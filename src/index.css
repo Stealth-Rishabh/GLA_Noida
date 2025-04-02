@@ -122,6 +122,9 @@
 @theme {
   --color-cusBlue: #11486a;
   --color-cusYellow: #fdd600;
+  --color-cusYellowLight: #fee566;
+  --color-cusYellowLighter: #fff0b3;
+  --color-cusYellowDark: #ccad00;
   --color-cusGreen: #407040;
 }
 
