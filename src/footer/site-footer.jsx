@@ -198,7 +198,7 @@ const SiteFooter = () => {
                           style={{ color: "var(--color-cusBlue)" }}
                           onMouseOver={(e) =>
                             (e.currentTarget.style.color =
-                              "var(--color-cusYellow)")
+                              "var(--color-cusGreenLight)")
                           }
                           onMouseOut={(e) =>
                             (e.currentTarget.style.color =
@@ -215,7 +215,7 @@ const SiteFooter = () => {
                           style={{ color: "var(--color-cusBlue)" }}
                           onMouseOver={(e) =>
                             (e.currentTarget.style.color =
-                              "var(--color-cusYellow)")
+                              "var(--color-cusGreenLight)")
                           }
                           onMouseOut={(e) =>
                             (e.currentTarget.style.color =
@@ -294,7 +294,7 @@ const SiteFooter = () => {
               className="transition-colors"
               style={{ color: "var(--color-cusBlue)" }}
               onMouseOver={(e) =>
-                (e.currentTarget.style.color = "var(--color-cusGreen)")
+                (e.currentTarget.style.color = "var(--color-cusGreenLight)")
               }
               onMouseOut={(e) =>
                 (e.currentTarget.style.color = "var(--color-cusBlue)")
@@ -311,7 +311,7 @@ const SiteFooter = () => {
               className="transition-colors"
               style={{ color: "var(--color-cusBlue)" }}
               onMouseOver={(e) =>
-                (e.currentTarget.style.color = "var(--color-cusYellow)")
+                (e.currentTarget.style.color = "var(--color-cusGreenLight)")
               }
               onMouseOut={(e) =>
                 (e.currentTarget.style.color = "var(--color-cusBlue)")
