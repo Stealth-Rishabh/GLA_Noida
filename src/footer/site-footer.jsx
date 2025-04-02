@@ -294,7 +294,7 @@ const SiteFooter = () => {
               className="transition-colors"
               style={{ color: "var(--color-cusBlue)" }}
               onMouseOver={(e) =>
-                (e.currentTarget.style.color = "var(--color-cusYellow)")
+                (e.currentTarget.style.color = "var(--color-cusGreen)")
               }
               onMouseOut={(e) =>
                 (e.currentTarget.style.color = "var(--color-cusBlue)")
