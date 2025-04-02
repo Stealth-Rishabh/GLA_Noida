@@ -3,7 +3,7 @@
 // src/components/site-header.jsx
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import logo from "@/assets/logo/gla-logo.png";
+import logo from "@/assets/logo/gla_logo.png";
 
 /**
  * SiteHeader Component
