@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { SiteHeader } from "@/header/site-header";
-import { SiteFooter } from "@/footer/site-footer";
+import SiteFooter from "@/footer/site-footer";
 import Contact from "@/Pages/Contact/Contact";
 
 // Home page component
@@ -29,18 +29,16 @@ function About() {
 
 export default function App() {
   return (
-    <Router>
-      <div className="flex min-h-screen flex-col">
-        <SiteHeader />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <SiteFooter />
-      </div>
-    </Router>
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
+        </Routes>
+      </main>
+      <SiteFooter />
+    </div>
   );
 }

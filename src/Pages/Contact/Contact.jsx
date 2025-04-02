@@ -12,7 +12,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
-import Heading from "@/components/Heading";
+// import Heading from "@/components/Heading";
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -70,7 +70,7 @@ function ContactForm() {
       </div>
       <Button
         type="submit"
-        className="w-full bg-pink-900 hover:bg-pink-800"
+        className="w-full bg-cusGreen hover:bg-cusGreen/80"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Send Message"}
@@ -197,16 +197,17 @@ export default function Contact() {
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <Heading
+          {/* <Heading
             title="Contact Us"
             titleClassName="lg:font-extrabold text-center text-white tracking-wide"
             className="block w-full  mx-auto text-left sm:col-span-4 sm:pb-0 lg:pb-0 pb-0 pt-8 sm:pt-0"
-          />
+          /> */}
+          <h1 className="text-4xl font-bold text-white">Contact Us</h1>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-6 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 sm:gap-8">
           {/* Contact Form */}
           <div className="p-6 bg-white rounded-lg shadow-lg">
