@@ -3,7 +3,7 @@
 // src/components/site-header.jsx
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import Logo from "@/assets/Logo/gla-logo.png";
+import logo from "@/assets/logo/gla-logo.png";
 
 /**
  * SiteHeader Component
@@ -15,10 +15,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
       <div className="container mx-auto px-4 flex h-32 items-center justify-between">
-        {/* Logo and University Name */}
+        {/* logo and University Name */}
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center space-x-2">
-            <img src={Logo} alt="GLA Logo" className="h-24 w-auto" />
+            <img src={logo} alt="GLA logo" className="h-24 w-auto" />
             <div className="flex flex-col"></div>
           </a>
         </div>

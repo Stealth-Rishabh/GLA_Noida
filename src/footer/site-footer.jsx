@@ -7,7 +7,7 @@ import {
   Youtube,
   Phone,
 } from "lucide-react";
-import logo from "@/assets/Logo/gla-logo.png";
+import logo from "@/assets/logo/gla-logo.png";
 
 /**
  * SiteFooter Component
@@ -94,7 +94,7 @@ const SiteFooter = () => {
 
       <div className="container relative mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
-          {/* Logo and Social Section */}
+          {/* logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
               <a
@@ -104,7 +104,7 @@ const SiteFooter = () => {
               >
                 <img
                   src={logo}
-                  alt="GLA University Logo"
+                  alt="GLA University logo"
                   className="h-24 cursor-pointer w-auto transition-transform group-hover:scale-105"
                 />
                 <div className="flex flex-col"></div>
