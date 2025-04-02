@@ -121,11 +121,17 @@
 
 @theme {
   --color-cusBlue: #11486a;
+  --color-cusBlueLight: #1a6998;
+  --color-cusBlueLighter: #2389c7;
+  --color-cusBlueDark: #0a2c40;
   --color-cusYellow: #fdd600;
   --color-cusYellowLight: #fee566;
   --color-cusYellowLighter: #fff0b3;
   --color-cusYellowDark: #ccad00;
   --color-cusGreen: #407040;
+  --color-cusGreenLight: #80a080;
+  --color-cusGreenLighter: #b3d1b3;
+  --color-cusGreenDark: #004000;
 }
 
 @layer components {
