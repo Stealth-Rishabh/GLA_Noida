@@ -3,6 +3,7 @@
 // src/components/site-header.jsx
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Logo from "@/assets/Logo/gla-logo.png";
 
 /**
  * SiteHeader Component
@@ -13,29 +14,12 @@ import { ChevronDown, Menu, X } from "lucide-react";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
-      <div className="container mx-auto px-4 flex h-20 items-center justify-between">
+      <div className="container mx-auto px-4 flex h-32 items-center justify-between">
         {/* Logo and University Name */}
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center space-x-2">
-            <img
-              src="/placeholder.svg"
-              alt="GLA Logo"
-              className="h-12 w-auto"
-            />
-            <div className="flex flex-col">
-              <span
-                className="font-bold text-xl"
-                style={{ color: "var(--color-cusBlue)" }}
-              >
-                GLA University
-              </span>
-              <span
-                className="text-xs"
-                style={{ color: "var(--color-cusGreen)" }}
-              >
-                Excellence in Education
-              </span>
-            </div>
+            <img src={Logo} alt="GLA Logo" className="h-24 w-auto" />
+            <div className="flex flex-col"></div>
           </a>
         </div>
 
@@ -180,6 +164,14 @@ export function SiteHeader() {
               style={{ color: "var(--color-cusBlue)" }}
             >
               Student Life
+            </a>
+
+            <a
+              href="/contact-us"
+              className="px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-[var(--color-cusYellow)]"
+              style={{ color: "var(--color-cusBlue)" }}
+            >
+              Contact Us
             </a>
           </nav>
         </div>
