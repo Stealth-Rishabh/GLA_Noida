@@ -1,321 +1,329 @@
-// src/components/site-footer.jsx
+"use client";
 import {
   Facebook,
   Instagram,
-  Linkedin,
   Twitter,
+  Linkedin,
   Youtube,
-  Mail,
   Phone,
-  MapPin,
 } from "lucide-react";
+import logo from "@/assets/Logo/gla-logo.png";
 
 /**
  * SiteFooter Component
  *
- * Footer for the GLA University website.
- * Contains university information, quick links, programs, contact details,
- * social media links, and copyright information.
+ * Footer for the GLA University website based on the provided design.
+ * Includes logo, social media links, useful links sections, and newsletter subscription.
  */
-export function SiteFooter() {
+const SiteFooter = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const footerSections = [
+    {
+      label: "Useful Links",
+      items: [
+        { name: "About Us", path: "/about/vision-mission" },
+        { name: "Rankings & Awards", path: "/about/accreditations-rankings" },
+        { name: "Accreditations", path: "/accreditations" },
+        { name: "Events", path: "/students-life/life-at-gla" },
+        { name: "Media", path: "/students-life/news-announcements" },
+        { name: "Blog", path: "/blog" },
+        { name: "Careers", path: "/careers" },
+        {
+          name: "AICTE Feedback",
+          path: "https://www.aicte-india.org/feedback/",
+        },
+      ],
+    },
+    {
+      label: "Programs Offered",
+      items: [
+        { name: "B.Tech", path: "/programs/btech" },
+        { name: "BBA", path: "/programs/bba" },
+        { name: "BCA", path: "/programs/bca" },
+        { name: "MBA", path: "/programs/mba" },
+        { name: "M.Tech", path: "/programs/mtech" },
+        { name: "Ph.D", path: "/programs/phd" },
+      ],
+    },
+    {
+      label: "Committees",
+      items: [
+        { name: "Grievance Redressal Mechanism", path: "/grievance" },
+        { name: "Internal Complaints Committee", path: "/complaints" },
+        { name: "Anti-Ragging Committee", path: "/anti-ragging" },
+        { name: "Research Committee", path: "/research-committee" },
+      ],
+    },
+    {
+      label: "Quick Links",
+      items: [
+        { name: "Academic Calendar", path: "/academic-calendar" },
+        { name: "Examinations", path: "/examinations" },
+        { name: "Student Login", path: "/student-login" },
+        { name: "Staff Login", path: "/staff-login" },
+        { name: "NIRF", path: "/nirf" },
+        { name: "IQAC", path: "/iqac" },
+      ],
+    },
+  ];
+
   return (
     <footer
-      style={{ backgroundColor: "var(--color-cusBlue)" }}
-      className="text-white"
+      className="relative pt-16 pb-10 px-4 md:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-yellow-200 via-yellow-100 to-yellow-200"
+      //   style={{
+      //     background: "linear-gradient(to right, #e9f2fa, #f5f9fd, #e9f2fa)",
+      //   }}
     >
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* University Information */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <img
-                src="/placeholder.svg"
-                alt="GLA University Logo"
-                className="h-12 w-auto bg-white p-1 rounded"
-              />
-              <div className="flex flex-col">
-                <span
-                  className="font-bold text-xl"
-                  style={{ color: "var(--color-cusYellow)" }}
-                >
-                  GLA University
-                </span>
-                <span className="text-xs">Excellence in Education</span>
-              </div>
-            </div>
-            <p className="text-gray-300 max-w-xs">
-              GLA University is committed to providing quality education and
-              fostering innovation through academic excellence. Our mission is
-              to empower students with knowledge and skills for a successful
-              future.
-            </p>
-
-            {/* Social Media Links */}
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="h-5 w-5" />
-                <span className="sr-only">YouTube</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3
-              className="text-lg font-semibold mb-4"
-              style={{ color: "var(--color-cusYellow)" }}
-            >
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/about"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  About GLA
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/programs"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  Academic Programs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/admissions"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  Admissions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/student-life"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  Student Life
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/research"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  Research
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/careers"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/news"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  News & Events
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Programs */}
-          <div>
-            <h3
-              className="text-lg font-semibold mb-4"
-              style={{ color: "var(--color-cusYellow)" }}
-            >
-              Programs
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="/programs/btech"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  B.Tech
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/programs/bba"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  BBA
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/programs/bca"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  BCA
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/programs/mba"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  MBA
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/programs/mtech"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  M.Tech
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/programs/phd"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  Ph.D
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <h3
-              className="text-lg font-semibold mb-4"
-              style={{ color: "var(--color-cusYellow)" }}
-            >
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex">
-                <MapPin
-                  className="h-5 w-5 mr-2 flex-shrink-0"
-                  style={{ color: "var(--color-cusYellow)" }}
-                />
-                <span className="text-gray-300">
-                  17km Stone, NH-2, Mathura-Delhi Highway, Mathura, Uttar
-                  Pradesh 281406
-                </span>
-              </li>
-              <li className="flex">
-                <Phone
-                  className="h-5 w-5 mr-2 flex-shrink-0"
-                  style={{ color: "var(--color-cusYellow)" }}
-                />
-                <a
-                  href="tel:+911234567890"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  +91 1234 567 890
-                </a>
-              </li>
-              <li className="flex">
-                <Mail
-                  className="h-5 w-5 mr-2 flex-shrink-0"
-                  style={{ color: "var(--color-cusYellow)" }}
-                />
-                <a
-                  href="mailto:info@gla.ac.in"
-                  className="text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-                >
-                  info@gla.ac.in
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, black 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
-      {/* Copyright and Legal Links */}
-      <div
-        className="border-t py-6"
-        style={{
-          borderColor: "var(--color-cusGreen)",
-          backgroundColor: "var(--color-cusBlue)",
-        }}
-      >
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-300">
-            © {new Date().getFullYear()} GLA University. All rights reserved.
+      <div className="container relative mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
+          {/* Logo and Social Section */}
+          <div className="lg:col-span-3 space-y-8">
+            <div className="space-y-6">
+              <a
+                href="/"
+                className="flex items-center gap-3 group"
+                onClick={scrollToTop}
+              >
+                <img
+                  src={logo}
+                  alt="GLA University Logo"
+                  className="h-24 cursor-pointer w-auto transition-transform group-hover:scale-105"
+                />
+                <div className="flex flex-col"></div>
+              </a>
+              <div className="flex gap-3">
+                {[
+                  {
+                    icon: Facebook,
+                    label: "Facebook",
+                    href: "https://www.facebook.com/glauniversity/",
+                  },
+                  {
+                    icon: Instagram,
+                    label: "Instagram",
+                    href: "https://www.instagram.com/gla_university/",
+                  },
+                  {
+                    icon: Twitter,
+                    label: "Twitter",
+                    href: "https://twitter.com/gla_university",
+                  },
+                  {
+                    icon: Linkedin,
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/school/gla-university/",
+                  },
+                  {
+                    icon: Youtube,
+                    label: "YouTube",
+                    href: "https://www.youtube.com/channel/UCIIKKSQjCqFiXxCe9HQhxbw",
+                  },
+                ].map((social, index) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button
+                        className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110 text-white"
+                        style={{ backgroundColor: "var(--color-cusBlue)" }}
+                        aria-label={social.label}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </button>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="space-y-3">
+              <p
+                className="text-sm font-medium mb-3"
+                style={{ color: "var(--color-cusBlue)" }}
+              >
+                24/7 Student Helpline Number
+              </p>
+              <a href="tel:+919027068068">
+                <button
+                  className="flex items-center gap-2 px-4 py-2 rounded-full text-white transition-colors hover:opacity-90"
+                  style={{ backgroundColor: "var(--color-cusGreen)" }}
+                >
+                  <Phone className="h-4 w-4" />
+                  9027068068
+                </button>
+              </a>
+            </div>
+          </div>
+
+          {/* Links Sections */}
+          <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-8">
+            {footerSections.map((section) => (
+              <div key={section.label} className="space-y-6">
+                <h3
+                  className="text-lg font-semibold tracking-wide"
+                  style={{ color: "var(--color-cusBlue)" }}
+                >
+                  {section.label}
+                </h3>
+                <ul className="space-y-3 text-base">
+                  {section.items.map((item) => (
+                    <li key={item.name}>
+                      {item.path.startsWith("https:") ? (
+                        <a
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group inline-flex items-center gap-1 transition-colors duration-200"
+                          style={{ color: "var(--color-cusBlue)" }}
+                          onMouseOver={(e) =>
+                            (e.currentTarget.style.color =
+                              "var(--color-cusYellow)")
+                          }
+                          onMouseOut={(e) =>
+                            (e.currentTarget.style.color =
+                              "var(--color-cusBlue)")
+                          }
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <a
+                          href={item.path}
+                          onClick={scrollToTop}
+                          className="group inline-flex items-center gap-1 transition-colors duration-200"
+                          style={{ color: "var(--color-cusBlue)" }}
+                          onMouseOver={(e) =>
+                            (e.currentTarget.style.color =
+                              "var(--color-cusYellow)")
+                          }
+                          onMouseOut={(e) =>
+                            (e.currentTarget.style.color =
+                              "var(--color-cusBlue)")
+                          }
+                        >
+                          {item.name}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        {/* <div
+          className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-xl border shadow-sm"
+          style={{ borderColor: "var(--color-cusBlue)", opacity: 0.1 }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-8">
+              <h3
+                className="text-xl font-semibold mb-2"
+                style={{ color: "var(--color-cusBlue)" }}
+              >
+                Stay Updated with GLA University
+              </h3>
+              <p style={{ color: "var(--color-cusBlue)", opacity: 0.8 }}>
+                Stay updated with our latest news, events, and academic
+                announcements
+              </p>
+            </div>
+            <div className="lg:col-span-4">
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="flex-1 px-3 py-2 border rounded-md focus:outline-none"
+                  style={{ borderColor: "var(--color-cusBlue)" }}
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-md text-white font-medium hover:opacity-90"
+                  style={{ backgroundColor: "var(--color-cusGreen)" }}
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div> */}
+
+        <div
+          className="h-px w-full my-12"
+          style={{ backgroundColor: "var(--color-cusBlue)" }}
+        ></div>
+
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-base">
+          <p style={{ color: "var(--color-cusBlue)" }}>
+            Copyright © GLA University {new Date().getFullYear()}
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex gap-6">
             <a
               href="/privacy-policy"
-              className="text-sm text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
+              className="transition-colors"
+              style={{ color: "var(--color-cusBlue)" }}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.color = "var(--color-cusYellow)")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.color = "var(--color-cusBlue)")
+              }
             >
               Privacy Policy
             </a>
             <a
-              href="/terms-of-use"
-              className="text-sm text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
+              href="/terms-of-service"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
+              className="transition-colors"
+              style={{ color: "var(--color-cusBlue)" }}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.color = "var(--color-cusYellow)")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.color = "var(--color-cusBlue)")
+              }
             >
-              Terms of Use
-            </a>
-            <a
-              href="/sitemap"
-              className="text-sm text-gray-300 hover:text-[var(--color-cusYellow)] transition-colors"
-            >
-              Sitemap
+              Terms of Service
             </a>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default SiteFooter;

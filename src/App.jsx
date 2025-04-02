@@ -1,5 +1,5 @@
 import { SiteHeader } from "@/header/site-header";
-import { SiteFooter } from "@/footer/site-footer";
+import SiteFooter from "@/footer/site-footer";
 
 export default function App() {
   return (
