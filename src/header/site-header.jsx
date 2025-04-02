@@ -13,8 +13,8 @@ import logo from "@/assets/logo/gla_logo.png";
  */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
-      <div className="container mx-auto px-4 flex h-32 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm h-32">
+      <div className="container mx-auto px-4 flex h-full items-center justify-between">
         {/* logo and University Name */}
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center space-x-2">
