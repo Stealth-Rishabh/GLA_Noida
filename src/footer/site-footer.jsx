@@ -7,7 +7,7 @@ import {
   Youtube,
   Phone,
 } from "lucide-react";
-import logo from "@/assets/Logo/gla_logo.png";
+import logo from "@/assets/logo/gla_logo.png";
 
 /**
  * SiteFooter Component
