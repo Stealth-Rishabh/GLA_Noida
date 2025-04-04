@@ -95,7 +95,7 @@ export function BannerSlider() {
   };
 
   return (
-    <div className="relative h-[600px] md:h-[calc(100vh-128px)] overflow-hidden">
+    <div className="relative h-[600px] md:h-[700px] overflow-hidden">
       <div
         className="absolute inset-0 flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -111,7 +111,7 @@ export function BannerSlider() {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ objectPosition: "center" }}
             />
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-black/20" />
             <div className="container mx-auto max-w-7xl px-4 relative h-full flex flex-col justify-center items-start text-white">
               <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl">
                 {slide.title}

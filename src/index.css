@@ -139,4 +139,8 @@
   .navlinks {
     @apply block rounded-md px-3 py-2 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground;
   }
+
+  .background-gradient {
+    @apply bg-gradient-to-b from-yellow-200 via-yellow-50 to-yellow-200;
+  }
 }
