@@ -143,4 +143,10 @@
   .background-gradient {
     @apply bg-gradient-to-b from-yellow-200 via-yellow-50 to-yellow-200;
   }
+  .background-gradient-white {
+    @apply bg-gradient-to-b from-white to-slate-50;
+  }
+  .background-gradient-blue {
+    @apply bg-gradient-to-r from-cusBlue to-cusBlueLight;
+  }
 }

@@ -3,7 +3,7 @@ import { SiteHeader } from "@/header/site-header";
 import SiteFooter from "@/footer/site-footer";
 import Contact from "@/Pages/Contact/Contact";
 import LandingPage from "@/Pages/LandingPage/LandingPage";
-
+import BTechCSE from "@/Pages/Programs/BTechCSE";
 // About page component
 function About() {
   return (
@@ -19,12 +19,13 @@ function About() {
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+      {/* <SiteHeader /> */}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/programs/btech" element={<BTechCSE />} />
         </Routes>
       </main>
       <SiteFooter />
