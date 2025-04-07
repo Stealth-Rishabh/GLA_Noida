@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import SetUsApartImage from "@/assets/general/setUsApart.webp";
+import SetUsApartImage from "@/assets/general/SetUsApart.webp";
 export default function SetUsApart() {
   return (
     <div className="relative w-full max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
