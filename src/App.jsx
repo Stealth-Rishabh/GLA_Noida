@@ -3,7 +3,7 @@ import { SiteHeader } from "@/header/site-header";
 import SiteFooter from "@/footer/site-footer";
 import Contact from "@/Pages/Contact/Contact";
 import LandingPage from "@/Pages/LandingPage/LandingPage";
-import BTechCSE from "@/Pages/Programs/BTechCSE";
+import BTechCSE from "@/Pages/Programs/BTechCse";
 // About page component
 function About() {
   return (
@@ -25,7 +25,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact-us" element={<Contact />} />
-          <Route path="/programs/btech" element={<BTechCSE />} />
+          <Route path="/programs/btech" element={<BTechCse />} />
         </Routes>
       </main>
       <SiteFooter />
