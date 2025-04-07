@@ -4,6 +4,7 @@ import Section from "@/layout.jsx/section";
 import SetUsApart from "@/components/main/SetUsApart";
 import ExploreMajorSections from "@/components/main/ExploreMajorSections";
 import StudentLife from "@/components/main/StudentLife";
+import LatestNews from "@/components/main/LatestNews";
 
 export default function LandingPage() {
   return (
@@ -18,6 +19,9 @@ export default function LandingPage() {
       <ExploreMajorSections />
       <Section>
         <StudentLife />
+      </Section>
+      <Section>
+        <LatestNews />
       </Section>
     </>
   );

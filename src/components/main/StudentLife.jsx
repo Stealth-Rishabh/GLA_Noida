@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Heading } from "@/components/ui/heading";
 import banner1 from "@/assets/banner/bannerOne.webp";
 import banner2 from "@/assets/banner/bannerTwo.webp";
 import sports from "@/assets/sports/sports.webp";
@@ -39,10 +40,15 @@ const studentLifeData = [
 export default function StudentLife() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <p className="text-gray-600">
-          A thriving community of creativity and innovation
-        </p>
+      <div className="mb-12">
+        <Heading
+          level={2}
+          align="center"
+          subtext="A thriving community of creativity and innovation"
+          className="text-cusBlue"
+        >
+          Student Life at GLA
+        </Heading>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -55,9 +61,9 @@ export default function StudentLife() {
                 className="w-full h-auto aspect-square object-cover"
               />
             </div>
-            <h2 className="text-2xl font-bold mb-3 text-cusBlue">
+            <Heading level={3} className="text-cusBlue mb-3">
               {item.title}
-            </h2>
+            </Heading>
             <p className="text-gray-600 mb-4">{item.description}</p>
             <a
               href="#"

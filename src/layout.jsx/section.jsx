@@ -5,7 +5,7 @@ export default function Section({
   className,
   containerClassName,
   background = "bg-white",
-  spacing = "py-16 md:py-24",
+  spacing = "py-16 md:py-16",
 }) {
   return (
     <section className={cn("w-full", background, spacing, className)}>

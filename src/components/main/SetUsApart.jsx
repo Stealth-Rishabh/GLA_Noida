@@ -1,20 +1,23 @@
 import { ArrowRight } from "lucide-react";
 import SetUsApartImage from "@/assets/general/SetUsApart.webp";
+import { Heading } from "@/components/ui/heading";
+
 export default function SetUsApart() {
   return (
     <div className="relative w-full max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Content Card */}
         <div className="lg:col-span-5 bg-white p-8 sm:p-12 shadow-sm rounded-sm z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold text-cusBlue mb-4">
-            UniCamp Open Day
-          </h2>
-          <div className="w-24 h-1 bg-cusYellow mb-6"></div>
-          <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-            Discover what studying at UniCamp is really like. Explore our
-            campuses and find out more about our admission process and get to
-            know our community.
-          </p>
+          <Heading
+            level={2}
+            className="text-cusBlue mb-4"
+            subtext="Discover what studying at UniCamp is really like. Explore our campuses and find out more about our admission process and get to know our community."
+            subtextClassName="text-gray-600 text-lg mb-8 leading-relaxed"
+          >
+            UniCamp <br /> Open
+            <span className=" border-b-4 border-cusYellow ">Day</span>
+          </Heading>
+
           <button className="bg-cusGreen text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-colors">
             Learn more <ArrowRight className="h-4 w-4" />
           </button>

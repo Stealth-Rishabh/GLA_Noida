@@ -23,9 +23,9 @@ export default function ExploreMajorsSection() {
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4">
             <span className="block">
               Explore
-              <span className="border-b-2 border-cusYellow">Majors</span> &
+              <span className="border-b-4 border-cusYellow">Majors</span> &
             </span>
-            <span className=" mt-2 border-b-2 border-cusYellow inline-block pb-2 ">
+            <span className=" mt-2 border-b-4 border-cusYellow inline-block pb-2 ">
               {/*inline-block*/}
               Programs
             </span>

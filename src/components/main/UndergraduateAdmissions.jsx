@@ -34,7 +34,7 @@ export default function UndergraduateAdmissions() {
 
   return (
     <div className="w-full bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto p-4">
         <div className="flex flex-wrap mx-2">
           {admissionsCards.map((card) => (
             <div

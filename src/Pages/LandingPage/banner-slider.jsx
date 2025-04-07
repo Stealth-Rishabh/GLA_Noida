@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import banner1 from "@/assets/banner/bannerOne.webp";
 import banner2 from "@/assets/banner/bannerTwo.webp";
 import banner3 from "@/assets/banner/bannerThree.webp";
+import { Heading } from "@/components/ui/heading";
 
 /**
  * BannerSlider Component
@@ -113,12 +114,14 @@ export function BannerSlider() {
             />
             <div className="absolute inset-0 bg-black/20" />
             <div className="container mx-auto max-w-7xl px-4 relative h-full flex flex-col justify-center items-start text-white">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-2xl">
+              <Heading
+                level={2}
+                className="text-white mb-4 max-w-2xl"
+                subtext={slide.description}
+                subtextClassName="text-white text-lg md:text-xl mb-8 max-w-xl"
+              >
                 {slide.title}
-              </h1>
-              <p className="text-lg md:text-xl mb-8 max-w-xl">
-                {slide.description}
-              </p>
+              </Heading>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   className="group px-6 py-3 rounded-md text-base font-medium flex items-center transition-all"
