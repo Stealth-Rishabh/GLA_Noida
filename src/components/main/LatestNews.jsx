@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowRight, Clock, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/ui/heading";
@@ -17,7 +17,7 @@ const Badge = ({ variant = "default", className, children, ...props }) => {
     alumni: "bg-purple-100 text-purple-800 border-purple-200",
     research: "bg-emerald-100 text-emerald-800 border-emerald-200",
     studentLife: "bg-sky-100 text-sky-800 border-sky-200",
-    studentStory: "bg-pink-100 text-pink-800 border-pink-200",
+
     career: "bg-purple-100 text-purple-800 border-purple-200",
     facilities: "bg-amber-100 text-amber-800 border-amber-200",
     campus: "bg-blue-100 text-blue-800 border-blue-200",
@@ -61,10 +61,7 @@ const LatestNews = () => {
     {
       id: 2,
       image: bannerTwo,
-      categories: [
-        { name: "STUDENT LIFE", variant: "studentLife" },
-        { name: "STUDENT STORY", variant: "studentStory" },
-      ],
+      categories: [{ name: "STUDENT LIFE", variant: "studentLife" }],
       title: "Most students say their mental health suffered in pandemic",
       author: "Owen Christ",
       date: "Jan 25, 2021",
@@ -166,42 +163,81 @@ const LatestNews = () => {
     },
   ];
 
-  // Display only 3 news items at a time
+  // Get the number of items to show based on screen size
+  const getVisibleItemCount = () => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth < 768 ? 1 : 3;
+    }
+    return 3;
+  };
+
+  const [visibleItems, setVisibleItems] = useState(getVisibleItemCount());
+
+  // Update visible items count on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleItems(getVisibleItemCount());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Display items based on screen size
   const visibleNewsItems = newsItems.slice(
     activeNewsIndex,
-    activeNewsIndex + 3
+    activeNewsIndex + visibleItems
   );
   // If we don't have enough items, add from the beginning
-  if (visibleNewsItems.length < 3) {
-    visibleNewsItems.push(...newsItems.slice(0, 3 - visibleNewsItems.length));
+  if (visibleNewsItems.length < visibleItems) {
+    visibleNewsItems.push(
+      ...newsItems.slice(0, visibleItems - visibleNewsItems.length)
+    );
   }
 
-  // Display only 3 events at a time
-  const visibleEvents = events.slice(activeEventIndex, activeEventIndex + 3);
+  // Display events based on screen size
+  const visibleEvents = events.slice(
+    activeEventIndex,
+    activeEventIndex + visibleItems
+  );
   // If we don't have enough items, add from the beginning
-  if (visibleEvents.length < 3) {
-    visibleEvents.push(...events.slice(0, 3 - visibleEvents.length));
+  if (visibleEvents.length < visibleItems) {
+    visibleEvents.push(...events.slice(0, visibleItems - visibleEvents.length));
   }
 
-  const handleNewsNavigation = (direction) => {
-    setActiveNewsIndex((prev) => {
+  const handleNewsNavigation = useCallback(
+    (direction) => {
       if (direction === "prev") {
-        return prev === 0 ? newsItems.length - 1 : prev - 1;
+        setActiveNewsIndex((prev) => {
+          const newIndex = prev - 1;
+          return newIndex < 0 ? newsItems.length - visibleItems : newIndex;
+        });
       } else {
-        return (prev + 1) % newsItems.length;
+        setActiveNewsIndex((prev) => {
+          const newIndex = prev + 1;
+          return newIndex > newsItems.length - visibleItems ? 0 : newIndex;
+        });
       }
-    });
-  };
+    },
+    [newsItems.length, visibleItems]
+  );
 
-  const handleEventNavigation = (direction) => {
-    setActiveEventIndex((prev) => {
+  const handleEventNavigation = useCallback(
+    (direction) => {
       if (direction === "prev") {
-        return prev === 0 ? events.length - 1 : prev - 1;
+        setActiveEventIndex((prev) => {
+          const newIndex = prev - 1;
+          return newIndex < 0 ? events.length - visibleItems : newIndex;
+        });
       } else {
-        return (prev + 1) % events.length;
+        setActiveEventIndex((prev) => {
+          const newIndex = prev + 1;
+          return newIndex > events.length - visibleItems ? 0 : newIndex;
+        });
       }
-    });
-  };
+    },
+    [events.length, visibleItems]
+  );
 
   // Auto-slide functionality
   useEffect(() => {
@@ -217,7 +253,7 @@ const LatestNews = () => {
       clearInterval(newsInterval);
       clearInterval(eventsInterval);
     };
-  }, []);
+  }, [handleNewsNavigation, handleEventNavigation]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 overflow-hidden">
@@ -288,8 +324,8 @@ const LatestNews = () => {
               key={idx}
               className={cn(
                 "h-2 w-2 rounded-full transition-colors",
-                idx >= activeNewsIndex && idx < activeNewsIndex + 3
-                  ? "bg-purple-600"
+                idx >= activeNewsIndex && idx < activeNewsIndex + 1
+                  ? "bg-cusYellow"
                   : "bg-gray-200 hover:bg-gray-300"
               )}
               onClick={() => setActiveNewsIndex(idx)}
@@ -300,7 +336,7 @@ const LatestNews = () => {
       </div>
 
       {/* Events Section - Right side */}
-      <div className="bg-gray-50 p-8 relative">
+      <div className=" p-2 relative">
         <div className="flex justify-between items-center mb-6">
           <Heading level={2}>
             <span className="border-b-4 border-cusYellow">Ev</span>ents
@@ -320,8 +356,8 @@ const LatestNews = () => {
               key={event.id}
               className="group flex items-start p-4 rounded-xl bg-white border border-gray-100 transition-all duration-300 shadow-lg hover:border-purple-100 cursor-pointer"
             >
-              <div className="flex-shrink-0 mr-5 p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-100 text-center group-hover:from-purple-100 group-hover:to-pink-100 transition-colors">
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <div className="flex-shrink-0 mr-5 p-3 shadow-lg rounded-lg transition-colors">
+                <div className="text-3xl font-bold bg-cusBlue bg-clip-text text-transparent">
                   {event.day}
                 </div>
                 <div className="text-gray-500 uppercase text-xs font-medium tracking-wider">
@@ -330,13 +366,13 @@ const LatestNews = () => {
               </div>
 
               <div className="flex-1">
-                <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                <h3 className="text-lg font-bold mb-2 text-gray-900 mt-2 group-hover:text-cusBlue transition-colors line-clamp-2">
                   {event.title}
                 </h3>
               </div>
 
               <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                <ArrowRight className="h-5 w-5 text-purple-500" />
+                <ArrowRight className="h-5 w-5 text-cusBlue" />
               </div>
             </div>
           ))}
@@ -348,8 +384,8 @@ const LatestNews = () => {
               key={idx}
               className={cn(
                 "h-2 w-2 rounded-full transition-colors",
-                idx >= activeEventIndex && idx < activeEventIndex + 3
-                  ? "bg-purple-600"
+                idx >= activeEventIndex && idx < activeEventIndex + 1
+                  ? "bg-cusYellow"
                   : "bg-gray-200 hover:bg-gray-300"
               )}
               onClick={() => setActiveEventIndex(idx)}

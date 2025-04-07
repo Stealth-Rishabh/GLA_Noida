@@ -10,14 +10,14 @@ export default function LandingPage() {
   return (
     <>
       <BannerSlider />
-      <Section>
+      <Section className="background-gradient-white">
         <UndergraduateAdmissions />
       </Section>
       <Section className="background-gradient">
         <SetUsApart />
       </Section>
       <ExploreMajorSections />
-      <Section>
+      <Section className="background-gradient-white">
         <StudentLife />
       </Section>
       <Section>
