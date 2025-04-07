@@ -33,6 +33,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
+import { Heading } from "@/components/ui/heading";
 
 export function BtechCS() {
   // Animation hooks
@@ -556,10 +557,11 @@ export function BtechCS() {
         <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
-        <div className="max-w-md mx-auto text-center mb-16">
-          <Badge className="mb-4">About the Program</Badge>
-          <h2 className="text-4xl font-bold mb-6">Program Description</h2>
-          <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <Badge className="mb-4 bg-cusGreen text-white">About the Program</Badge>
+          <Heading level={2} className="text-center text-cusBlue">Program Description</Heading>
+          {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
+          <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -580,8 +582,8 @@ export function BtechCS() {
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <GraduationCap className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
                     <h4 className="font-medium">12 Months</h4>
@@ -592,8 +594,8 @@ export function BtechCS() {
                 </div>
 
                 <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Users className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
                     <h4 className="font-medium">Expert Faculty</h4>
@@ -604,8 +606,8 @@ export function BtechCS() {
                 </div>
 
                 <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <BookOpen className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
                     <h4 className="font-medium">Certification</h4>
@@ -616,8 +618,8 @@ export function BtechCS() {
                 </div>
 
                 <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-primary" />
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Beaker className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
                     <h4 className="font-medium">Hands-on Labs</h4>
@@ -631,15 +633,15 @@ export function BtechCS() {
           </div>
 
           <div className="order-1 md:order-2 relative">
-            <div className="relative z-10 bg-white rounded-2xl shadow-xl p-6 border border-slate-100">
+            <div className="relative z-10 background-gradient-blue rounded-2xl shadow-xl p-6 border border-slate-100">
               <img
                 src="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
                 alt="Program Overview"
                 className="w-full h-auto rounded-xl mb-6"
               />
               <div className="space-y-4">
-                <h3 className="text-xl font-bold">Program Highlights</h3>
-                <ul className="space-y-3">
+                <h3 className="text-xl font-bold text-white">Program Highlights</h3>
+                <ul className="space-y-3 text-white">
                   {[
                     "Comprehensive curriculum covering all aspects of data science",
                     "Hands-on projects with real-world datasets",
@@ -647,8 +649,8 @@ export function BtechCS() {
                     "Career support and placement assistance",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
-                      <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        <ChevronRight className="h-3.5 w-3.5 text-primary" />
+                      <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
+                        <ArrowRight className="h-3.5 w-3.5 text-white" />
                       </div>
                       <span>{item}</span>
                     </li>
@@ -677,10 +679,10 @@ export function BtechCS() {
         </div> */}
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-md mx-auto text-center mb-16">
-            <Badge className="mb-4">What You'll Achieve</Badge>
-            <h2 className="text-4xl font-bold mb-6">Program Outcomes</h2>
-            <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+          <div className="max-w-7xl mx-auto text-center mb-16">
+            <Badge className="mb-4 bg-cusGreen text-white">What You'll Achieve</Badge>
+            <Heading level={2} className="text-center text-cusBlue">Program Outcomes</Heading>
+            <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -690,39 +692,39 @@ export function BtechCS() {
                 description:
                   "Develop practical skills that are immediately applicable in the workplace",
                 icon: (
-                  <GraduationCap className="h-10 w-10 text-cusBlueLighter" />
+                  <GraduationCap className="h-10 w-10 text-cusGreen" />
                 ),
               },
               {
                 title: "Career Advancement",
                 description:
                   "Position yourself for promotions and new career opportunities in data science",
-                icon: <Users className="h-10 w-10 text-cusBlueLighter" />,
+                icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Project Portfolio",
                 description:
                   "Build an impressive portfolio of real-world data science projects",
-                icon: <BookOpen className="h-10 w-10 text-cusBlueLighter" />,
+                icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Professional Network",
                 description:
                   "Connect with industry professionals and fellow data enthusiasts",
-                icon: <Users className="h-10 w-10 text-cusBlueLighter" />,
+                icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Technical Expertise",
                 description:
                   "Master the latest tools and technologies used in the data science industry",
-                icon: <Beaker className="h-10 w-10 text-cusBlueLighter" />,
+                icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Certification",
                 description:
                   "Earn a recognized certification validating your data science expertise",
                 icon: (
-                  <GraduationCap className="h-10 w-10 text-cusBlueLighter" />
+                  <GraduationCap className="h-10 w-10 text-cusGreen" />
                 ),
               },
             ].map((item, index) => (
@@ -731,7 +733,7 @@ export function BtechCS() {
                 className="border-none shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
                 <CardHeader>
-                  <div className="mb-2 w-16 h-16 rounded-2xl bg-cusYellow flex items-center justify-center group-hover:bg-cusYellow/80 transition-colors duration-300">
+                  <div className="mb-2 w-16 h-16 rounded-2xl bg-cusGreenLighter flex items-center justify-center group-hover:bg-cusGreenLighter/80 transition-colors duration-300">
                     {item.icon}
                   </div>
                   <CardTitle className="text-cusBlueLight text-lg font-bold">
