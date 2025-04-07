@@ -34,7 +34,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 
-export function BTechCSE() {
+export function BTechCse() {
   // Animation hooks
   const [isVisible, setIsVisible] = useState({});
   const [activeField, setActiveField] = useState(null);
@@ -1581,4 +1581,4 @@ export function BTechCSE() {
   );
 }
 
-export default BTechCSE;
+export default BTechCse;
