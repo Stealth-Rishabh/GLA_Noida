@@ -190,7 +190,11 @@ export function SiteHeader() {
               <div className="flex items-center gap-2">
                 <a
                   href="/more-info"
-                  className="rounded-md px-4 py-1.5 text-sm font-medium border-2 border-white text-white hover:bg-white hover:text-cusBlue transition-colors"
+                  className={`rounded-md px-4 py-1.5 text-sm font-medium border-2 transition-colors ${
+                    scrolled
+                      ? "border-cusBlue text-cusBlue hover:bg-cusBlue hover:text-white"
+                      : "border-white text-white hover:bg-white hover:text-cusBlue"
+                  }`}
                 >
                   More info
                 </a>
