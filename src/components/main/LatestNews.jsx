@@ -165,7 +165,7 @@ const LatestNews = () => {
 
   // Get the number of items to show based on screen size
   const getVisibleItemCount = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       return window.innerWidth < 768 ? 1 : 3;
     }
     return 3;
@@ -179,8 +179,8 @@ const LatestNews = () => {
       setVisibleItems(getVisibleItemCount());
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Display items based on screen size
@@ -190,43 +190,54 @@ const LatestNews = () => {
   );
   // If we don't have enough items, add from the beginning
   if (visibleNewsItems.length < visibleItems) {
-    visibleNewsItems.push(...newsItems.slice(0, visibleItems - visibleNewsItems.length));
+    visibleNewsItems.push(
+      ...newsItems.slice(0, visibleItems - visibleNewsItems.length)
+    );
   }
 
   // Display events based on screen size
-  const visibleEvents = events.slice(activeEventIndex, activeEventIndex + visibleItems);
+  const visibleEvents = events.slice(
+    activeEventIndex,
+    activeEventIndex + visibleItems
+  );
   // If we don't have enough items, add from the beginning
   if (visibleEvents.length < visibleItems) {
     visibleEvents.push(...events.slice(0, visibleItems - visibleEvents.length));
   }
 
-  const handleNewsNavigation = useCallback((direction) => {
-    if (direction === "prev") {
-      setActiveNewsIndex((prev) => {
-        const newIndex = prev - 1;
-        return newIndex < 0 ? newsItems.length - visibleItems : newIndex;
-      });
-    } else {
-      setActiveNewsIndex((prev) => {
-        const newIndex = prev + 1;
-        return newIndex > newsItems.length - visibleItems ? 0 : newIndex;
-      });
-    }
-  }, [newsItems.length, visibleItems]);
+  const handleNewsNavigation = useCallback(
+    (direction) => {
+      if (direction === "prev") {
+        setActiveNewsIndex((prev) => {
+          const newIndex = prev - 1;
+          return newIndex < 0 ? newsItems.length - visibleItems : newIndex;
+        });
+      } else {
+        setActiveNewsIndex((prev) => {
+          const newIndex = prev + 1;
+          return newIndex > newsItems.length - visibleItems ? 0 : newIndex;
+        });
+      }
+    },
+    [newsItems.length, visibleItems]
+  );
 
-  const handleEventNavigation = useCallback((direction) => {
-    if (direction === "prev") {
-      setActiveEventIndex((prev) => {
-        const newIndex = prev - 1;
-        return newIndex < 0 ? events.length - visibleItems : newIndex;
-      });
-    } else {
-      setActiveEventIndex((prev) => {
-        const newIndex = prev + 1;
-        return newIndex > events.length - visibleItems ? 0 : newIndex;
-      });
-    }
-  }, [events.length, visibleItems]);
+  const handleEventNavigation = useCallback(
+    (direction) => {
+      if (direction === "prev") {
+        setActiveEventIndex((prev) => {
+          const newIndex = prev - 1;
+          return newIndex < 0 ? events.length - visibleItems : newIndex;
+        });
+      } else {
+        setActiveEventIndex((prev) => {
+          const newIndex = prev + 1;
+          return newIndex > events.length - visibleItems ? 0 : newIndex;
+        });
+      }
+    },
+    [events.length, visibleItems]
+  );
 
   // Auto-slide functionality
   useEffect(() => {
@@ -345,7 +356,7 @@ const LatestNews = () => {
               key={event.id}
               className="group flex items-start p-4 rounded-xl bg-white border border-gray-100 transition-all duration-300 shadow-lg hover:border-purple-100 cursor-pointer"
             >
-              <div className="flex-shrink-0 mr-5 p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-100 text-center group-hover:from-purple-100 group-hover:to-pink-100 transition-colors">
+              <div className="flex-shrink-0 mr-5 p-3 shadow-lg rounded-lg transition-colors">
                 <div className="text-3xl font-bold bg-cusBlue bg-clip-text text-transparent">
                   {event.day}
                 </div>
