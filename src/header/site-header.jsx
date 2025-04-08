@@ -15,26 +15,38 @@ import logoscrolled from "@/assets/logo/logo_scroll.png";
  */
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+      const currentScrollY = window.scrollY;
+      const isScrolled = currentScrollY > 50;
+
+      // Determine scroll direction and visibility
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
       }
+
+      setScrolled(isScrolled);
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]);
+  }, [lastScrollY]);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "background-gradient-white shadow-md" : "bg-transparent"
-      }`}
+      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       {/* Top Bar */}
       <div className="hidden md:block bg-cusBlue text-white py-2 px-4">
