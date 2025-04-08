@@ -558,8 +558,12 @@ export function BtechCS() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-cusGreen text-white">About the Program</Badge>
-          <Heading level={2} className="text-center text-cusBlue">Program Description</Heading>
+          <Badge className="mb-4 bg-cusGreen text-white">
+            About the Program
+          </Badge>
+          <Heading level={2} className="text-center text-cusBlue">
+            Program Description
+          </Heading>
           {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
         </div>
@@ -640,7 +644,9 @@ export function BtechCS() {
                 className="w-full h-auto rounded-xl mb-6"
               />
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-white">Program Highlights</h3>
+                <h3 className="text-xl font-bold text-white">
+                  Program Highlights
+                </h3>
                 <ul className="space-y-3 text-white">
                   {[
                     "Comprehensive curriculum covering all aspects of data science",
@@ -680,8 +686,12 @@ export function BtechCS() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto text-center mb-16">
-            <Badge className="mb-4 bg-cusGreen text-white">What You'll Achieve</Badge>
-            <Heading level={2} className="text-center text-cusBlue">Program Outcomes</Heading>
+            <Badge className="mb-4 bg-cusGreen text-white">
+              What You'll Achieve
+            </Badge>
+            <Heading level={2} className="text-center text-cusBlue">
+              Program Outcomes
+            </Heading>
             <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
           </div>
 
@@ -691,9 +701,7 @@ export function BtechCS() {
                 title: "Industry-Ready Skills",
                 description:
                   "Develop practical skills that are immediately applicable in the workplace",
-                icon: (
-                  <GraduationCap className="h-10 w-10 text-cusGreen" />
-                ),
+                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Career Advancement",
@@ -723,9 +731,7 @@ export function BtechCS() {
                 title: "Certification",
                 description:
                   "Earn a recognized certification validating your data science expertise",
-                icon: (
-                  <GraduationCap className="h-10 w-10 text-cusGreen" />
-                ),
+                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
               <Card
@@ -768,13 +774,13 @@ export function BtechCS() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl blur-3xl"></div>
-            <div className="relative bg-white shadow-xl rounded-2xl overflow-hidden border border-slate-100">
+            <div className="relative background-gradient-blue shadow-xl rounded-2xl overflow-hidden border border-slate-100">
               <div className="absolute top-0 left-0 w-full h-2 bg-primary"></div>
               <div className="p-8">
-                <h2 className="text-3xl font-bold mb-8">
+                <Heading level={3} className="text-white mb-8">
                   Eligibility Requirements
-                </h2>
-                <ul className="space-y-6">
+                </Heading>
+                <ul className="space-y-6 text-white">
                   {[
                     "Bachelor's degree in Computer Science, Statistics, Mathematics, or related field",
                     "Basic programming knowledge (Python preferred)",
@@ -784,8 +790,8 @@ export function BtechCS() {
                     "Access to a computer with internet connection",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
-                      <div className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        <ChevronRight className="h-3.5 w-3.5 text-primary" />
+                      <div className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
+                        <ArrowRight className="h-3.5 w-3.5 text-white" />
                       </div>
                       <span className="text-lg">{item}</span>
                     </li>
@@ -794,10 +800,10 @@ export function BtechCS() {
                 <div className="mt-10">
                   <Button
                     size="lg"
-                    className="group gap-2 transition-all duration-300 hover:pl-6 hover:pr-10"
+                    className="group gap-2 transition-all bg-cusYellow text-cusBlue hover:bg-cusYellow/80 duration-300 hover:pl-6 hover:pr-7"
                   >
                     Check Your Eligibility
-                    <ChevronRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </Button>
                 </div>
               </div>
@@ -806,11 +812,13 @@ export function BtechCS() {
 
           <div className="space-y-8">
             <div>
-              <Badge className="mb-4">Who Can Apply</Badge>
-              <h2 className="text-4xl font-bold mb-6">
+              <Badge className="mb-4 bg-cusGreen text-white">
+                Who Can Apply
+              </Badge>
+              <Heading level={2} className="text-left text-cusBlue">
                 Is This Program Right For You?
-              </h2>
-              <div className="h-1 w-20 bg-primary rounded-full mb-6"></div>
+              </Heading>
+              <div className="h-1 w-20 bg-cusYellow rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground">
@@ -840,7 +848,7 @@ export function BtechCS() {
           </div>
         </div>
       </section>
-      
+
       {/* Curriculum */}
       <section
         ref={curriculumRef}
@@ -855,9 +863,13 @@ export function BtechCS() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-md mx-auto text-center mb-16">
-            <Badge className="mb-4">What You'll Learn</Badge>
-            <h2 className="text-4xl font-bold mb-6">Curriculum</h2>
-            <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+            <Badge className="mb-4 bg-cusGreen text-white">
+              What You'll Learn
+            </Badge>
+            <Heading level={2} className="text-center text-cusBlue">
+              Curriculum
+            </Heading>
+            <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
           </div>
 
           <Tabs defaultValue="module1" className="max-w-4xl mx-auto">
@@ -1043,8 +1055,8 @@ export function BtechCS() {
                             >
                               <AccordionTrigger className="px-6 py-4 hover:no-underline group-data-[state=open]:bg-slate-50 transition-colors duration-300">
                                 <div className="flex items-center gap-4">
-                                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                    <span className="font-bold text-primary">
+                                  <div className="w-10 h-10 rounded-full bg-cusGreenLighter flex items-center justify-center flex-shrink-0">
+                                    <span className="font-bold text-lg text-cusGreen">
                                       {index + 1}
                                     </span>
                                   </div>
@@ -1098,10 +1110,12 @@ export function BtechCS() {
           feesVisible ? fadeInUpVisible : fadeInUpHidden
         }`}
       >
-        <div className="max-w-md mx-auto text-center mb-16">
-          <Badge className="mb-4">Investment</Badge>
-          <h2 className="text-4xl font-bold mb-6">Program Fees</h2>
-          <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+        <div className="max-w-md mx-auto text-center mb-20">
+          <Badge className="mb-4 bg-cusGreen text-white">Investment</Badge>
+          <Heading level={2} className="text-center text-cusBlue">
+            Program Fees
+          </Heading>
+          <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -1158,14 +1172,14 @@ export function BtechCS() {
             >
               {plan.highlight && (
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <Badge className="bg-primary hover:bg-primary animate-pulse">
+                  <Badge className="bg-cusGreen hover:bg-cusGreen animate-pulse">
                     Most Popular
                   </Badge>
                 </div>
               )}
               <CardHeader
                 className={`${
-                  plan.highlight ? "bg-primary/5 p-5" : ""
+                  plan.highlight ? "bg-cusBlue p-5 text-slate-100" : ""
                 } rounded-t-lg transition-colors duration-300`}
               >
                 <CardTitle className="text-xl">{plan.title}</CardTitle>
@@ -1180,8 +1194,8 @@ export function BtechCS() {
                 <ul className="space-y-3">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center group">
-                      <div className="mr-3 flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        <ChevronRight className="h-3 w-3 text-primary" />
+                      <div className="mr-3 flex h-5 w-5 items-center justify-center rounded-full bg-cusGreenLighter group-hover:bg-cusGreenLighter/80 transition-colors duration-300">
+                        <ArrowRight className="h-3 w-3 text-cusGreen" />
                       </div>
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -1192,7 +1206,7 @@ export function BtechCS() {
                 <Button
                   className={`w-full group ${
                     plan.highlight
-                      ? "bg-primary hover:bg-primary/90"
+                      ? "bg-cusYellow hover:bg-cusYellow/80 text-cusBlue"
                       : "bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 hover:border-primary/50"
                   }`}
                 >
@@ -1234,10 +1248,12 @@ export function BtechCS() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-md mx-auto text-center mb-16">
-            <Badge className="mb-4">Facilities</Badge>
-            <h2 className="text-4xl font-bold mb-6">State-of-the-Art Labs</h2>
-            <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+          <div className="mx-auto text-center mb-16">
+            <Badge className="mb-4 bg-cusGreen text-white">Facilities</Badge>
+            <Heading level={2} className="text-center text-cusBlue">
+              State-of-the-Art Labs
+            </Heading>
+            <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1304,7 +1320,10 @@ export function BtechCS() {
           </div>
 
           <div className="mt-16 text-center">
-            <Button size="lg" className="gap-2 bg-cusGreen text-white hover:bg-cusGreen/80 group">
+            <Button
+              size="lg"
+              className="gap-2 bg-cusGreen text-white hover:bg-cusGreen/80 group"
+            >
               Schedule a Lab Tour
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
@@ -1320,49 +1339,55 @@ export function BtechCS() {
         }`}
       >
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center bg-gradient-to-br from-slate-50 to-white p-8 md:p-12 rounded-2xl shadow-lg border border-slate-100">
+          <div className="grid md:grid-cols-2 gap-12 items-center background-gradient-blue p-8 md:p-12 rounded-2xl shadow-lg border border-slate-100">
             <div>
-              <Badge className="mb-4">Program Details</Badge>
-              <h2 className="text-3xl font-bold mb-6">
+              <Badge className="mb-4 bg-cusGreen text-white">
+                Program Details
+              </Badge>
+              <Heading level={3} className="text-center sm:text-left text-white">
                 Download Program Brochure
-              </h2>
-              <p className="text-muted-foreground mb-8">
+              </Heading>
+              <p className="text-white/80 mb-8">
                 Get detailed information about our program, curriculum, faculty,
                 and more in our comprehensive brochure.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-5 w-5 text-primary" />
+                  <div className="w-5 h-5 rounded-full bg-cusBlueLighter flex items-center justify-center flex-shrink-0 mt-1">
+                    <ArrowRight className="h-3 w-3 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Complete Curriculum</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="font-medium text-white">
+                      Complete Curriculum
+                    </h4>
+                    <p className="text-sm text-white/80">
                       Detailed overview of all modules and courses
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-5 w-5 text-primary" />
+                  <div className="w-5 h-5 rounded-full bg-cusBlueLighter flex items-center justify-center flex-shrink-0 mt-1">
+                    <ArrowRight className="h-3 w-3 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Faculty Profiles</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="font-medium text-white">
+                      Faculty Profiles
+                    </h4>
+                    <p className="text-sm text-white/80">
                       Learn about our expert instructors and mentors
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                    <ChevronRight className="h-5 w-5 text-primary" />
+                  <div className="w-5 h-5 rounded-full bg-cusBlueLighter flex items-center justify-center flex-shrink-0 mt-1">
+                    <ArrowRight className="h-3 w-3 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Success Stories</h4>
-                    <p className="text-sm text-muted-foreground">
+                    <h4 className="font-medium text-white">Success Stories</h4>
+                    <p className="text-sm text-white/80">
                       Read about our alumni and their achievements
                     </p>
                   </div>
@@ -1372,10 +1397,10 @@ export function BtechCS() {
               <div className="mt-10">
                 <Button
                   size="lg"
-                  className="gap-2 group transition-all duration-300 hover:pl-6 hover:pr-10"
+                  className="gap-2 group bg-cusYellow text-cusBlue hover:bg-cusYellow/80 transition-all duration-300 hover:pl-6 hover:pr-10"
                 >
                   Download Now
-                  <Download className="h-4 w-4 group-hover:translate-y-1 transition-transform duration-300" />
+                  <Download className="h-4 w-4 transition-transform duration-300" />
                 </Button>
               </div>
             </div>
@@ -1390,7 +1415,7 @@ export function BtechCS() {
                   alt="Program Brochure"
                   className="w-full h-auto aspect-square object-cover rounded-lg shadow-md"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-primary text-white p-3 rounded-full shadow-lg">
+                <div className="absolute -bottom-4 -right-4 bg-cusYellow text-cusBlue p-3 rounded-full shadow-lg">
                   <Download className="h-6 w-6" />
                 </div>
               </div>
@@ -1412,12 +1437,12 @@ export function BtechCS() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-md mx-auto text-center mb-16">
-            <Badge className="mb-4">Stay Connected</Badge>
-            <h2 className="text-4xl font-bold mb-6">
+          <div className="mx-auto text-center mb-16">
+            <Badge className="mb-4 bg-cusGreen text-white">Stay Connected</Badge>
+            <Heading level={2} className="text-center text-cusBlue">
               Recent Events & Activities
-            </h2>
-            <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+            </Heading>
+            <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1499,7 +1524,10 @@ export function BtechCS() {
           </div>
 
           <div className="mt-16 text-center">
-            <Button size="lg" className="gap-2 bg-transparent hover:bg-transparent text-cusBlueLight border-cusGreen border-2 group">
+            <Button
+              size="lg"
+              className="gap-2 bg-transparent hover:bg-transparent text-cusBlueLight border-cusGreen border-2 group"
+            >
               View All Events
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
@@ -1521,22 +1549,22 @@ export function BtechCS() {
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto">
             <Badge className="mb-6 bg-cusGreen text-white hover:bg-cusGreen/80">
               Limited Seats Available
             </Badge>
-            <h2 className="text-4xl md:text-5xl text-cusBlue font-bold mb-6">
+            <Heading level={2} className="text-center mb-6 text-cusBlue">
               Ready to Transform Your Career?
-            </h2>
+            </Heading>
             <p className="text-xl opacity-90 mb-12 text-black max-w-2xl mx-auto">
               Join our Advanced Data Science Program and unlock new
               opportunities in the world of data.
             </p>
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap max-w-3xl mx-auto justify-center gap-6">
               <Button
                 size="lg"
                 variant="secondary"
-                className="gap-2 group bg-cusBlue text-white hover:bg-cusBlue/80 transition-all duration-300 hover:pl-6 hover:pr-10"
+                className="gap-2 group bg-cusYellow text-cusBlue hover:bg-cusYellow/80 transition-all duration-300 hover:pl-6 hover:pr-10"
               >
                 Apply Now
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
@@ -1544,33 +1572,33 @@ export function BtechCS() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-cusBlue border-cusBlue hover:bg-cusBlue/10 gap-2 group"
+                className="text-cusBlue border-cusYellow hover:bg-cusYellow/10 gap-2 group"
               >
                 Request Information
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
 
-            <div className="mt-16 pt-16 border-t border-cusBlue grid md:grid-cols-3 gap-8">
+            <div className="mt-16 pt-16 border-t border-cusBlue max-w-3xl mx-auto grid md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-black/10 flex items-center justify-center mb-4">
-                  <Calendar className="h-8 w-8 text-cusBlue" />
+                <div className="w-16 h-16 rounded-full bg-cusGreenLighter flex items-center justify-center mb-4">
+                  <Calendar className="h-8 w-8 text-cusGreen" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Next Batch</h3>
                 <p className="opacity-80">Starting June 15, 2025</p>
               </div>
 
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-black/10 flex items-center justify-center mb-4">
-                  <Users className="h-8 w-8 text-cusBlue" />
+                <div className="w-16 h-16 rounded-full bg-cusGreenLighter flex items-center justify-center mb-4">
+                  <Users className="h-8 w-8 text-cusGreen" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Class Size</h3>
                 <p className="opacity-80">Limited to 30 students</p>
               </div>
 
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-black/10 flex items-center justify-center mb-4">
-                  <GraduationCap className="h-8 w-8 text-cusBlue" />
+                <div className="w-16 h-16 rounded-full bg-cusGreenLighter flex items-center justify-center mb-4">
+                  <GraduationCap className="h-8 w-8 text-cusGreen" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Application Deadline</h3>
                 <p className="opacity-80">May 15, 2025</p>
