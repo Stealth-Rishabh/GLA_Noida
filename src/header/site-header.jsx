@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 // import logo from "@/assets/logo/gla_logo.png";
-import logo from "@/assets/logo/GLA Logo.png";
+import logo from "@/assets/logo/gla_logo.png";
 
 /**
  * TransparentSiteHeader Component
@@ -171,8 +171,8 @@ export function SiteHeader() {
       <div className="container mx-auto px-4 my-0 md:my-4">
         {/* Grid Container */}
         <div className="grid grid-cols-[auto_1fr] gap-4">
-          {/* Logo - spans both rows */}
-          <div className="row-span-2 flex items-center md:background-gradient-white p-2 rounded-lg">
+          {/* Logo */}
+          <div className="flex items-center md:background-gradient-white p-2 rounded-lg">
             <a href="/" className="flex items-center">
               <img
                 src={logo || "/placeholder.svg"}
@@ -182,34 +182,10 @@ export function SiteHeader() {
             </a>
           </div>
 
-          {/* Right side content */}
-          <div className="flex flex-col">
-            {/* Top Action Buttons */}
-            <div className="hidden md:flex justify-end py-2">
-              {" "}
-              {/* Reduced padding */}
-              <div className="flex items-center gap-2">
-                <a
-                  href="/more-info"
-                  className={`rounded-md px-4 py-1.5 text-sm font-medium border-2 transition-colors ${
-                    scrolled
-                      ? "border-cusBlue text-cusBlue hover:bg-cusBlue hover:text-white"
-                      : "border-white text-white hover:background-gradient-white hover:text-cusBlue"
-                  }`}
-                >
-                  More info
-                </a>
-                <a
-                  href="/apply"
-                  className="rounded-md px-8 py-1.5 text-sm font-medium bg-cusGreen text-white hover:opacity-90 transition-colors"
-                >
-                  Apply
-                </a>
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center justify-end">
+          {/* Right side content - Combined navigation and buttons */}
+          <div className="flex items-center justify-end">
+            {/* Desktop Navigation and Action Buttons */}
+            <div className="hidden md:flex items-center space-x-4">
               <nav className="flex items-center space-x-1">
                 <a
                   href="/"
@@ -347,12 +323,32 @@ export function SiteHeader() {
                   Contact Us
                 </a>
               </nav>
-            </div>
-          </div>
 
-          {/* Mobile Navigation Toggle */}
-          <div className="md:hidden absolute md:relative justify-self-end self-center">
-            <MobileNav scrolled={scrolled} />
+              {/* Action Buttons */}
+              <div className="flex items-center gap-2">
+                <a
+                  href="/more-info"
+                  className={`rounded-md px-4 py-1.5 text-sm font-medium border-2 transition-colors ${
+                    scrolled
+                      ? "border-cusBlue text-cusBlue hover:bg-cusBlue hover:text-white"
+                      : "border-white text-white hover:background-gradient-white hover:text-cusBlue"
+                  }`}
+                >
+                  More info
+                </a>
+                <a
+                  href="/apply"
+                  className="rounded-md px-8 py-1.5 text-sm font-medium bg-cusGreen text-white hover:opacity-90 transition-colors"
+                >
+                  Apply
+                </a>
+              </div>
+            </div>
+
+            {/* Mobile Navigation Toggle */}
+            <div className="md:hidden">
+              <MobileNav scrolled={scrolled} />
+            </div>
           </div>
         </div>
       </div>
