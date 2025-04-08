@@ -583,12 +583,12 @@ export function BtechCS() {
                 comprehensive 8-semester program that prepares you for an
                 exciting career in the world of computing. If you have a passion
                 for technology, this program will help you understand the core
-                concepts of computer science and engineering. You’ll learn how
+                concepts of computer science and engineering. You'll learn how
                 to design, develop, and test software and algorithms, as well as
                 explore the latest advancements in the field.
               </p>
               <p className="text-lg text-muted-foreground">
-                After completing the course, you’ll be a skilled professional in
+                After completing the course, you'll be a skilled professional in
                 computing systems and their operation. The knowledge you gain
                 will help not only in computer science but also in other areas
                 of engineering, like IT, electronics, and software engineering.
@@ -599,12 +599,24 @@ export function BtechCS() {
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <BookOpen className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Industry-Linked Curriculum</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Latest Industry Trends
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                     <GraduationCap className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">12 Months</h4>
+                    <h4 className="font-medium">Global Exposure</h4>
                     <p className="text-sm text-muted-foreground">
-                      Program Duration
+                      Study Abroad Options
                     </p>
                   </div>
                 </div>
@@ -616,19 +628,7 @@ export function BtechCS() {
                   <div>
                     <h4 className="font-medium">Expert Faculty</h4>
                     <p className="text-sm text-muted-foreground">
-                      Industry Leaders
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Certification</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Industry Recognized
+                      IITs & NITs Professors
                     </p>
                   </div>
                 </div>
@@ -638,9 +638,57 @@ export function BtechCS() {
                     <Beaker className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Hands-on Labs</h4>
+                    <h4 className="font-medium">Innovation Focus</h4>
                     <p className="text-sm text-muted-foreground">
-                      Practical Learning
+                      Entrepreneurship Skills
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <GraduationCap className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">IIT Experience</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Semester-Long Study
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <BookOpen className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Project-Based</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Practical Skills
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Users className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Placement-Ready</h4>
+                    <p className="text-sm text-muted-foreground">
+                      AI Mock Interviews
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Beaker className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Codeathons</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Real-world Experience
                     </p>
                   </div>
                 </div>
@@ -661,14 +709,18 @@ export function BtechCS() {
                 </h3>
                 <ul className="space-y-3 text-white">
                   {[
-                    "Comprehensive curriculum covering all aspects of data science",
-                    "Hands-on projects with real-world datasets",
-                    "Industry mentorship and networking opportunities",
-                    "Career support and placement assistance",
+                    "Industry-Linked Curriculum: Learn the latest industry trends and technologies",
+                    "Opportunities for Global Exposure: Study abroad options, industry visits, and boot camps",
+                    "Expert Faculty: Lectures by professors from IITs, NITs, and top industry experts",
+                    "Focus on Innovation: Develop skills in entrepreneurship and industry-focused work",
+                    "Semester-Long Study @ IITs: Get hands-on experience through academic programs at IITs",
+                    "Project-Based Learning: Work on track-specific projects to gain practical skills",
+                    "Placement-Ready: AI-based mock interviews to help you prepare for placements",
+                    "Codeathons and Assessments: Participate in VIVA assessments and codeathons for real-world experience",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
-                        <ArrowRight className="h-3.5 w-3.5 text-white" />
+                        <ArrowRight className="h-3.5 min-w-3.5 text-white" />
                       </div>
                       <span>{item}</span>
                     </li>
