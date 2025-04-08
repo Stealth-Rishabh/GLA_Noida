@@ -217,17 +217,17 @@ export function BtechCS() {
         </div>
 
         <div className="relative z-10 container max-w-7xl mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 items-end">
             {/* Content Column */}
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-6 max-w-xl">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-cusGreen text-white border border-primary/20 text-sm">
+                {/* <div className="inline-flex items-center px-3 py-1 rounded-full bg-cusGreen text-white border border-primary/20 text-sm">
                   <span className="relative flex h-2 w-2 mr-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                   </span>
                   New Program 2025
-                </div>
+                </div> */}
 
                 <Heading
                   level={1}
@@ -270,7 +270,7 @@ export function BtechCS() {
               {/* </div> */}
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 pt-4">
+              <div className="grid grid-cols-3 gap-4">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
                   <div className="text-3xl font-bold text-cusBlueLighter mb-1">
                     55 LPA
@@ -903,15 +903,16 @@ export function BtechCS() {
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our program is designed for individuals who are passionate about
-              data and analytics, and want to build a career in the rapidly
-              growing field of data science.
+              Our B.Tech in Computer Science Engineering program is designed for students who are 
+              passionate about technology, programming, and problem-solving. If you're interested in
+              developing cutting-edge software, building innovative applications, and exploring
+              emerging technologies like AI and cloud computing, this program is perfect for you.
             </p>
 
             <p className="text-lg text-muted-foreground">
-              Whether you're a recent graduate looking to specialize, or a
-              professional seeking to pivot your career, our program provides
-              the skills and knowledge you need to succeed.
+              Whether you're a mathematics enthusiast, a coding hobbyist, or someone fascinated by
+              how computers work, our comprehensive curriculum will provide you with the theoretical
+              knowledge and practical skills needed to excel in the dynamic field of computer science.
             </p>
 
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
@@ -920,7 +921,7 @@ export function BtechCS() {
               </h3>
               <p className="text-muted-foreground mb-4">
                 Schedule a free consultation with our admissions team to discuss
-                your background and career goals.
+                your academic background and career aspirations in computer science.
               </p>
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
