@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { ArrowRight, Clock, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/ui/heading";
 import banner from "@/assets/banner/bannerOne.webp";
@@ -44,6 +44,37 @@ const LatestNews = () => {
   const [activeEventIndex, setActiveEventIndex] = useState(0);
   const newsContainerRef = useRef(null);
   const eventsContainerRef = useRef(null);
+
+  // Add these new states for touch handling
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // Minimum swipe distance (in px) to trigger navigation
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const onTouchEnd = (isNews = true) => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      isNews ? handleNewsNavigation("next") : handleEventNavigation("next");
+    }
+    if (isRightSwipe) {
+      isNews ? handleNewsNavigation("prev") : handleEventNavigation("prev");
+    }
+  };
 
   const newsItems = [
     {
@@ -275,6 +306,9 @@ const LatestNews = () => {
         <div
           ref={newsContainerRef}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={() => onTouchEnd(true)}
         >
           {visibleNewsItems.map((item) => (
             <div
@@ -350,7 +384,13 @@ const LatestNews = () => {
           </button>
         </div>
 
-        <div ref={eventsContainerRef} className="space-y-4">
+        <div
+          ref={eventsContainerRef}
+          className="space-y-4"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={() => onTouchEnd(false)}
+        >
           {visibleEvents.map((event) => (
             <div
               key={event.id}

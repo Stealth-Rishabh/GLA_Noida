@@ -4,7 +4,7 @@ import { Heading } from "@/components/ui/heading";
 
 export default function SetUsApart() {
   return (
-    <div className="relative w-full max-w-7xl mx-auto my-12 px-4 sm:px-6 lg:px-8">
+    <div className="relative w-full max-w-7xl mx-auto my-12 px-0 md:px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Content Card */}
         <div className="lg:col-span-5 bg-white p-8 sm:p-12 shadow-sm rounded-sm z-10">
@@ -15,7 +15,7 @@ export default function SetUsApart() {
             subtextClassName="text-gray-600 text-lg mb-8 leading-relaxed"
           >
             UniCamp <br /> Open
-            <span className=" border-b-4 border-cusYellow ">Day</span>
+            <span className=" border-b-4 border-cusYellow "> Day</span>
           </Heading>
 
           <button className="bg-cusGreen text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-colors">

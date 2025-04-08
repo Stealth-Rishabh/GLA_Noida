@@ -31,7 +31,7 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-transparent"
+        scrolled ? "background-gradient-white shadow-md" : "bg-transparent"
       }`}
     >
       {/* Top Bar */}
@@ -171,7 +171,7 @@ export function SiteHeader() {
         {/* Grid Container */}
         <div className="grid grid-cols-[auto_1fr] gap-4">
           {/* Logo - spans both rows */}
-          <div className="row-span-2 flex items-center background-gradient-white p-2 rounded-lg">
+          <div className="row-span-2 flex items-center md:background-gradient-white p-2 rounded-lg">
             <a href="/" className="flex items-center">
               <img
                 src={logo || "/placeholder.svg"}
@@ -193,7 +193,7 @@ export function SiteHeader() {
                   className={`rounded-md px-4 py-1.5 text-sm font-medium border-2 transition-colors ${
                     scrolled
                       ? "border-cusBlue text-cusBlue hover:bg-cusBlue hover:text-white"
-                      : "border-white text-white hover:bg-white hover:text-cusBlue"
+                      : "border-white text-white hover:background-gradient-white hover:text-cusBlue"
                   }`}
                 >
                   More info
@@ -228,7 +228,7 @@ export function SiteHeader() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                   {/* Dropdown content */}
-                  <div className="absolute left-0 top-full w-48 mt-2 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                     <div className="p-2">
                       <a
                         href="/about"
@@ -261,7 +261,7 @@ export function SiteHeader() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                   {/* Dropdown content */}
-                  <div className="absolute left-0 top-full w-48 mt-2 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                     <div className="p-2">
                       <a
                         href="/programs/btech"
@@ -300,7 +300,7 @@ export function SiteHeader() {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                   {/* Dropdown content */}
-                  <div className="absolute left-0 top-full w-48 mt-2 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                     <div className="p-2">
                       <a
                         href="/admissions/scholarships"
@@ -385,7 +385,7 @@ function MobileNav({ scrolled }) {
 
       {/* Mobile Menu Dropdown - removed mt-2 */}
       {open && (
-        <div className="absolute right-0 top-[calc(100%+1px)] w-60 origin-top-right rounded-md border bg-white shadow-lg">
+        <div className="absolute right-0 top-[calc(100%+1px)] w-60 origin-top-right rounded-md border background-gradient-white shadow-lg">
           <div className="p-2">
             <a
               href="/"
