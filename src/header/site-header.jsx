@@ -171,7 +171,7 @@ export function SiteHeader() {
         {/* Grid Container */}
         <div className="grid grid-cols-[auto_1fr] gap-4">
           {/* Logo - spans both rows */}
-          <div className="row-span-2 flex items-center">
+          <div className="row-span-2 flex items-center background-gradient-white p-2 rounded-lg">
             <a href="/" className="flex items-center">
               <img
                 src={logo || "/placeholder.svg"}
@@ -350,7 +350,7 @@ export function SiteHeader() {
           </div>
 
           {/* Mobile Navigation Toggle */}
-          <div className="md:hidden justify-self-end self-center">
+          <div className="md:hidden absolute md:relative justify-self-end self-center">
             <MobileNav scrolled={scrolled} />
           </div>
         </div>
