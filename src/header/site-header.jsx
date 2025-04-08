@@ -350,7 +350,7 @@ export function SiteHeader() {
           </div>
 
           {/* Mobile Navigation Toggle */}
-          <div className="md:hidden justify-self-end self-center">
+          <div className="md:hidden absolute md:relative justify-self-end self-center">
             <MobileNav scrolled={scrolled} />
           </div>
         </div>

@@ -34,12 +34,12 @@ export default function UndergraduateAdmissions() {
 
   return (
     <div className="w-full bg-white">
-      <div className="container mx-auto p-4">
-        <div className="flex flex-wrap mx-2">
+      <div className=" container mx-auto p-0 md:p-4">
+        <div className="flex flex-wrap mx-0 md:mx-2 gap-6 md:gap-0">
           {admissionsCards.map((card) => (
             <div
               key={card.id}
-              className="w-full sm:w-1/2 lg:w-1/4 px-2 mb-4 group"
+              className="w-full sm:w-1/2 lg:w-1/4 px-0 md:px-2 mb-4 group"
             >
               <a href={card.href} className="block relative">
                 <div className="relative">
