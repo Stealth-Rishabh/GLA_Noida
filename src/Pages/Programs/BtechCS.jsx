@@ -229,46 +229,53 @@ export function BtechCS() {
                   New Program 2025
                 </div>
 
-                <Heading level={1} className="text-4xl md:text-6xl font-bold text-white leading-tight">
-                  Advanced{" "}
+                <Heading
+                  level={1}
+                  className="text-4xl md:!text-5xl font-bold text-white leading-tight"
+                >
+                  B.Tech in{" "}
                   <span className="text-cusBlueLighter relative">
-                    Data Science
+                    Computer Science Engineering
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
                   </span>{" "}
-                  Program
+                  (CSE)
                 </Heading>
 
                 <p className="text-xl text-white leading-relaxed">
-                  Transform your career with our comprehensive data science
-                  program designed for the modern industry. Learn from experts
-                  and build real-world projects.
+                  Transform your career with our comprehensive b.tech in
+                  computer science engineering program designed for the modern
+                  industry. Learn from experts and build real-world projects.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-6 items-center">
-                <div className="flex items-center gap-6 text-white text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
-                    <span>12-Month Program</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
-                    <span>Expert Mentors</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
-                    <span>Industry Certification</span>
-                  </div>
+              {/* <div className="flex flex-wrap gap-6 items-center"> */}
+              <div className="grid grid-cols-2 sm:flex items-center gap-6 text-white text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
+                  <span>8-Semester Program</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
+                  <span>Expert Faculty</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
+                  <span>Industry-Ready Skills</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
+                  <span>Latest Technology</span>
                 </div>
               </div>
+              {/* </div> */}
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
                   <div className="text-3xl font-bold text-cusBlueLighter mb-1">
-                    94%
+                    55 LPA
                   </div>
-                  <div className="text-sm text-white">Job Placement</div>
+                  <div className="text-sm text-white">Highest CTC</div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
                   <div className="text-3xl font-bold text-cusBlueLighter mb-1">
@@ -278,9 +285,9 @@ export function BtechCS() {
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
                   <div className="text-3xl font-bold text-cusBlueLighter mb-1">
-                    35+
+                    500+
                   </div>
-                  <div className="text-sm text-white">Industry Partners</div>
+                  <div className="text-sm text-white">Top Recruiters</div>
                 </div>
               </div>
             </div>
@@ -536,7 +543,7 @@ export function BtechCS() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
             <span className="text-sm mb-2">Scroll to explore</span>
             <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
               <div className="w-1 h-1 bg-white rounded-full animate-scrollDown"></div>
@@ -572,16 +579,21 @@ export function BtechCS() {
           <div className="order-2 md:order-1">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground">
-                Our Advanced Data Science Program is designed to equip
-                professionals with the skills needed to excel in the rapidly
-                evolving field of data science. This comprehensive program
-                combines theoretical knowledge with practical applications,
-                preparing you for real-world challenges.
+                The B.Tech in Computer Science & Engineering (CSE) is a
+                comprehensive 8-semester program that prepares you for an
+                exciting career in the world of computing. If you have a passion
+                for technology, this program will help you understand the core
+                concepts of computer science and engineering. You’ll learn how
+                to design, develop, and test software and algorithms, as well as
+                explore the latest advancements in the field.
               </p>
               <p className="text-lg text-muted-foreground">
-                Through hands-on projects, expert mentorship, and industry
-                partnerships, you'll gain expertise in machine learning,
-                statistical analysis, data visualization, and more.
+                After completing the course, you’ll be a skilled professional in
+                computing systems and their operation. The knowledge you gain
+                will help not only in computer science but also in other areas
+                of engineering, like IT, electronics, and software engineering.
+                Get ready to dive into the fast-changing world of technology
+                with a B. Tech in CSE from GLA University
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
@@ -1344,7 +1356,10 @@ export function BtechCS() {
               <Badge className="mb-4 bg-cusGreen text-white">
                 Program Details
               </Badge>
-              <Heading level={3} className="text-center sm:text-left text-white">
+              <Heading
+                level={3}
+                className="text-center sm:text-left text-white"
+              >
                 Download Program Brochure
               </Heading>
               <p className="text-white/80 mb-8">
@@ -1372,9 +1387,7 @@ export function BtechCS() {
                     <ArrowRight className="h-3 w-3 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-white">
-                      Faculty Profiles
-                    </h4>
+                    <h4 className="font-medium text-white">Faculty Profiles</h4>
                     <p className="text-sm text-white/80">
                       Learn about our expert instructors and mentors
                     </p>
@@ -1438,7 +1451,9 @@ export function BtechCS() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="mx-auto text-center mb-16">
-            <Badge className="mb-4 bg-cusGreen text-white">Stay Connected</Badge>
+            <Badge className="mb-4 bg-cusGreen text-white">
+              Stay Connected
+            </Badge>
             <Heading level={2} className="text-center text-cusBlue">
               Recent Events & Activities
             </Heading>

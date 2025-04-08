@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import logo from "@/assets/logo/gla_logo.png";
+// import logo from "@/assets/logo/gla_logo.png";
+import logo from "@/assets/logo/GLA Logo.png";
 
 /**
  * TransparentSiteHeader Component
