@@ -199,7 +199,7 @@ export function BtechCS() {
           className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
           style={{
             backgroundImage:
-              "url('https://gla-noida.vercel.app/assets/bannerThree-BejT2RMn.webp')",
+              "url('https://i.ibb.co/spMmK3RL/moez-mustafa-Ukr2hyu-E068-unsplash.jpg')",
           }}
         ></div>
 
@@ -229,14 +229,14 @@ export function BtechCS() {
                   New Program 2025
                 </div>
 
-                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+                <Heading level={1} className="text-4xl md:text-6xl font-bold text-white leading-tight">
                   Advanced{" "}
                   <span className="text-cusBlueLighter relative">
                     Data Science
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
                   </span>{" "}
                   Program
-                </h1>
+                </Heading>
 
                 <p className="text-xl text-white leading-relaxed">
                   Transform your career with our comprehensive data science
