@@ -181,7 +181,7 @@ export function SiteHeader() {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 my-0 md:my-2">
+      <div className="container mx-auto px-4 my-0">
         {/* Grid Container */}
         <div className="grid grid-cols-[auto_1fr] gap-4">
           {/* Logo */}
