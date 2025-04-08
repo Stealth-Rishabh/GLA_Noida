@@ -177,7 +177,7 @@ export function SiteHeader() {
               <img
                 src={logo || "/placeholder.svg"}
                 alt="GLA logo"
-                className="md:h-12 h-16 mt-4 md:mt-0 w-auto"
+                className="md:h-20 h-16 mt-4 md:mt-0 w-auto"
               />
             </a>
           </div>
