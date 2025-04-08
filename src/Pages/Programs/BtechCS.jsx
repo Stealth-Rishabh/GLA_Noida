@@ -757,56 +757,75 @@ export function BtechCS() {
               Program Outcomes
             </Heading>
             <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
+            <p className="text-black mt-5 text-lg max-w-4xl mx-auto">
+              At GLA University, Greater Noida campus, we go beyond just
+              teaching theory. Our hands-on approach and project-based learning
+              ensure that you’re equipped with the skills the industry is
+              looking for. By the time you graduate, you’ll be ready to make an
+              impact in the tech world.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                title: "Industry-Ready Skills",
+                title: "Advanced Technical Expertise",
                 description:
-                  "Develop practical skills that are immediately applicable in the workplace",
-                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
-              },
-              {
-                title: "Career Advancement",
-                description:
-                  "Position yourself for promotions and new career opportunities in data science",
-                icon: <Users className="h-10 w-10 text-cusGreen" />,
-              },
-              {
-                title: "Project Portfolio",
-                description:
-                  "Build an impressive portfolio of real-world data science projects",
+                  "Master cutting-edge programming languages and software development methodologies for industry success.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Professional Network",
+                title: "Research & Innovation Skills",
                 description:
-                  "Connect with industry professionals and fellow data enthusiasts",
-                icon: <Users className="h-10 w-10 text-cusGreen" />,
-              },
-              {
-                title: "Technical Expertise",
-                description:
-                  "Master the latest tools and technologies used in the data science industry",
+                  "Develop groundbreaking solutions through advanced research and innovative problem-solving approaches.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Certification",
+                title: "Industry-Ready Professional",
                 description:
-                  "Earn a recognized certification validating your data science expertise",
+                  "Transform into a skilled professional ready for top tech companies.",
+                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Global Tech Leader",
+                description:
+                  "Lead international tech teams and drive cross-cultural innovation projects.",
+                icon: <Users className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Strategic Problem Solver",
+                description:
+                  "Create efficient solutions for complex technical and business challenges.",
+                icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Tech Entrepreneur Ready",
+                description:
+                  "Launch and scale innovative technology ventures in global markets.",
+                icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Ethical Tech Champion",
+                description:
+                  "Drive responsible innovation while ensuring data privacy and security.",
+                icon: <Users className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Continuous Tech Innovator",
+                description:
+                  "Stay ahead with emerging technologies and industry best practices.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
               <Card
                 key={index}
-                className="border-none shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="border-none shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 gap-2"
               >
-                <CardHeader>
-                  <div className="mb-2 w-16 h-16 rounded-2xl bg-cusGreenLighter flex items-center justify-center group-hover:bg-cusGreenLighter/80 transition-colors duration-300">
+                <CardHeader className="flex flex-row gap-5">
+                  <div className="mb-2 min-w-16 h-16 rounded-2xl bg-cusGreenLighter flex items-center justify-center group-hover:bg-cusGreenLighter/80 transition-colors duration-300">
                     {item.icon}
                   </div>
-                  <CardTitle className="text-cusBlueLight text-lg font-bold">
+                  <CardTitle className="text-cusBlueLight text-2xl font-bold">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
@@ -814,10 +833,7 @@ export function BtechCS() {
                   <p className="text-muted-foreground">{item.description}</p>
                 </CardContent>
                 <CardFooter>
-                  <Button
-                    variant="ghost"
-                    className="h-auto group-hover:text-cusGreen text-cusGreen hover:text-white hover:bg-cusGreen transition-colors duration-300"
-                  >
+                  <Button className="h-auto bg-cusGreen group-hover:text-white text-white hover:text-white hover:bg-cusGreen transition-colors duration-300">
                     Learn more{" "}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
@@ -846,12 +862,13 @@ export function BtechCS() {
                 </Heading>
                 <ul className="space-y-6 text-white">
                   {[
-                    "Bachelor's degree in Computer Science, Statistics, Mathematics, or related field",
-                    "Basic programming knowledge (Python preferred)",
-                    "Understanding of fundamental statistical concepts",
+                    "10+2 examination with Physics and Mathematics as mandatory subjects",
+                    "Chemistry or Computer Science as third subject",
+                    "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
+                    "Minimum 50% marks overall in 10+2 examination",
                     "Strong analytical and problem-solving skills",
-                    "Proficiency in English (written and verbal)",
-                    "Access to a computer with internet connection",
+                    "Basic computer proficiency",
+                    "Proficiency in English (written and verbal)"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
