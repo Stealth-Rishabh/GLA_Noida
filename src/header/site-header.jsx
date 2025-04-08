@@ -168,7 +168,7 @@ export function SiteHeader() {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 my-0 md:my-4">
+      <div className="container mx-auto px-4 my-0 md:my-2">
         {/* Grid Container */}
         <div className="grid grid-cols-[auto_1fr] gap-4">
           {/* Logo */}
@@ -177,7 +177,7 @@ export function SiteHeader() {
               <img
                 src={logo || "/placeholder.svg"}
                 alt="GLA logo"
-                className="md:h-24 h-20 mt-4 md:mt-0 w-auto"
+                className="md:h-12 h-16 mt-4 md:mt-0 w-auto"
               />
             </a>
           </div>
