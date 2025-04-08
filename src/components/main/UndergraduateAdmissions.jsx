@@ -1,12 +1,16 @@
 import { useMemo } from "react";
 import sports1 from "@/assets/sports/sports.webp";
+import btech from "@/assets/general/Btech_home.webp";
+// import bca from "@/assets/sports/Bca_home.webp";
+import bba from "@/assets/general/Bba_home.webp";
+import mba from "@/assets/general/Mba_home.webp";
 
 export default function UndergraduateAdmissions() {
   const admissionsCards = useMemo(
     () => [
       {
         id: 1,
-        image: sports1,
+        image: btech,
         alt: "Students walking in university hallway",
         href: "/undergraduate/programs",
         caption: "B.Tech",
@@ -20,14 +24,14 @@ export default function UndergraduateAdmissions() {
       },
       {
         id: 3,
-        image: sports1,
+        image: bba,
         alt: "Students in common area",
         href: "/undergraduate/campus-life",
         caption: "BBA",
       },
       {
         id: 4,
-        image: sports1,
+        image: mba,
         alt: "Students collaborating around computer",
         href: "/undergraduate/research",
         caption: "MBA",
