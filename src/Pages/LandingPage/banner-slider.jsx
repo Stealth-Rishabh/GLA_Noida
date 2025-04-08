@@ -112,7 +112,7 @@ export function BannerSlider() {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ objectPosition: "center" }}
             />
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/40" />
             <div className="container mx-auto max-w-7xl px-4 relative h-full flex flex-col justify-center items-start text-white mt-20">
               <Heading
                 level={2}

@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 // import logo from "@/assets/logo/gla_logo.png";
-import logo from "@/assets/logo/gla_logo.png";
+import logo from "@/assets/logo/logo.png";
+import logoscrolled from "@/assets/logo/logo_scroll.png";
 
 /**
  * TransparentSiteHeader Component
@@ -168,14 +169,14 @@ export function SiteHeader() {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 my-0 md:my-4">
+      <div className="container mx-auto px-4 my-0 md:my-2">
         {/* Grid Container */}
         <div className="grid grid-cols-[auto_1fr] gap-4">
           {/* Logo */}
-          <div className="flex items-center md:background-gradient-white p-2 rounded-lg">
+          <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img
-                src={logo || "/placeholder.svg"}
+                src={scrolled ? logoscrolled : logo || "/placeholder.svg"}
                 alt="GLA logo"
                 className="md:h-24 h-20 mt-4 md:mt-0 w-auto"
               />
