@@ -33,7 +33,7 @@ export default function UndergraduateAdmissions() {
   ); // Empty dependency array since sports1 is a static import
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full background-gradient-white">
       <div className=" container mx-auto p-0 md:p-4">
         <div className="flex flex-wrap mx-0 md:mx-2 gap-6 md:gap-0">
           {admissionsCards.map((card) => (

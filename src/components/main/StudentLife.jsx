@@ -12,27 +12,27 @@ const studentLifeData = [
       alt: "Arts and Culture - Gallery exhibition with people viewing displays",
     },
     description:
-      "UniCamp nurtures creativity in all its forms — be it art, music, drama, or dance. It's an opportunity to meet like-minded people.",
+      "GLA University fosters creativity in all its forms — be it art, music, drama, or dance. Our vibrant cultural scene provides endless opportunities to explore and express yourself.",
     className: "",
   },
   {
-    title: "Student Life",
+    title: "Campus Life",
     image: {
       src: banner2,
-      alt: "Student Life - Students studying in a library area with bookshelves",
+      alt: "Campus Life - Students studying in a library area with bookshelves",
     },
     description:
-      "The extraordinary range of opportunities to discover something new and allows you to determine your student life at UniCamp.",
+      "Experience the dynamic campus life at GLA University with countless opportunities for personal growth, leadership development, and memorable experiences.",
     className: "md:mt-16",
   },
   {
-    title: "Sports and Fitness",
+    title: "Sports and Athletics",
     image: {
       src: sports,
-      alt: "Sports and Fitness - Students in sports uniforms playing a team sport",
+      alt: "Sports and Athletics - Students in sports uniforms playing a team sport",
     },
     description:
-      "UniCamp offers a diverse range of competitive sporting opportunities to help you lead a healthy and active lifestyle.",
+      "GLA University provides excellent sporting facilities and programs, encouraging students to maintain an active lifestyle while competing at various levels.",
     className: "",
   },
 ];
@@ -44,7 +44,7 @@ export default function StudentLife() {
         <Heading
           level={2}
           align="center"
-          subtext="A thriving community of creativity and innovation"
+          subtext="A vibrant ecosystem of learning and growth"
           className="text-cusBlue"
         >
           Student Life at GLA
