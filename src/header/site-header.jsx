@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 // import logo from "@/assets/logo/gla_logo.png";
 import logo from "@/assets/logo/logo.png";
 import logoscrolled from "@/assets/logo/logo_scroll.png";
@@ -129,36 +130,15 @@ export function SiteHeader() {
 
           {/* Quick Links */}
           <div className="hidden md:flex items-center space-x-6">
-            <a
-              href="#"
-              className="text-sm hover:text-cusYellow transition-colors"
-            >
-              STUDENTS
-            </a>
-            <a
-              href="#"
-              className="text-sm hover:text-cusYellow transition-colors"
-            >
-              STAFFS
-            </a>
-            <a
-              href="#"
-              className="text-sm hover:text-cusYellow transition-colors"
-            >
-              ALUMNI
-            </a>
-            <a
-              href="#"
-              className="text-sm hover:text-cusYellow transition-colors"
-            >
-              VISIT
-            </a>
-            <a
-              href="#"
-              className="text-sm hover:text-cusYellow transition-colors"
-            >
-              MEDIA
-            </a>
+            {QUICK_LINKS.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className="text-sm hover:text-cusYellow transition-colors"
+              >
+                {link.title}
+              </Link>
+            ))}
             <button className="text-sm hover:text-cusYellow transition-colors">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -200,141 +180,43 @@ export function SiteHeader() {
             {/* Desktop Navigation and Action Buttons */}
             <div className="hidden md:flex items-center space-x-4">
               <nav className="flex items-center space-x-1">
-                <a
-                  href="/"
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                    scrolled ? "text-cusBlue" : "text-white"
-                  }`}
-                >
-                  Home
-                </a>
-                <div className="relative group">
-                  <button
-                    className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                      scrolled ? "text-cusBlue" : "text-white"
-                    }`}
-                  >
-                    About
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </button>
-                  {/* Dropdown content */}
-                  <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                    <div className="p-2">
-                      <a
-                        href="/about"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
+                {NAV_ITEMS.map((item) =>
+                  item.dropdownItems ? (
+                    <div key={item.path} className="relative group">
+                      <button
+                        className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
+                          scrolled ? "text-cusBlue" : "text-white"
+                        }`}
                       >
-                        About GLA
-                      </a>
-                      <a
-                        href="/about/awards"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        Awards & Accreditation
-                      </a>
-                      <a
-                        href="/about/advisory-board"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        Advisory Board
-                      </a>
+                        {item.title}
+                        <ChevronDown className="ml-1 h-4 w-4" />
+                      </button>
+                      <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                        <div className="p-2">
+                          {item.dropdownItems.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.path}
+                              to={dropdownItem.path}
+                              className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
+                            >
+                              {dropdownItem.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <button
-                    className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                      scrolled ? "text-cusBlue" : "text-white"
-                    }`}
-                  >
-                    Programs
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </button>
-                  {/* Dropdown content */}
-                  <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                    <div className="p-2">
-                      <a
-                        href="/programs/btech"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        B.Tech
-                      </a>
-                      <a
-                        href="/programs/bba"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        BBA
-                      </a>
-                      <a
-                        href="/programs/bca"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        BCA
-                      </a>
-                      <a
-                        href="/programs/mba"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        MBA
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <button
-                    className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                      scrolled ? "text-cusBlue" : "text-white"
-                    }`}
-                  >
-                    Admissions
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </button>
-                  {/* Dropdown content */}
-                  <div className="absolute left-0 top-full w-48 mt-2 background-gradient-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                    <div className="p-2">
-                      <a
-                        href="/admissions/scholarships"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        Scholarships
-                      </a>
-                      <a
-                        href="/admissions/eligibility"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        Eligibility Criteria
-                      </a>
-                      <a
-                        href="/admissions/procedure"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        Admissions Procedure
-                      </a>
-                      <a
-                        href="/admissions/fee-structure"
-                        className="block px-4 py-2 text-sm text-cusBlue hover:bg-cusYellow rounded-md"
-                      >
-                        Fee Structure
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <a
-                  href="/research"
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                    scrolled ? "text-cusBlue" : "text-white"
-                  }`}
-                >
-                  Student Life
-                </a>
-                <a
-                  href="/contact"
-                  className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                    scrolled ? "text-cusBlue" : "text-white"
-                  }`}
-                >
-                  Contact Us
-                </a>
+                  ) : (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
+                        scrolled ? "text-cusBlue" : "text-white"
+                      }`}
+                    >
+                      {item.title}
+                    </Link>
+                  )
+                )}
               </nav>
 
               {/* Action Buttons */}
@@ -393,66 +275,29 @@ function MobileNav({ scrolled }) {
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
 
-      {/* Mobile Menu Dropdown - removed mt-2 */}
+      {/* Mobile Menu Dropdown - Now using map */}
       {open && (
         <div className="absolute right-0 top-[calc(100%+1px)] w-60 origin-top-right rounded-md border background-gradient-white shadow-lg">
           <div className="p-2">
-            <a
-              href="/"
-              className="block rounded-md px-3 py-2 text-sm font-medium text-cusBlue hover:bg-cusYellow"
-              onClick={() => setOpen(false)}
-            >
-              Home
-            </a>
-            <MobileNavItem
-              title="About"
-              items={[
-                { title: "About GLA", href: "/about" },
-                { title: "Awards & Accreditation", href: "/about/awards" },
-                { title: "Advisory Board", href: "/about/advisory-board" },
-              ]}
-              setOpen={setOpen}
-            />
-            <MobileNavItem
-              title="Programs"
-              items={[
-                { title: "B.Tech", href: "/programs/btech" },
-                { title: "BBA", href: "/programs/bba" },
-                { title: "BCA", href: "/programs/bca" },
-                { title: "MBA", href: "/programs/mba" },
-              ]}
-              setOpen={setOpen}
-            />
-            <MobileNavItem
-              title="Admissions"
-              items={[
-                { title: "Scholarships", href: "/admissions/scholarships" },
-                {
-                  title: "Eligibility Criteria",
-                  href: "/admissions/eligibility",
-                },
-                {
-                  title: "Admissions Procedure",
-                  href: "/admissions/procedure",
-                },
-                { title: "Fee Structure", href: "/admissions/fee-structure" },
-              ]}
-              setOpen={setOpen}
-            />
-            <a
-              href="/student-life"
-              className="block rounded-md px-3 py-2 text-sm font-medium text-cusBlue hover:bg-cusYellow"
-              onClick={() => setOpen(false)}
-            >
-              Student Life
-            </a>
-            <a
-              href="/contact"
-              className="block rounded-md px-3 py-2 text-sm font-medium text-cusBlue hover:bg-cusYellow"
-              onClick={() => setOpen(false)}
-            >
-              Contact Us
-            </a>
+            {NAV_ITEMS.map((item) =>
+              item.dropdownItems ? (
+                <MobileNavItem
+                  key={item.path}
+                  title={item.title}
+                  items={item.dropdownItems}
+                  setOpen={setOpen}
+                />
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="block rounded-md px-3 py-2 text-sm font-medium text-cusBlue hover:bg-cusYellow"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              )
+            )}
           </div>
         </div>
       )}
@@ -492,18 +337,62 @@ function MobileNavItem({ title, items, setOpen }) {
       {expanded && (
         <div className="ml-4 mt-1 space-y-1">
           {items.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <Link
+              key={item.path}
+              to={item.path}
               className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-cusYellow"
               style={{ color: "var(--color-cusBlue)" }}
               onClick={() => setOpen(false)}
             >
               {item.title}
-            </a>
+            </Link>
           ))}
         </div>
       )}
     </div>
   );
 }
+
+// Add navigation data arrays
+const QUICK_LINKS = [
+  { title: "STUDENTS", path: "/students" },
+  { title: "STAFFS", path: "/staffs" },
+  { title: "ALUMNI", path: "/alumni" },
+  { title: "VISIT", path: "/visit" },
+  { title: "MEDIA", path: "/media" },
+];
+
+const NAV_ITEMS = [
+  { title: "Home", path: "/" },
+  {
+    title: "About",
+    path: "/about",
+    dropdownItems: [
+      { title: "About GLA", path: "/about" },
+      { title: "Awards & Accreditation", path: "/about/awards" },
+      { title: "Advisory Board", path: "/about/advisory-board" },
+    ],
+  },
+  {
+    title: "Programs",
+    path: "/programs",
+    dropdownItems: [
+      { title: "B.Tech", path: "/programs/btech" },
+      { title: "BBA", path: "/programs/bba" },
+      { title: "BCA", path: "/programs/bca" },
+      { title: "MBA", path: "/programs/mba" },
+    ],
+  },
+  {
+    title: "Admissions",
+    path: "/admissions",
+    dropdownItems: [
+      { title: "Scholarships", path: "/admissions/scholarships" },
+      { title: "Eligibility Criteria", path: "/admissions/eligibility" },
+      { title: "Admissions Procedure", path: "/admissions/procedure" },
+      { title: "Fee Structure", path: "/admissions/fee-structure" },
+    ],
+  },
+  { title: "Student Life", path: "/student-life" },
+  { title: "Contact Us", path: "/contact" },
+];
