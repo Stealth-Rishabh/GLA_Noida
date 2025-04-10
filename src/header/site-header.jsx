@@ -14,6 +14,52 @@ import logoscrolled from "@/assets/logo/logo_scroll.png";
  * Features transparent background initially, becomes white on scroll.
  * Includes responsive design with mobile menu and dropdown navigation.
  */
+
+// Add navigation data arrays
+const QUICK_LINKS = [
+  { title: "STUDENTS", path: "/students" },
+  { title: "STAFFS", path: "/staffs" },
+  { title: "ALUMNI", path: "/alumni" },
+  { title: "VISIT", path: "/visit" },
+  { title: "MEDIA", path: "/media" },
+];
+
+const NAV_ITEMS = [
+  { title: "Home", path: "/" },
+  {
+    title: "About",
+    path: "/about",
+    dropdownItems: [
+      { title: "About GLA", path: "/about" },
+      { title: "Awards & Accreditation", path: "/about/awards" },
+      { title: "Advisory Board", path: "/about/advisory-board" },
+    ],
+  },
+  {
+    title: "Programs",
+    path: "/programs",
+    dropdownItems: [
+      { title: "B.Tech", path: "/programs/btech" },
+      { title: "BBA", path: "/programs/bba" },
+      { title: "BCA", path: "/programs/bca" },
+      { title: "MBA", path: "/programs/mba" },
+      { title: "AIML", path: "/programs/aiml" },
+    ],
+  },
+  {
+    title: "Admissions",
+    path: "/admissions",
+    dropdownItems: [
+      { title: "Scholarships", path: "/admissions/scholarships" },
+      { title: "Eligibility Criteria", path: "/admissions/eligibility" },
+      { title: "Admissions Procedure", path: "/admissions/procedure" },
+      { title: "Fee Structure", path: "/admissions/fee-structure" },
+    ],
+  },
+  { title: "Student Life", path: "/student-life" },
+  { title: "Contact Us", path: "/contact-us" },
+];
+
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -352,47 +398,3 @@ function MobileNavItem({ title, items, setOpen }) {
     </div>
   );
 }
-
-// Add navigation data arrays
-const QUICK_LINKS = [
-  { title: "STUDENTS", path: "/students" },
-  { title: "STAFFS", path: "/staffs" },
-  { title: "ALUMNI", path: "/alumni" },
-  { title: "VISIT", path: "/visit" },
-  { title: "MEDIA", path: "/media" },
-];
-
-const NAV_ITEMS = [
-  { title: "Home", path: "/" },
-  {
-    title: "About",
-    path: "/about",
-    dropdownItems: [
-      { title: "About GLA", path: "/about" },
-      { title: "Awards & Accreditation", path: "/about/awards" },
-      { title: "Advisory Board", path: "/about/advisory-board" },
-    ],
-  },
-  {
-    title: "Programs",
-    path: "/programs",
-    dropdownItems: [
-      { title: "B.Tech", path: "/programs/btech" },
-      { title: "BBA", path: "/programs/bba" },
-      { title: "BCA", path: "/programs/bca" },
-      { title: "MBA", path: "/programs/mba" },
-    ],
-  },
-  {
-    title: "Admissions",
-    path: "/admissions",
-    dropdownItems: [
-      { title: "Scholarships", path: "/admissions/scholarships" },
-      { title: "Eligibility Criteria", path: "/admissions/eligibility" },
-      { title: "Admissions Procedure", path: "/admissions/procedure" },
-      { title: "Fee Structure", path: "/admissions/fee-structure" },
-    ],
-  },
-  { title: "Student Life", path: "/student-life" },
-  { title: "Contact Us", path: "/contact" },
-];
