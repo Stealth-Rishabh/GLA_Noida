@@ -35,8 +35,15 @@ import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
 import herobg from "@/assets/programs/HeroBtechCse.png";
+import { Building2 } from "lucide-react";
+import { UserPlus } from "lucide-react";
+import { UsersRound } from "lucide-react";
+import { Code2 } from "lucide-react";
+import { Wrench } from "lucide-react";
+import { Lightbulb } from "lucide-react";
+import { UserCircle } from "lucide-react";
 
-export function BtechCS() {
+export function AIML() {
   // Animation hooks
   const [isVisible, setIsVisible] = useState({});
   const [activeField, setActiveField] = useState(null);
@@ -235,16 +242,16 @@ export function BtechCS() {
                 >
                   B.Tech in{" "}
                   <span className="text-cusBlueLighter relative">
-                    Computer Science Engineering
+                    Computer Science & Engineering with AIML
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
-                  </span>{" "}
-                  (CSE)
+                  </span>
                 </Heading>
 
                 <p className="text-xl text-white leading-relaxed">
                   Transform your career with our comprehensive b.tech in
-                  computer science engineering program designed for the modern
-                  industry. Learn from experts and build real-world projects.
+                  computer science & engineering with AIML program designed for
+                  the modern industry. Learn from experts and build real-world
+                  projects.
                 </p>
               </div>
 
@@ -579,116 +586,123 @@ export function BtechCS() {
           <div className="order-2 md:order-1">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground">
-                The B.Tech in Computer Science & Engineering (CSE) is a
-                comprehensive 8-semester program that prepares you for an
-                exciting career in the world of computing. If you have a passion
-                for technology, this program will help you understand the core
-                concepts of computer science and engineering. You'll learn how
-                to design, develop, and test software and algorithms, as well as
-                explore the latest advancements in the field.
+                Have you ever wondered how your smartphone recognizes your face,
+                or how your personal assistant, like Siri or Alexa, responds to
+                your voice? That’s the magic of Artificial Intelligence (AI) and
+                Machine Learning (ML). From helping us navigate through traffic
+                with GPS to predicting your next movie based on your
+                preferences, AI and ML are all around us, changing the way we
+                live and work. These technologies are rapidly advancing, and as
+                they evolve, they’re making an even bigger impact on industries
+                worldwide
               </p>
               <p className="text-lg text-muted-foreground">
-                After completing the course, you'll be a skilled professional in
-                computing systems and their operation. The knowledge you gain
-                will help not only in computer science but also in other areas
-                of engineering, like IT, electronics, and software engineering.
-                Get ready to dive into the fast-changing world of technology
-                with a B. Tech in CSE from GLA University
+                A B. Tech in Computer Science & Engineering with a focus on
+                Artificial Intelligence and Machine Learning (AIML) at GLA
+                University, in partnership with Microsoft, offers you a chance
+                to dive into the heart of this revolution. This program covers
+                everything from the basics of programming languages like Python
+                and R, and Tableau, to exploring the depths of machine learning
+                algorithms, data analysis, and intelligent systems. With a
+                curriculum backed by industry giants, you’ll not only learn
+                cutting-edge skills but also get hands-on experience with
+                Microsoft tools, preparing you to be a leader in AI and ML
+                technologies.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry-Linked Curriculum</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Latest Industry Trends
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Global Exposure</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Study Abroad Options
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                     <Users className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Expert Faculty</h4>
+                    <h4 className="font-medium">Practical Learning</h4>
                     <p className="text-sm text-muted-foreground">
-                      IITs & NITs Professors
+                      Industry Professionals
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
+                    <Building2 className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Innovation Focus</h4>
+                    <h4 className="font-medium">Industry Visits</h4>
                     <p className="text-sm text-muted-foreground">
-                      Entrepreneurship Skills
+                      Leading Companies
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
+                    <UserPlus className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">IIT Experience</h4>
+                    <h4 className="font-medium">Small Class Sizes</h4>
                     <p className="text-sm text-muted-foreground">
-                      Semester-Long Study
+                      Personalized Attention
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
+                    <UsersRound className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Project-Based</h4>
+                    <h4 className="font-medium">Collaborative Learning</h4>
                     <p className="text-sm text-muted-foreground">
-                      Practical Skills
+                      Team Environment
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
+                    <Code2 className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Placement-Ready</h4>
+                    <h4 className="font-medium">Real-World Projects</h4>
                     <p className="text-sm text-muted-foreground">
-                      AI Mock Interviews
+                      Hackathons & Bootcamps
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
+                    <Wrench className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Codeathons</h4>
+                    <h4 className="font-medium">Skill Building</h4>
                     <p className="text-sm text-muted-foreground">
-                      Real-world Experience
+                      Interactive Workshops
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Lightbulb className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Innovation Culture</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Research Focused
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <UserCircle className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Holistic Growth</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Beyond Academics
                     </p>
                   </div>
                 </div>
@@ -709,14 +723,20 @@ export function BtechCS() {
                 </h3>
                 <ul className="space-y-3 text-white">
                   {[
-                    "Industry-Linked Curriculum: Learn the latest industry trends and technologies",
-                    "Opportunities for Global Exposure: Study abroad options, industry visits, and boot camps",
-                    "Expert Faculty: Lectures by professors from IITs, NITs, and top industry experts",
-                    "Focus on Innovation: Develop skills in entrepreneurship and industry-focused work",
-                    "Semester-Long Study @ IITs: Get hands-on experience through academic programs at IITs",
-                    "Project-Based Learning: Work on track-specific projects to gain practical skills",
-                    "Placement-Ready: AI-based mock interviews to help you prepare for placements",
-                    "Codeathons and Assessments: Participate in VIVA assessments and codeathons for real-world experience",
+                    "Exclusive Microsoft Certifications and Badges",
+                    "Industry-Linked Curriculum: AI, ML, Deep Learning, Gen AI, and more",
+                    "Hands-On Learning with Microsoft Tools",
+                    "Training by Industry Certified Experts",
+                    "Expert Faculty from IITs, NITs, and Industry",
+                    "Exceptional Placement Opportunities (Up to 55 LPA)",
+                    "Practical Learning with Industry Professionals",
+                    "Regular Visits to Industry Leaders",
+                    "Personalized Attention with Small Class Sizes",
+                    "Collaborative Learning Environment",
+                    "Engaging in Real-World Projects, Hackathons, Case Studies, and Bootcamps",
+                    "Interactive Workshops for Skill Building",
+                    "Promoting a Culture of Innovation & Research",
+                    "Comprehensive Development Beyond Academics",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
@@ -758,63 +778,63 @@ export function BtechCS() {
             </Heading>
             <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
             <p className="text-black mt-5 text-lg max-w-4xl mx-auto">
-              At GLA University, Greater Noida campus, we go beyond just
-              teaching theory. Our hands-on approach and project-based learning
-              ensure that you’re equipped with the skills the industry is
-              looking for. By the time you graduate, you’ll be ready to make an
-              impact in the tech world.
+              At GLA University, Greater Noida campus, we believe in learning by
+              doing. Our approach is centered around real-world projects,
+              industry collaborations, and skill-building workshops. This
+              ensures that our students not only understand theoretical concepts
+              but are also ready to apply them in the professional world.
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                title: "Advanced Technical Expertise",
+                title: "AI/ML Expert",
                 description:
-                  "Master cutting-edge programming languages and software development methodologies for industry success.",
-                icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+                  "Master advanced AI algorithms, neural networks, and machine learning models for real-world applications.",
+                icon: <Code2 className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Research & Innovation Skills",
+                title: "Data Science Specialist",
                 description:
-                  "Develop groundbreaking solutions through advanced research and innovative problem-solving approaches.",
+                  "Excel in data analytics, statistical modeling, and extracting actionable insights from complex datasets.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Industry-Ready Professional",
+                title: "Deep Learning Professional",
                 description:
-                  "Transform into a skilled professional ready for top tech companies.",
-                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+                  "Build and optimize deep neural networks for computer vision, NLP, and other AI applications.",
+                icon: <Wrench className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Global Tech Leader",
+                title: "AI Solution Architect",
                 description:
-                  "Lead international tech teams and drive cross-cultural innovation projects.",
-                icon: <Users className="h-10 w-10 text-cusGreen" />,
+                  "Design and implement end-to-end AI solutions for enterprise-level problems.",
+                icon: <Building2 className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Strategic Problem Solver",
+                title: "Research Innovator",
                 description:
-                  "Create efficient solutions for complex technical and business challenges.",
-                icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+                  "Contribute to cutting-edge AI research and develop novel solutions using Microsoft's advanced tools.",
+                icon: <Lightbulb className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Tech Entrepreneur Ready",
+                title: "MLOps Engineer",
                 description:
-                  "Launch and scale innovative technology ventures in global markets.",
-                icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+                  "Deploy and manage ML models in production environments using industry-standard practices.",
+                icon: <UserPlus className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Ethical Tech Champion",
+                title: "AI Ethics Leader",
                 description:
-                  "Drive responsible innovation while ensuring data privacy and security.",
-                icon: <Users className="h-10 w-10 text-cusGreen" />,
+                  "Ensure responsible AI development with focus on fairness, transparency and ethical considerations.",
+                icon: <UserCircle className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Continuous Tech Innovator",
+                title: "Industry Collaborator",
                 description:
-                  "Stay ahead with emerging technologies and industry best practices.",
-                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+                  "Work effectively with cross-functional teams to deliver AI-powered business solutions.",
+                icon: <UsersRound className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
               <Card
@@ -863,7 +883,7 @@ export function BtechCS() {
                 <ul className="space-y-6 text-white">
                   {[
                     "10+2 examination with Physics and Mathematics as mandatory subjects",
-                    "Chemistry or Computer Science as third subject",
+                    "Chemistry or Computer Science as optional subject",
                     "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
                     "Minimum 50% marks overall in 10+2 examination",
                     "Strong analytical and problem-solving skills",
@@ -903,20 +923,23 @@ export function BtechCS() {
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our B.Tech in Computer Science Engineering program is designed for
-              students who are passionate about technology, programming, and
-              problem-solving. If you're interested in developing cutting-edge
-              software, building innovative applications, and exploring emerging
-              technologies like AI and cloud computing, this program is perfect
-              for you.
+              Our B.Tech in Computer Science Engineering with AIML
+              specialization is designed for students who are fascinated by
+              artificial intelligence, machine learning, and their real-world
+              applications. If you're excited about developing AI solutions,
+              working with neural networks, and exploring cutting-edge
+              technologies like deep learning and natural language processing,
+              this Microsoft-partnered program is perfect for you.
             </p>
 
             <p className="text-lg text-muted-foreground">
-              Whether you're a mathematics enthusiast, a coding hobbyist, or
-              someone fascinated by how computers work, our comprehensive
-              curriculum will provide you with the theoretical knowledge and
-              practical skills needed to excel in the dynamic field of computer
-              science.
+              Whether you're passionate about data science, interested in
+              building intelligent systems, or eager to shape the future of
+              technology through AI innovations, our comprehensive curriculum
+              will equip you with both theoretical foundations and hands-on
+              experience using industry-standard tools and frameworks. With
+              Microsoft's backing, you'll gain the expertise needed to excel in
+              the rapidly evolving field of AI and ML.
             </p>
 
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
@@ -925,8 +948,8 @@ export function BtechCS() {
               </h3>
               <p className="text-muted-foreground mb-4">
                 Schedule a free consultation with our admissions team to discuss
-                your academic background and career aspirations in computer
-                science.
+                your academic background and career aspirations in AI and
+                Machine Learning.
               </p>
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
@@ -962,7 +985,7 @@ export function BtechCS() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 h-min">
               <Heading level={3} className="text-2xl font-bold mb-2">
-                B.Tech in Computer Science Engineering
+                B.Tech in Computer Science & Engineering with AIML
               </Heading>
               <div className="flex items-center gap-2 mb-4">
                 <Badge variant="outline" className="text-sm">
@@ -970,11 +993,11 @@ export function BtechCS() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The B.Tech in Computer Science Engineering program is designed
-                to provide students with a comprehensive understanding of
-                computer science and engineering principles. Don't miss out on
-                this opportunity to learn from the best in the field. Download
-                the syllabus to get started.
+                The B.Tech in Computer Science & Engineering with AIML program
+                is designed to provide students with a comprehensive
+                understanding of computer science and engineering principles.
+                Don't miss out on this opportunity to learn from the best in the
+                field. Download the syllabus to get started.
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
@@ -1234,25 +1257,25 @@ export function BtechCS() {
           {[
             {
               title: "1st Year Fees",
-              price: "₹2,00,000/-",
+              price: "₹2,35,000/-",
               highlight: true,
               buttonText: "Enroll Now",
             },
             {
               title: "2nd Year Fees",
-              price: "₹2,08,000/-",
+              price: "₹2,43,000/-",
               highlight: false,
               buttonText: "Enroll Now",
             },
             {
               title: "3rd Year Fees",
-              price: "₹2,16,000/-",
+              price: "₹2,51,000/-",
               highlight: false,
               buttonText: "Enroll Now",
             },
             {
               title: "4th Year Fees",
-              price: "₹2,24,000/-",
+              price: "₹2,59,000/-",
               highlight: false,
               buttonText: "Enroll Now",
             },
@@ -1709,4 +1732,4 @@ export function BtechCS() {
   );
 }
 
-export default BtechCS;
+export default AIML;

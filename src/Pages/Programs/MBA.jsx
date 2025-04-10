@@ -34,9 +34,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
-import herobg from "@/assets/programs/HeroBtechCse.png";
 
-export function BtechCS() {
+export function MBA() {
   // Animation hooks
   const [isVisible, setIsVisible] = useState({});
   const [activeField, setActiveField] = useState(null);
@@ -197,9 +196,10 @@ export function BtechCS() {
 
         {/* Background image with overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
           style={{
-            backgroundImage: `url(${herobg})`,
+            backgroundImage:
+              "url('https://i.ibb.co/spMmK3RL/moez-mustafa-Ukr2hyu-E068-unsplash.jpg')",
           }}
         ></div>
 
@@ -233,18 +233,17 @@ export function BtechCS() {
                   level={1}
                   className="text-4xl md:!text-5xl font-bold text-white leading-tight"
                 >
-                  B.Tech in{" "}
+                  MBA in{" "}
                   <span className="text-cusBlueLighter relative">
-                    Computer Science Engineering
+                    Dual Specialization
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
-                  </span>{" "}
-                  (CSE)
+                  </span>
                 </Heading>
 
                 <p className="text-xl text-white leading-relaxed">
-                  Transform your career with our comprehensive b.tech in
-                  computer science engineering program designed for the modern
-                  industry. Learn from experts and build real-world projects.
+                  Transform your career with our comprehensive MBA in Dual
+                  Specialization program designed for the modern industry. Learn
+                  from experts and build real-world projects.
                 </p>
               </div>
 
@@ -252,7 +251,7 @@ export function BtechCS() {
               <div className="grid grid-cols-2 sm:flex items-center gap-6 text-white text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
-                  <span>8-Semester Program</span>
+                  <span>4-Semester Program</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
@@ -579,21 +578,37 @@ export function BtechCS() {
           <div className="order-2 md:order-1">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground">
-                The B.Tech in Computer Science & Engineering (CSE) is a
-                comprehensive 8-semester program that prepares you for an
-                exciting career in the world of computing. If you have a passion
-                for technology, this program will help you understand the core
-                concepts of computer science and engineering. You'll learn how
-                to design, develop, and test software and algorithms, as well as
-                explore the latest advancements in the field.
+                Are you ready to take your career to the next level and step
+                into the world of business leadership? The MBA (Dual) programme
+                at GLA University offers you a unique opportunity to do just
+                that. This isn’t just any MBA, it’s designed to prepare you for
+                the ever-evolving global business landscape by giving you the
+                knowledge, skills, and strategic mindset needed to thrive in
+                today’s fast-paced, competitive environment.
               </p>
               <p className="text-lg text-muted-foreground">
-                After completing the course, you'll be a skilled professional in
-                computing systems and their operation. The knowledge you gain
-                will help not only in computer science but also in other areas
-                of engineering, like IT, electronics, and software engineering.
-                Get ready to dive into the fast-changing world of technology
-                with a B. Tech in CSE from GLA University
+                So, what does "MBA (Dual)" mean? Well, it means you get the best
+                of both worlds! The Dual aspect of this programme allows you to
+                specialize in two distinct areas of business, helping you build
+                a broader, more versatile skill set. Not only will you gain
+                in-depth knowledge of core business functions like marketing,
+                finance, human resources, operations, and strategy, but you’ll
+                also have the flexibility to customize your education by
+                choosing a second specialization that aligns with your career
+                aspirations. Whether you're passionate about business analytics,
+                supply chain management, or banking & finance, our MBA (Dual)
+                program gives you the tools to excel.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Our MBA programme is designed with a perfect mix of theoretical
+                and practical experience. You won’t just be sitting in
+                classrooms absorbing knowledge, you’ll actively engage in
+                real-world business challenges through case studies, live
+                projects, and internships. These hands-on opportunities give you
+                a chance to apply what you’ve learned in real business
+                situations, helping you develop critical thinking,
+                problem-solving, and decision-making skills that are essential
+                in today’s business world.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
@@ -602,21 +617,11 @@ export function BtechCS() {
                     <BookOpen className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Industry-Linked Curriculum</h4>
+                    <h4 className="font-medium">
+                      Industry-Integrated Learning
+                    </h4>
                     <p className="text-sm text-muted-foreground">
-                      Latest Industry Trends
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Global Exposure</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Study Abroad Options
+                      Hands-on Experience
                     </p>
                   </div>
                 </div>
@@ -626,21 +631,21 @@ export function BtechCS() {
                     <Users className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Expert Faculty</h4>
+                    <h4 className="font-medium">Small Batch Sizes</h4>
                     <p className="text-sm text-muted-foreground">
-                      IITs & NITs Professors
+                      Personalized Learning
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
+                    <CreditCard className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Innovation Focus</h4>
+                    <h4 className="font-medium">Best-In-Class Placements</h4>
                     <p className="text-sm text-muted-foreground">
-                      Entrepreneurship Skills
+                      Up to 55 LPA
                     </p>
                   </div>
                 </div>
@@ -650,9 +655,45 @@ export function BtechCS() {
                     <GraduationCap className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">IIT Experience</h4>
+                    <h4 className="font-medium">Project-Based Education</h4>
                     <p className="text-sm text-muted-foreground">
-                      Semester-Long Study
+                      Real-world Cases
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <ArrowUpRight className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Industry Visits</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Corporate Exposure
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Users className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Top Recruiters</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Premium Placements
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Beaker className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">New-Gen IEDC</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Start-up Incubation
                     </p>
                   </div>
                 </div>
@@ -662,33 +703,9 @@ export function BtechCS() {
                     <BookOpen className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Project-Based</h4>
+                    <h4 className="font-medium">JOVAC Sessions</h4>
                     <p className="text-sm text-muted-foreground">
-                      Practical Skills
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Placement-Ready</h4>
-                    <p className="text-sm text-muted-foreground">
-                      AI Mock Interviews
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Codeathons</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Real-world Experience
+                      Career Enhancement
                     </p>
                   </div>
                 </div>
@@ -709,14 +726,16 @@ export function BtechCS() {
                 </h3>
                 <ul className="space-y-3 text-white">
                   {[
-                    "Industry-Linked Curriculum: Learn the latest industry trends and technologies",
-                    "Opportunities for Global Exposure: Study abroad options, industry visits, and boot camps",
-                    "Expert Faculty: Lectures by professors from IITs, NITs, and top industry experts",
-                    "Focus on Innovation: Develop skills in entrepreneurship and industry-focused work",
-                    "Semester-Long Study @ IITs: Get hands-on experience through academic programs at IITs",
-                    "Project-Based Learning: Work on track-specific projects to gain practical skills",
-                    "Placement-Ready: AI-based mock interviews to help you prepare for placements",
-                    "Codeathons and Assessments: Participate in VIVA assessments and codeathons for real-world experience",
+                    "Industry-Integrated Learning: Curriculum aligned with industry needs for hands-on, real-world knowledge",
+                    "Frequent Industry Visits: Exposure to corporate environments bridging academic learning with practical implementation",
+                    "Small Batch Sizes: Personalized learning ensures better attention and skill development",
+                    "Project-Based Education: Real-world case studies and live projects to sharpen problem-solving skills",
+                    "Top Recruitment Partners: Access to premium placement opportunities with leading companies",
+                    "Best-In-Class Placements: High placements with salaries reaching up to Rs. 55 LPA",
+                    "New-Gen IEDC to Incubate Start-up Ideas: Opportunities to nurture entrepreneurial ideas and start your own venture",
+                    "JOVAC Sessions: Job-Oriented Value-Added Workshops designed to enhance employability",
+                    "Networking Opportunities: Build valuable connections with industry leaders, alumni, and professionals",
+                    "Holistic Development: A balanced approach to academics, co-curricular activities, and personality development",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
@@ -758,63 +777,65 @@ export function BtechCS() {
             </Heading>
             <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
             <p className="text-black mt-5 text-lg max-w-4xl mx-auto">
-              At GLA University, Greater Noida campus, we go beyond just
-              teaching theory. Our hands-on approach and project-based learning
-              ensure that you’re equipped with the skills the industry is
-              looking for. By the time you graduate, you’ll be ready to make an
-              impact in the tech world.
+              At GLA University, Greater Noida campus, our MBA program goes
+              beyond traditional business education. Through industry
+              partnerships, experiential learning, and dual specialization
+              options, we ensure you develop both strategic thinking and
+              practical management skills. By the time you graduate, you'll be
+              ready to take on leadership roles and make impactful business
+              decisions.
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                title: "Advanced Technical Expertise",
+                title: "Leadership",
                 description:
-                  "Master cutting-edge programming languages and software development methodologies for industry success.",
-                icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
-              },
-              {
-                title: "Research & Innovation Skills",
-                description:
-                  "Develop groundbreaking solutions through advanced research and innovative problem-solving approaches.",
-                icon: <Beaker className="h-10 w-10 text-cusGreen" />,
-              },
-              {
-                title: "Industry-Ready Professional",
-                description:
-                  "Transform into a skilled professional ready for top tech companies.",
-                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
-              },
-              {
-                title: "Global Tech Leader",
-                description:
-                  "Lead international tech teams and drive cross-cultural innovation projects.",
+                  "Learn to lead and manage business teams effectively.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Strategic Problem Solver",
+                title: "Financial Acumen",
                 description:
-                  "Create efficient solutions for complex technical and business challenges.",
+                  "Master financial analysis and decision-making for organizational growth.",
+                icon: <CreditCard className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Marketing Excellence",
+                description:
+                  "Create and execute innovative marketing strategies in digital age.",
+                icon: <ArrowUpRight className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Operations Management",
+                description:
+                  "Optimize business processes and supply chains for maximum efficiency.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Tech Entrepreneur Ready",
+                title: "Business Analytics",
                 description:
-                  "Launch and scale innovative technology ventures in global markets.",
+                  "Transform data into actionable business insights and strategies.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Ethical Tech Champion",
+                title: "Entrepreneurial Mindset",
                 description:
-                  "Drive responsible innovation while ensuring data privacy and security.",
-                icon: <Users className="h-10 w-10 text-cusGreen" />,
+                  "Develop skills to identify and capitalize on business opportunities.",
+                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Continuous Tech Innovator",
+                title: "Global Business Perspective",
                 description:
-                  "Stay ahead with emerging technologies and industry best practices.",
-                icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+                  "Navigate international markets and cross-cultural business environments effectively.",
+                icon: <Calendar className="h-10 w-10 text-cusGreen" />,
+              },
+              {
+                title: "Digital Transformation",
+                description:
+                  "Lead organizational change in the digital business landscape.",
+                icon: <Lock className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
               <Card
@@ -862,13 +883,13 @@ export function BtechCS() {
                 </Heading>
                 <ul className="space-y-6 text-white">
                   {[
-                    "10+2 examination with Physics and Mathematics as mandatory subjects",
-                    "Chemistry or Computer Science as third subject",
-                    "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
-                    "Minimum 50% marks overall in 10+2 examination",
-                    "Strong analytical and problem-solving skills",
+                    "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
+                    "Minimum 50% marks in Bachelor's degree",
+                    "Strong analytical and problem-solving abilities",
+                    "Good communication and interpersonal skills",
                     "Basic computer proficiency",
                     "Proficiency in English (written and verbal)",
+                    "Prior work experience preferred but not mandatory",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
@@ -903,20 +924,21 @@ export function BtechCS() {
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our B.Tech in Computer Science Engineering program is designed for
-              students who are passionate about technology, programming, and
-              problem-solving. If you're interested in developing cutting-edge
-              software, building innovative applications, and exploring emerging
-              technologies like AI and cloud computing, this program is perfect
-              for you.
+              Our MBA in Dual Specialization program is designed for ambitious
+              professionals and fresh graduates who aspire to excel in business
+              leadership roles. If you're interested in developing advanced
+              management skills, understanding strategic business practices, and
+              gaining expertise in two specialized business domains, this
+              program is perfect for you.
             </p>
 
             <p className="text-lg text-muted-foreground">
-              Whether you're a mathematics enthusiast, a coding hobbyist, or
-              someone fascinated by how computers work, our comprehensive
-              curriculum will provide you with the theoretical knowledge and
-              practical skills needed to excel in the dynamic field of computer
-              science.
+              Whether you're an experienced professional looking to accelerate
+              your career, an entrepreneur aiming to enhance your business
+              acumen, or a graduate seeking to build a strong foundation in
+              management, our comprehensive curriculum will equip you with the
+              knowledge and skills needed to succeed in today's dynamic business
+              environment.
             </p>
 
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
@@ -925,8 +947,8 @@ export function BtechCS() {
               </h3>
               <p className="text-muted-foreground mb-4">
                 Schedule a free consultation with our admissions team to discuss
-                your academic background and career aspirations in computer
-                science.
+                your academic background and career aspirations in business
+                management.
               </p>
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
@@ -962,23 +984,25 @@ export function BtechCS() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 h-min">
               <Heading level={3} className="text-2xl font-bold mb-2">
-                B.Tech in Computer Science Engineering
+                MBA in Dual Specialization
               </Heading>
               <div className="flex items-center gap-2 mb-4">
                 <Badge variant="outline" className="text-sm">
-                  <Calendar className="h-3 w-3 mr-1" />4 Years
+                  <Calendar className="h-3 w-3 mr-1" />2 Years
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The B.Tech in Computer Science Engineering program is designed
-                to provide students with a comprehensive understanding of
-                computer science and engineering principles. Don't miss out on
-                this opportunity to learn from the best in the field. Download
-                the syllabus to get started.
+                Our MBA in Dual Specialization program offers a comprehensive
+                business education with the flexibility to specialize in two
+                distinct areas of management. This unique program combines core
+                business fundamentals with specialized knowledge, preparing you
+                for diverse leadership roles. Don't miss out on this opportunity
+                to enhance your career prospects with a dual specialization.
+                Download the detailed curriculum to learn more.
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
-                  Download Syllabus <Download className="h-4 w-4" />
+                  Download Curriculum <Download className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -1230,29 +1254,17 @@ export function BtechCS() {
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {[
             {
               title: "1st Year Fees",
-              price: "₹2,00,000/-",
+              price: "₹2,35,000/-",
               highlight: true,
               buttonText: "Enroll Now",
             },
             {
               title: "2nd Year Fees",
-              price: "₹2,08,000/-",
-              highlight: false,
-              buttonText: "Enroll Now",
-            },
-            {
-              title: "3rd Year Fees",
-              price: "₹2,16,000/-",
-              highlight: false,
-              buttonText: "Enroll Now",
-            },
-            {
-              title: "4th Year Fees",
-              price: "₹2,24,000/-",
+              price: "₹2,45,000/-",
               highlight: false,
               buttonText: "Enroll Now",
             },
@@ -1277,9 +1289,13 @@ export function BtechCS() {
                   plan.highlight ? "bg-cusBlue p-5 text-slate-100" : ""
                 } rounded-t-lg transition-colors duration-300`}
               >
-                <CardTitle className="text-xl">{plan.title}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">{plan.price}</span>
+                <CardTitle className="text-xl text-center">
+                  {plan.title}
+                </CardTitle>
+                <div className="mt-4 mx-auto">
+                  <span className="text-4xl font-bold text-center">
+                    {plan.price}
+                  </span>
                   {/* <span className="text-muted-foreground ml-1">
                     {index + 1} Year
                   </span> */}
@@ -1709,4 +1725,4 @@ export function BtechCS() {
   );
 }
 
-export default BtechCS;
+export default MBA;

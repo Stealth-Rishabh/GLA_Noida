@@ -34,9 +34,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
-import herobg from "@/assets/programs/HeroBtechCse.png";
 
-export function BtechCS() {
+export function BCA() {
   // Animation hooks
   const [isVisible, setIsVisible] = useState({});
   const [activeField, setActiveField] = useState(null);
@@ -197,9 +196,10 @@ export function BtechCS() {
 
         {/* Background image with overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
           style={{
-            backgroundImage: `url(${herobg})`,
+            backgroundImage:
+              "url('https://i.ibb.co/spMmK3RL/moez-mustafa-Ukr2hyu-E068-unsplash.jpg')",
           }}
         ></div>
 
@@ -217,7 +217,7 @@ export function BtechCS() {
         </div>
 
         <div className="relative z-10 container max-w-7xl mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Content Column */}
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-6 max-w-xl">
@@ -233,18 +233,17 @@ export function BtechCS() {
                   level={1}
                   className="text-4xl md:!text-5xl font-bold text-white leading-tight"
                 >
-                  B.Tech in{" "}
+                  BCA in{" "}
                   <span className="text-cusBlueLighter relative">
-                    Computer Science Engineering
+                    Data Science
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
-                  </span>{" "}
-                  (CSE)
+                  </span>
                 </Heading>
 
                 <p className="text-xl text-white leading-relaxed">
-                  Transform your career with our comprehensive b.tech in
-                  computer science engineering program designed for the modern
-                  industry. Learn from experts and build real-world projects.
+                  Transform your career with our comprehensive bca in data
+                  science program designed for the modern industry. Learn from
+                  experts and build real-world projects.
                 </p>
               </div>
 
@@ -252,7 +251,7 @@ export function BtechCS() {
               <div className="grid grid-cols-2 sm:flex items-center gap-6 text-white text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
-                  <span>8-Semester Program</span>
+                  <span>6-Semester Program</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
@@ -285,7 +284,7 @@ export function BtechCS() {
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
                   <div className="text-3xl font-bold text-cusBlueLighter mb-1">
-                    500+
+                    400+
                   </div>
                   <div className="text-sm text-white">Top Recruiters</div>
                 </div>
@@ -579,80 +578,36 @@ export function BtechCS() {
           <div className="order-2 md:order-1">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground">
-                The B.Tech in Computer Science & Engineering (CSE) is a
-                comprehensive 8-semester program that prepares you for an
-                exciting career in the world of computing. If you have a passion
-                for technology, this program will help you understand the core
-                concepts of computer science and engineering. You'll learn how
-                to design, develop, and test software and algorithms, as well as
-                explore the latest advancements in the field.
+                In today’s tech-driven world, data is everything. The field of
+                data science is growing rapidly, and its influence is expanding
+                across industries. The BCA in Data Science at GLA University is
+                a three-year undergraduate program that combines the essentials
+                of computer science with specialized knowledge in data science.
               </p>
               <p className="text-lg text-muted-foreground">
-                After completing the course, you'll be a skilled professional in
-                computing systems and their operation. The knowledge you gain
-                will help not only in computer science but also in other areas
-                of engineering, like IT, electronics, and software engineering.
-                Get ready to dive into the fast-changing world of technology
-                with a B. Tech in CSE from GLA University
+                This course provides a strong foundation in programming,
+                software development, and data analysis. It covers crucial areas
+                such as Machine Learning, Big Data Analytics, Database
+                Management Systems, and Statistics, giving students a
+                comprehensive understanding of how data can drive
+                decision-making in businesses and industries.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                By the end of the program, students are equipped with the skills
+                and expertise needed to pursue exciting careers as Data
+                Scientists, Machine Learning Engineers, Business Analysts, and
+                more.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry-Linked Curriculum</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Latest Industry Trends
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Global Exposure</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Study Abroad Options
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Expert Faculty</h4>
-                    <p className="text-sm text-muted-foreground">
-                      IITs & NITs Professors
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                     <Beaker className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Innovation Focus</h4>
+                    <h4 className="font-medium">Industry-Focused Learning</h4>
                     <p className="text-sm text-muted-foreground">
-                      Entrepreneurship Skills
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">IIT Experience</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Semester-Long Study
+                      Latest Data Science Tools
                     </p>
                   </div>
                 </div>
@@ -662,9 +617,9 @@ export function BtechCS() {
                     <BookOpen className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Project-Based</h4>
+                    <h4 className="font-medium">Hands-on Experience</h4>
                     <p className="text-sm text-muted-foreground">
-                      Practical Skills
+                      Labs & Assignments
                     </p>
                   </div>
                 </div>
@@ -674,21 +629,69 @@ export function BtechCS() {
                     <Users className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Placement-Ready</h4>
+                    <h4 className="font-medium">Small Batch Sizes</h4>
                     <p className="text-sm text-muted-foreground">
-                      AI Mock Interviews
+                      Personalized Attention
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
+                    <GraduationCap className="h-6 w-6 text-cusGreen" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Codeathons</h4>
+                    <h4 className="font-medium">Career-Driven Approach</h4>
                     <p className="text-sm text-muted-foreground">
-                      Real-world Experience
+                      Professional Success
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <Users className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Networking Opportunities</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Industry Connections
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <ArrowUpRight className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Start-up Incubation</h4>
+                    <p className="text-sm text-muted-foreground">
+                      New-Gen IEDC Support
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <CreditCard className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Top Placements</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Up to 55 LPA Package
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 group">
+                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                    <User className="h-6 w-6 text-cusGreen" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium">Holistic Development</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Well-Rounded Growth
                     </p>
                   </div>
                 </div>
@@ -709,14 +712,15 @@ export function BtechCS() {
                 </h3>
                 <ul className="space-y-3 text-white">
                   {[
-                    "Industry-Linked Curriculum: Learn the latest industry trends and technologies",
-                    "Opportunities for Global Exposure: Study abroad options, industry visits, and boot camps",
-                    "Expert Faculty: Lectures by professors from IITs, NITs, and top industry experts",
-                    "Focus on Innovation: Develop skills in entrepreneurship and industry-focused work",
-                    "Semester-Long Study @ IITs: Get hands-on experience through academic programs at IITs",
-                    "Project-Based Learning: Work on track-specific projects to gain practical skills",
-                    "Placement-Ready: AI-based mock interviews to help you prepare for placements",
-                    "Codeathons and Assessments: Participate in VIVA assessments and codeathons for real-world experience",
+                    "Industry-Focused Learning: Training on the latest Data Science tools to meet industry demands",
+                    "Hands-on Experience: Labs and assignments to build practical skills",
+                    "Live Projects: Work on two real-life projects (minor followed by a major)",
+                    "Small Batch Sizes: Personalized attention ensures deeper understanding and skill development",
+                    "Career-Driven Approach: Focus on employability, providing essential skills for professional success",
+                    "Networking Opportunities: Interact with industry leaders, alumni, and professionals to build valuable connections",
+                    "Start-up Incubation: Opportunities for students to launch their start-up ideas through the New-Gen IEDC",
+                    "Top Placements: Access to premium placement opportunities with top recruiters offering salaries as high as Rs. 55 LPA",
+                    "Holistic Development: Balanced focus on academics, co-curricular activities, and personality development ensures well-rounded growth",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
@@ -758,62 +762,63 @@ export function BtechCS() {
             </Heading>
             <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
             <p className="text-black mt-5 text-lg max-w-4xl mx-auto">
-              At GLA University, Greater Noida campus, we go beyond just
-              teaching theory. Our hands-on approach and project-based learning
-              ensure that you’re equipped with the skills the industry is
-              looking for. By the time you graduate, you’ll be ready to make an
-              impact in the tech world.
+              At GLA University, Greater Noida campus, we don’t just teach; we
+              prepare students for the real world. Our approach includes
+              project-based learning, allowing students to get hands-on
+              experience and develop practical skills. With industry-driven
+              training, the course ensures that our graduates are ready to meet
+              the demands of the ever-evolving IT sector.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-5">
             {[
               {
-                title: "Advanced Technical Expertise",
+                title: "Data Analysis Mastery",
                 description:
-                  "Master cutting-edge programming languages and software development methodologies for industry success.",
+                  "Master data collection, cleaning, analysis and visualization using industry-standard tools and techniques.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Research & Innovation Skills",
+                title: "Programming Proficiency",
                 description:
-                  "Develop groundbreaking solutions through advanced research and innovative problem-solving approaches.",
+                  "Develop strong programming skills in Python, R, SQL and other languages essential for data science.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Industry-Ready Professional",
+                title: "Machine Learning Expert",
                 description:
-                  "Transform into a skilled professional ready for top tech companies.",
+                  "Build and deploy machine learning models for predictive analytics and pattern recognition.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Global Tech Leader",
+                title: "Statistical Analysis Skills",
                 description:
-                  "Lead international tech teams and drive cross-cultural innovation projects.",
+                  "Apply statistical methods and probability theory to extract meaningful insights from data.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Strategic Problem Solver",
+                title: "Big Data Technologies",
                 description:
-                  "Create efficient solutions for complex technical and business challenges.",
+                  "Work with big data tools like Hadoop and Spark to process and analyze large-scale datasets.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Tech Entrepreneur Ready",
+                title: "Business Intelligence",
                 description:
-                  "Launch and scale innovative technology ventures in global markets.",
+                  "Transform data insights into actionable business strategies and decision-making tools.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Ethical Tech Champion",
+                title: "Data Ethics & Privacy",
                 description:
-                  "Drive responsible innovation while ensuring data privacy and security.",
+                  "Understand and implement ethical data practices while ensuring data security and privacy.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Continuous Tech Innovator",
+                title: "Industry Applications",
                 description:
-                  "Stay ahead with emerging technologies and industry best practices.",
+                  "Apply data science concepts to solve real-world problems across various industry domains.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
@@ -862,13 +867,13 @@ export function BtechCS() {
                 </Heading>
                 <ul className="space-y-6 text-white">
                   {[
-                    "10+2 examination with Physics and Mathematics as mandatory subjects",
-                    "Chemistry or Computer Science as third subject",
-                    "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
-                    "Minimum 50% marks overall in 10+2 examination",
+                    "10+2 examination with Mathematics as one of the subjects",
+                    "Minimum 60% marks in 10+2 examination (any stream)",
                     "Strong analytical and problem-solving skills",
                     "Basic computer proficiency",
                     "Proficiency in English (written and verbal)",
+                    "Passion for data analysis and statistics",
+                    "Interest in programming and technology",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start group">
                       <div className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300">
@@ -903,20 +908,20 @@ export function BtechCS() {
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our B.Tech in Computer Science Engineering program is designed for
-              students who are passionate about technology, programming, and
-              problem-solving. If you're interested in developing cutting-edge
-              software, building innovative applications, and exploring emerging
-              technologies like AI and cloud computing, this program is perfect
-              for you.
+              Our BCA in Data Science program is designed for students who are
+              passionate about data analytics, statistics, and problem-solving.
+              If you're interested in extracting meaningful insights from data,
+              building predictive models, and exploring emerging technologies
+              like Machine Learning and Big Data, this program is perfect for
+              you.
             </p>
 
             <p className="text-lg text-muted-foreground">
-              Whether you're a mathematics enthusiast, a coding hobbyist, or
-              someone fascinated by how computers work, our comprehensive
-              curriculum will provide you with the theoretical knowledge and
-              practical skills needed to excel in the dynamic field of computer
-              science.
+              Whether you're a mathematics enthusiast, interested in business
+              analytics, or someone fascinated by how data drives
+              decision-making, our comprehensive curriculum will provide you
+              with the theoretical knowledge and practical skills needed to
+              excel in the rapidly growing field of data science.
             </p>
 
             <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
@@ -925,8 +930,7 @@ export function BtechCS() {
               </h3>
               <p className="text-muted-foreground mb-4">
                 Schedule a free consultation with our admissions team to discuss
-                your academic background and career aspirations in computer
-                science.
+                your academic background and career aspirations in data science.
               </p>
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
@@ -962,19 +966,19 @@ export function BtechCS() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 h-min">
               <Heading level={3} className="text-2xl font-bold mb-2">
-                B.Tech in Computer Science Engineering
+                BCA in Data Science
               </Heading>
               <div className="flex items-center gap-2 mb-4">
                 <Badge variant="outline" className="text-sm">
-                  <Calendar className="h-3 w-3 mr-1" />4 Years
+                  <Calendar className="h-3 w-3 mr-1" />3 Years
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The B.Tech in Computer Science Engineering program is designed
-                to provide students with a comprehensive understanding of
-                computer science and engineering principles. Don't miss out on
-                this opportunity to learn from the best in the field. Download
-                the syllabus to get started.
+                The BCA in Data Science program is designed to provide students
+                with a comprehensive understanding of data science and
+                programming principles. Don't miss out on this opportunity to
+                learn from the best in the field. Download the syllabus to get
+                started.
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
@@ -1218,7 +1222,7 @@ export function BtechCS() {
       {/* Fees */}
       <section
         ref={feesRef}
-        className={`py-24 container mx-auto px-4 ${fadeInUp} ${
+        className={`py-20 container mx-auto px-4 ${fadeInUp} ${
           feesVisible ? fadeInUpVisible : fadeInUpHidden
         }`}
       >
@@ -1230,29 +1234,23 @@ export function BtechCS() {
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {[
             {
               title: "1st Year Fees",
-              price: "₹2,00,000/-",
+              price: "₹1,40,000/-",
               highlight: true,
               buttonText: "Enroll Now",
             },
             {
               title: "2nd Year Fees",
-              price: "₹2,08,000/-",
+              price: "₹1,45,000/-",
               highlight: false,
               buttonText: "Enroll Now",
             },
             {
               title: "3rd Year Fees",
-              price: "₹2,16,000/-",
-              highlight: false,
-              buttonText: "Enroll Now",
-            },
-            {
-              title: "4th Year Fees",
-              price: "₹2,24,000/-",
+              price: "₹1,50,000/-",
               highlight: false,
               buttonText: "Enroll Now",
             },
@@ -1709,4 +1707,4 @@ export function BtechCS() {
   );
 }
 
-export default BtechCS;
+export default BCA;
