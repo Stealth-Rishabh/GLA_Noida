@@ -43,7 +43,7 @@ const NAV_ITEMS = [
       { title: "BBA", path: "/programs/bba" },
       { title: "BCA", path: "/programs/bca" },
       { title: "MBA", path: "/programs/mba" },
-      { title: "AIML", path: "/programs/aiml" },
+      { title: "AI/ML", path: "/programs/AI/ML" },
     ],
   },
   {

@@ -35,6 +35,7 @@ import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import herobg from "@/assets/programs/HeroBBA.png";
 
 export function BBA() {
   // Animation hooks
@@ -197,10 +198,9 @@ export function BBA() {
 
         {/* Background image with overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://i.ibb.co/spMmK3RL/moez-mustafa-Ukr2hyu-E068-unsplash.jpg')",
+            backgroundImage: `url(${herobg})`,
           }}
         ></div>
 
@@ -218,7 +218,7 @@ export function BBA() {
         </div>
 
         <div className="relative z-10 container max-w-7xl mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Content Column */}
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-6 max-w-xl">
@@ -310,7 +310,7 @@ export function BBA() {
                 ></div>
 
                 {/* Form container */}
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
+                <div className="relative bg-white/10 backdrop-blur-md border scale-90 border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 animate-shimmer pointer-events-none"></div>
 
@@ -518,7 +518,7 @@ export function BBA() {
 
               {/* Floating elements */}
               <div
-                className="absolute -top-6 -right-6 animate-float"
+                className="absolute top-5 -right-6 animate-float"
                 style={{ animationDuration: "4s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -529,7 +529,7 @@ export function BBA() {
               </div>
 
               <div
-                className="absolute -bottom-6 -left-6 animate-float"
+                className="absolute bottom-5 -left-6 animate-float"
                 style={{ animationDuration: "5s", animationDelay: "1s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -565,11 +565,11 @@ export function BBA() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-cusGreen text-white">
+          {/* <Badge className="mb-4 bg-cusGreen text-white">
             About the Program
-          </Badge>
+          </Badge> */}
           <Heading level={2} className="text-center text-cusBlue">
-            Program Description
+            About the Program
           </Heading>
           {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
@@ -594,118 +594,20 @@ export function BBA() {
                 problem-solving skills—traits that are essential for success in
                 the business world.
               </p>
-              <p className="text-lg text-muted-foreground">
+              {/* <p className="text-lg text-muted-foreground">
                 By focusing on both small businesses and large corporations, the
                 program teaches the ethical values and strategic approaches
                 necessary for effective management. It prepares students for
                 roles in management by developing their skills in business
                 administration, making them ready for various managerial
                 positions in well-established companies.
-              </p>
+              </p> */}
               <p className="text-lg text-muted-foreground">
                 Additionally, this program is a great stepping stone for those
                 aspiring to pursue an MBA. It equips students with the knowledge
                 and preparation needed to succeed in competitive MBA entrance
                 exams like CAT, XAT, MAT, and others.
               </p>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Hands-On Workshops</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Industry Tools Training
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Live Projects</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Real-world Case Studies
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry Visits</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Leading Company Tours
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Small Batch Size</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Personalized Attention
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Career Focus</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Professional Skills
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Networking</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Industry Connections
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Innovation Hub</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Research & Creativity
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Holistic Growth</h4>
-                    <p className="text-sm text-muted-foreground">
-                      All-round Development
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -714,9 +616,9 @@ export function BBA() {
               <img
                 src="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
                 alt="Program Overview"
-                className="w-full h-auto rounded-xl mb-6"
+                className="w-full h-auto rounded-xl"
               />
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white">
                   Program Highlights
                 </h3>
@@ -749,13 +651,68 @@ export function BBA() {
                     ))}
                   </ul>
                 </ScrollArea>
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
           </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-12 mt-16">
+          {[
+            {
+              icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+              title: "Hands-On Workshops",
+              description: "Industry Tools Training"
+            },
+            {
+              icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+              title: "Live Projects", 
+              description: "Real-world Case Studies"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Industry Visits",
+              description: "Leading Company Tours"
+            },
+            {
+              icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+              title: "Small Batch Size",
+              description: "Personalized Attention"
+            },
+            {
+              icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+              title: "Career Focus",
+              description: "Professional Skills"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Networking",
+              description: "Industry Connections"
+            },
+            {
+              icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+              title: "Innovation Hub",
+              description: "Research & Creativity"
+            },
+            {
+              icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+              title: "Holistic Growth",
+              description: "All-round Development"
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex items-center gap-3 group">
+              <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                {item.icon}
+              </div>
+              <div>
+                <h4 className="font-medium">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
