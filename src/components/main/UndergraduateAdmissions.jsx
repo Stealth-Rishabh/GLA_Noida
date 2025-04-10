@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import sports1 from "@/assets/sports/sports.webp";
 import btech from "@/assets/general/Btech_home.webp";
 // import bca from "@/assets/sports/Bca_home.webp";
-import bba from "@/assets/general/Bba_home.webp";
-import mba from "@/assets/general/Mba_home.webp";
+import bba from "@/assets/general/BBA_home.webp";
+import mba from "@/assets/general/MBA_home.webp";
 
 export default function UndergraduateAdmissions() {
   const admissionsCards = useMemo(
