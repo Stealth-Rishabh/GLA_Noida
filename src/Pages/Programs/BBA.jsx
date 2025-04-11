@@ -36,6 +36,7 @@ import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import herobg from "@/assets/programs/HeroBBA.png";
+import IconMarquee from "@/components/main/IconMarquee";
 
 export function BBA() {
   // Animation hooks
@@ -170,6 +171,153 @@ export function BBA() {
   const [brochureRef, brochureVisible] = useElementOnScreen({ threshold: 0.1 });
   const [eventsRef, eventsVisible] = useElementOnScreen({ threshold: 0.1 });
   const [ctaRef, ctaVisible] = useElementOnScreen({ threshold: 0.1 });
+
+  const icons = [
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
+      alt: "Acute Rating",
+    },
+    {
+      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
+      alt: "Airtel",
+    },
+    {
+      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
+      alt: "Anand Rathi",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
@@ -720,6 +868,21 @@ export function BBA() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-24 container mx-auto px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <Badge className="mb-4 bg-cusGreen text-white">
+            Our Industry Partners
+          </Badge>
+          <Heading level={2} className="text-center text-cusBlue">
+            Industry Partners & Recruiters
+          </Heading>
+          <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
+          <div className="mt-10 sm:mt-16">
+            <IconMarquee icons={icons} />
+          </div>
         </div>
       </section>
 

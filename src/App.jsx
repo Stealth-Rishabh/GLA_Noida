@@ -8,6 +8,7 @@ import BCA from "@/Pages/Programs/BCA";
 import MBA from "@/Pages/Programs/MBA";
 import BBA from "@/Pages/Programs/BBA";
 import AIML from "@/Pages/Programs/AIML";
+import Stepper from "@/Pages/Programs/Stepper";
 // About page component
 function About() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="/programs/mba" element={<MBA />} />
           <Route path="/programs/bba" element={<BBA />} />
           <Route path="/programs/aiml" element={<AIML />} />
+          <Route path="/programs/stepper" element={<Stepper />} />
         </Routes>
       </main>
       <SiteFooter />
