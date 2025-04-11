@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Heading } from "@/components/ui/heading";
+import { motion } from "framer-motion";
+import { TextAnimate } from "@/components/magicui/text-animate";
 import banner1 from "@/assets/banner/bannerOne.webp";
 import banner2 from "@/assets/banner/bannerTwo.webp";
 import sports from "@/assets/sports/sports.webp";
@@ -40,39 +42,100 @@ const studentLifeData = [
 export default function StudentLife() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      <div className="mb-12">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+        className="mb-12"
+      >
         <Heading
           level={2}
           align="center"
           subtext="A vibrant ecosystem of learning and growth"
           className="text-cusBlue"
         >
-          Student Life at GLA
+          <TextAnimate
+            as="span"
+            by="word"
+            delay={0.2}
+            duration={0.5}
+            animation="slideUp"
+            className="inline-flex flex-wrap"
+          >
+            Student Life at GLA
+          </TextAnimate>
         </Heading>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {studentLifeData.map((item, index) => (
-          <div key={index} className={`flex flex-col ${item.className}`}>
-            <div className="mb-4">
-              <img
+          <motion.div
+            key={index}
+            initial={{
+              x: index === 0 ? -50 : index === 1 ? 0 : 50,
+              y: index === 0 ? 0 : index === 1 ? 50 : 0,
+              opacity: 0,
+            }}
+            whileInView={{
+              x: 0,
+              y: 0,
+              opacity: 1,
+            }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.2,
+              ease: "easeOut",
+            }}
+            className={`flex flex-col ${item.className}`}
+          >
+            <motion.div
+              className="mb-4 overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 src={item.image.src}
                 alt={item.image.alt}
                 className="w-full h-auto aspect-square object-cover"
               />
-            </div>
+            </motion.div>
+
             <Heading level={3} className="text-cusBlue mb-3">
-              {item.title}
+              <TextAnimate
+                as="span"
+                by="word"
+                delay={0.4 + index * 0.2}
+                duration={0.5}
+                animation="slideUp"
+                className="inline-flex flex-wrap"
+              >
+                {item.title}
+              </TextAnimate>
             </Heading>
-            <p className="text-gray-600 mb-4">{item.description}</p>
-            <a
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.6 + index * 0.2 }}
+              className="text-gray-600 mb-4"
+            >
+              {item.description}
+            </motion.p>
+
+            <motion.a
               href="#"
+              whileHover={{ x: 5 }}
               className="text-cusGreen font-medium flex items-center group"
             >
               Learn more
               <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         ))}
       </div>
     </div>

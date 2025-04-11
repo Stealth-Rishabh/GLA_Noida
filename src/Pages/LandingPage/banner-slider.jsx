@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import banner1 from "@/assets/banner/bannerOne.webp";
+import banner1 from "@/assets/banner/bannerOne.jpg";
 import banner2 from "@/assets/banner/bannerTwo.webp";
 import banner3 from "@/assets/banner/bannerThree.webp";
 import { Heading } from "@/components/ui/heading";
