@@ -661,50 +661,55 @@ export function AIML() {
             {
               icon: <Users className="h-6 min-w-6 text-cusGreen" />,
               title: "Practical Learning",
-              subtitle: "Industry Professionals"
+              subtitle: "Industry Professionals",
             },
             {
-              icon: <Building2 className="h-6 min-w-6 text-cusGreen" />, 
+              icon: <Building2 className="h-6 min-w-6 text-cusGreen" />,
               title: "Industry Visits",
-              subtitle: "Leading Companies"
+              subtitle: "Leading Companies",
             },
             {
               icon: <UserPlus className="h-6 min-w-6 text-cusGreen" />,
-              title: "Small Class Sizes", 
-              subtitle: "Personalized Attention"
+              title: "Small Class Sizes",
+              subtitle: "Personalized Attention",
             },
             {
               icon: <UsersRound className="h-6 min-w-6 text-cusGreen" />,
               title: "Collaborative Learning",
-              subtitle: "Team Environment"
+              subtitle: "Team Environment",
             },
             {
               icon: <Code2 className="h-6 min-w-6 text-cusGreen" />,
               title: "Real-World Projects",
-              subtitle: "Hackathons & Bootcamps"
+              subtitle: "Hackathons & Bootcamps",
             },
             {
               icon: <Wrench className="h-6 min-w-6 text-cusGreen" />,
               title: "Skill Building",
-              subtitle: "Interactive Workshops"
+              subtitle: "Interactive Workshops",
             },
             {
               icon: <Lightbulb className="h-6 min-w-6 text-cusGreen" />,
               title: "Innovation Culture",
-              subtitle: "Research Focused"
+              subtitle: "Research Focused",
             },
             {
               icon: <UserCircle className="h-6 min-w-6 text-cusGreen" />,
               title: "Holistic Growth",
-              subtitle: "Beyond Academics"
-            }
+              subtitle: "Beyond Academics",
+            },
           ].map((item, index) => (
-            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
+            <div
+              key={index}
+              className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
+            >
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">
+                  {item.title}
+                </h4>
                 <p className="text-sm text-muted-foreground">{item.subtitle}</p>
               </div>
             </div>
@@ -746,20 +751,18 @@ export function AIML() {
             {[
               {
                 title: "AI/ML Expert",
-                description:
-                  "Build advanced AI algorithms and ML models.",
+                description: "Build advanced AI algorithms and ML models.",
                 icon: <Code2 className="h-10 min-w-10 text-cusGreen" />,
               },
               {
-                title: "Data Science Specialist", 
+                title: "Data Science Specialist",
                 description:
                   "Analyze data and extract actionable business insights.",
                 icon: <Beaker className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "Deep Learning Professional",
-                description:
-                  "Create neural networks for AI applications.",
+                description: "Create neural networks for AI applications.",
                 icon: <Wrench className="h-10 min-w-10 text-cusGreen" />,
               },
               {
@@ -770,20 +773,17 @@ export function AIML() {
               },
               {
                 title: "Research Innovator",
-                description:
-                  "Develop cutting-edge AI research and solutions.",
+                description: "Develop cutting-edge AI research and solutions.",
                 icon: <Lightbulb className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "MLOps Engineer",
-                description:
-                  "Deploy ML models in production environments.",
+                description: "Deploy ML models in production environments.",
                 icon: <UserPlus className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "AI Ethics Leader",
-                description:
-                  "Ensure responsible and ethical AI development.",
+                description: "Ensure responsible and ethical AI development.",
                 icon: <UserCircle className="h-10 min-w-10 text-cusGreen" />,
               },
               {
@@ -836,7 +836,7 @@ export function AIML() {
                 <Heading level={3} className="text-white mb-8">
                   Eligibility Requirements
                 </Heading>
-                <ul className="space-y-6 text-white">
+                <ul className="space-y-3 text-white">
                   {[
                     "10+2 examination with Physics and Mathematics as mandatory subjects",
                     "Chemistry or Computer Science as optional subject",
@@ -873,32 +873,22 @@ export function AIML() {
                 Who Can Apply
               </Badge>
               <Heading level={2} className="text-left text-cusBlue">
-                Is This Program Right For You?
+                Why Choose B.Tech CSE with AI/ML?
               </Heading>
               <div className="h-1 w-20 bg-cusYellow rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our B.Tech in Computer Science Engineering with AI/ML
-              specialization is designed for students who are fascinated by
-              artificial intelligence, machine learning, and their real-world
-              applications. If you're excited about developing AI solutions,
-              working with neural networks, and exploring cutting-edge
-              technologies like deep learning and natural language processing,
-              this Microsoft-partnered program is perfect for you.
+              AI and ML are the future, and every sector is eager to adopt these
+              technologies to improve efficiency and productivity. From
+              healthcare to finance, to entertainment, industries are relying
+              more and more on AIML to create smarter solutions. By choosing
+              this specialized program, you’re not just learning about today’s
+              technology, you’re preparing for the technology of tomorrow,
+              ensuring a bright and successful career in this booming field.
             </p>
 
-            <p className="text-lg text-muted-foreground">
-              Whether you're passionate about data science, interested in
-              building intelligent systems, or eager to shape the future of
-              technology through AI innovations, our comprehensive curriculum
-              will equip you with both theoretical foundations and hands-on
-              experience using industry-standard tools and frameworks. With
-              Microsoft's backing, you'll gain the expertise needed to excel in
-              the rapidly evolving field of AI and ML.
-            </p>
-
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+            {/* <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
               <h3 className="text-xl font-bold mb-4">
                 Not sure if you qualify?
               </h3>
@@ -910,7 +900,7 @@ export function AIML() {
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -949,15 +939,15 @@ export function AIML() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The B.Tech in Computer Science & Engineering with AI/ML program
-                is designed to provide students with a comprehensive
-                understanding of computer science and engineering principles.
-                Don't miss out on this opportunity to learn from the best in the
-                field. Download the syllabus to get started.
+                Kickstart your journey in the world of Artificial Intelligence
+                and Machine Learning with a B.Tech from GLA University, Greater
+                Noida campus. Gain the skills and hands-on experience needed to
+                lead in this fast-growing field. Join us and shape the future of
+                technology!
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
-                  Download Syllabus <Download className="h-4 w-4" />
+                  Apply Now <ArrowUpRight className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -1292,7 +1282,7 @@ export function AIML() {
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
+        {/* <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
           <h3 className="text-xl font-bold mb-4">Flexible Payment Options</h3>
           <p className="text-muted-foreground mb-6">
             We offer installment plans and scholarship opportunities for
@@ -1306,7 +1296,7 @@ export function AIML() {
               Scholarship Information <GraduationCap className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Labs */}

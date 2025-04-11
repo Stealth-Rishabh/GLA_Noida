@@ -39,10 +39,10 @@ const NAV_ITEMS = [
     title: "Programs",
     path: "/programs",
     dropdownItems: [
-      { title: "B.Tech", path: "/programs/btech" },
       { title: "BBA", path: "/programs/bba" },
-      { title: "BCA", path: "/programs/bca" },
       { title: "MBA", path: "/programs/mba" },
+      { title: "BCA", path: "/programs/bca" },
+      { title: "B.Tech", path: "/programs/btech" },
       { title: "B.Tech AI/ML", path: "/programs/aiml" },
     ],
   },

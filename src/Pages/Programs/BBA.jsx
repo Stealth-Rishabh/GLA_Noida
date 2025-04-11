@@ -665,51 +665,58 @@ export function BBA() {
             {
               icon: <Beaker className="h-6 w-6 text-cusGreen" />,
               title: "Hands-On Workshops",
-              description: "Industry Tools Training"
+              description: "Industry Tools Training",
             },
             {
               icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
-              title: "Live Projects", 
-              description: "Real-world Case Studies"
+              title: "Live Projects",
+              description: "Real-world Case Studies",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
               title: "Industry Visits",
-              description: "Leading Company Tours"
+              description: "Leading Company Tours",
             },
             {
               icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
               title: "Small Batch Size",
-              description: "Personalized Attention"
+              description: "Personalized Attention",
             },
             {
               icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
               title: "Career Focus",
-              description: "Professional Skills"
+              description: "Professional Skills",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
               title: "Networking",
-              description: "Industry Connections"
+              description: "Industry Connections",
             },
             {
               icon: <Beaker className="h-6 w-6 text-cusGreen" />,
               title: "Innovation Hub",
-              description: "Research & Creativity"
+              description: "Research & Creativity",
             },
             {
               icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
               title: "Holistic Growth",
-              description: "All-round Development"
-            }
+              description: "All-round Development",
+            },
           ].map((item, index) => (
-            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
+            <div
+              key={index}
+              className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
+            >
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -754,7 +761,7 @@ export function BBA() {
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Strategic Management", 
+                title: "Strategic Management",
                 description:
                   "Master strategic planning for sustainable business growth.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
@@ -839,7 +846,7 @@ export function BBA() {
                 <Heading level={3} className="text-white mb-8">
                   Eligibility Requirements
                 </Heading>
-                <ul className="space-y-6 text-white">
+                <ul className="space-y-3 text-white">
                   {[
                     "10+2 examination with minimum 60% marks in any stream (Science/Commerce/Arts)",
                     "Strong analytical and problem-solving skills",
@@ -876,31 +883,21 @@ export function BBA() {
                 Who Can Apply
               </Badge>
               <Heading level={2} className="text-left text-cusBlue">
-                Is This Program Right For You?
+                Why Choose BBA in Management Science?
               </Heading>
               <div className="h-1 w-20 bg-cusYellow rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our BBA in Management Science program is designed for ambitious
-              students who aspire to become future business leaders and
-              entrepreneurs. If you're interested in understanding how
-              businesses operate, developing management skills, and learning
-              about different aspects of business administration like finance,
-              marketing, and human resources, this program is perfect for you.
+              With businesses growing and evolving, the demand for skilled
+              professionals in management roles is higher than ever. A BBA in
+              Management Science equips you with the knowledge and skills to
+              succeed in the competitive world of business. Whether you want to
+              climb the corporate ladder or start your own business, this
+              program is the perfect foundation for your future.
             </p>
 
-            <p className="text-lg text-muted-foreground">
-              Whether you're an aspiring entrepreneur, a natural leader, or
-              someone fascinated by business strategy and management, our
-              comprehensive curriculum will equip you with the theoretical
-              knowledge and practical skills needed to excel in the dynamic
-              world of business management. The program is particularly suited
-              for those who enjoy problem-solving, have good analytical skills,
-              and possess strong interpersonal abilities.
-            </p>
-
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+            {/* <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
               <h3 className="text-xl font-bold mb-4">
                 Not sure if you qualify?
               </h3>
@@ -912,7 +909,7 @@ export function BBA() {
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -951,15 +948,14 @@ export function BBA() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The BBA in Management Science program is designed to provide
-                students with a comprehensive understanding of business
-                management and administration principles. Don't miss out on this
-                opportunity to learn from the best in the field. Download the
-                syllabus to get started.
+                Gain essential business knowledge and leadership skills with a
+                BBA in Management Science from GLA University, Greater Noida
+                campus. Prepare for a successful career in management and beyond
+                with hands-on learning and industry insights.
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
-                  Download Syllabus <Download className="h-4 w-4" />
+                  Apply Now <ArrowUpRight className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -1288,7 +1284,7 @@ export function BBA() {
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
+        {/* <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
           <h3 className="text-xl font-bold mb-4">Flexible Payment Options</h3>
           <p className="text-muted-foreground mb-6">
             We offer installment plans and scholarship opportunities for
@@ -1302,7 +1298,7 @@ export function BBA() {
               Scholarship Information <GraduationCap className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Labs */}

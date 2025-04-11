@@ -646,51 +646,58 @@ export function BCA() {
             {
               icon: <Beaker className="h-6 min-w-6 text-cusGreen" />,
               title: "Industry-Focused Learning",
-              description: "Latest Data Science Tools"
+              description: "Latest Data Science Tools",
             },
             {
-              icon: <BookOpen className="h-6 min-w-6 text-cusGreen" />, 
+              icon: <BookOpen className="h-6 min-w-6 text-cusGreen" />,
               title: "Hands-on Experience",
-              description: "Labs & Assignments"
+              description: "Labs & Assignments",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
-              title: "Small Batch Sizes", 
-              description: "Personalized Attention"
+              title: "Small Batch Sizes",
+              description: "Personalized Attention",
             },
             {
               icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
               title: "Career-Driven Approach",
-              description: "Professional Success"
+              description: "Professional Success",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
               title: "Networking Opportunities",
-              description: "Industry Connections"
+              description: "Industry Connections",
             },
             {
               icon: <ArrowUpRight className="h-6 w-6 text-cusGreen" />,
               title: "Start-up Incubation",
-              description: "New-Gen IEDC Support"
+              description: "New-Gen IEDC Support",
             },
             {
               icon: <CreditCard className="h-6 w-6 text-cusGreen" />,
               title: "Top Placements",
-              description: "Up to 55 LPA Package"
+              description: "Up to 55 LPA Package",
             },
             {
               icon: <User className="h-6 w-6 text-cusGreen" />,
               title: "Holistic Development",
-              description: "Well-Rounded Growth"
-            }
+              description: "Well-Rounded Growth",
+            },
           ].map((item, index) => (
-            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
+            <div
+              key={index}
+              className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
+            >
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -737,9 +744,8 @@ export function BCA() {
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Programming Proficiency", 
-                description:
-                  "Develop programming skills in Python, R and SQL.",
+                title: "Programming Proficiency",
+                description: "Develop programming skills in Python, R and SQL.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
@@ -750,14 +756,12 @@ export function BCA() {
               },
               {
                 title: "Statistical Analysis Skills",
-                description:
-                  "Apply statistics to extract insights from data.",
+                description: "Apply statistics to extract insights from data.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Big Data Technologies",
-                description:
-                  "Work with Hadoop and Spark for data processing.",
+                description: "Work with Hadoop and Spark for data processing.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
@@ -822,7 +826,7 @@ export function BCA() {
                 <Heading level={3} className="text-white mb-8">
                   Eligibility Requirements
                 </Heading>
-                <ul className="space-y-6 text-white">
+                <ul className="space-y-3 text-white">
                   {[
                     "10+2 examination with Mathematics as one of the subjects",
                     "Minimum 60% marks in 10+2 examination (any stream)",
@@ -859,29 +863,21 @@ export function BCA() {
                 Who Can Apply
               </Badge>
               <Heading level={2} className="text-left text-cusBlue">
-                Is This Program Right For You?
+                Why BCA in Data Science is the Right Choice
               </Heading>
               <div className="h-1 w-20 bg-cusYellow rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our BCA in Data Science program is designed for students who are
-              passionate about data analytics, statistics, and problem-solving.
-              If you're interested in extracting meaningful insights from data,
-              building predictive models, and exploring emerging technologies
-              like Machine Learning and Big Data, this program is perfect for
-              you.
+              A BCA degree gives you a strong foundation in computer
+              applications, and when combined with a Data Science
+              specialization, it sets you up for long-term career success. Data
+              Science is the future, and its applications are expanding across
+              sectors like healthcare, finance, retail, and technology. This
+              degree helps ensure a rewarding and future-proof career.
             </p>
 
-            <p className="text-lg text-muted-foreground">
-              Whether you're a mathematics enthusiast, interested in business
-              analytics, or someone fascinated by how data drives
-              decision-making, our comprehensive curriculum will provide you
-              with the theoretical knowledge and practical skills needed to
-              excel in the rapidly growing field of data science.
-            </p>
-
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+            {/* <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
               <h3 className="text-xl font-bold mb-4">
                 Not sure if you qualify?
               </h3>
@@ -892,7 +888,7 @@ export function BCA() {
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -931,15 +927,13 @@ export function BCA() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The BCA in Data Science program is designed to provide students
-                with a comprehensive understanding of data science and
-                programming principles. Don't miss out on this opportunity to
-                learn from the best in the field. Download the syllabus to get
-                started.
+                Choose BCA in Data Science at GLA University, Greater Noida
+                campus to start your journey towards a career in one of the most
+                exciting and in-demand fields of today’s tech world!
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
-                  Download Syllabus <Download className="h-4 w-4" />
+                  Apply Now <ArrowUpRight className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -1268,7 +1262,7 @@ export function BCA() {
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
+        {/* <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
           <h3 className="text-xl font-bold mb-4">Flexible Payment Options</h3>
           <p className="text-muted-foreground mb-6">
             We offer installment plans and scholarship opportunities for
@@ -1282,7 +1276,7 @@ export function BCA() {
               Scholarship Information <GraduationCap className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Labs */}

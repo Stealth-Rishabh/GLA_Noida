@@ -658,51 +658,58 @@ export function MBA() {
             {
               icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
               title: "Industry-Integrated Learning",
-              description: "Hands-on Experience"
+              description: "Hands-on Experience",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
-              title: "Small Batch Sizes", 
-              description: "Personalized Learning"
+              title: "Small Batch Sizes",
+              description: "Personalized Learning",
             },
             {
               icon: <CreditCard className="h-6 w-6 text-cusGreen" />,
               title: "Best-In-Class Placements",
-              description: "Up to 55 LPA"
+              description: "Up to 55 LPA",
             },
             {
               icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
               title: "Project-Based Education",
-              description: "Real-world Cases"
+              description: "Real-world Cases",
             },
             {
               icon: <ArrowUpRight className="h-6 w-6 text-cusGreen" />,
               title: "Industry Visits",
-              description: "Corporate Exposure"
+              description: "Corporate Exposure",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
               title: "Top Recruiters",
-              description: "Premium Placements"
+              description: "Premium Placements",
             },
             {
               icon: <Beaker className="h-6 w-6 text-cusGreen" />,
               title: "New-Gen IEDC",
-              description: "Start-up Incubation"
+              description: "Start-up Incubation",
             },
             {
               icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
               title: "JOVAC Sessions",
-              description: "Career Enhancement"
-            }
+              description: "Career Enhancement",
+            },
           ].map((item, index) => (
-            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
+            <div
+              key={index}
+              className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
+            >
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -835,7 +842,7 @@ export function MBA() {
                 <Heading level={3} className="text-white mb-8">
                   Eligibility Requirements
                 </Heading>
-                <ul className="space-y-6 text-white">
+                <ul className="space-y-3 text-white">
                   {[
                     "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
                     "Minimum 50% marks in Bachelor's degree",
@@ -872,30 +879,20 @@ export function MBA() {
                 Who Can Apply
               </Badge>
               <Heading level={2} className="text-left text-cusBlue">
-                Is This Program Right For You?
+                Why Pursue an MBA in Dual Specialization?
               </Heading>
               <div className="h-1 w-20 bg-cusYellow rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our MBA in Dual Specialization program is designed for ambitious
-              professionals and fresh graduates who aspire to excel in business
-              leadership roles. If you're interested in developing advanced
-              management skills, understanding strategic business practices, and
-              gaining expertise in two specialized business domains, this
-              program is perfect for you.
+              The demand for skilled professionals in managerial roles continues
+              to rise, making an MBA an essential qualification for career
+              advancement. Many engineers, after completing their technical
+              degrees, choose to pursue an MBA to open up new career avenues and
+              boost their professional growth.
             </p>
 
-            <p className="text-lg text-muted-foreground">
-              Whether you're an experienced professional looking to accelerate
-              your career, an entrepreneur aiming to enhance your business
-              acumen, or a graduate seeking to build a strong foundation in
-              management, our comprehensive curriculum will equip you with the
-              knowledge and skills needed to succeed in today's dynamic business
-              environment.
-            </p>
-
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+            {/* <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
               <h3 className="text-xl font-bold mb-4">
                 Not sure if you qualify?
               </h3>
@@ -907,7 +904,7 @@ export function MBA() {
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -946,17 +943,15 @@ export function MBA() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                Our MBA in Dual Specialization program offers a comprehensive
-                business education with the flexibility to specialize in two
-                distinct areas of management. This unique program combines core
-                business fundamentals with specialized knowledge, preparing you
-                for diverse leadership roles. Don't miss out on this opportunity
-                to enhance your career prospects with a dual specialization.
-                Download the detailed curriculum to learn more.
+                Enroll in the MBA in Dual Specialization program at GLA
+                University and gain the skills, knowledge, and experience needed
+                to lead in today’s competitive business world. Join us and start
+                your transformative journey towards a successful and fulfilling
+                career.
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
-                  Download Curriculum <Download className="h-4 w-4" />
+                  Apply Now <ArrowUpRight className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -1283,7 +1278,7 @@ export function MBA() {
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
+        {/* <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
           <h3 className="text-xl font-bold mb-4">Flexible Payment Options</h3>
           <p className="text-muted-foreground mb-6">
             We offer installment plans and scholarship opportunities for
@@ -1297,7 +1292,7 @@ export function MBA() {
               Scholarship Information <GraduationCap className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Labs */}

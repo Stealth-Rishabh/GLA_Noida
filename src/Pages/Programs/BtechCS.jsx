@@ -641,51 +641,58 @@ export function BtechCS() {
             {
               icon: <BookOpen className="h-6 min-w-6 text-cusGreen" />,
               title: "Industry-Linked Curriculum",
-              description: "Latest Industry Trends"
+              description: "Latest Industry Trends",
             },
             {
-              icon: <GraduationCap className="h-6 min-w-6 text-cusGreen" />, 
+              icon: <GraduationCap className="h-6 min-w-6 text-cusGreen" />,
               title: "Global Exposure",
-              description: "Study Abroad Options"
+              description: "Study Abroad Options",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
-              title: "Expert Faculty", 
-              description: "IITs & NITs Professors"
+              title: "Expert Faculty",
+              description: "IITs & NITs Professors",
             },
             {
               icon: <Beaker className="h-6 w-6 text-cusGreen" />,
               title: "Innovation Focus",
-              description: "Entrepreneurship Skills"
+              description: "Entrepreneurship Skills",
             },
             {
               icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
               title: "IIT Experience",
-              description: "Semester-Long Study"
+              description: "Semester-Long Study",
             },
             {
               icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
               title: "Project-Based",
-              description: "Practical Skills"
+              description: "Practical Skills",
             },
             {
               icon: <Users className="h-6 w-6 text-cusGreen" />,
               title: "Placement-Ready",
-              description: "AI Mock Interviews"
+              description: "AI Mock Interviews",
             },
             {
               icon: <Beaker className="h-6 w-6 text-cusGreen" />,
               title: "Codeathons",
-              description: "Real-world Experience"
-            }
+              description: "Real-world Experience",
+            },
           ].map((item, index) => (
-            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
+            <div
+              key={index}
+              className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
+            >
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
@@ -731,7 +738,7 @@ export function BtechCS() {
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Research & Innovation Skills", 
+                title: "Research & Innovation Skills",
                 description:
                   "Develop innovative solutions through advanced research approaches.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
@@ -853,29 +860,31 @@ export function BtechCS() {
                 Who Can Apply
               </Badge>
               <Heading level={2} className="text-left text-cusBlue">
-                Is This Program Right For You?
+                Why Choose Computer Science Engineering?
               </Heading>
               <div className="h-1 w-20 bg-cusYellow rounded-full"></div>
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our B.Tech in Computer Science Engineering program is designed for
-              students who are passionate about technology, programming, and
-              problem-solving. If you're interested in developing cutting-edge
-              software, building innovative applications, and exploring emerging
-              technologies like AI and cloud computing, this program is perfect
-              for you.
+              Computer Science is one of the most popular and rapidly growing
+              fields in engineering. Students often choose this path because of
+              its vast potential and career opportunities. As new technologies
+              emerge, the scope of CSE continues to expand.
             </p>
 
             <p className="text-lg text-muted-foreground">
-              Whether you're a mathematics enthusiast, a coding hobbyist, or
-              someone fascinated by how computers work, our comprehensive
-              curriculum will provide you with the theoretical knowledge and
-              practical skills needed to excel in the dynamic field of computer
-              science.
+              From the Internet of Things (IoT) to gesture-controlled home
+              automation, innovations are changing how we live. With the arrival
+              of 6G, faster processing will become a priority, leading to the
+              development of more powerful processors. Artificial Intelligence
+              (AI), Virtual Reality (VR), and Robotics are also set to
+              revolutionize our daily lives, with developments like Butler bots
+              helping us in everyday tasks. These advancements ensure that a
+              career in Computer Science is not only exciting but future-proof,
+              with endless growth opportunities.
             </p>
 
-            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+            {/* <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
               <h3 className="text-xl font-bold mb-4">
                 Not sure if you qualify?
               </h3>
@@ -887,7 +896,7 @@ export function BtechCS() {
               <Button variant="outline" className="gap-2">
                 Book a Consultation <Calendar className="h-4 w-4" />
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -926,15 +935,16 @@ export function BtechCS() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The B.Tech in Computer Science Engineering program is designed
-                to provide students with a comprehensive understanding of
-                computer science and engineering principles. Don't miss out on
-                this opportunity to learn from the best in the field. Download
-                the syllabus to get started.
+                Step into the world of technology with a B.Tech in Computer
+                Science Engineering from GLA University, Greater Noida campus.
+                Develop a strong foundation in programming, software
+                development, and system design, while gaining hands-on
+                experience to tackle real-world challenges. Join us and pave the
+                way for a successful career in the tech industry!
               </p>
               <div className="mt-auto pt-4 border-t">
                 <Button className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2">
-                  Download Syllabus <Download className="h-4 w-4" />
+                  Apply Now <ArrowUpRight className="h-4 w-4" />
                 </Button>
               </div>
             </div>
@@ -1269,7 +1279,7 @@ export function BtechCS() {
           ))}
         </div>
 
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
+        {/* <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 p-8 rounded-xl border border-slate-100">
           <h3 className="text-xl font-bold mb-4">Flexible Payment Options</h3>
           <p className="text-muted-foreground mb-6">
             We offer installment plans and scholarship opportunities for
@@ -1283,7 +1293,7 @@ export function BtechCS() {
               Scholarship Information <GraduationCap className="h-4 w-4" />
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Labs */}
