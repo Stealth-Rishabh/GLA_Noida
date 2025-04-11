@@ -1,3 +1,4 @@
+// landing-page.jsx
 import { BannerSlider } from "./banner-slider";
 import UndergraduateAdmissions from "@/components/main/UndergraduateAdmissions";
 import Section from "@/layout.jsx/section";
@@ -10,17 +11,22 @@ export default function LandingPage() {
   return (
     <>
       <BannerSlider />
-      <Section className="background-gradient-white">
+
+      <Section animate background="background-gradient-white">
         <UndergraduateAdmissions />
       </Section>
+
       <Section className="background-gradient">
         <SetUsApart />
       </Section>
+
       <ExploreMajorSections />
+
       <Section className="background-gradient-white">
         <StudentLife />
       </Section>
-      <Section>
+
+      <Section animate>
         <LatestNews />
       </Section>
     </>

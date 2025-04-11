@@ -10,6 +10,8 @@ import bannerThree from "@/assets/banner/bannerThree.webp";
 import sports from "@/assets/sports/sports.webp";
 import general from "@/assets/general/SetUsApart.webp";
 import generalTwo from "@/assets/general/fixedBackground.webp";
+import { motion } from "framer-motion";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 // Custom Badge component
 const Badge = ({ variant = "default", className, children, ...props }) => {
@@ -194,7 +196,7 @@ const LatestNews = () => {
     },
   ];
 
-  // Get the number of items to show based on screen size
+  // Update the getVisibleItemCount function to apply to both sliders
   const getVisibleItemCount = () => {
     if (typeof window !== "undefined") {
       return window.innerWidth < 768 ? 1 : 3;
@@ -241,31 +243,34 @@ const LatestNews = () => {
       if (direction === "prev") {
         setActiveNewsIndex((prev) => {
           const newIndex = prev - 1;
-          return newIndex < 0 ? newsItems.length - visibleItems : newIndex;
+          if (newIndex < 0) {
+            return newsItems.length - 1;
+          }
+          return newIndex;
         });
       } else {
         setActiveNewsIndex((prev) => {
           const newIndex = prev + 1;
-          return newIndex > newsItems.length - visibleItems ? 0 : newIndex;
+          if (newIndex >= newsItems.length) {
+            return 0;
+          }
+          return newIndex;
         });
       }
     },
-    [newsItems.length, visibleItems]
+    [newsItems.length]
   );
 
+  // Make sure the handleEventNavigation uses visibleItems
   const handleEventNavigation = useCallback(
     (direction) => {
-      if (direction === "prev") {
-        setActiveEventIndex((prev) => {
-          const newIndex = prev - 1;
-          return newIndex < 0 ? events.length - visibleItems : newIndex;
-        });
-      } else {
-        setActiveEventIndex((prev) => {
-          const newIndex = prev + 1;
-          return newIndex > events.length - visibleItems ? 0 : newIndex;
-        });
-      }
+      setActiveEventIndex((prev) => {
+        if (direction === "prev") {
+          return prev === 0 ? events.length - visibleItems : prev - 1;
+        } else {
+          return prev === events.length - visibleItems ? 0 : prev + 1;
+        }
+      });
     },
     [events.length, visibleItems]
   );
@@ -274,11 +279,11 @@ const LatestNews = () => {
   useEffect(() => {
     const newsInterval = setInterval(() => {
       handleNewsNavigation("next");
-    }, 5000);
+    }, 3000);
 
     const eventsInterval = setInterval(() => {
       handleEventNavigation("next");
-    }, 7000);
+    }, 3000);
 
     return () => {
       clearInterval(newsInterval);
@@ -289,10 +294,24 @@ const LatestNews = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 overflow-hidden">
       {/* News Section - Left side */}
-      <div className="lg:col-span-2">
-        <div className="flex justify-between items-center mb-6">
+      <div className="lg:col-span-2 overflow-hidden">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-between items-center mb-6"
+        >
           <Heading level={2}>
-            <span className="border-b-4 border-cusYellow">Latest News</span>
+            <TextAnimate
+              as="span"
+              by="word"
+              delay={0.2}
+              duration={0.5}
+              animation="slideUp"
+              className="inline-flex flex-wrap"
+            >
+              Latest News
+            </TextAnimate>
           </Heading>
           <button
             className="group flex items-center text-sm font-medium text-gray-600 hover:text-cusBlue transition-colors"
@@ -301,55 +320,68 @@ const LatestNews = () => {
             View all
             <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
+        </motion.div>
 
-        <div
-          ref={newsContainerRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={() => onTouchEnd(true)}
-        >
-          {visibleNewsItems.map((item) => (
-            <div
-              key={item.id}
-              className="group relative flex flex-col h-full overflow-hidden rounded-xl bg-white transition-all duration-300 shadow-xl"
-            >
-              <div className="relative h-48 overflow-hidden rounded-t-xl">
-                <img
-                  src={item.image || "/placeholder.svg?height=200&width=300"}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+        <div className="relative overflow-hidden">
+          <div
+            ref={newsContainerRef}
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(-${
+                activeNewsIndex * (100 / visibleItems)
+              }%)`,
+            }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={() => onTouchEnd(true)}
+          >
+            {[...newsItems, ...newsItems.slice(0, visibleItems)].map(
+              (item, index) => (
+                <div
+                  key={`${item.id}-${index}`}
+                  className="w-full md:w-1/3 flex-shrink-0 px-3"
+                >
+                  <div className="group relative flex flex-col h-full overflow-hidden rounded-xl bg-white transition-all duration-300 shadow-xl">
+                    <div className="relative h-48 overflow-hidden rounded-t-xl">
+                      <img
+                        src={
+                          item.image || "/placeholder.svg?height=200&width=300"
+                        }
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
 
-              <div className="flex-1 p-5 border border-t-0 border-gray-100 rounded-b-xl transition-all duration-300 group-hover:border-purple-100">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {item.categories.map((category, idx) => (
-                    <Badge key={idx} variant={category.variant}>
-                      {category.name}
-                    </Badge>
-                  ))}
+                    <div className="flex-1 p-5 border border-t-0 border-gray-100 rounded-b-xl transition-all duration-300 group-hover:border-purple-100">
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {item.categories.map((category, idx) => (
+                          <Badge key={idx} variant={category.variant}>
+                            {category.name}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <h3 className="text-lg font-bold mb-4 text-gray-900 line-clamp-2 group-hover:text-cusBlue transition-colors">
+                        {item.title}
+                      </h3>
+
+                      <div className="mt-auto pt-4 text-gray-500 text-sm border-t border-gray-100 flex items-center justify-between">
+                        <span className="font-medium">{item.author}</span>
+                        <span>{item.date}</span>
+                      </div>
+
+                      <div className="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <button className="bg-cusGreen hover:bg-cusGreenDark text-white p-2 rounded-full shadow-lg">
+                          <ArrowRight className="h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <h3 className="text-lg font-bold mb-4 text-gray-900 line-clamp-2 group-hover:text-cusBlue transition-colors">
-                  {item.title}
-                </h3>
-
-                <div className="mt-auto pt-4 text-gray-500 text-sm border-t border-gray-100 flex items-center justify-between">
-                  <span className="font-medium">{item.author}</span>
-                  <span>{item.date}</span>
-                </div>
-
-                <div className="absolute bottom-5 right-5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <button className="bg-cusGreen hover:bg-cusGreenDark text-white p-2 rounded-full shadow-lg">
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
+              )
+            )}
+          </div>
         </div>
 
         <div className="flex justify-center mt-8 space-x-2">
@@ -370,62 +402,103 @@ const LatestNews = () => {
       </div>
 
       {/* Events Section - Right side */}
-      <div className=" p-2 relative">
-        <div className="flex justify-between items-center mb-6">
+      <div className="overflow-hidden p-2 relative h-full">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex justify-between items-center mb-6"
+        >
           <Heading level={2}>
-            <span className="border-b-4 border-cusYellow">Ev</span>ents
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Events
+            </motion.div>
           </Heading>
           <button
-            className="group flex items-center text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors"
+            className="group flex items-center text-sm font-medium text-gray-600 hover:text-cusBlue transition-colors"
             onClick={() => handleEventNavigation("next")}
           >
             View all
             <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </button>
+        </motion.div>
+
+        <div className="relative overflow-hidden h-[380px]">
+          <div
+            ref={eventsContainerRef}
+            className="absolute inset-0 flex flex-col md:grid md:grid-cols-1 transition-transform duration-700 ease-out"
+            style={{
+              transform: `translateY(-${
+                activeEventIndex * (100 / visibleItems)
+              }%)`,
+            }}
+          >
+            {[...events, ...events.slice(0, visibleItems)].map(
+              (event, index) => (
+                <motion.div
+                  key={`${event.id}-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex-shrink-0 h-[160px] mb-4 last:mb-0"
+                >
+                  <div
+                    className="group flex items-start p-4 h-full rounded-xl bg-white border border-gray-100 
+                             transition-all duration-300 hover:shadow-lg hover:border-cusBlue/20 
+                             cursor-pointer transform hover:-translate-y-1"
+                  >
+                    <div
+                      className="flex-shrink-0 mr-5 p-3 bg-gradient-to-br from-cusBlue/10 to-cusBlue/5 
+                               rounded-lg transition-colors group-hover:from-cusBlue/20 group-hover:to-cusBlue/10"
+                    >
+                      <div className="text-3xl font-bold text-cusBlue">
+                        {event.day}
+                      </div>
+                      <div className="text-gray-500 uppercase text-xs font-medium tracking-wider">
+                        {event.month}
+                      </div>
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <h3
+                        className="text-lg font-bold mb-2 text-gray-900 group-hover:text-cusBlue 
+                                 transition-colors line-clamp-2"
+                      >
+                        {event.title}
+                      </h3>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <div className="truncate">{event.timeRange}</div>
+                        <div className="mx-2">•</div>
+                        <div className="truncate">{event.location}</div>
+                      </div>
+                    </div>
+
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      className="flex-shrink-0 ml-4 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    >
+                      <ArrowRight className="h-5 w-5 text-cusBlue" />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )
+            )}
+          </div>
         </div>
 
-        <div
-          ref={eventsContainerRef}
-          className="space-y-4"
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={() => onTouchEnd(false)}
-        >
-          {visibleEvents.map((event) => (
-            <div
-              key={event.id}
-              className="group flex items-start p-4 rounded-xl bg-white border border-gray-100 transition-all duration-300 shadow-lg hover:border-purple-100 cursor-pointer"
-            >
-              <div className="flex-shrink-0 mr-5 p-3 shadow-lg rounded-lg transition-colors">
-                <div className="text-3xl font-bold bg-cusBlue bg-clip-text text-transparent">
-                  {event.day}
-                </div>
-                <div className="text-gray-500 uppercase text-xs font-medium tracking-wider">
-                  {event.month}
-                </div>
-              </div>
-
-              <div className="flex-1">
-                <h3 className="text-lg font-bold mb-2 text-gray-900 mt-2 group-hover:text-cusBlue transition-colors line-clamp-2">
-                  {event.title}
-                </h3>
-              </div>
-
-              <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                <ArrowRight className="h-5 w-5 text-cusBlue" />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center mt-8 space-x-2">
+        <div className="flex justify-center mt-4 space-x-2">
           {events.map((_, idx) => (
             <button
               key={idx}
               className={cn(
-                "h-2 w-2 rounded-full transition-colors",
-                idx >= activeEventIndex && idx < activeEventIndex + 1
-                  ? "bg-cusYellow"
+                "h-2 w-2 rounded-full transition-colors duration-300",
+                idx === activeEventIndex
+                  ? "bg-cusBlue w-4"
                   : "bg-gray-200 hover:bg-gray-300"
               )}
               onClick={() => setActiveEventIndex(idx)}

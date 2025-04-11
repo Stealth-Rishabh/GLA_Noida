@@ -1,9 +1,53 @@
-import { useMemo } from "react";
-import sports1 from "@/assets/sports/sports.webp";
+import { useMemo, memo } from "react";
+import { motion } from "framer-motion";
+import sports1 from "@/assets/general/sports_new.webp";
 import btech from "@/assets/general/Btech_home.webp";
-// import bca from "@/assets/sports/Bca_home.webp";
 import bba from "@/assets/general/BBA_home.webp";
 import mba from "@/assets/general/MBA_home.webp";
+
+const AdmissionCard = memo(({ card, index, total }) => {
+  const xInitial = index % 2 === 0 ? -100 : 100; // Alternate between left and right
+
+  return (
+    <motion.div
+      className="w-full sm:w-1/2 lg:w-1/4 px-0 md:px-2 mb-4 group"
+      initial={{ x: xInitial, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: false }} // Animation will trigger every time element enters viewport
+      transition={{
+        duration: 0.5,
+        delay: index * 0.2, // Stagger the animations
+        ease: "easeOut",
+      }}
+    >
+      <a href={card.href} className="block relative">
+        <div className="relative">
+          <figure className="relative overflow-hidden cursor-pointer">
+            <img
+              src={card.image || "/placeholder.svg"}
+              alt={card.alt}
+              width={400}
+              height={256}
+              className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <div className="absolute bottom-[-20px] left-[-10px] right-[-10px] max-w-[75%] mx-auto bg-cusBlue py-3 px-4 transition-all duration-300 group-hover:bg-cusBlueDark group-hover:pb-8 z-10">
+            <div className="relative flex items-center justify-center">
+              <h3 className="text-white text-center font-serif font-medium text-lg">
+                {card.caption}
+              </h3>
+              <span className="absolute top-full left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 group-hover:opacity-100 text-sm">
+                Learn →
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </motion.div>
+  );
+});
 
 export default function UndergraduateAdmissions() {
   const admissionsCards = useMemo(
@@ -38,40 +82,19 @@ export default function UndergraduateAdmissions() {
       },
     ],
     []
-  ); // Empty dependency array since sports1 is a static import
+  );
 
   return (
-    <div className="w-full background-gradient-white">
-      <div className=" container mx-auto p-0 md:p-4">
-        <div className="flex flex-wrap mx-0 md:mx-2 gap-6 md:gap-0">
-          {admissionsCards.map((card) => (
-            <div
+    <div className="w-full max-w-9xl mx-auto p-0">
+      <div className=" max-w-9xl mx-auto p-0">
+        <div className="flex  flex-wrap mx-0 md:mx-2 gap-6 md:gap-0">
+          {admissionsCards.map((card, index) => (
+            <AdmissionCard
               key={card.id}
-              className="w-full sm:w-1/2 lg:w-1/4 px-0 md:px-2 mb-4 group"
-            >
-              <a href={card.href} className="block relative">
-                <div className="relative">
-                  <figure className="relative overflow-hidden cursor-pointer">
-                    <img
-                      src={card.image || "/placeholder.svg"}
-                      alt={card.alt}
-                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </figure>
-                  <div className="absolute bottom-[-20px] left-[-10px] right-[-10px] max-w-[75%] mx-auto bg-cusBlue py-3 px-4 transition-all duration-300 group-hover:bg-cusBlueDark group-hover:pb-8 z-10">
-                    <div className="relative flex items-center justify-center">
-                      <h3 className="text-white text-center font-serif font-medium text-lg">
-                        {card.caption}
-                      </h3>
-                      <span className="absolute top-full left-1/2 -translate-x-1/2 text-white opacity-0 transition-all duration-300 group-hover:opacity-100 text-sm">
-                        Learn →
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+              card={card}
+              index={index}
+              total={admissionsCards.length}
+            />
           ))}
         </div>
       </div>
