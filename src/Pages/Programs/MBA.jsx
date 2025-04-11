@@ -696,12 +696,12 @@ export function MBA() {
               description: "Career Enhancement"
             }
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 group">
+            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium">{item.title}</h4>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             </div>

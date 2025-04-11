@@ -679,12 +679,12 @@ export function BtechCS() {
               description: "Real-world Experience"
             }
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 group">
+            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium">{item.title}</h4>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             </div>
@@ -727,49 +727,49 @@ export function BtechCS() {
               {
                 title: "Advanced Technical Expertise",
                 description:
-                  "Master cutting-edge programming languages and software development methodologies for industry success.",
+                  "Master programming languages and development methods for success.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Research & Innovation Skills",
+                title: "Research & Innovation Skills", 
                 description:
-                  "Develop groundbreaking solutions through advanced research and innovative problem-solving approaches.",
+                  "Develop innovative solutions through advanced research approaches.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Industry-Ready Professional",
                 description:
-                  "Transform into a skilled professional ready for top tech companies.",
+                  "Transform into skilled professional for tech companies.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Global Tech Leader",
                 description:
-                  "Lead international tech teams and drive cross-cultural innovation projects.",
+                  "Lead international teams and drive innovation projects.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Strategic Problem Solver",
                 description:
-                  "Create efficient solutions for complex technical and business challenges.",
+                  "Create efficient solutions for technical business challenges.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Tech Entrepreneur Ready",
                 description:
-                  "Launch and scale innovative technology ventures in global markets.",
+                  "Launch and scale innovative tech ventures globally.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Ethical Tech Champion",
                 description:
-                  "Drive responsible innovation while ensuring data privacy and security.",
+                  "Drive innovation ensuring data privacy and security.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Continuous Tech Innovator",
                 description:
-                  "Stay ahead with emerging technologies and industry best practices.",
+                  "Stay ahead with emerging tech and industry practices.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (

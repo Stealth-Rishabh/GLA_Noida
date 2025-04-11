@@ -703,12 +703,12 @@ export function BBA() {
               description: "All-round Development"
             }
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 group">
+            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium">{item.title}</h4>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             </div>
@@ -750,49 +750,49 @@ export function BBA() {
               {
                 title: "Business Leadership",
                 description:
-                  "Develop strong leadership skills to effectively manage teams and drive organizational success.",
+                  "Lead teams effectively to drive organizational growth.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Strategic Management",
+                title: "Strategic Management", 
                 description:
-                  "Master strategic planning and decision-making skills for business growth and sustainability.",
+                  "Master strategic planning for sustainable business growth.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Financial Acumen",
                 description:
-                  "Gain expertise in financial analysis, budgeting, and investment management.",
+                  "Expert in financial analysis and investment management.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Marketing Excellence",
                 description:
-                  "Learn modern marketing strategies and tools to drive brand growth and customer engagement.",
+                  "Drive brand growth with modern marketing strategies.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Operations Management",
                 description:
-                  "Master the skills to optimize business processes and improve operational efficiency.",
+                  "Optimize business processes for improved operational efficiency.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Business Analytics",
                 description:
-                  "Develop data-driven decision making abilities using modern business analytics tools.",
+                  "Make data-driven decisions using modern analytics tools.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Entrepreneurial Mindset",
                 description:
-                  "Build the skills and knowledge needed to launch and grow successful business ventures.",
+                  "Launch and grow successful business ventures effectively.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Global Business Perspective",
                 description:
-                  "Understand international business practices and cross-cultural management principles.",
+                  "Master international business practices and cross-cultural management.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (

@@ -684,12 +684,12 @@ export function BCA() {
               description: "Well-Rounded Growth"
             }
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 group">
+            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium">{item.title}</h4>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             </div>
@@ -733,49 +733,49 @@ export function BCA() {
               {
                 title: "Data Analysis Mastery",
                 description:
-                  "Master data collection, cleaning, analysis and visualization using industry-standard tools and techniques.",
+                  "Master data analysis using industry tools and techniques.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
-                title: "Programming Proficiency",
+                title: "Programming Proficiency", 
                 description:
-                  "Develop strong programming skills in Python, R, SQL and other languages essential for data science.",
+                  "Develop programming skills in Python, R and SQL.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Machine Learning Expert",
                 description:
-                  "Build and deploy machine learning models for predictive analytics and pattern recognition.",
+                  "Build and deploy machine learning models for analytics.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Statistical Analysis Skills",
                 description:
-                  "Apply statistical methods and probability theory to extract meaningful insights from data.",
+                  "Apply statistics to extract insights from data.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Big Data Technologies",
                 description:
-                  "Work with big data tools like Hadoop and Spark to process and analyze large-scale datasets.",
+                  "Work with Hadoop and Spark for data processing.",
                 icon: <Beaker className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Business Intelligence",
                 description:
-                  "Transform data insights into actionable business strategies and decision-making tools.",
+                  "Transform data insights into actionable business strategies.",
                 icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Data Ethics & Privacy",
                 description:
-                  "Understand and implement ethical data practices while ensuring data security and privacy.",
+                  "Implement ethical practices ensuring data security and privacy.",
                 icon: <Users className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Industry Applications",
                 description:
-                  "Apply data science concepts to solve real-world problems across various industry domains.",
+                  "Apply data science concepts to solve industry problems.",
                 icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
               },
             ].map((item, index) => (

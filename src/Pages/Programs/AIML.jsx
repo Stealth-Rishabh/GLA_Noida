@@ -699,12 +699,12 @@ export function AIML() {
               subtitle: "Beyond Academics"
             }
           ].map((item, index) => (
-            <div key={index} className="flex items-center gap-3 group">
+            <div key={index} className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group">
               <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
                 {item.icon}
               </div>
               <div>
-                <h4 className="font-medium">{item.title}</h4>
+                <h4 className="font-medium text-base text-cusBlue sm:text-lg">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.subtitle}</p>
               </div>
             </div>
@@ -747,49 +747,49 @@ export function AIML() {
               {
                 title: "AI/ML Expert",
                 description:
-                  "Master advanced AI algorithms, neural networks, and machine learning models for real-world applications.",
+                  "Build advanced AI algorithms and ML models.",
                 icon: <Code2 className="h-10 min-w-10 text-cusGreen" />,
               },
               {
-                title: "Data Science Specialist",
+                title: "Data Science Specialist", 
                 description:
-                  "Excel in data analytics, statistical modeling, and extracting actionable insights from complex datasets.",
+                  "Analyze data and extract actionable business insights.",
                 icon: <Beaker className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "Deep Learning Professional",
                 description:
-                  "Build and optimize deep neural networks for computer vision, NLP, and other AI applications.",
+                  "Create neural networks for AI applications.",
                 icon: <Wrench className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "AI Solution Architect",
                 description:
-                  "Design and implement end-to-end AI solutions for enterprise-level problems.",
+                  "Design enterprise-level AI solutions and implementations.",
                 icon: <Building2 className="h-10 w-10 text-cusGreen" />,
               },
               {
                 title: "Research Innovator",
                 description:
-                  "Contribute to cutting-edge AI research and develop novel solutions using Microsoft's advanced tools.",
+                  "Develop cutting-edge AI research and solutions.",
                 icon: <Lightbulb className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "MLOps Engineer",
                 description:
-                  "Deploy and manage ML models in production environments using industry-standard practices.",
+                  "Deploy ML models in production environments.",
                 icon: <UserPlus className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "AI Ethics Leader",
                 description:
-                  "Ensure responsible AI development with focus on fairness, transparency and ethical considerations.",
+                  "Ensure responsible and ethical AI development.",
                 icon: <UserCircle className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "Industry Collaborator",
                 description:
-                  "Work effectively with cross-functional teams to deliver AI-powered business solutions.",
+                  "Deliver AI solutions with cross-functional teams.",
                 icon: <UsersRound className="h-10 min-w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
