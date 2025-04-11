@@ -310,7 +310,7 @@ export function BtechCS() {
                 ></div>
 
                 {/* Form container */}
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
+                <div className="relative bg-white/10 backdrop-blur-md border scale-90 border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 animate-shimmer pointer-events-none"></div>
 
@@ -518,7 +518,7 @@ export function BtechCS() {
 
               {/* Floating elements */}
               <div
-                className="absolute -top-6 -right-6 animate-float"
+                className="absolute top-5 -right-6 animate-float"
                 style={{ animationDuration: "4s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -529,7 +529,7 @@ export function BtechCS() {
               </div>
 
               <div
-                className="absolute -bottom-6 -left-6 animate-float"
+                className="absolute bottom-5 -left-6 animate-float"
                 style={{ animationDuration: "5s", animationDelay: "1s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -565,11 +565,11 @@ export function BtechCS() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-cusGreen text-white">
+          {/* <Badge className="mb-4 bg-cusGreen text-white">
             About the Program
-          </Badge>
+          </Badge> */}
           <Heading level={2} className="text-center text-cusBlue">
-            Program Description
+            About the Program
           </Heading>
           {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
@@ -595,104 +595,6 @@ export function BtechCS() {
                 Get ready to dive into the fast-changing world of technology
                 with a B. Tech in CSE from GLA University
               </p>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry-Linked Curriculum</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Latest Industry Trends
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Global Exposure</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Study Abroad Options
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Expert Faculty</h4>
-                    <p className="text-sm text-muted-foreground">
-                      IITs & NITs Professors
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Innovation Focus</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Entrepreneurship Skills
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">IIT Experience</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Semester-Long Study
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Project-Based</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Practical Skills
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Placement-Ready</h4>
-                    <p className="text-sm text-muted-foreground">
-                      AI Mock Interviews
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Codeathons</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Real-world Experience
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -701,9 +603,9 @@ export function BtechCS() {
               <img
                 src="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
                 alt="Program Overview"
-                className="w-full h-auto rounded-xl mb-6"
+                className="w-full h-auto rounded-xl"
               />
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white">
                   Program Highlights
                 </h3>
@@ -726,13 +628,67 @@ export function BtechCS() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
           </div>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-12 mt-16">
+          {[
+            {
+              icon: <BookOpen className="h-6 min-w-6 text-cusGreen" />,
+              title: "Industry-Linked Curriculum",
+              description: "Latest Industry Trends"
+            },
+            {
+              icon: <GraduationCap className="h-6 min-w-6 text-cusGreen" />, 
+              title: "Global Exposure",
+              description: "Study Abroad Options"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Expert Faculty", 
+              description: "IITs & NITs Professors"
+            },
+            {
+              icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+              title: "Innovation Focus",
+              description: "Entrepreneurship Skills"
+            },
+            {
+              icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+              title: "IIT Experience",
+              description: "Semester-Long Study"
+            },
+            {
+              icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+              title: "Project-Based",
+              description: "Practical Skills"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Placement-Ready",
+              description: "AI Mock Interviews"
+            },
+            {
+              icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+              title: "Codeathons",
+              description: "Real-world Experience"
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex items-center gap-3 group">
+              <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                {item.icon}
+              </div>
+              <div>
+                <h4 className="font-medium">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -34,6 +34,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
+import herobg from "@/assets/programs/HeroBCA.png";
 
 export function BCA() {
   // Animation hooks
@@ -196,10 +197,9 @@ export function BCA() {
 
         {/* Background image with overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://i.ibb.co/spMmK3RL/moez-mustafa-Ukr2hyu-E068-unsplash.jpg')",
+            backgroundImage: `url(${herobg})`,
           }}
         ></div>
 
@@ -292,7 +292,7 @@ export function BCA() {
             </div>
 
             {/* Form Column */}
-            <div className="lg:col-span-6 max-w-md relative ml-auto">
+            <div className="lg:col-span-6 max-w-md relative sm:mt-16 ml-auto">
               {/* Form Card with Animation */}
               <div
                 className="relative animate-float"
@@ -309,7 +309,7 @@ export function BCA() {
                 ></div>
 
                 {/* Form container */}
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
+                <div className="relative bg-white/10 backdrop-blur-md border scale-90 border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 animate-shimmer pointer-events-none"></div>
 
@@ -517,7 +517,7 @@ export function BCA() {
 
               {/* Floating elements */}
               <div
-                className="absolute -top-6 -right-6 animate-float"
+                className="absolute top-5 -right-6 animate-float"
                 style={{ animationDuration: "4s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -528,7 +528,7 @@ export function BCA() {
               </div>
 
               <div
-                className="absolute -bottom-6 -left-6 animate-float"
+                className="absolute bottom-5 -left-6 animate-float"
                 style={{ animationDuration: "5s", animationDelay: "1s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -542,7 +542,7 @@ export function BCA() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
+          <div className="absolute bottom-4 sm:bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
             <span className="text-sm mb-2">Scroll to explore</span>
             <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
               <div className="w-1 h-1 bg-white rounded-full animate-scrollDown"></div>
@@ -564,11 +564,11 @@ export function BCA() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-cusGreen text-white">
+          {/* <Badge className="mb-4 bg-cusGreen text-white">
             About the Program
-          </Badge>
+          </Badge> */}
           <Heading level={2} className="text-center text-cusBlue">
-            Program Description
+            About the Program
           </Heading>
           {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
@@ -598,104 +598,6 @@ export function BCA() {
                 Scientists, Machine Learning Engineers, Business Analysts, and
                 more.
               </p>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry-Focused Learning</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Latest Data Science Tools
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Hands-on Experience</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Labs & Assignments
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Small Batch Sizes</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Personalized Attention
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Career-Driven Approach</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Professional Success
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Networking Opportunities</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Industry Connections
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <ArrowUpRight className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Start-up Incubation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      New-Gen IEDC Support
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <CreditCard className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Top Placements</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Up to 55 LPA Package
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <User className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Holistic Development</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Well-Rounded Growth
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -704,9 +606,9 @@ export function BCA() {
               <img
                 src="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
                 alt="Program Overview"
-                className="w-full h-auto rounded-xl mb-6"
+                className="w-full h-auto rounded-xl"
               />
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white">
                   Program Highlights
                 </h3>
@@ -730,13 +632,68 @@ export function BCA() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
           </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-12 mt-16">
+          {[
+            {
+              icon: <Beaker className="h-6 min-w-6 text-cusGreen" />,
+              title: "Industry-Focused Learning",
+              description: "Latest Data Science Tools"
+            },
+            {
+              icon: <BookOpen className="h-6 min-w-6 text-cusGreen" />, 
+              title: "Hands-on Experience",
+              description: "Labs & Assignments"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Small Batch Sizes", 
+              description: "Personalized Attention"
+            },
+            {
+              icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+              title: "Career-Driven Approach",
+              description: "Professional Success"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Networking Opportunities",
+              description: "Industry Connections"
+            },
+            {
+              icon: <ArrowUpRight className="h-6 w-6 text-cusGreen" />,
+              title: "Start-up Incubation",
+              description: "New-Gen IEDC Support"
+            },
+            {
+              icon: <CreditCard className="h-6 w-6 text-cusGreen" />,
+              title: "Top Placements",
+              description: "Up to 55 LPA Package"
+            },
+            {
+              icon: <User className="h-6 w-6 text-cusGreen" />,
+              title: "Holistic Development",
+              description: "Well-Rounded Growth"
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex items-center gap-3 group">
+              <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                {item.icon}
+              </div>
+              <div>
+                <h4 className="font-medium">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -771,7 +728,7 @@ export function BCA() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-4 gap-5">
             {[
               {
                 title: "Data Analysis Mastery",

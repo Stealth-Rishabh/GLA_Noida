@@ -34,6 +34,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
+import herobg from "@/assets/programs/HeroMBA.png";
 
 export function MBA() {
   // Animation hooks
@@ -196,10 +197,9 @@ export function MBA() {
 
         {/* Background image with overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('https://i.ibb.co/spMmK3RL/moez-mustafa-Ukr2hyu-E068-unsplash.jpg')",
+            backgroundImage: `url(${herobg})`,
           }}
         ></div>
 
@@ -217,7 +217,7 @@ export function MBA() {
         </div>
 
         <div className="relative z-10 container max-w-7xl mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-end">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Content Column */}
             <div className="lg:col-span-6 space-y-8">
               <div className="space-y-6 max-w-xl">
@@ -309,7 +309,7 @@ export function MBA() {
                 ></div>
 
                 {/* Form container */}
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
+                <div className="relative bg-white/10 backdrop-blur-md border scale-90 border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 animate-shimmer pointer-events-none"></div>
 
@@ -517,7 +517,7 @@ export function MBA() {
 
               {/* Floating elements */}
               <div
-                className="absolute -top-6 -right-6 animate-float"
+                className="absolute top-5 -right-6 animate-float"
                 style={{ animationDuration: "4s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -528,7 +528,7 @@ export function MBA() {
               </div>
 
               <div
-                className="absolute -bottom-6 -left-6 animate-float"
+                className="absolute bottom-5 -left-6 animate-float"
                 style={{ animationDuration: "5s", animationDelay: "1s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -564,11 +564,11 @@ export function MBA() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-cusGreen text-white">
+          {/* <Badge className="mb-4 bg-cusGreen text-white">
             About the Program
-          </Badge>
+          </Badge> */}
           <Heading level={2} className="text-center text-cusBlue">
-            Program Description
+            About the Program
           </Heading>
           {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
@@ -610,106 +610,6 @@ export function MBA() {
                 problem-solving, and decision-making skills that are essential
                 in today’s business world.
               </p>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">
-                      Industry-Integrated Learning
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Hands-on Experience
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Small Batch Sizes</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Personalized Learning
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <CreditCard className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Best-In-Class Placements</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Up to 55 LPA
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <GraduationCap className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Project-Based Education</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Real-world Cases
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <ArrowUpRight className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry Visits</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Corporate Exposure
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Top Recruiters</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Premium Placements
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Beaker className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">New-Gen IEDC</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Start-up Incubation
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <BookOpen className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">JOVAC Sessions</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Career Enhancement
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -718,9 +618,9 @@ export function MBA() {
               <img
                 src="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
                 alt="Program Overview"
-                className="w-full h-auto rounded-xl mb-6"
+                className="w-full h-auto rounded-xl"
               />
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white">
                   Program Highlights
                 </h3>
@@ -745,13 +645,67 @@ export function MBA() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
           </div>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-12 mt-16">
+          {[
+            {
+              icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+              title: "Industry-Integrated Learning",
+              description: "Hands-on Experience"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Small Batch Sizes", 
+              description: "Personalized Learning"
+            },
+            {
+              icon: <CreditCard className="h-6 w-6 text-cusGreen" />,
+              title: "Best-In-Class Placements",
+              description: "Up to 55 LPA"
+            },
+            {
+              icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+              title: "Project-Based Education",
+              description: "Real-world Cases"
+            },
+            {
+              icon: <ArrowUpRight className="h-6 w-6 text-cusGreen" />,
+              title: "Industry Visits",
+              description: "Corporate Exposure"
+            },
+            {
+              icon: <Users className="h-6 w-6 text-cusGreen" />,
+              title: "Top Recruiters",
+              description: "Premium Placements"
+            },
+            {
+              icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+              title: "New-Gen IEDC",
+              description: "Start-up Incubation"
+            },
+            {
+              icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+              title: "JOVAC Sessions",
+              description: "Career Enhancement"
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex items-center gap-3 group">
+              <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                {item.icon}
+              </div>
+              <div>
+                <h4 className="font-medium">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

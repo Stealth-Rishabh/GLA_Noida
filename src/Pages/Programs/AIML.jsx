@@ -34,7 +34,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Section from "@/layout.jsx/section";
 import { Heading } from "@/components/ui/heading";
-import herobg from "@/assets/programs/HeroBtechCse.png";
+import herobg from "@/assets/programs/HeroAIML.png";
 import { Building2 } from "lucide-react";
 import { UserPlus } from "lucide-react";
 import { UsersRound } from "lucide-react";
@@ -242,14 +242,14 @@ export function AIML() {
                 >
                   B.Tech in{" "}
                   <span className="text-cusBlueLighter relative">
-                    Computer Science & Engineering with AIML
+                    Computer Science & Engineering with AI/ML
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
                   </span>
                 </Heading>
 
                 <p className="text-xl text-white leading-relaxed">
                   Transform your career with our comprehensive b.tech in
-                  computer science & engineering with AIML program designed for
+                  computer science & engineering with AI/ML program designed for
                   the modern industry. Learn from experts and build real-world
                   projects.
                 </p>
@@ -317,7 +317,7 @@ export function AIML() {
                 ></div>
 
                 {/* Form container */}
-                <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
+                <div className="relative bg-white/10 backdrop-blur-md border scale-90 border-white/20 rounded-2xl p-8 shadow-2xl overflow-hidden">
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 animate-shimmer pointer-events-none"></div>
 
@@ -525,7 +525,7 @@ export function AIML() {
 
               {/* Floating elements */}
               <div
-                className="absolute -top-6 -right-6 animate-float"
+                className="absolute top-5 -right-6 animate-float"
                 style={{ animationDuration: "4s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -536,7 +536,7 @@ export function AIML() {
               </div>
 
               <div
-                className="absolute -bottom-6 -left-6 animate-float"
+                className="absolute bottom-5 -left-6 animate-float"
                 style={{ animationDuration: "5s", animationDelay: "1s" }}
               >
                 <div className="bg-white rounded-full shadow-lg p-2">
@@ -572,11 +572,11 @@ export function AIML() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
 
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <Badge className="mb-4 bg-cusGreen text-white">
+          {/* <Badge className="mb-4 bg-cusGreen text-white">
             About the Program
-          </Badge>
+          </Badge> */}
           <Heading level={2} className="text-center text-cusBlue">
-            Program Description
+            About the Program
           </Heading>
           {/* <h2 className="text-4xl font-bold mb-6">Program Description</h2> */}
           <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
@@ -598,7 +598,7 @@ export function AIML() {
               </p>
               <p className="text-lg text-muted-foreground">
                 A B. Tech in Computer Science & Engineering with a focus on
-                Artificial Intelligence and Machine Learning (AIML) at GLA
+                Artificial Intelligence and Machine Learning (AI/ML) at GLA
                 University, in partnership with Microsoft, offers you a chance
                 to dive into the heart of this revolution. This program covers
                 everything from the basics of programming languages like Python
@@ -609,104 +609,6 @@ export function AIML() {
                 Microsoft tools, preparing you to be a leader in AI and ML
                 technologies.
               </p>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Users className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Practical Learning</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Industry Professionals
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Building2 className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Industry Visits</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Leading Companies
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <UserPlus className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Small Class Sizes</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Personalized Attention
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <UsersRound className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Collaborative Learning</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Team Environment
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Code2 className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Real-World Projects</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Hackathons & Bootcamps
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Wrench className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Skill Building</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Interactive Workshops
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <Lightbulb className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Innovation Culture</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Research Focused
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3 group">
-                  <div className="w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
-                    <UserCircle className="h-6 w-6 text-cusGreen" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Holistic Growth</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Beyond Academics
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -715,9 +617,9 @@ export function AIML() {
               <img
                 src="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
                 alt="Program Overview"
-                className="w-full h-auto rounded-xl mb-6"
+                className="w-full h-auto rounded-xl"
               />
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-xl font-bold text-white">
                   Program Highlights
                 </h3>
@@ -746,13 +648,67 @@ export function AIML() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative elements */}
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-full -z-10"></div>
           </div>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-12 mt-16">
+          {[
+            {
+              icon: <Users className="h-6 min-w-6 text-cusGreen" />,
+              title: "Practical Learning",
+              subtitle: "Industry Professionals"
+            },
+            {
+              icon: <Building2 className="h-6 min-w-6 text-cusGreen" />, 
+              title: "Industry Visits",
+              subtitle: "Leading Companies"
+            },
+            {
+              icon: <UserPlus className="h-6 min-w-6 text-cusGreen" />,
+              title: "Small Class Sizes", 
+              subtitle: "Personalized Attention"
+            },
+            {
+              icon: <UsersRound className="h-6 min-w-6 text-cusGreen" />,
+              title: "Collaborative Learning",
+              subtitle: "Team Environment"
+            },
+            {
+              icon: <Code2 className="h-6 min-w-6 text-cusGreen" />,
+              title: "Real-World Projects",
+              subtitle: "Hackathons & Bootcamps"
+            },
+            {
+              icon: <Wrench className="h-6 min-w-6 text-cusGreen" />,
+              title: "Skill Building",
+              subtitle: "Interactive Workshops"
+            },
+            {
+              icon: <Lightbulb className="h-6 min-w-6 text-cusGreen" />,
+              title: "Innovation Culture",
+              subtitle: "Research Focused"
+            },
+            {
+              icon: <UserCircle className="h-6 min-w-6 text-cusGreen" />,
+              title: "Holistic Growth",
+              subtitle: "Beyond Academics"
+            }
+          ].map((item, index) => (
+            <div key={index} className="flex items-center gap-3 group">
+              <div className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300">
+                {item.icon}
+              </div>
+              <div>
+                <h4 className="font-medium">{item.title}</h4>
+                <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -792,19 +748,19 @@ export function AIML() {
                 title: "AI/ML Expert",
                 description:
                   "Master advanced AI algorithms, neural networks, and machine learning models for real-world applications.",
-                icon: <Code2 className="h-10 w-10 text-cusGreen" />,
+                icon: <Code2 className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "Data Science Specialist",
                 description:
                   "Excel in data analytics, statistical modeling, and extracting actionable insights from complex datasets.",
-                icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+                icon: <Beaker className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "Deep Learning Professional",
                 description:
                   "Build and optimize deep neural networks for computer vision, NLP, and other AI applications.",
-                icon: <Wrench className="h-10 w-10 text-cusGreen" />,
+                icon: <Wrench className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "AI Solution Architect",
@@ -816,25 +772,25 @@ export function AIML() {
                 title: "Research Innovator",
                 description:
                   "Contribute to cutting-edge AI research and develop novel solutions using Microsoft's advanced tools.",
-                icon: <Lightbulb className="h-10 w-10 text-cusGreen" />,
+                icon: <Lightbulb className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "MLOps Engineer",
                 description:
                   "Deploy and manage ML models in production environments using industry-standard practices.",
-                icon: <UserPlus className="h-10 w-10 text-cusGreen" />,
+                icon: <UserPlus className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "AI Ethics Leader",
                 description:
                   "Ensure responsible AI development with focus on fairness, transparency and ethical considerations.",
-                icon: <UserCircle className="h-10 w-10 text-cusGreen" />,
+                icon: <UserCircle className="h-10 min-w-10 text-cusGreen" />,
               },
               {
                 title: "Industry Collaborator",
                 description:
                   "Work effectively with cross-functional teams to deliver AI-powered business solutions.",
-                icon: <UsersRound className="h-10 w-10 text-cusGreen" />,
+                icon: <UsersRound className="h-10 min-w-10 text-cusGreen" />,
               },
             ].map((item, index) => (
               <Card
@@ -923,7 +879,7 @@ export function AIML() {
             </div>
 
             <p className="text-lg text-muted-foreground">
-              Our B.Tech in Computer Science Engineering with AIML
+              Our B.Tech in Computer Science Engineering with AI/ML
               specialization is designed for students who are fascinated by
               artificial intelligence, machine learning, and their real-world
               applications. If you're excited about developing AI solutions,
@@ -985,7 +941,7 @@ export function AIML() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 h-min">
               <Heading level={3} className="text-2xl font-bold mb-2">
-                B.Tech in Computer Science & Engineering with AIML
+                B.Tech in Computer Science & Engineering with AI/ML
               </Heading>
               <div className="flex items-center gap-2 mb-4">
                 <Badge variant="outline" className="text-sm">
@@ -993,7 +949,7 @@ export function AIML() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-6">
-                The B.Tech in Computer Science & Engineering with AIML program
+                The B.Tech in Computer Science & Engineering with AI/ML program
                 is designed to provide students with a comprehensive
                 understanding of computer science and engineering principles.
                 Don't miss out on this opportunity to learn from the best in the
