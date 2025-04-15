@@ -13,6 +13,7 @@ import { CTASection } from "./components/cta-section";
 import { useElementOnScreen } from "./components/use-element-on-screen";
 import { AnimationStyles } from "./components/animation-styles";
 import AdmissionStepper from "./Stepper";
+import herobg from "@/assets/programs/HeroBBA.png";
 export function BBA() {
   // Animation classes
   const fadeInUp = "transition-all duration-700 ease-out";
@@ -139,7 +140,7 @@ export function BBA() {
         }`}
       >
         <HeroSection
-          backgroundImage="https://gla-noida.vercel.app/assets/HeroBBA-DCa4YUHX.png"
+          backgroundImage={herobg}
           title="BBA in"
           subtitle="Management Science"
           para="Transform your career with our comprehensive bba in management science program designed for the modern industry. Learn from experts and build real-world projects."
