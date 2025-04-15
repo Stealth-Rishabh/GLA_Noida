@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,13 +7,19 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
+  Pause,
+  Play,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Heading } from "@/components/ui/heading";
 
 export default function AdmissionStepper() {
   const [currentStep, setCurrentStep] = useState(1);
   const [direction, setDirection] = useState(0);
   const [isHovering, setIsHovering] = useState(null);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isInViewport, setIsInViewport] = useState(false);
+  const stepperRef = useRef(null);
 
   const steps = [
     {
@@ -30,7 +36,7 @@ export default function AdmissionStepper() {
     },
     {
       number: 3,
-      title: "GLAET",
+      title: "GLAET Test",
       description:
         "It's a 2-hour online test with multiple-choice questions (MCQs)",
       icon: "📝",
@@ -57,10 +63,59 @@ export default function AdmissionStepper() {
     },
   ];
 
+  // Intersection Observer setup
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInViewport(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Consider visible when 50% of the element is in viewport
+      }
+    );
+
+    if (stepperRef.current) {
+      observer.observe(stepperRef.current);
+    }
+
+    return () => {
+      if (stepperRef.current) {
+        observer.unobserve(stepperRef.current);
+      }
+    };
+  }, []);
+
+  // Auto-progression effect
+  useEffect(() => {
+    let interval;
+    if (isAutoPlaying && isInViewport) {
+      interval = setInterval(() => {
+        setDirection(1);
+        setCurrentStep((prevStep) => {
+          if (prevStep === steps.length) {
+            return 1; // Loop back to first step
+          }
+          return prevStep + 1;
+        });
+      }, 3000); // Change step every 3 seconds
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isAutoPlaying, steps.length, isInViewport]);
+
   const handleNext = () => {
     if (currentStep < steps.length) {
       setDirection(1);
       setCurrentStep(currentStep + 1);
+    } else {
+      setDirection(1);
+      setCurrentStep(1); // Loop back to first step
     }
   };
 
@@ -76,6 +131,10 @@ export default function AdmissionStepper() {
     setCurrentStep(stepNumber);
   };
 
+  const toggleAutoPlay = () => {
+    setIsAutoPlaying(!isAutoPlaying);
+  };
+
   // Reset scroll position when step changes
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -87,15 +146,33 @@ export default function AdmissionStepper() {
   }, [currentStep]);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-12 mt-40">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-3xl font-bold text-center mb-10 text-gray-800"
-      >
+    <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 pt-16">
+      <Heading level={2} className="text-center text-cusBlue">
         Admission Process
-      </motion.h2>
+      </Heading>
+      <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full mb-10 sm:mb-16"></div>
+
+      {/* Auto-play toggle button */}
+      <div className="flex justify-center mb-6">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={toggleAutoPlay}
+          className="gap-2"
+        >
+          {isAutoPlaying ? (
+            <>
+              <Pause className="h-4 w-4" />
+              <span>Pause</span>
+            </>
+          ) : (
+            <>
+              <Play className="h-4 w-4" />
+              <span>Play</span>
+            </>
+          )}
+        </Button>
+      </div>
 
       {/* Mobile Stepper (Vertical) */}
       <div className="md:hidden space-y-0 overflow-hidden">
@@ -334,7 +411,7 @@ export default function AdmissionStepper() {
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="relative"
             >
-              <Card className="border-gray-200 overflow-hidden shadow-md">
+              <Card className="border-gray-200 overflow-hidden shadow-md !p-0">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <motion.div
@@ -410,7 +487,7 @@ export default function AdmissionStepper() {
       </div>
 
       {/* Navigation Buttons - Responsive for both mobile and desktop */}
-      <motion.div
+      {/* <motion.div
         className="flex justify-between mt-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -440,7 +517,7 @@ export default function AdmissionStepper() {
           <span className="hidden xs:inline">Next</span>
           <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
