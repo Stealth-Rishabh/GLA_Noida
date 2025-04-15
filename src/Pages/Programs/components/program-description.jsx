@@ -5,11 +5,10 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 export function ProgramDescription({ title, description, features, imageUrl }) {
   return (
-    <section className="py-24 container mx-auto max-w-7xl px-4 overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15 px-4 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
-
       <div className="max-w-7xl overflow-hidden mx-auto text-center mb-16">
         <motion.div
           initial={{ opacity: 1, y: 20 }}
@@ -17,7 +16,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
           viewport={{ once: false }}
           transition={{ duration: 0.5 }}
         >
-          <Heading level={2} className="text-center text-cusBlue">
+          <Heading level={2} className="text-center text-cusText">
             <TextAnimate
               as="span"
               by="word"
@@ -29,7 +28,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
               {title}
             </TextAnimate>
           </Heading>
-          <motion.div 
+          <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: false }}
@@ -39,8 +38,8 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
         </motion.div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-16 items-center">
-        <motion.div 
+      <div className="grid max-w-7xl mx-auto md:grid-cols-2 gap-16 items-center">
+        <motion.div
           className="order-2 md:order-1"
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -53,9 +52,9 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
         >
           <div className="space-y-4">
             {description.map((paragraph, index) => (
-              <motion.p 
-                key={index} 
-                className="text-[17px] text-muted-foreground"
+              <motion.p
+                key={index}
+                className="text-[17px] text-cusText"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
@@ -67,7 +66,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="order-1 md:order-2"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -78,7 +77,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             ease: "easeOut",
           }}
         >
-          <div className="relative z-10 background-gradient-blue rounded-2xl shadow-xl p-6 border border-slate-100">
+          <div className="relative z-10 bg-cusPrimary rounded-2xl shadow-xl p-6 border border-slate-100">
             <motion.img
               src={imageUrl || "/placeholder.svg"}
               alt="Program Overview"
@@ -94,8 +93,8 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
         </motion.div>
       </div>
 
-      <motion.div 
-        className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-12 mt-16"
+      <motion.div
+        className="grid grid-cols-2 max-w-7xl mx-auto sm:grid-cols-4 gap-4 mt-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
@@ -104,22 +103,22 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
         {features.map((item, index) => (
           <motion.div
             key={index}
-            className="flex items-center hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
+            className="flex items-center bg-white rounded-2xl shadow-xl p-4 border border-slate-100 hover:scale-105 transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer gap-3 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <motion.div 
-              className="min-w-12 h-12 rounded-full bg-cusGreen/10 flex items-center justify-center group-hover:bg-cusGreen/20 transition-colors duration-300"
+            <motion.div
+              className="min-w-12 h-12 rounded-full bg-cusPrimary/25 flex items-center justify-center group-hover:bg-cusPrimary transition-colors duration-300"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
             >
               {item.icon}
             </motion.div>
             <div>
-              <h4 className="font-medium text-base text-cusBlue sm:text-lg">
+              <h4 className="font-medium text-base text-cusText sm:text-lg">
                 {item.title}
               </h4>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-cusText">
                 {item.description}
               </p>
             </div>

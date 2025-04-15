@@ -151,6 +151,16 @@
   --color-cusGreenLight: #80a080;
   --color-cusGreenLighter: #b3d1b3;
   --color-cusGreenDark: #004000;
+  --color-cusPrimary: #1E3A8A;
+  --color-cusPrimaryLight: #2563EB;
+  --color-cusAccent: #10B981;
+  --color-cusAccentLight: #22C55E;
+  --color-cusSecondary: #FACC15;
+  --color-cusSecondaryLight: #EAB308;
+  --color-cusBase: #F9FAFB;
+  --color-cusBaseLight: #F3F4F6;
+  --color-cusText: #1F2937;
+  --color-cusTextLight: #374151;
 }
 
 @layer components {

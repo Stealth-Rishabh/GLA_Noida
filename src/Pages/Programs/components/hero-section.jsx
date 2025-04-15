@@ -99,10 +99,11 @@ export function HeroSection({
                   className="text-4xl md:!text-5xl font-bold text-white leading-tight"
                 >
                   {title}{" "}
-                  <span className="text-cusBlueLighter relative">
+                  <span className="text-cusSecondary relative">
                     {subtitle}
                     <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
                   </span>
+                  {/* <span className="absolute bottom-1 left-0 w-full h-1 bg-gradient-to-r from-cusSecondary/70 to-cusSecondary-light/70 rounded-full"></span> */}
                 </Heading>
               </BoxReveal>
               <BoxReveal boxColor={"#fdd600"} duration={0.5}>
@@ -114,7 +115,7 @@ export function HeroSection({
               {features.map((feature, index) => (
                 <BoxReveal boxColor={"#fdd600"} duration={0.5}>
                   <div key={index} className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-cusBlueLighter"></div>
+                    <div className="w-2 h-2 rounded-full bg-cusSecondary"></div>
                     <span>{feature}</span>
                   </div>
                 </BoxReveal>
@@ -124,16 +125,12 @@ export function HeroSection({
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               {stats.map((stat, index) => (
-                <BoxReveal
-                  boxColor={"#fdd600"}
-                  width={"100%"}
-                  duration={0.5}
-                >
+                <BoxReveal boxColor={"#fdd600"} width={"100%"} duration={0.5}>
                   <div
                     key={index}
                     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center"
                   >
-                    <div className="text-3xl font-bold text-cusBlueLighter mb-1">
+                    <div className="text-3xl font-bold text-cusSecondary mb-1">
                       {stat.value}
                     </div>
                     <div className="text-sm text-white">{stat.label}</div>
@@ -333,7 +330,7 @@ export function HeroSection({
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full relative overflow-hidden group bg-cusYellow hover:bg-cusYellow/90 text-cusBlue font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-primary/20"
+                      className="w-full relative overflow-hidden group bg-cusAccent hover:bg-cusAccent/90 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-primary/20"
                     >
                       <span className="relative z-10 flex items-center justify-center text-lg">
                         Submit Application

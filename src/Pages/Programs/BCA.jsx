@@ -120,42 +120,42 @@ export function BCA() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Industry-Focused Learning",
             description: "Latest Data Science Tools",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Hands-on Experience",
             description: "Labs & Assignments",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Small Batch Sizes",
             description: "Personalized Attention",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Career-Driven Approach",
             description: "Professional Success",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Networking Opportunities",
             description: "Industry Connections",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Start-up Incubation",
             description: "New-Gen IEDC Support",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Top Placements",
             description: "Up to 55 LPA Package",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Holistic Development",
             description: "Well-Rounded Growth",
           },

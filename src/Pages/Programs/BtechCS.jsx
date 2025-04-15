@@ -119,42 +119,42 @@ export function BtechCS() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Industry-Linked Curriculum",
             description: "Latest Industry Trends",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Global Exposure",
             description: "Study Abroad Options",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Expert Faculty",
             description: "IITs & NITs Professors",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Innovation Focus",
             description: "Entrepreneurship Skills",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "IIT Experience",
             description: "Semester-Long Study",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Project-Based",
             description: "Practical Skills",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Placement-Ready",
             description: "AI Mock Interviews",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Codeathons",
             description: "Real-world Experience",
           },

@@ -214,42 +214,42 @@ export function AIML() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Practical Learning",
             description: "Industry Professionals",
           },
           {
-            icon: <Building2 className="h-6 w-6 text-cusGreen" />,
+            icon: <Building2 className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Industry Visits",
             description: "Leading Companies",
           },
           {
-            icon: <UserPlus className="h-6 w-6 text-cusGreen" />,
+            icon: <UserPlus className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Small Class Sizes",
             description: "Personalized Attention",
           },
           {
-            icon: <UsersRound className="h-6 w-6 text-cusGreen" />,
+            icon: <UsersRound className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Collaborative Learning",
             description: "Team Environment",
           },
           {
-            icon: <Code2 className="h-6 w-6 text-cusGreen" />,
+            icon: <Code2 className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Real-World Projects",
             description: "Hackathons & Bootcamps",
           },
           {
-            icon: <Wrench className="h-6 w-6 text-cusGreen" />,
+            icon: <Wrench className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Skill Building",
             description: "Interactive Workshops",
           },
           {
-            icon: <Lightbulb className="h-6 w-6 text-cusGreen" />,
+            icon: <Lightbulb className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Innovation Culture",
             description: "Research Focused",
           },
           {
-            icon: <UserCircle className="h-6 w-6 text-cusGreen" />,
+            icon: <UserCircle className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Holistic Growth",
             description: "Beyond Academics",
           },

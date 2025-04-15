@@ -46,42 +46,42 @@ export function MBA() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Industry-Integrated Learning",
             description: "Hands-on Experience",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Small Batch Sizes",
             description: "Personalized Learning",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Best-In-Class Placements",
             description: "Up to 55 LPA",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Project-Based Education",
             description: "Real-world Cases",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusGreen" />,
+            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Industry Visits",
             description: "Corporate Exposure",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusGreen" />,
+            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "Top Recruiters",
             description: "Premium Placements",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "New-Gen IEDC",
             description: "Start-up Incubation",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusGreen" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
             title: "JOVAC Sessions",
             description: "Career Enhancement",
           },
@@ -98,49 +98,49 @@ export function MBA() {
             title: "Leadership",
             description:
               "Learn to lead and manage business teams effectively.",
-            icon: <Users className="h-10 w-10 text-cusGreen" />,
+            icon: <Users className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Financial Acumen",
             description:
               "Master financial analysis and decision-making for organizational growth.",
-            icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+            icon: <BookOpen className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Marketing Excellence",
             description:
               "Create and execute innovative marketing strategies in digital age.",
-            icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+            icon: <GraduationCap className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Operations Management",
             description:
               "Optimize business processes and supply chains for maximum efficiency.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+            icon: <Beaker className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Business Analytics",
             description:
               "Transform data into actionable business insights and strategies.",
-            icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+            icon: <BookOpen className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Entrepreneurial Mindset",
             description:
               "Develop skills to identify and capitalize on business opportunities.",
-            icon: <Users className="h-10 w-10 text-cusGreen" />,
+            icon: <Users className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Global Business Perspective",
             description:
               "Navigate international markets and cross-cultural business environments effectively.",
-            icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+            icon: <GraduationCap className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Digital Transformation",
             description:
               "Lead organizational change in the digital business landscape.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+            icon: <Beaker className="h-10 w-10 text-cusAccent" />,
           },
         ]}
       />
