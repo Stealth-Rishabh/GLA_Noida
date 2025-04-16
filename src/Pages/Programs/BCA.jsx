@@ -46,8 +46,43 @@ import { BrochureSection } from "./components/brochure-section";
 import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import AdmissionStepper from "./Stepper";
+import { IndustryPartners } from "./components/industry-partners";
 
 export function BCA() {
+  const icons = [
+    {
+      src: "/src/assets/programs/recruiters/Google.webp",
+      alt: "Google",
+    },
+    {
+      src: "/src/assets/programs/recruiters/microsoft.png",
+      alt: "Microsoft",
+    },
+    {
+      src: "/src/assets/programs/recruiters/IBM.webp",
+      alt: "IBM",
+    },
+    {
+      src: "/src/assets/programs/recruiters/Deloitte.webp",
+      alt: "Deloitte",
+    },
+    {
+      src: "/src/assets/programs/recruiters/Infosys.webp",
+      alt: "Infosys",
+    },
+    {
+      src: "/src/assets/programs/recruiters/cognizant.webp",
+      alt: "Cognizant",
+    },
+    {
+      src: "/src/assets/programs/recruiters/TCS.webp",
+      alt: "TCS",
+    },
+    {
+      src: "/src/assets/programs/recruiters/HCL.webp",
+      alt: "HCL",
+    },
+  ];
   // State management
   const [activeField, setActiveField] = useState(null);
   const [formState, setFormState] = useState({
@@ -120,46 +155,68 @@ export function BCA() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Industry-Focused Learning",
             description: "Latest Data Science Tools",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Hands-on Experience",
             description: "Labs & Assignments",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Small Batch Sizes",
             description: "Personalized Attention",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Career-Driven Approach",
             description: "Professional Success",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Networking Opportunities",
             description: "Industry Connections",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Start-up Incubation",
             description: "New-Gen IEDC Support",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Top Placements",
             description: "Up to 55 LPA Package",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Holistic Development",
             description: "Well-Rounded Growth",
           },
         ]}
+      />
+
+      <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
       />
 
       {/* Program Outcomes */}

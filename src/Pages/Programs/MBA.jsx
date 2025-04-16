@@ -12,8 +12,51 @@ import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import herobg from "@/assets/programs/HeroMBA.png";
 import AdmissionStepper from "./Stepper";
+import googleWebp from "@/assets/programs/recruiters/Google.webp";
+import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
+import eyWebp from "@/assets/programs/recruiters/ey.webp";
+import deloitteWebp from "@/assets/programs/recruiters/Deloitte.webp";
+import axisWebp from "@/assets/programs/recruiters/Axis_Bank.webp";
+import boaWebp from "@/assets/programs/recruiters/BankOfAmerica.webp";
+import hdfcWebp from "@/assets/programs/recruiters/hdfc.webp";
+import nseWebp from "@/assets/programs/recruiters/nse.webp";
 
 export function MBA() {
+  const icons = [
+    {
+      src: googleWebp,
+      alt: "Google",
+    },
+    {
+      src: microsoftImg,
+      alt: "Microsoft",
+    },
+    {
+      src: deloitteWebp,
+      alt: "Deloitte",
+    },
+    {
+      src: axisWebp,
+      alt: "Axis Bank",
+    },
+    {
+      src: boaWebp,
+      alt: "Bank of America",
+    },
+    {
+      src: hdfcWebp,
+      alt: "HDFC Bank",
+    },
+    {
+      src: nseWebp,
+      alt: "NSE",
+    },
+    {
+      src: eyWebp,
+      alt: "EY",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Banner */}
@@ -46,46 +89,68 @@ export function MBA() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Industry-Integrated Learning",
             description: "Hands-on Experience",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Small Batch Sizes",
             description: "Personalized Learning",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Best-In-Class Placements",
             description: "Up to 55 LPA",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Project-Based Education",
             description: "Real-world Cases",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Industry Visits",
             description: "Corporate Exposure",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Top Recruiters",
             description: "Premium Placements",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "New-Gen IEDC",
             description: "Start-up Incubation",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "JOVAC Sessions",
             description: "Career Enhancement",
           },
         ]}
+      />
+
+      <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
       />
 
       {/* Program Outcome */}
@@ -96,8 +161,7 @@ export function MBA() {
         outcomes={[
           {
             title: "Leadership",
-            description:
-              "Learn to lead and manage business teams effectively.",
+            description: "Learn to lead and manage business teams effectively.",
             icon: <Users className="h-10 w-10 text-cusAccent" />,
           },
           {

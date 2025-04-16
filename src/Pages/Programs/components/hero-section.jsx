@@ -341,20 +341,20 @@ export function HeroSection({
                   </div>
 
                   {/* Form footer */}
-                  <div className="text-center text-white/60 text-xs flex items-center justify-center gap-1">
+                  <div className="text-center text-white/80 text-xs flex items-center justify-center gap-1">
                     <Lock className="h-3 w-3" />
                     <span>
                       By submitting, you agree to our{" "}
                       <a
                         href="#"
-                        className="text-primary hover:underline transition-colors duration-300"
+                        className="text-cusSecondary hover:underline transition-colors duration-300"
                       >
                         Terms
                       </a>{" "}
                       and{" "}
                       <a
                         href="#"
-                        className="text-primary hover:underline transition-colors duration-300"
+                        className="text-cusSecondary hover:underline transition-colors duration-300"
                       >
                         Privacy Policy
                       </a>
@@ -369,23 +369,23 @@ export function HeroSection({
               className="absolute top-5 -right-6 animate-float"
               style={{ animationDuration: "4s" }}
             >
-              <div className="bg-white rounded-full shadow-lg p-2">
-                <Badge className="bg-primary hover:bg-primary">
+              {/* <div className="bg-white rounded-full shadow-lg"> */}
+                <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
                   Limited Seats
                 </Badge>
-              </div>
+              {/* </div> */}
             </div>
 
             <div
               className="absolute bottom-5 -left-6 animate-float"
               style={{ animationDuration: "5s", animationDelay: "1s" }}
             >
-              <div className="bg-white rounded-full shadow-lg p-2">
-                <Badge variant="outline" className="flex items-center gap-1">
+              {/* <div className="bg-white rounded-full shadow-lg p-2"> */}
+                <Badge className="flex bg-white text-cusText items-center gap-1">
                   {/* <Calendar className="h-3.5 w-3.5" /> */}
                   Starts June 2025
                 </Badge>
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>

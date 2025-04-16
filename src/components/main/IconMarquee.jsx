@@ -12,18 +12,17 @@ const ReviewCard = ({ src, alt }) => {
 };
 
 export default function IconMarquee({ icons }) {
-
   const firstRow = icons?.slice(0, icons.length / 2);
   const secondRow = icons?.slice(icons.length / 2);
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:20s]">
+      <Marquee pauseOnHover className="[--duration:8s]">
         {firstRow?.map((icon, index) => (
           <ReviewCard key={`first-${index}`} {...icon} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      <Marquee reverse pauseOnHover className="[--duration:8s]">
         {secondRow?.map((icon, index) => (
           <ReviewCard key={`second-${index}`} {...icon} />
         ))}

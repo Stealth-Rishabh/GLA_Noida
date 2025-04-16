@@ -46,6 +46,7 @@ import { BrochureSection } from "./components/brochure-section";
 import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import AdmissionStepper from "./Stepper";
+import { IndustryPartners } from "./components/industry-partners";
 
 export function BtechCS() {
   // State management
@@ -88,6 +89,45 @@ export function BtechCS() {
     setActiveField(null);
   };
 
+  const icons = [
+    {
+      src: "/src/assets/programs/recruiters/amazon.webp",
+      alt: "Amazon",
+    },
+    {
+      src: "/src/assets/programs/recruiters/dell.webp", 
+      alt: "Dell",
+    },
+    {
+      src: "/src/assets/programs/recruiters/hp.webp",
+      alt: "HP", 
+    },
+    {
+      src: "/src/assets/programs/recruiters/microsoft.png",
+      alt: "Microsoft",
+    },
+    {
+      src: "/src/assets/programs/recruiters/vmware.webp",
+      alt: "VMware",
+    },
+    {
+      src: "/src/assets/programs/recruiters/IBM.webp",
+      alt: "IBM",
+    },
+    {
+      src: "/src/assets/programs/recruiters/HCL.webp",
+      alt: "HCL",
+    },
+    {
+      src: "/src/assets/programs/recruiters/Infosys.webp",
+      alt: "Infosys",
+    },
+    {
+      src: "/src/assets/programs/recruiters/capgemini.webp",
+      alt: "Capgemini",
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Banner */}
@@ -119,46 +159,68 @@ export function BtechCS() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Industry-Linked Curriculum",
             description: "Latest Industry Trends",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Global Exposure",
             description: "Study Abroad Options",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+            ),
             title: "Expert Faculty",
             description: "IITs & NITs Professors",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Innovation Focus",
             description: "Entrepreneurship Skills",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "IIT Experience",
             description: "Semester-Long Study",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Project-Based",
             description: "Practical Skills",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Placement-Ready",
             description: "AI Mock Interviews",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Codeathons",
             description: "Real-world Experience",
           },
         ]}
+      />
+
+      <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
       />
 
       {/* Program Outcomes */}
@@ -199,14 +261,12 @@ export function BtechCS() {
           },
           {
             title: "Tech Entrepreneur Ready",
-            description:
-              "Launch and scale innovative tech ventures globally.",
+            description: "Launch and scale innovative tech ventures globally.",
             icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
           },
           {
             title: "Ethical Tech Champion",
-            description:
-              "Drive innovation ensuring data privacy and security.",
+            description: "Drive innovation ensuring data privacy and security.",
             icon: <Users className="h-10 w-10 text-cusGreen" />,
           },
           {
