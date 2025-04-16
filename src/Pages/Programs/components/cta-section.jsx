@@ -127,7 +127,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 1.2 }}
-            className="mt-16 pt-16 border-t border-cusBlue max-w-3xl mx-auto grid md:grid-cols-3 gap-8"
+            className="mt-16 pt-16 border-t border-white/20 max-w-3xl mx-auto grid md:grid-cols-3 gap-8"
           >
             {ctaInfo.map((info, index) => (
               <motion.div
