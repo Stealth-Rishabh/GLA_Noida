@@ -14,93 +14,44 @@ import { AnimationStyles } from "./components/animation-styles";
 import AdmissionStepper from "./Stepper";
 import herobg from "@/assets/programs/HeroBBA.png";
 
+
+
+
 export function BBA() {
   // Sample data for components
   const icons = [
     {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
+      src: "/src/assets/programs/recruiters/Google.webp",
+      alt: "Google",
     },
     {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
+      src: "/src/assets/programs/recruiters/microsoft.png",
+      alt: "Microsoft", 
     },
     {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
+      src: "/src/assets/programs/recruiters/IBM.webp",
+      alt: "IBM",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
+      src: "/src/assets/programs/recruiters/Deloitte.webp", 
+      alt: "Deloitte",
     },
     {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
+      src: "/src/assets/programs/recruiters/Axis_Bank.webp",
+      alt: "Axis Bank",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
+      src: "/src/assets/programs/recruiters/bankOfAmerica.webp",
+      alt: "The Bank of America",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
+      src: "/src/assets/programs/recruiters/TCS.webp",
+      alt: "TCS",
     },
     {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
+      src: "/src/assets/programs/recruiters/berger.webp",
+      alt: "Berger Paints",
+    }
   ];
 
   return (

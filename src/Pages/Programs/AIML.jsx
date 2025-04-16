@@ -98,89 +98,37 @@ export function AIML() {
 
   const icons = [
     {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
+      src: "/src/assets/programs/recruiters/accenture.webp",
+      alt: "Accenture",
     },
     {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
+      src: "/src/assets/programs/recruiters/amazon.webp", 
+      alt: "Amazon",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
+      src: "/src/assets/programs/recruiters/facebook.webp",
+      alt: "Facebook",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
+      src: "/src/assets/programs/recruiters/IBM.webp",
+      alt: "IBM",
     },
     {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
+      src: "/src/assets/programs/recruiters/Intel.webp",
+      alt: "Intel",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
+      src: "/src/assets/programs/recruiters/microsoft.png",
+      alt: "Microsoft",
     },
     {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
+      src: "/src/assets/programs/recruiters/nvidia.webp",
+      alt: "NVIDIA",
     },
     {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=AzLSbCDHPY0k&format=png",
-      alt: "Acute Rating",
-    },
-    {
-      src: "https://img.icons8.com/?size=100&id=WdvNU85TbUGt&format=png",
-      alt: "Airtel",
-    },
-    {
-      src: "https://img.icons8.com/?size=96&id=7bKLognUSdDj&format=png",
-      alt: "Anand Rathi",
-    },
+      src: "/src/assets/programs/recruiters/samsung.webp",
+      alt: "Samsung",
+    }
   ];
 
   return (

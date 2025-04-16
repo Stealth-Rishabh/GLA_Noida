@@ -4,7 +4,7 @@ import IconMarquee from "@/components/main/IconMarquee";
 import { TextAnimate } from "@/components/magicui/text-animate";
 export function IndustryPartners({ title, subtitle, icons }) {
   return (
-    <section className="py-24 container mx-auto px-4">
+    <section className="py-16 container mx-auto px-4">
       <div className="max-w-7xl mx-auto text-center">
         <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
         <Heading level={2} className="text-center text-cusText">
@@ -20,7 +20,7 @@ export function IndustryPartners({ title, subtitle, icons }) {
           </TextAnimate>
         </Heading>
         <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full"></div>
-        <div className="mt-10 sm:mt-20">
+        <div className="mt-10">
           <IconMarquee icons={icons} />
         </div>
       </div>
