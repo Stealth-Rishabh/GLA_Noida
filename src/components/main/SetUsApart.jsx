@@ -1,10 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import SetUsApartImage from "@/assets/general/SetUsApart.webp";
+import BackgroundWave from "@/assets/general/background-wave.svg";
+
 import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function SetUsApart() {
+  console.log("BackgroundWave:", BackgroundWave); // Debug log
+
   return (
     <div className="relative w-full max-w-7xl mx-auto my-12 px-0 md:px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">

@@ -6,19 +6,20 @@ import SetUsApart from "@/components/main/SetUsApart";
 import ExploreMajorSections from "@/components/main/ExploreMajorSections";
 import StudentLife from "@/components/main/StudentLife";
 import LatestNews from "@/components/main/LatestNews";
+import { GradientBackground } from "@/components/ui/gradient-background";
 
 export default function LandingPage() {
   return (
     <>
       <BannerSlider />
 
-      <Section animate background="background-gradient-white">
+      <Section animate className="checkBackground">
         <UndergraduateAdmissions />
       </Section>
 
-      <Section className="background-gradient">
+      <GradientBackground className="gradientOne">
         <SetUsApart />
-      </Section>
+      </GradientBackground>
 
       <ExploreMajorSections />
 
@@ -26,7 +27,7 @@ export default function LandingPage() {
         <StudentLife />
       </Section>
 
-      <Section animate>
+      <Section animate className="checkBackground">
         <LatestNews />
       </Section>
     </>
