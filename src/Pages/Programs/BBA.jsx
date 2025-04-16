@@ -11,11 +11,9 @@ import { BrochureSection } from "./components/brochure-section";
 import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import { AnimationStyles } from "./components/animation-styles";
+import { GradientBackground } from "@/components/ui/gradient-background";
 import AdmissionStepper from "./Stepper";
 import herobg from "@/assets/programs/HeroBBA.png";
-
-
-
 
 export function BBA() {
   // Sample data for components
@@ -26,14 +24,14 @@ export function BBA() {
     },
     {
       src: "/src/assets/programs/recruiters/microsoft.png",
-      alt: "Microsoft", 
+      alt: "Microsoft",
     },
     {
       src: "/src/assets/programs/recruiters/IBM.webp",
       alt: "IBM",
     },
     {
-      src: "/src/assets/programs/recruiters/Deloitte.webp", 
+      src: "/src/assets/programs/recruiters/Deloitte.webp",
       alt: "Deloitte",
     },
     {
@@ -51,7 +49,7 @@ export function BBA() {
     {
       src: "/src/assets/programs/recruiters/berger.webp",
       alt: "Berger Paints",
-    }
+    },
   ];
 
   return (
@@ -77,63 +75,97 @@ export function BBA() {
         ]}
       />
 
-      {/* Program Description */}
-      <ProgramDescription
-        title="About the Program"
-        description={[
-          "In today's world, businesses are the backbone of every economy, catering to the needs of people across the globe. The BBA in Management Science opens the door to a wide range of career opportunities in industries like finance, marketing, human resources, and operations.",
-          "This three-year program is designed to equip students with a strong foundation in key management areas such as finance, marketing, accounting, and organizational behavior. The course not only focuses on core business principles but also helps students enhance their communication, leadership, and problem-solving skills—traits that are essential for success in the business world.",
-          "Additionally, this program is a great stepping stone for those aspiring to pursue an MBA. It equips students with the knowledge and preparation needed to succeed in competitive MBA entrance exams like CAT, XAT, MAT, and others.",
-        ]}
-        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
-        features={[
-          {
-            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Hands-On Workshops",
-            description: "Industry Tools Training",
-          },
-          {
-            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Live Projects",
-            description: "Real-world Case Studies",
-          },
-          {
-            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Industry Visits",
-            description: "Leading Company Tours",
-          },
-          {
-            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Small Batch Size",
-            description: "Personalized Attention",
-          },
-          {
-            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Career Focus",
-            description: "Professional Skills",
-          },
-          {
-            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Networking",
-            description: "Industry Connections",
-          },
-          {
-            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Innovation Hub",
-            description: "Research & Creativity",
-          },
-          {
-            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
-            title: "Holistic Growth",
-            description: "All-round Development",
-          },
-        ]}
-      />
       {/* Industry Partners */}
       <IndustryPartners
         title="Industry Partners"
         subtitle="Trusted by"
         icons={icons}
+      />
+
+      {/* Program Description */}
+      <GradientBackground className="gradientOne">
+        <ProgramDescription
+          title="About the Program"
+          description={[
+            "In today's world, businesses are the backbone of every economy, catering to the needs of people across the globe. The BBA in Management Science opens the door to a wide range of career opportunities in industries like finance, marketing, human resources, and operations.",
+            "This three-year program is designed to equip students with a strong foundation in key management areas such as finance, marketing, accounting, and organizational behavior. The course not only focuses on core business principles but also helps students enhance their communication, leadership, and problem-solving skills—traits that are essential for success in the business world.",
+            "Additionally, this program is a great stepping stone for those aspiring to pursue an MBA. It equips students with the knowledge and preparation needed to succeed in competitive MBA entrance exams like CAT, XAT, MAT, and others.",
+          ]}
+          imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+          features={[
+            {
+              icon: (
+                <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Hands-On Workshops",
+              description: "Industry Tools Training",
+            },
+            {
+              icon: (
+                <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Live Projects",
+              description: "Real-world Case Studies",
+            },
+            {
+              icon: (
+                <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Industry Visits",
+              description: "Leading Company Tours",
+            },
+            {
+              icon: (
+                <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Small Batch Size",
+              description: "Personalized Attention",
+            },
+            {
+              icon: (
+                <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Career Focus",
+              description: "Professional Skills",
+            },
+            {
+              icon: (
+                <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Networking",
+              description: "Industry Connections",
+            },
+            {
+              icon: (
+                <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Innovation Hub",
+              description: "Research & Creativity",
+            },
+            {
+              icon: (
+                <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              ),
+              title: "Holistic Growth",
+              description: "All-round Development",
+            },
+          ]}
+        />
+      </GradientBackground>
+
+      <EligibilitySection
+        title="Why Choose BBA in Management Science?"
+        subtitle="Who Can Apply"
+        description="With businesses growing and evolving, the demand for skilled professionals in management roles is higher than ever. A BBA in Management Science equips you with the knowledge and skills to succeed in the competitive world of business. Whether you want to climb the corporate ladder or start your own business, this program is the perfect foundation for your future."
+        requirements={[
+          "10+2 examination with minimum 60% marks in any stream (Science/Commerce/Arts)",
+          "Strong analytical and problem-solving skills",
+          "Basic computer proficiency",
+          "Good communication skills in English (written and verbal)",
+          "Leadership qualities and team spirit",
+          "Interest in business and management concepts",
+          "Ability to think critically and strategically",
+        ]}
       />
 
       {/* Program Outcome */}
@@ -193,20 +225,9 @@ export function BBA() {
       />
 
       {/* Eligibility */}
-      <EligibilitySection
-        title="Why Choose BBA in Management Science?"
-        subtitle="Who Can Apply"
-        description="With businesses growing and evolving, the demand for skilled professionals in management roles is higher than ever. A BBA in Management Science equips you with the knowledge and skills to succeed in the competitive world of business. Whether you want to climb the corporate ladder or start your own business, this program is the perfect foundation for your future."
-        requirements={[
-          "10+2 examination with minimum 60% marks in any stream (Science/Commerce/Arts)",
-          "Strong analytical and problem-solving skills",
-          "Basic computer proficiency",
-          "Good communication skills in English (written and verbal)",
-          "Leadership qualities and team spirit",
-          "Interest in business and management concepts",
-          "Ability to think critically and strategically",
-        ]}
-      />
+
+      {/* Admission Process */}
+      <AdmissionStepper className="checkBackground" />
 
       {/* Curriculum */}
       <CurriculumSection
@@ -216,9 +237,6 @@ export function BBA() {
         programDuration="3 Years"
         programDescription="Gain essential business knowledge and leadership skills with a BBA in Management Science from GLA University, Greater Noida campus. Prepare for a successful career in management and beyond with hands-on learning and industry insights."
       />
-
-      {/* Admission Process */}
-      <AdmissionStepper />
 
       {/* Fees */}
       <FeesSection
