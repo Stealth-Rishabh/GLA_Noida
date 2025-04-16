@@ -13,10 +13,10 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 background-gradient-white relative overflow-hidden"
+      className="py-24 bg-gradient-to-r from-cusPrimary to-cusPrimaryLight text-white relative overflow-hidden"
     >
       {/* Animated background elements */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false }}
@@ -37,7 +37,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute bottom-0 right-1/4 w-72 h-72 bg-cusGreen/5 rounded-full blur-3xl"
         />
-      </motion.div>
+      </motion.div> */}
 
       <motion.div
         initial={{ y: 20, opacity: 0 }}
@@ -53,7 +53,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Badge className="mb-6 bg-cusGreen text-white hover:bg-cusGreen/80">
+            <Badge className="mb-6 bg-cusSecondary text-cusText hover:bg-cusSecondary/80">
               {subtitle}
             </Badge>
           </motion.div>
@@ -64,7 +64,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mb-6"
           >
-            <Heading level={2} className="text-center text-cusBlue">
+            <Heading level={2} className="text-center text-white">
               <TextAnimate
                 as="span"
                 by="word"
@@ -89,7 +89,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="text-xl opacity-90 mb-12 text-black max-w-2xl mx-auto"
+            className="text-xl opacity-90 mb-12 text-white/90 max-w-2xl mx-auto"
           >
             {description}
           </motion.p>
@@ -103,7 +103,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="gap-2 group bg-cusYellow text-cusBlue hover:bg-cusYellow/80 transition-all duration-300 hover:pl-6 hover:pr-10 flex items-center px-6 py-2 rounded-md"
+              className="gap-2 group bg-cusSecondary text-cusText hover:bg-cusSecondary/80 transition-all duration-300 hover:pl-6 hover:pr-10 flex items-center px-6 py-2 rounded-md"
             >
               Apply Now
               <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
@@ -113,7 +113,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-cusBlue border-cusYellow hover:bg-cusYellow/10 gap-2 group flex items-center px-6 py-2 rounded-md border"
+              className="text-white border-cusYellow hover:bg-cusYellow/10 gap-2 group flex items-center px-6 py-2 rounded-md border"
             >
               Request Information
               <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
@@ -146,7 +146,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.2 }}
-                  className="w-16 h-16 rounded-full bg-cusGreenLighter flex items-center justify-center mb-4"
+                  className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4"
                 >
                   {info.icon}
                 </motion.div>

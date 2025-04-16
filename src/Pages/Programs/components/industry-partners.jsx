@@ -6,8 +6,8 @@ export function IndustryPartners({ title, subtitle, icons }) {
   return (
     <section className="py-24 container mx-auto px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <Badge className="mb-4 bg-cusGreen text-white">{subtitle}</Badge>
-        <Heading level={2} className="text-center text-cusBlue">
+        <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
+        <Heading level={2} className="text-center text-cusText">
           <TextAnimate
             as="span"
             by="word"

@@ -12,8 +12,8 @@ export function EligibilitySection({
   requirements,
 }) {
   return (
-    <section className="py-24 container mx-auto max-w-7xl px-4">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section className="py-24 px-4">
+      <div className="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -75,9 +75,9 @@ export function EligibilitySection({
                   >
                     <motion.div
                       whileHover={{ scale: 1.1 }}
-                      className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-cusBlueLight group-hover:bg-cusBlueLight/80 transition-colors duration-300"
+                      className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-white group-hover:bg-white/80 transition-colors duration-300"
                     >
-                      <ArrowRight className="h-3.5 w-3.5 text-white" />
+                      <ArrowRight className="h-3.5 w-3.5 text-cusPrimary" />
                     </motion.div>
                     <span className="text-lg">{item}</span>
                   </motion.li>
@@ -93,7 +93,7 @@ export function EligibilitySection({
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group gap-2 transition-all bg-cusYellow text-cusBlue hover:bg-cusYellow/80 duration-300 hover:pl-6 hover:pr-7 px-6 py-2 rounded-md flex items-center"
+                  className="group gap-2 transition-all bg-cusSecondary text-cusText hover:bg-cusSecondary/80 duration-300 hover:pl-6 hover:pr-7 px-6 py-2 rounded-md flex items-center"
                 >
                   Apply Now
                   <motion.span
@@ -125,7 +125,7 @@ export function EligibilitySection({
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Heading level={2} className="text-left text-cusBlue">
+            <Heading level={2} className="text-left text-cusText">
               <TextAnimate
                 as="span"
                 by="word"
@@ -150,7 +150,7 @@ export function EligibilitySection({
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="text-[17px] text-muted-foreground"
+            className="text-[17px] text-cusTextLight"
           >
             {description}
           </motion.p>

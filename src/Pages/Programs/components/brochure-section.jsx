@@ -39,7 +39,7 @@ export function BrochureSection({ title, subtitle, description, features, imageU
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Badge className="mb-4 bg-cusGreen text-white">{subtitle}</Badge>
+              <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
             </motion.div>
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -85,9 +85,9 @@ export function BrochureSection({ title, subtitle, description, features, imageU
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.2 }}
-                    className="w-5 h-5 rounded-full bg-cusBlueLighter flex items-center justify-center flex-shrink-0 mt-1"
+                    className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 mt-1"
                   >
-                    <ArrowRight className="h-3 w-3 text-white" />
+                    <ArrowRight className="h-3 w-3 text-cusPrimary" />
                   </motion.div>
                   <div>
                     <h4 className="font-medium text-white">{feature.title}</h4>
@@ -107,7 +107,7 @@ export function BrochureSection({ title, subtitle, description, features, imageU
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="gap-2 group bg-cusYellow text-cusBlue hover:bg-cusYellow/80 transition-all duration-300 hover:pl-6 hover:pr-10 flex items-center px-4 py-2 rounded-md"
+                className="gap-2 group bg-cusSecondary text-cusText hover:bg-cusSecondary/80 transition-all duration-300 hover:pl-6 hover:pr-10 flex items-center px-4 py-2 rounded-md"
               >
                 Download Now
                 <motion.span
@@ -171,7 +171,7 @@ export function BrochureSection({ title, subtitle, description, features, imageU
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 1.2 }}
                 whileHover={{ scale: 1.1 }}
-                className="absolute -bottom-4 -right-4 bg-cusYellow text-cusBlue p-3 rounded-full shadow-lg"
+                className="absolute -bottom-4 -right-4 bg-cusSecondary text-cusText p-3 rounded-full shadow-lg"
               >
                 <Download className="h-6 w-6" />
               </motion.div>

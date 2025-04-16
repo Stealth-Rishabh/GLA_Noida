@@ -73,7 +73,7 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                 <CardHeader className="flex flex-row gap-5">
                   <motion.div 
                     whileHover={{ scale: 1.1 }}
-                    className="mb-2 min-w-16 h-16 rounded-2xl bg-cusAccent/20 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
+                    className="mb-2 min-w-16 h-16 rounded-2xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
                   >
                     {item.icon}
                   </motion.div>

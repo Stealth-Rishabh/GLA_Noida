@@ -88,7 +88,7 @@ export function HeroSection({
         ></div>
       </div>
 
-      <div className="relative z-10 container max-w-7xl mx-auto px-4 py-20">
+      <div className="relative z-10 container max-w-7xl mx-auto px-4 py-24">
         <div className="grid lg:grid-cols-12 gap-12 items-end">
           {/* Content Column */}
           <div className="lg:col-span-6 space-y-8">

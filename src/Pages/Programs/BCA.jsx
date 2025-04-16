@@ -155,7 +155,7 @@ export function BCA() {
             description: "Up to 55 LPA Package",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Holistic Development",
             description: "Well-Rounded Growth",
           },
@@ -299,17 +299,17 @@ export function BCA() {
         description="Join our Advanced Data Science Program and unlock new opportunities in the world of data."
         ctaInfo={[
           {
-            icon: <Calendar className="h-8 w-8 text-cusGreen" />,
+            icon: <Calendar className="h-8 w-8 text-cusSecondary" />,
             title: "Next Batch",
             description: "Starting June 15, 2025",
           },
           {
-            icon: <Users className="h-8 w-8 text-cusGreen" />,
+            icon: <Users className="h-8 w-8 text-cusSecondary" />,
             title: "Class Size",
             description: "Limited to 30 students",
           },
           {
-            icon: <GraduationCap className="h-8 w-8 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 text-cusSecondary" />,
             title: "Application Deadline",
             description: "May 15, 2025",
           },

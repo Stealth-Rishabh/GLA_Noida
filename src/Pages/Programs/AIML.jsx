@@ -214,42 +214,42 @@ export function AIML() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Practical Learning",
             description: "Industry Professionals",
           },
           {
-            icon: <Building2 className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Building2 className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Industry Visits",
             description: "Leading Companies",
           },
           {
-            icon: <UserPlus className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <UserPlus className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Small Class Sizes",
             description: "Personalized Attention",
           },
           {
-            icon: <UsersRound className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <UsersRound className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Collaborative Learning",
             description: "Team Environment",
           },
           {
-            icon: <Code2 className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Code2 className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Real-World Projects",
             description: "Hackathons & Bootcamps",
           },
           {
-            icon: <Wrench className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Wrench className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Skill Building",
             description: "Interactive Workshops",
           },
           {
-            icon: <Lightbulb className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Lightbulb className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Innovation Culture",
             description: "Research Focused",
           },
           {
-            icon: <UserCircle className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <UserCircle className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Holistic Growth",
             description: "Beyond Academics",
           },
@@ -403,17 +403,17 @@ export function AIML() {
         description="Join our Advanced Data Science Program and unlock new opportunities in the world of data."
         ctaInfo={[
           {
-            icon: <Calendar className="h-8 w-8 text-cusGreen" />,
+            icon: <Calendar className="h-8 w-8 text-cusSecondary" />,
             title: "Next Batch",
             description: "Starting June 15, 2025",
           },
           {
-            icon: <Users className="h-8 w-8 text-cusGreen" />,
+            icon: <Users className="h-8 w-8 text-cusSecondary" />,
             title: "Class Size",
             description: "Limited to 30 students",
           },
           {
-            icon: <GraduationCap className="h-8 w-8 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 text-cusSecondary" />,
             title: "Application Deadline",
             description: "May 15, 2025",
           },

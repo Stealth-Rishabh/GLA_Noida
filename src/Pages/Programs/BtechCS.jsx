@@ -134,27 +134,27 @@ export function BtechCS() {
             description: "IITs & NITs Professors",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Innovation Focus",
             description: "Entrepreneurship Skills",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "IIT Experience",
             description: "Semester-Long Study",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Project-Based",
             description: "Practical Skills",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Placement-Ready",
             description: "AI Mock Interviews",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Codeathons",
             description: "Real-world Experience",
           },
@@ -307,17 +307,17 @@ export function BtechCS() {
         description="Join our Advanced Data Science Program and unlock new opportunities in the world of data."
         ctaInfo={[
           {
-            icon: <Calendar className="h-8 w-8 text-cusGreen" />,
+            icon: <Calendar className="h-8 w-8 text-cusSecondary" />,
             title: "Next Batch",
             description: "Starting June 15, 2025",
           },
           {
-            icon: <Users className="h-8 w-8 text-cusGreen" />,
+            icon: <Users className="h-8 w-8 text-cusSecondary" />,
             title: "Class Size",
             description: "Limited to 30 students",
           },
           {
-            icon: <GraduationCap className="h-8 w-8 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 text-cusSecondary" />,
             title: "Application Deadline",
             description: "May 15, 2025",
           },

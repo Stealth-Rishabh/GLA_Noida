@@ -137,42 +137,42 @@ export function BBA() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Hands-On Workshops",
             description: "Industry Tools Training",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Live Projects",
             description: "Real-world Case Studies",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Industry Visits",
             description: "Leading Company Tours",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Small Batch Size",
             description: "Personalized Attention",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Career Focus",
             description: "Professional Skills",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Networking",
             description: "Industry Connections",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Innovation Hub",
             description: "Research & Creativity",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Holistic Growth",
             description: "All-round Development",
           },
@@ -195,48 +195,48 @@ export function BBA() {
             title: "Business Leadership",
             description:
               "Lead teams effectively to drive organizational growth.",
-            icon: <Users className="h-10 w-10 text-cusGreen" />,
+            icon: <Users className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Strategic Management",
             description:
               "Master strategic planning for sustainable business growth.",
-            icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+            icon: <BookOpen className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Financial Acumen",
             description:
               "Expert in financial analysis and investment management.",
-            icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+            icon: <GraduationCap className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Marketing Excellence",
             description: "Drive brand growth with modern marketing strategies.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+            icon: <Beaker className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Operations Management",
             description:
               "Optimize business processes for improved operational efficiency.",
-            icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+            icon: <BookOpen className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Business Analytics",
             description:
               "Make data-driven decisions using modern analytics tools.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+            icon: <Beaker className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Entrepreneurial Mindset",
             description:
               "Launch and grow successful business ventures effectively.",
-            icon: <Users className="h-10 w-10 text-cusGreen" />,
+            icon: <Users className="h-10 w-10 text-cusAccent" />,
           },
           {
             title: "Global Business Perspective",
             description:
               "Master international business practices and cross-cultural management.",
-            icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+            icon: <GraduationCap className="h-10 w-10 text-cusAccent" />,
           },
         ]}
       />
@@ -324,17 +324,17 @@ export function BBA() {
         description="Join our Advanced Data Science Program and unlock new opportunities in the world of data."
         ctaInfo={[
           {
-            icon: <Calendar className="h-8 w-8 text-cusGreen" />,
+            icon: <Calendar className="h-8 w-8 text-cusSecondary" />,
             title: "Next Batch",
             description: "Starting June 15, 2025",
           },
           {
-            icon: <Users className="h-8 w-8 text-cusGreen" />,
+            icon: <Users className="h-8 w-8 text-cusSecondary" />,
             title: "Class Size",
             description: "Limited to 30 students",
           },
           {
-            icon: <GraduationCap className="h-8 w-8 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 text-cusSecondary" />,
             title: "Application Deadline",
             description: "May 15, 2025",
           },

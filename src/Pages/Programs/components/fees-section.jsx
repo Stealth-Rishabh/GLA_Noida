@@ -13,7 +13,7 @@ export function FeesSection({ title, subtitle, plans }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 container mx-auto px-4"
+      className="py-24 container background-gradient-yellow mx-auto px-4"
     >
       <motion.div
         initial={{ y: 20, opacity: 0 }}
@@ -28,9 +28,9 @@ export function FeesSection({ title, subtitle, plans }) {
           viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <Badge className="mb-4 bg-cusGreen text-white">{subtitle}</Badge>
+          <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
         </motion.div>
-        <Heading level={2} className="text-center text-cusBlue">
+        <Heading level={2} className="text-center text-cusText">
           <TextAnimate
             as="span"
             by="word"
@@ -73,8 +73,8 @@ export function FeesSection({ title, subtitle, plans }) {
             <Card
               className={`relative group hover:-translate-y-2 transition-all duration-300 ${
                 plan.highlight
-                  ? "border-primary shadow-lg z-10 pt-0"
-                  : "hover:border-primary/50 hover:shadow-md"
+                  ? "border-cusAccent shadow-lg z-10 pt-0"
+                  : "hover:border-cusAccent/50 hover:shadow-md"
               }`}
             >
               <motion.div
@@ -85,7 +85,7 @@ export function FeesSection({ title, subtitle, plans }) {
               >
                 <CardHeader
                   className={`${
-                    plan.highlight ? "bg-cusBlue p-5 text-slate-100" : ""
+                    plan.highlight ? "bg-cusAccent/10 p-5 text-cusText" : ""
                   } rounded-t-lg transition-colors duration-300`}
                 >
                   <motion.div
@@ -105,7 +105,7 @@ export function FeesSection({ title, subtitle, plans }) {
                 <Button
                   className={`w-full group ${
                     plan.highlight
-                      ? "bg-cusYellow hover:bg-cusYellow/80 text-cusBlue"
+                      ? "bg-cusAccent hover:bg-cusAccent/80 text-white"
                       : "bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 hover:border-primary/50"
                   }`}
                 >

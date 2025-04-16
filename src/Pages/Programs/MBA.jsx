@@ -46,42 +46,42 @@ export function MBA() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Industry-Integrated Learning",
             description: "Hands-on Experience",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Small Batch Sizes",
             description: "Personalized Learning",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Best-In-Class Placements",
             description: "Up to 55 LPA",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Project-Based Education",
             description: "Real-world Cases",
           },
           {
-            icon: <Beaker className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Industry Visits",
             description: "Corporate Exposure",
           },
           {
-            icon: <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "Top Recruiters",
             description: "Premium Placements",
           },
           {
-            icon: <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "New-Gen IEDC",
             description: "Start-up Incubation",
           },
           {
-            icon: <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />,
+            icon: <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
             title: "JOVAC Sessions",
             description: "Career Enhancement",
           },
@@ -222,17 +222,17 @@ export function MBA() {
         description="Join our MBA in Dual Specialization Program and unlock new opportunities in the world of business."
         ctaInfo={[
           {
-            icon: <Calendar className="h-8 w-8 text-cusGreen" />,
+            icon: <Calendar className="h-8 w-8 text-cusSecondary" />,
             title: "Next Batch",
             description: "Starting June 15, 2025",
           },
           {
-            icon: <Users className="h-8 w-8 text-cusGreen" />,
+            icon: <Users className="h-8 w-8 text-cusSecondary" />,
             title: "Class Size",
             description: "Limited to 30 students",
           },
           {
-            icon: <GraduationCap className="h-8 w-8 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 text-cusSecondary" />,
             title: "Application Deadline",
             description: "May 15, 2025",
           },

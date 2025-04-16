@@ -56,9 +56,9 @@ export function CurriculumSection({
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Badge className="mb-4 bg-cusGreen text-white">{subtitle}</Badge>
+            <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
           </motion.div>
-          <Heading level={2} className="text-center text-cusBlue">
+          <Heading level={2} className="text-center text-white">
             <TextAnimate
               as="span"
               by="word"
@@ -136,7 +136,7 @@ export function CurriculumSection({
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full bg-cusGreen text-white hover:bg-cusGreen/80 gap-2 flex items-center justify-center py-2 rounded-md"
+                className="w-full bg-cusSecondary text-cusText hover:bg-cusSecondary/80 gap-2 flex items-center justify-center py-2 rounded-md"
               >
                 Apply Now
                 <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>

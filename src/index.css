@@ -169,12 +169,17 @@
   }
 
   .background-gradient {
-    @apply bg-gradient-to-b from-yellow-200 via-yellow-50 to-yellow-200;
+    @apply bg-gradient-to-r from-cusPrimary to-cusPrimaryLight;
   }
   .background-gradient-white {
     @apply bg-gradient-to-b from-white to-slate-100;
   }
-  .background-gradient-blue {
-    @apply bg-gradient-to-r from-cusBlue to-cusBlueLight;
+  .background-gradient-yellow {
+    @apply bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15;
   }
+  .background-gradient-blue {
+    @apply bg-gradient-to-l from-cusPrimaryLight to-cusPrimaryLight;
+  }
+
+
 }

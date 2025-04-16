@@ -146,8 +146,8 @@ export default function AdmissionStepper() {
   }, [currentStep]);
 
   return (
-    <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 pt-16">
-      <Heading level={2} className="text-center text-cusBlue">
+    <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20">
+      <Heading level={2} className="text-center text-cusText">
         <TextAnimate
           as="span"
           by="word"

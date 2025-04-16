@@ -77,7 +77,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             ease: "easeOut",
           }}
         >
-          <div className="relative z-10 bg-cusPrimary rounded-2xl shadow-xl p-6 border border-slate-100">
+          <div className="relative z-10 bg-cusAccent rounded-2xl shadow-xl p-6 border-cusAccent border-2">
             <motion.img
               src={imageUrl || "/placeholder.svg"}
               alt="Program Overview"
@@ -108,7 +108,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             whileTap={{ scale: 0.95 }}
           >
             <motion.div
-              className="min-w-12 h-12 rounded-full bg-cusPrimary/25 flex items-center justify-center group-hover:bg-cusPrimary transition-colors duration-300"
+              className="min-w-12 h-12 rounded-full bg-cusAccent/25 flex items-center justify-center group-hover:bg-cusAccent transition-colors duration-300"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
             >
