@@ -17,7 +17,7 @@ import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
 import eyWebp from "@/assets/programs/recruiters/ey.webp";
 import deloitteWebp from "@/assets/programs/recruiters/Deloitte.webp";
 import axisWebp from "@/assets/programs/recruiters/Axis_Bank.webp";
-import boaWebp from "@/assets/programs/recruiters/BankOfAmerica.webp";
+import boaWebp from "@/assets/programs/recruiters/bankOfAmerica.webp";
 import hdfcWebp from "@/assets/programs/recruiters/hdfc.webp";
 import nseWebp from "@/assets/programs/recruiters/nse.webp";
 

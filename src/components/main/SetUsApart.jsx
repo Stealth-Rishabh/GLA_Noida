@@ -32,7 +32,7 @@ export default function SetUsApart() {
           >
             <Heading
               level={2}
-              className="text-cusBlue mb-4"
+              className="text-black mb-4"
               subtext="Experience excellence at GLA University, where cutting-edge technology meets traditional values. Our state-of-the-art facilities, industry-aligned curriculum, and focus on practical learning set us apart in higher education."
               subtextClassName="text-gray-600 text-lg mb-8 leading-relaxed"
             >
