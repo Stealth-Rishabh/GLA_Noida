@@ -7,7 +7,7 @@ import { PlayCircle } from "lucide-react";
 
 export function ProgramDescription({ title, description, features, imageUrl }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoId = 'HeMNPaGtRr4';
+  const videoId = "HeMNPaGtRr4";
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   return (
@@ -15,14 +15,14 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
-      <div className="max-w-7xl overflow-hidden mx-auto text-center mb-16">
+      {/* <div className="max-w-7xl overflow-hidden mx-auto text-center mb-16">
         <motion.div
           initial={{ opacity: 1, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.5 }}
         >
-          <Heading level={2} className="text-center text-cusText">
+          <Heading level={2} className="text-center text-black">
             <TextAnimate
               as="span"
               by="word"
@@ -42,9 +42,9 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             className="h-1 w-20 bg-cusYellow mx-auto rounded-full"
           />
         </motion.div>
-      </div>
+      </div> */}
 
-      <div className="grid max-w-7xl mx-auto md:grid-cols-2 gap-16 items-center">
+      <div className="grid bg-white p-10 rounded-2xl max-w-7xl mx-auto md:grid-cols-2 gap-16">
         <motion.div
           className="order-2 md:order-1"
           initial={{ x: -100, opacity: 0 }}
@@ -56,6 +56,33 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             ease: "easeOut",
           }}
         >
+          <motion.div
+            initial={{ opacity: 1, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5 }}
+            className="mb-10"
+          >
+            <Heading level={2} className="text-black">
+              <TextAnimate
+                as="span"
+                by="word"
+                delay={0.2}
+                duration={0.5}
+                animation="slideUp"
+                className="inline-flex flex-wrap"
+              >
+                {title}
+              </TextAnimate>
+            </Heading>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="h-1 w-20 bg-cusYellow rounded-full"
+            />
+          </motion.div>
           <div className="space-y-4">
             {description.map((paragraph, index) => (
               <motion.p
@@ -87,7 +114,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             <Dialog open={isPlaying} onOpenChange={setIsPlaying}>
               <DialogTrigger asChild>
                 <div className="relative w-full cursor-pointer group">
-                  <img 
+                  <img
                     src={thumbnailUrl}
                     alt="Video thumbnail"
                     className="w-full h-auto rounded-xl hover:scale-105 transition-all duration-300"
@@ -103,7 +130,10 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
                 </div>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[800px] p-0">
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <div
+                  className="relative w-full"
+                  style={{ paddingBottom: "56.25%" }}
+                >
                   <iframe
                     src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
                     title="Program Overview"
@@ -147,9 +177,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
               <h4 className="font-medium text-base text-cusText sm:text-lg">
                 {item.title}
               </h4>
-              <p className="text-sm text-cusText">
-                {item.description}
-              </p>
+              <p className="text-sm text-cusText">{item.description}</p>
             </div>
           </motion.div>
         ))}
