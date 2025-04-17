@@ -83,7 +83,7 @@ export function BBA() {
       />
 
       {/* Program Description */}
-      <GradientBackground className="gradientOne py-20">
+      <GradientBackground className="gradientOne">
         <ProgramDescription
           title="About the Program"
           description={[

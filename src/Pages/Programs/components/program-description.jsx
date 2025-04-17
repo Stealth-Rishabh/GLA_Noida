@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { PlayCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export function ProgramDescription({ title, description, features, imageUrl }) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const videoId = "HeMNPaGtRr4";
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
@@ -84,18 +87,44 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             />
           </motion.div>
           <div className="space-y-4">
-            {description.map((paragraph, index) => (
-              <motion.p
-                key={index}
-                className="text-[17px] text-cusText"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+            <div className={`space-y-4 ${!isExpanded ? 'line-clamp-7' : ''}`}>
+              {description.map((paragraph, index) => (
+                <motion.p
+                  key={index}
+                  className="text-[17px] text-cusText"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Button
+                variant="outline"
+                className="text-cusAccent hover:text-cusAccent/80 hover:bg-cusAccent/10"
+                onClick={() => setIsExpanded(!isExpanded)}
               >
-                {paragraph}
-              </motion.p>
-            ))}
+                {isExpanded ? (
+                  <>
+                    <ChevronUp className="w-4 h-4 mr-2" />
+                    Show Less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-4 h-4 mr-2" />
+                    Read More
+                  </>
+                )}
+              </Button>
+            </motion.div>
           </div>
         </motion.div>
 
