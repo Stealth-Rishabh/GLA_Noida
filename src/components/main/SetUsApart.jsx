@@ -53,7 +53,7 @@ export default function SetUsApart() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-cusGreen text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-all duration-300 hover:shadow-lg"
+            className="bg-cusGreen  text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-all duration-300 hover:shadow-lg"
           >
             Explore More
             <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>

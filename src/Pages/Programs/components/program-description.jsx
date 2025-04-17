@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { PlayCircle } from "lucide-react";
 
 export function ProgramDescription({ title, description, features, imageUrl }) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = 'HeMNPaGtRr4';
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
   return (
     <section className="py-24 bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15 px-4 overflow-hidden">
       {/* Background elements */}
@@ -77,14 +83,37 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             ease: "easeOut",
           }}
         >
-          <div className="relative z-10 bg-cusAccent rounded-2xl shadow-xl p-6 border-cusAccent border-2">
-            <motion.img
-              src={imageUrl || "/placeholder.svg"}
-              alt="Program Overview"
-              className="w-full h-auto rounded-xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            />
+          <div className="relative z-10 bg-cusAccent rounded-xl hover:shadow-cusAccent/50 shadow-2xl p-[px] ring-cusAccent ring-4 ring-offset-4 overflow-hidden">
+            <Dialog open={isPlaying} onOpenChange={setIsPlaying}>
+              <DialogTrigger asChild>
+                <div className="relative w-full cursor-pointer group">
+                  <img 
+                    src={thumbnailUrl}
+                    alt="Video thumbnail"
+                    className="w-full h-auto rounded-xl hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="bg-cusAccent/90 p-1 rounded-full group-hover:bg-cusAccent transition-colors duration-300"
+                    >
+                      <PlayCircle className="w-10 h-10 text-white group-hover:scale-110 transition-all duration-300 animate-pulse" />
+                    </motion.div>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[800px] p-0">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    title="Program Overview"
+                    className="absolute top-0 left-0 w-full h-full rounded-xl"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           {/* Decorative elements */}
