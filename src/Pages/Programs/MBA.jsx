@@ -78,6 +78,13 @@ export function MBA() {
         ]}
       />
 
+       {/* Industry Partners */}
+       <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
+      />
+
       {/* Program Description */}
       <ProgramDescription
         title="About the Program"
@@ -147,11 +154,6 @@ export function MBA() {
         ]}
       />
 
-      <IndustryPartners
-        title="Industry Partners"
-        subtitle="Trusted by"
-        icons={icons}
-      />
 
       {/* Program Outcome */}
       <ProgramOutcomes

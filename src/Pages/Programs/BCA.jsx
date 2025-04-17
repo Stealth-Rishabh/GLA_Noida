@@ -152,6 +152,13 @@ export function BCA() {
         ]}
       />
 
+       {/* Industry Partners */}
+       <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
+      />
+
       {/* Program Description */}
       <ProgramDescription
         title="About the Program"
@@ -219,12 +226,6 @@ export function BCA() {
             description: "Well-Rounded Growth",
           },
         ]}
-      />
-
-      <IndustryPartners
-        title="Industry Partners"
-        subtitle="Trusted by"
-        icons={icons}
       />
 
       {/* Program Outcomes */}

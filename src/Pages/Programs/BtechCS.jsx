@@ -158,6 +158,13 @@ export function BtechCS() {
         ]}
       />
 
+       {/* Industry Partners */}
+       <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
+      />
+
       {/* Program Description */}
       <ProgramDescription
         title="About the Program"
@@ -224,12 +231,6 @@ export function BtechCS() {
             description: "Real-world Experience",
           },
         ]}
-      />
-
-      <IndustryPartners
-        title="Industry Partners"
-        subtitle="Trusted by"
-        icons={icons}
       />
 
       {/* Program Outcomes */}

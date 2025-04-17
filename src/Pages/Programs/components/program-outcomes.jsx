@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
 export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
   return (
     <section className="py-24 bg-gradient-to-r from-cusPrimary to-cusPrimaryLight text-white">
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container max-w-7xl mx-auto px-4 relative z-10">
         <motion.div 
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -26,7 +26,7 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
             delay: 0.2,
             ease: "easeOut",
           }}
-          className="max-w-7xl mx-auto text-center mb-16"
+          className="mx-auto text-center mb-16"
         >
           <Badge className="mb-4 bg-cusSecondary text-black">{subtitle}</Badge>
           <Heading
@@ -54,7 +54,7 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {outcomes.map((item, index) => (
             <motion.div
               key={index}
@@ -68,12 +68,12 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
               }}
             >
               <Card
-                className="border-none bg-white/30 backdrop-blur-sm shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 gap-2"
+                className="border-none p-3 bg-white/30 backdrop-blur-sm shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 gap-2"
               >
-                <CardHeader className="flex flex-row gap-5">
+                <CardHeader className="flex sm:flex-row gap-5 px-0">
                   <motion.div 
                     whileHover={{ scale: 1.1 }}
-                    className="mb-2 min-w-16 h-16 rounded-2xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
+                    className="min-w-16 h-16 rounded-2xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
                   >
                     {item.icon}
                   </motion.div>
@@ -81,7 +81,7 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                     {item.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                {/* <CardContent>
                   <p className="text-white/90">{item.description}</p>
                 </CardContent>
                 <CardFooter>
@@ -95,7 +95,7 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                       <ArrowRight className="h-4 w-4" />
                     </motion.span>
                   </motion.button>
-                </CardFooter>
+                </CardFooter> */}
               </Card>
             </motion.div>
           ))}

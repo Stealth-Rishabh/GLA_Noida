@@ -162,6 +162,13 @@ export function AIML() {
         ]}
       />
 
+       {/* Industry Partners */}
+       <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
+      />
+
       {/* Program Description */}
       <ProgramDescription
         title="About the Program"
@@ -212,13 +219,6 @@ export function AIML() {
             description: "Beyond Academics",
           },
         ]}
-      />
-
-      {/* Industry Partners */}
-      <IndustryPartners
-        title="Industry Partners"
-        subtitle="Trusted by"
-        icons={icons}
       />
 
       {/* Program Outcomes */}
