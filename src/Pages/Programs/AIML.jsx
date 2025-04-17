@@ -142,7 +142,7 @@ export function AIML() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
