@@ -47,7 +47,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
         </motion.div>
       </div> */}
 
-      <div className="grid bg-white p-10 rounded-2xl max-w-7xl mx-auto md:grid-cols-2 gap-16">
+      <div className="grid bg-white p-5 sm:p-10 rounded-2xl max-w-7xl mx-auto md:grid-cols-2 gap-16">
         <motion.div
           className="order-2 md:order-1"
           initial={{ x: -100, opacity: 0 }}
@@ -182,7 +182,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
       </div>
 
       <motion.div
-        className="grid grid-cols-2 max-w-7xl mx-auto sm:grid-cols-4 gap-4 mt-16"
+        className="grid max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
