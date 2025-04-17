@@ -169,7 +169,7 @@
   }
 
   .background-gradient {
-    @apply bg-gradient-to-r from-cusPrimary to-cusPrimaryLight;
+    @apply bg-gradient-to-r from-cusSecondary to-cusSecondaryLight;
   }
   .background-gradient-white {
     @apply bg-gradient-to-b from-white to-slate-100;

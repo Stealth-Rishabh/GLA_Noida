@@ -32,7 +32,7 @@ export default function SetUsApart() {
           >
             <Heading
               level={2}
-              className="text-cusBlue mb-4"
+              className="text-black mb-4"
               subtext="Experience excellence at GLA University, where cutting-edge technology meets traditional values. Our state-of-the-art facilities, industry-aligned curriculum, and focus on practical learning set us apart in higher education."
               subtextClassName="text-gray-600 text-lg mb-8 leading-relaxed"
             >
@@ -53,7 +53,7 @@ export default function SetUsApart() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-cusGreen text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-all duration-300 hover:shadow-lg"
+            className="bg-cusGreen  text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-all duration-300 hover:shadow-lg"
           >
             Explore More
             <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
