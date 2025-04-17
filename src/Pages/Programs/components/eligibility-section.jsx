@@ -12,7 +12,7 @@ export function EligibilitySection({
   requirements,
 }) {
   return (
-    <section className="py-24 px-4">
+    <section className="py-24 checkBackground px-4">
       <div className="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
