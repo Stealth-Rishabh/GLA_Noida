@@ -13,14 +13,14 @@ export function FeesSection({ title, subtitle, plans }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 container background-gradient-yellow mx-auto px-4"
+      className="container mx-auto px-4"
     >
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-md mx-auto text-center mb-20"
+        className="max-w-md mb-10"
       >
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -30,7 +30,7 @@ export function FeesSection({ title, subtitle, plans }) {
         >
           <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
         </motion.div>
-        <Heading level={2} className="text-center text-cusText">
+        <Heading level={2} className="text-cusText">
           <TextAnimate
             as="span"
             by="word"
@@ -46,7 +46,7 @@ export function FeesSection({ title, subtitle, plans }) {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="h-1 w-20 bg-cusYellow mx-auto rounded-full"
+          className="h-1 w-20 bg-cusYellow rounded-full"
         />
       </motion.div>
 
@@ -55,7 +55,7 @@ export function FeesSection({ title, subtitle, plans }) {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+        className="grid grid-cols-2 gap-5 max-w-5xl mx-auto"
       >
         {plans.map((plan, index) => (
           <motion.div
@@ -69,6 +69,11 @@ export function FeesSection({ title, subtitle, plans }) {
               type: "spring",
               stiffness: 100
             }}
+            className={`${
+              index === plans.length - 1 && plans.length % 2 !== 0
+                ? "col-span-2 max-w-[280px] w-full mx-auto"
+                : ""
+            }`}
           >
             <Card
               className={`relative group hover:-translate-y-2 transition-all duration-300 ${
@@ -85,7 +90,7 @@ export function FeesSection({ title, subtitle, plans }) {
               >
                 <CardHeader
                   className={`${
-                    plan.highlight ? "bg-cusAccent/10 p-5 text-cusText" : ""
+                    plan.highlight ? "bg-cusAccent/10 p-5 pb-2 text-cusText" : ""
                   } rounded-t-lg transition-colors duration-300`}
                 >
                   <motion.div
@@ -96,7 +101,7 @@ export function FeesSection({ title, subtitle, plans }) {
                   >
                     <CardTitle className="text-xl">{plan.title}</CardTitle>
                     <div className="mt-4">
-                      <span className="text-4xl font-bold">{plan.price}</span>
+                      <span className="text-3xl font-bold">{plan.price}</span>
                     </div>
                   </motion.div>
                 </CardHeader>

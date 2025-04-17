@@ -12,76 +12,78 @@ import { Heading } from "@/components/ui/heading";
 import { ArrowRight } from "lucide-react";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { motion } from "framer-motion";
+import { GradientBackground } from "@/components/ui/gradient-background";
 
 export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
   return (
-    <section className="py-24 bg-gradient-to-r from-cusPrimary to-cusPrimaryLight text-white">
-      <div className="container max-w-7xl mx-auto px-4 relative z-10">
-        <motion.div 
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{
-            duration: 0.5,
-            delay: 0.2,
-            ease: "easeOut",
-          }}
-          className="mx-auto text-center mb-16"
-        >
-          <Badge className="mb-4 bg-cusSecondary text-black">{subtitle}</Badge>
-          <Heading
-            level={2}
-            className="text-center text-white"
-            subtextClassName="text-gray-600 text-[17px] mb-8 text-center leading-relaxed"
-          >
-            <TextAnimate
-              as="span"
-              by="word"
-              delay={0.2}
-              duration={0.5}
-              animation="slideUp"
-              className="inline-flex flex-wrap"
-            >
-              {title}
-            </TextAnimate>
-          </Heading>
-          <motion.div 
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
+    <GradientBackground>
+      <section className="py-24 text-black">
+        <div className="container max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="h-1 w-20 bg-cusYellow mx-auto rounded-full"
-          />
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {outcomes.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.2, // Increased delay between each card
-                ease: "easeOut",
-              }}
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
+              ease: "easeOut",
+            }}
+            className="mx-auto text-center mb-16"
+          >
+            <Badge className="mb-4 bg-cusAccent text-white">
+              {subtitle}
+            </Badge>
+            <Heading
+              level={2}
+              className="text-center text-black"
+              subtextClassName="text-gray-600 text-[17px] mb-8 text-center leading-relaxed"
             >
-              <Card
-                className="border-none p-3 bg-white/30 backdrop-blur-sm shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 gap-2"
+              <TextAnimate
+                as="span"
+                by="word"
+                delay={0.2}
+                duration={0.5}
+                animation="slideUp"
+                className="inline-flex flex-wrap"
               >
-                <CardHeader className="flex sm:flex-row gap-5 px-0">
-                  <motion.div 
-                    whileHover={{ scale: 1.1 }}
-                    className="min-w-16 h-16 rounded-2xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
-                  >
-                    {item.icon}
-                  </motion.div>
-                  <CardTitle className="text-white text-2xl font-bold">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                {/* <CardContent>
+                {title}
+              </TextAnimate>
+            </Heading>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="h-1 w-20 bg-cusAccent mx-auto rounded-full"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {outcomes.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.2, // Increased delay between each card
+                  ease: "easeOut",
+                }}
+              >
+                <Card className="border-none p-3 bg-white backdrop-blur-sm shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 gap-2">
+                  <CardHeader className="flex sm:flex-row gap-5 px-0">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="min-w-16 h-16 rounded-2xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
+                    >
+                      {item.icon}
+                    </motion.div>
+                    <CardTitle className="text-black text-2xl font-bold">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  {/* <CardContent>
                   <p className="text-white/90">{item.description}</p>
                 </CardContent>
                 <CardFooter>
@@ -96,11 +98,12 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                     </motion.span>
                   </motion.button>
                 </CardFooter> */}
-              </Card>
-            </motion.div>
-          ))}
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </GradientBackground>
   );
 }

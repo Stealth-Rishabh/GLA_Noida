@@ -32,7 +32,7 @@ export function BBA() {
     },
     {
       src: microsoftImg,
-      alt: "Microsoft", 
+      alt: "Microsoft",
     },
     {
       src: ibmWebp,
@@ -57,6 +57,27 @@ export function BBA() {
     {
       src: bergerWebp,
       alt: "Berger Paints",
+    },
+  ];
+
+  const plans = [
+    {
+      title: "1st Year Fees",
+      price: "₹1,40,000/-",
+      highlight: true,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "2nd Year Fees",
+      price: "₹1,45,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "3rd Year Fees",
+      price: "₹1,50,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
     },
   ];
 
@@ -91,75 +112,75 @@ export function BBA() {
       />
 
       {/* Program Description */}
-      <GradientBackground className="gradientOne">
-        <ProgramDescription
-          title="About the Program"
-          description={[
-            "In today's world, businesses are the backbone of every economy, catering to the needs of people across the globe. The BBA in Management Science opens the door to a wide range of career opportunities in industries like finance, marketing, human resources, and operations.",
-            "This three-year program is designed to equip students with a strong foundation in key management areas such as finance, marketing, accounting, and organizational behavior. The course not only focuses on core business principles but also helps students enhance their communication, leadership, and problem-solving skills—traits that are essential for success in the business world.",
-            "Additionally, this program is a great stepping stone for those aspiring to pursue an MBA. It equips students with the knowledge and preparation needed to succeed in competitive MBA entrance exams like CAT, XAT, MAT, and others.",
-          ]}
-          imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
-          features={[
-            {
-              icon: (
-                <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Hands-On Workshops",
-              description: "Industry Tools Training",
-            },
-            {
-              icon: (
-                <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Live Projects",
-              description: "Real-world Case Studies",
-            },
-            {
-              icon: (
-                <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Industry Visits",
-              description: "Leading Company Tours",
-            },
-            {
-              icon: (
-                <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Small Batch Size",
-              description: "Personalized Attention",
-            },
-            {
-              icon: (
-                <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Career Focus",
-              description: "Professional Skills",
-            },
-            {
-              icon: (
-                <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Networking",
-              description: "Industry Connections",
-            },
-            {
-              icon: (
-                <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Innovation Hub",
-              description: "Research & Creativity",
-            },
-            {
-              icon: (
-                <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
-              ),
-              title: "Holistic Growth",
-              description: "All-round Development",
-            },
-          ]}
-        />
-      </GradientBackground>
+      {/* <GradientBackground className="gradientOne"> */}
+      <ProgramDescription
+        title="About the Program"
+        description={[
+          "In today's world, businesses are the backbone of every economy, catering to the needs of people across the globe. The BBA in Management Science opens the door to a wide range of career opportunities in industries like finance, marketing, human resources, and operations.",
+          "This three-year program is designed to equip students with a strong foundation in key management areas such as finance, marketing, accounting, and organizational behavior. The course not only focuses on core business principles but also helps students enhance their communication, leadership, and problem-solving skills—traits that are essential for success in the business world.",
+          "Additionally, this program is a great stepping stone for those aspiring to pursue an MBA. It equips students with the knowledge and preparation needed to succeed in competitive MBA entrance exams like CAT, XAT, MAT, and others.",
+        ]}
+        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+        features={[
+          {
+            icon: (
+              <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Hands-On Workshops",
+            description: "Industry Tools Training",
+          },
+          {
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Live Projects",
+            description: "Real-world Case Studies",
+          },
+          {
+            icon: (
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Industry Visits",
+            description: "Leading Company Tours",
+          },
+          {
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Small Batch Size",
+            description: "Personalized Attention",
+          },
+          {
+            icon: (
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Career Focus",
+            description: "Professional Skills",
+          },
+          {
+            icon: (
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Networking",
+            description: "Industry Connections",
+          },
+          {
+            icon: (
+              <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Innovation Hub",
+            description: "Research & Creativity",
+          },
+          {
+            icon: (
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
+            title: "Holistic Growth",
+            description: "All-round Development",
+          },
+        ]}
+      />
+      {/* </GradientBackground> */}
 
       <EligibilitySection
         title="Why Choose BBA in Management Science?"
@@ -174,6 +195,7 @@ export function BBA() {
           "Interest in business and management concepts",
           "Ability to think critically and strategically",
         ]}
+        plans={plans}
       />
 
       {/* Program Outcome */}
@@ -247,7 +269,7 @@ export function BBA() {
       />
 
       {/* Fees */}
-      <FeesSection
+      {/* <FeesSection
         title="Program Fees"
         subtitle="Investment"
         plans={[
@@ -270,7 +292,7 @@ export function BBA() {
             buttonText: "Enroll Now",
           },
         ]}
-      />
+      /> */}
 
       {/* Brochure */}
       <BrochureSection

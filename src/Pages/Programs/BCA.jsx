@@ -131,6 +131,27 @@ export function BCA() {
     setActiveField(null);
   };
 
+  const plans = [
+    {
+      title: "1st Year Fees",
+      price: "₹1,40,000/-",
+      highlight: true,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "2nd Year Fees",
+      price: "₹1,45,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "3rd Year Fees",
+      price: "₹1,50,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Banner */}
@@ -152,8 +173,8 @@ export function BCA() {
         ]}
       />
 
-       {/* Industry Partners */}
-       <IndustryPartners
+      {/* Industry Partners */}
+      <IndustryPartners
         title="Industry Partners"
         subtitle="Trusted by"
         icons={icons}
@@ -228,6 +249,23 @@ export function BCA() {
         ]}
       />
 
+      {/* Eligibility */}
+      <EligibilitySection
+        title="Why BCA in Data Science is the Right Choice"
+        subtitle="Who Can Apply"
+        description="A BCA degree gives you a strong foundation in computer applications, and when combined with a Data Science specialization, it sets you up for long-term career success. Data Science is the future, and its applications are expanding across sectors like healthcare, finance, retail, and technology. This degree helps ensure a rewarding and future-proof career."
+        requirements={[
+          "10+2 examination with Mathematics as one of the subjects",
+          "Minimum 60% marks in 10+2 examination (any stream)",
+          "Strong analytical and problem-solving skills",
+          "Basic computer proficiency",
+          "Proficiency in English (written and verbal)",
+          "Passion for data analysis and statistics",
+          "Interest in programming and technology",
+        ]}
+        plans={plans}
+      />
+
       {/* Program Outcomes */}
       <ProgramOutcomes
         title="Program Outcomes"
@@ -282,21 +320,8 @@ export function BCA() {
         ]}
       />
 
-      {/* Eligibility */}
-      <EligibilitySection
-        title="Why BCA in Data Science is the Right Choice"
-        subtitle="Who Can Apply"
-        description="A BCA degree gives you a strong foundation in computer applications, and when combined with a Data Science specialization, it sets you up for long-term career success. Data Science is the future, and its applications are expanding across sectors like healthcare, finance, retail, and technology. This degree helps ensure a rewarding and future-proof career."
-        requirements={[
-          "10+2 examination with Mathematics as one of the subjects",
-          "Minimum 60% marks in 10+2 examination (any stream)",
-          "Strong analytical and problem-solving skills",
-          "Basic computer proficiency",
-          "Proficiency in English (written and verbal)",
-          "Passion for data analysis and statistics",
-          "Interest in programming and technology",
-        ]}
-      />
+      {/* Admission Process */}
+      <AdmissionStepper />
 
       {/* Curriculum */}
       <CurriculumSection
@@ -307,11 +332,8 @@ export function BCA() {
         programDescription="Choose BCA in Data Science at GLA University, Greater Noida campus to start your journey towards a career in one of the most exciting and in-demand fields of today's tech world!"
       />
 
-      {/* Admission Process */}
-      <AdmissionStepper />
-
       {/* Fees */}
-      <FeesSection
+      {/* <FeesSection
         title="Program Fees"
         subtitle="Investment"
         plans={[
@@ -334,7 +356,7 @@ export function BCA() {
             buttonText: "Enroll Now",
           },
         ]}
-      />
+      /> */}
 
       {/* Brochure */}
       <BrochureSection

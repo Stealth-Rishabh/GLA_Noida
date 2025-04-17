@@ -134,7 +134,34 @@ export function BtechCS() {
     {
       src: capgeminiWebp,
       alt: "Capgemini",
-    }
+    },
+  ];
+
+  const plans = [
+    {
+      title: "1st Year Fees",
+      price: "₹2,00,000/-",
+      highlight: true,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "2nd Year Fees",
+      price: "₹2,08,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "3rd Year Fees",
+      price: "₹2,16,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "4th Year Fees",
+      price: "₹2,24,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
   ];
 
   return (
@@ -158,8 +185,8 @@ export function BtechCS() {
         ]}
       />
 
-       {/* Industry Partners */}
-       <IndustryPartners
+      {/* Industry Partners */}
+      <IndustryPartners
         title="Industry Partners"
         subtitle="Trusted by"
         icons={icons}
@@ -233,6 +260,23 @@ export function BtechCS() {
         ]}
       />
 
+      {/* Eligibility */}
+      <EligibilitySection
+        title="Why Choose Computer Science Engineering?"
+        subtitle="Who Can Apply"
+        description="Computer Science is one of the most popular and rapidly growing fields in engineering. Students often choose this path because of its vast potential and career opportunities. As new technologies emerge, the scope of CSE continues to expand. From the Internet of Things (IoT) to gesture-controlled home automation, innovations are changing how we live. With the arrival of 6G, faster processing will become a priority, leading to the development of more powerful processors. Artificial Intelligence (AI), Virtual Reality (VR), and Robotics are also set to revolutionize our daily lives, with developments like Butler bots helping us in everyday tasks. These advancements ensure that a career in Computer Science is not only exciting but future-proof, with endless growth opportunities."
+        requirements={[
+          "10+2 examination with Physics and Mathematics as mandatory subjects",
+          "Chemistry or Computer Science as third subject",
+          "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
+          "Minimum 50% marks overall in 10+2 examination",
+          "Strong analytical and problem-solving skills",
+          "Basic computer proficiency",
+          "Proficiency in English (written and verbal)",
+        ]}
+        plans={plans}
+      />
+
       {/* Program Outcomes */}
       <ProgramOutcomes
         title="Program Outcomes"
@@ -288,21 +332,8 @@ export function BtechCS() {
         ]}
       />
 
-      {/* Eligibility */}
-      <EligibilitySection
-        title="Why Choose Computer Science Engineering?"
-        subtitle="Who Can Apply"
-        description="Computer Science is one of the most popular and rapidly growing fields in engineering. Students often choose this path because of its vast potential and career opportunities. As new technologies emerge, the scope of CSE continues to expand. From the Internet of Things (IoT) to gesture-controlled home automation, innovations are changing how we live. With the arrival of 6G, faster processing will become a priority, leading to the development of more powerful processors. Artificial Intelligence (AI), Virtual Reality (VR), and Robotics are also set to revolutionize our daily lives, with developments like Butler bots helping us in everyday tasks. These advancements ensure that a career in Computer Science is not only exciting but future-proof, with endless growth opportunities."
-        requirements={[
-          "10+2 examination with Physics and Mathematics as mandatory subjects",
-          "Chemistry or Computer Science as third subject",
-          "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
-          "Minimum 50% marks overall in 10+2 examination",
-          "Strong analytical and problem-solving skills",
-          "Basic computer proficiency",
-          "Proficiency in English (written and verbal)",
-        ]}
-      />
+      {/* Admission Process */}
+      <AdmissionStepper />
 
       {/* Curriculum */}
       <CurriculumSection
@@ -313,11 +344,8 @@ export function BtechCS() {
         programDescription="Step into the world of technology with a B.Tech in Computer Science Engineering from GLA University, Greater Noida campus. Develop a strong foundation in programming, software development, and system design, while gaining hands-on experience to tackle real-world challenges. Join us and pave the way for a successful career in the tech industry!"
       />
 
-      {/* Admission Process */}
-      <AdmissionStepper />
-
       {/* Fees */}
-      <FeesSection
+      {/* <FeesSection
         title="Program Fees"
         subtitle="Investment"
         plans={[
@@ -346,7 +374,7 @@ export function BtechCS() {
             buttonText: "Enroll Now",
           },
         ]}
-      />
+      /> */}
 
       {/* Brochure */}
       <BrochureSection

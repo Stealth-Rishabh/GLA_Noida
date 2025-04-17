@@ -57,6 +57,21 @@ export function MBA() {
     },
   ];
 
+  const plans = [
+    {
+      title: "1st Year Fees",
+      price: "₹2,35,000/-",
+      highlight: true,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "2nd Year Fees",
+      price: "₹2,45,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Banner */}
@@ -78,8 +93,8 @@ export function MBA() {
         ]}
       />
 
-       {/* Industry Partners */}
-       <IndustryPartners
+      {/* Industry Partners */}
+      <IndustryPartners
         title="Industry Partners"
         subtitle="Trusted by"
         icons={icons}
@@ -154,6 +169,22 @@ export function MBA() {
         ]}
       />
 
+      {/* Eligibility */}
+      <EligibilitySection
+        title="Why Pursue an MBA in Dual Specialization?"
+        subtitle="Who Can Apply"
+        description="The demand for skilled professionals in managerial roles continues to rise, making an MBA an essential qualification for career advancement. Many engineers, after completing their technical degrees, choose to pursue an MBA to open up new career avenues and boost their professional growth."
+        requirements={[
+          "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
+          "Minimum 50% marks in Bachelor's degree",
+          "Strong analytical and problem-solving abilities",
+          "Good communication and interpersonal skills",
+          "Basic computer proficiency",
+          "Proficiency in English (written and verbal)",
+          "Prior work experience preferred but not mandatory",
+        ]}
+        plans={plans}
+      />
 
       {/* Program Outcome */}
       <ProgramOutcomes
@@ -211,21 +242,8 @@ export function MBA() {
         ]}
       />
 
-      {/* Eligibility */}
-      <EligibilitySection
-        title="Why Pursue an MBA in Dual Specialization?"
-        subtitle="Who Can Apply"
-        description="The demand for skilled professionals in managerial roles continues to rise, making an MBA an essential qualification for career advancement. Many engineers, after completing their technical degrees, choose to pursue an MBA to open up new career avenues and boost their professional growth."
-        requirements={[
-          "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
-          "Minimum 50% marks in Bachelor's degree",
-          "Strong analytical and problem-solving abilities",
-          "Good communication and interpersonal skills",
-          "Basic computer proficiency",
-          "Proficiency in English (written and verbal)",
-          "Prior work experience preferred but not mandatory",
-        ]}
-      />
+      {/* Admission Process */}
+      <AdmissionStepper />
 
       {/* Curriculum */}
       <CurriculumSection
@@ -236,11 +254,8 @@ export function MBA() {
         programDescription="Enroll in the MBA in Dual Specialization program at GLA University and gain the skills, knowledge, and experience needed to lead in today's competitive business world. Join us and start your transformative journey towards a successful and fulfilling career."
       />
 
-      {/* Admission Process */}
-      <AdmissionStepper />
-
       {/* Fees */}
-      <FeesSection
+      {/* <FeesSection
         title="Program Fees"
         subtitle="Investment"
         plans={[
@@ -257,7 +272,7 @@ export function MBA() {
             buttonText: "Enroll Now",
           },
         ]}
-      />
+      /> */}
 
       {/* Brochure */}
       <BrochureSection

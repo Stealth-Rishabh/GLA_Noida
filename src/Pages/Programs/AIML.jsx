@@ -113,7 +113,7 @@ export function AIML() {
     },
     {
       src: amazonImg,
-      alt: "Amazon", 
+      alt: "Amazon",
     },
     {
       src: facebookImg,
@@ -138,7 +138,34 @@ export function AIML() {
     {
       src: samsungImg,
       alt: "Samsung",
-    }
+    },
+  ];
+
+  const plans = [
+    {
+      title: "1st Year Fees",
+      price: "₹2,35,000/-",
+      highlight: true,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "2nd Year Fees",
+      price: "₹2,43,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "3rd Year Fees",
+      price: "₹2,51,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
+    {
+      title: "4th Year Fees",
+      price: "₹2,59,000/-",
+      highlight: false,
+      buttonText: "Enroll Now",
+    },
   ];
 
   return (
@@ -162,8 +189,8 @@ export function AIML() {
         ]}
       />
 
-       {/* Industry Partners */}
-       <IndustryPartners
+      {/* Industry Partners */}
+      <IndustryPartners
         title="Industry Partners"
         subtitle="Trusted by"
         icons={icons}
@@ -179,46 +206,79 @@ export function AIML() {
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
           {
-            icon: <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Practical Learning",
             description: "Industry Professionals",
           },
           {
-            icon: <Building2 className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Building2 className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Industry Visits",
             description: "Leading Companies",
           },
           {
-            icon: <UserPlus className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <UserPlus className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Small Class Sizes",
             description: "Personalized Attention",
           },
           {
-            icon: <UsersRound className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <UsersRound className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Collaborative Learning",
             description: "Team Environment",
           },
           {
-            icon: <Code2 className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Code2 className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Real-World Projects",
             description: "Hackathons & Bootcamps",
           },
           {
-            icon: <Wrench className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Wrench className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Skill Building",
             description: "Interactive Workshops",
           },
           {
-            icon: <Lightbulb className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <Lightbulb className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Innovation Culture",
             description: "Research Focused",
           },
           {
-            icon: <UserCircle className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />,
+            icon: (
+              <UserCircle className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+            ),
             title: "Holistic Growth",
             description: "Beyond Academics",
           },
         ]}
+      />
+
+      {/* Eligibility */}
+      <EligibilitySection
+        title="Why Choose B.Tech CSE with AI/ML?"
+        subtitle="Who Can Apply"
+        description="AI and ML are the future, and every sector is eager to adopt these technologies to improve efficiency and productivity. From healthcare to finance, to entertainment, industries are relying more and more on AIML to create smarter solutions. By choosing this specialized program, you're not just learning about today's technology, you're preparing for the technology of tomorrow, ensuring a bright and successful career in this booming field."
+        requirements={[
+          "10+2 examination with Physics and Mathematics as mandatory subjects",
+          "Chemistry or Computer Science as optional subject",
+          "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
+          "Minimum 50% marks overall in 10+2 examination",
+          "Strong analytical and problem-solving skills",
+          "Basic computer proficiency",
+          "Proficiency in English (written and verbal)",
+        ]}
+        plans={plans}
       />
 
       {/* Program Outcomes */}
@@ -272,21 +332,8 @@ export function AIML() {
         ]}
       />
 
-      {/* Eligibility */}
-      <EligibilitySection
-        title="Why Choose B.Tech CSE with AI/ML?"
-        subtitle="Who Can Apply"
-        description="AI and ML are the future, and every sector is eager to adopt these technologies to improve efficiency and productivity. From healthcare to finance, to entertainment, industries are relying more and more on AIML to create smarter solutions. By choosing this specialized program, you're not just learning about today's technology, you're preparing for the technology of tomorrow, ensuring a bright and successful career in this booming field."
-        requirements={[
-          "10+2 examination with Physics and Mathematics as mandatory subjects",
-          "Chemistry or Computer Science as optional subject",
-          "Minimum 50% marks in Physics, Mathematics and Chemistry/Computer Science combined",
-          "Minimum 50% marks overall in 10+2 examination",
-          "Strong analytical and problem-solving skills",
-          "Basic computer proficiency",
-          "Proficiency in English (written and verbal)",
-        ]}
-      />
+      {/* Admission Process */}
+      <AdmissionStepper />
 
       {/* Curriculum */}
       <CurriculumSection
@@ -297,11 +344,8 @@ export function AIML() {
         programDescription="Kickstart your journey in the world of Artificial Intelligence and Machine Learning with a B.Tech from GLA University, Greater Noida campus. Gain the skills and hands-on experience needed to lead in this fast-growing field. Join us and shape the future of technology!"
       />
 
-      {/* Admission Process */}
-      <AdmissionStepper />
-
       {/* Fees */}
-      <FeesSection
+      {/* <FeesSection
         title="Program Fees"
         subtitle="Investment"
         plans={[
@@ -330,7 +374,7 @@ export function AIML() {
             buttonText: "Enroll Now",
           },
         ]}
-      />
+      /> */}
 
       {/* Brochure */}
       <BrochureSection

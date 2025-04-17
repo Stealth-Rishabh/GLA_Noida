@@ -5,6 +5,7 @@ import { Heading } from "@/components/ui/heading";
 import { Calendar } from "lucide-react";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { motion } from "framer-motion";
+import { GradientBackground } from "@/components/ui/gradient-background";
 
 export function CurriculumSection({
   title,
@@ -14,8 +15,9 @@ export function CurriculumSection({
   programDescription,
 }) {
   return (
-    <section className="py-24 background-gradient relative">
-      <motion.div 
+    <GradientBackground>
+    <section className="py-24 background-gradient-yellow-light relative">
+      {/* <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false }}
@@ -36,7 +38,7 @@ export function CurriculumSection({
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute bottom-0 left-1/4 w-72 h-72 bg-slate-200 rounded-full blur-3xl"
         />
-      </motion.div>
+      </motion.div> */}
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
@@ -56,9 +58,9 @@ export function CurriculumSection({
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
+            <Badge className="mb-4 bg-cusAccent text-white">{subtitle}</Badge>
           </motion.div>
-          <Heading level={2} className="text-center text-white">
+          <Heading level={2} className="text-center text-black">
             <TextAnimate
               as="span"
               by="word"
@@ -75,7 +77,7 @@ export function CurriculumSection({
             whileInView={{ scaleX: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="h-1 w-20 bg-cusYellow mx-auto rounded-full"
+            className="h-1 w-20 bg-cusAccent mx-auto rounded-full"
           />
         </motion.div>
 
@@ -148,5 +150,6 @@ export function CurriculumSection({
         </motion.div>
       </div>
     </section>
+    </GradientBackground>
   );
 }

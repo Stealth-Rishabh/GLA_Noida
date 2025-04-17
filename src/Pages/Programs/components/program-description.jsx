@@ -14,7 +14,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   return (
-    <section className="py-24 bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15 px-4 overflow-hidden">
+    <section className="py-24 background-gradient-yellow-light px-4 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>

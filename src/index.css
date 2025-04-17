@@ -181,15 +181,18 @@
   .background-gradient-blue {
     @apply bg-gradient-to-l from-cusPrimaryLight to-cusPrimaryLight;
   }
+
+  .background-gradient-yellow-light {
+    @apply bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15;
+  }
 }
 
 .gradientOne {
-  background: linear-gradient(125deg, #57f571 0%, #f4d24e 50%, #e38330 100%);
+  background: linear-gradient(125deg, #4dd965 0%, #f4d24e 50%, #e38330 100%);
 }
 
 .checkBackground {
   background-image: url("../src/assets/general/oppertunityBG.webp");
   background-size: fit;
-
   background-repeat: no-repeat;
 }

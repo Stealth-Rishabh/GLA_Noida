@@ -4,13 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { FeesSection } from "./fees-section";
 
-export function EligibilitySection({
-  title,
-  subtitle,
-  description,
-  requirements,
-}) {
+export function EligibilitySection({ plans, requirements }) {
   return (
     <section className="py-24 checkBackground px-4">
       <div className="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
@@ -32,7 +28,7 @@ export function EligibilitySection({
             transition={{ duration: 0.5, delay: 0.4 }}
             className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl blur-3xl"
           />
-          <div className="relative background-gradient-blue shadow-xl rounded-2xl overflow-hidden border border-slate-100">
+          <div className="relative background-gradient-yellow-light shadow-xl rounded-2xl overflow-hidden border border-slate-100">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -47,7 +43,7 @@ export function EligibilitySection({
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <Heading level={3} className="text-white mb-8">
+                <Heading level={3} className="text-black mb-8">
                   <TextAnimate
                     as="span"
                     by="word"
@@ -59,7 +55,7 @@ export function EligibilitySection({
                   </TextAnimate>
                 </Heading>
               </motion.div>
-              <ul className="space-y-3 text-white">
+              <ul className="space-y-3 text-black">
                 {requirements.map((item, index) => (
                   <motion.li
                     key={index}
@@ -77,7 +73,7 @@ export function EligibilitySection({
                       whileHover={{ scale: 1.1 }}
                       className="mr-4 mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-white group-hover:bg-white/80 transition-colors duration-300"
                     >
-                      <ArrowRight className="h-3.5 w-3.5 text-cusPrimary" />
+                      <ArrowRight className="h-3.5 w-3.5 text-cusAccent" />
                     </motion.div>
                     <span className="text-lg">{item}</span>
                   </motion.li>
@@ -119,7 +115,12 @@ export function EligibilitySection({
           }}
           className="space-y-8"
         >
-          <motion.div
+          <FeesSection
+            title="Program Fees"
+            subtitle="Investment"
+            plans={plans}
+          />
+          {/* <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
@@ -153,7 +154,7 @@ export function EligibilitySection({
             className="text-[17px] text-cusTextLight"
           >
             {description}
-          </motion.p>
+          </motion.p> */}
         </motion.div>
       </div>
     </section>
