@@ -14,24 +14,11 @@ import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 
 // Custom Badge component
-const Badge = ({ variant = "default", className, children, ...props }) => {
-  const variantClasses = {
-    alumni: "bg-purple-100 text-purple-800 border-purple-200",
-    research: "bg-emerald-100 text-emerald-800 border-emerald-200",
-    studentLife: "bg-sky-100 text-sky-800 border-sky-200",
-
-    career: "bg-purple-100 text-purple-800 border-purple-200",
-    facilities: "bg-amber-100 text-amber-800 border-amber-200",
-    campus: "bg-blue-100 text-blue-800 border-blue-200",
-    events: "bg-rose-100 text-rose-800 border-rose-200",
-    science: "bg-indigo-100 text-indigo-800 border-indigo-200",
-  };
-
+const Badge = ({ className, children, ...props }) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center background-gradient px-2.5 py-0.5 text-xs font-medium transition-colors",
-        variantClasses[variant] || " text-gray-800 border-gray-200",
+        "inline-flex items-center background-gradient text-black px-2.5 py-0.5 text-xs font-medium transition-colors",
         className
       )}
       {...props}
