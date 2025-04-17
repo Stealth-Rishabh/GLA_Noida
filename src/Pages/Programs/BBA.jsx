@@ -183,9 +183,6 @@ export function BBA() {
       {/* </GradientBackground> */}
 
       <EligibilitySection
-        title="Why Choose BBA in Management Science?"
-        subtitle="Who Can Apply"
-        description="With businesses growing and evolving, the demand for skilled professionals in management roles is higher than ever. A BBA in Management Science equips you with the knowledge and skills to succeed in the competitive world of business. Whether you want to climb the corporate ladder or start your own business, this program is the perfect foundation for your future."
         requirements={[
           "10+2 examination with minimum 60% marks in any stream (Science/Commerce/Arts)",
           "Strong analytical and problem-solving skills",
@@ -261,11 +258,8 @@ export function BBA() {
 
       {/* Curriculum */}
       <CurriculumSection
-        title="Curriculum"
-        subtitle="What You'll Learn"
-        programTitle="BBA in Management Science"
-        programDuration="3 Years"
-        programDescription="Gain essential business knowledge and leadership skills with a BBA in Management Science from GLA University, Greater Noida campus. Prepare for a successful career in management and beyond with hands-on learning and industry insights."
+        title="Why Choose BBA in Management Science?"
+        programDescription="With businesses growing and evolving, the demand for skilled professionals in management roles is higher than ever. A BBA in Management Science equips you with the knowledge and skills to succeed in the competitive world of business. Whether you want to climb the corporate ladder or start your own business, this program is the perfect foundation for your future."
       />
 
       {/* Fees */}

@@ -171,9 +171,6 @@ export function MBA() {
 
       {/* Eligibility */}
       <EligibilitySection
-        title="Why Pursue an MBA in Dual Specialization?"
-        subtitle="Who Can Apply"
-        description="The demand for skilled professionals in managerial roles continues to rise, making an MBA an essential qualification for career advancement. Many engineers, after completing their technical degrees, choose to pursue an MBA to open up new career avenues and boost their professional growth."
         requirements={[
           "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
           "Minimum 50% marks in Bachelor's degree",
@@ -247,11 +244,8 @@ export function MBA() {
 
       {/* Curriculum */}
       <CurriculumSection
-        title="Curriculum"
-        subtitle="What You'll Learn"
-        programTitle="MBA in Dual Specialization"
-        programDuration="2 Years"
-        programDescription="Enroll in the MBA in Dual Specialization program at GLA University and gain the skills, knowledge, and experience needed to lead in today's competitive business world. Join us and start your transformative journey towards a successful and fulfilling career."
+        title="Why Pursue an MBA in Dual Specialization?"
+        programDescription="The demand for skilled professionals in managerial roles continues to rise, making an MBA an essential qualification for career advancement. Many engineers, after completing their technical degrees, choose to pursue an MBA to open up new career avenues and boost their professional growth."
       />
 
       {/* Fees */}

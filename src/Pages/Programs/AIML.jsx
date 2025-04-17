@@ -266,9 +266,6 @@ export function AIML() {
 
       {/* Eligibility */}
       <EligibilitySection
-        title="Why Choose B.Tech CSE with AI/ML?"
-        subtitle="Who Can Apply"
-        description="AI and ML are the future, and every sector is eager to adopt these technologies to improve efficiency and productivity. From healthcare to finance, to entertainment, industries are relying more and more on AIML to create smarter solutions. By choosing this specialized program, you're not just learning about today's technology, you're preparing for the technology of tomorrow, ensuring a bright and successful career in this booming field."
         requirements={[
           "10+2 examination with Physics and Mathematics as mandatory subjects",
           "Chemistry or Computer Science as optional subject",
@@ -337,11 +334,8 @@ export function AIML() {
 
       {/* Curriculum */}
       <CurriculumSection
-        title="Curriculum"
-        subtitle="What You'll Learn"
-        programTitle="B.Tech in Computer Science & Engineering with AI/ML"
-        programDuration="4 Years"
-        programDescription="Kickstart your journey in the world of Artificial Intelligence and Machine Learning with a B.Tech from GLA University, Greater Noida campus. Gain the skills and hands-on experience needed to lead in this fast-growing field. Join us and shape the future of technology!"
+        title="Why Choose B.Tech CSE with AI/ML?"
+        programDescription="AI and ML are the future, and every sector is eager to adopt these technologies to improve efficiency and productivity. From healthcare to finance, to entertainment, industries are relying more and more on AIML to create smarter solutions. By choosing this specialized program, you're not just learning about today's technology, you're preparing for the technology of tomorrow, ensuring a bright and successful career in this booming field."
       />
 
       {/* Fees */}

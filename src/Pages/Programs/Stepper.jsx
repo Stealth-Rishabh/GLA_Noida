@@ -148,15 +148,15 @@ export default function AdmissionStepper() {
   return (
     <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20">
       <Heading level={2} className="text-center text-cusText">
-        <TextAnimate
+        {/* <TextAnimate
           as="span"
           by="word"
           delay={0.2}
           duration={0.5}
           animation="slideUp"
-        >
+        > */}
           Admission Process
-        </TextAnimate>
+        {/* </TextAnimate> */}
       </Heading>
       <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full mb-10 sm:mb-16"></div>
 

@@ -262,9 +262,6 @@ export function BtechCS() {
 
       {/* Eligibility */}
       <EligibilitySection
-        title="Why Choose Computer Science Engineering?"
-        subtitle="Who Can Apply"
-        description="Computer Science is one of the most popular and rapidly growing fields in engineering. Students often choose this path because of its vast potential and career opportunities. As new technologies emerge, the scope of CSE continues to expand. From the Internet of Things (IoT) to gesture-controlled home automation, innovations are changing how we live. With the arrival of 6G, faster processing will become a priority, leading to the development of more powerful processors. Artificial Intelligence (AI), Virtual Reality (VR), and Robotics are also set to revolutionize our daily lives, with developments like Butler bots helping us in everyday tasks. These advancements ensure that a career in Computer Science is not only exciting but future-proof, with endless growth opportunities."
         requirements={[
           "10+2 examination with Physics and Mathematics as mandatory subjects",
           "Chemistry or Computer Science as third subject",
@@ -337,11 +334,8 @@ export function BtechCS() {
 
       {/* Curriculum */}
       <CurriculumSection
-        title="Curriculum"
-        subtitle="What You'll Learn"
-        programTitle="B.Tech in Computer Science Engineering"
-        programDuration="4 Years"
-        programDescription="Step into the world of technology with a B.Tech in Computer Science Engineering from GLA University, Greater Noida campus. Develop a strong foundation in programming, software development, and system design, while gaining hands-on experience to tackle real-world challenges. Join us and pave the way for a successful career in the tech industry!"
+        title="Why Choose Computer Science Engineering?"
+        programDescription="Computer Science is one of the most popular and rapidly growing fields in engineering. Students often choose this path because of its vast potential and career opportunities. As new technologies emerge, the scope of CSE continues to expand. From the Internet of Things (IoT) to gesture-controlled home automation, innovations are changing how we live. With the arrival of 6G, faster processing will become a priority, leading to the development of more powerful processors. Artificial Intelligence (AI), Virtual Reality (VR), and Robotics are also set to revolutionize our daily lives, with developments like Butler bots helping us in everyday tasks. These advancements ensure that a career in Computer Science is not only exciting but future-proof, with endless growth opportunities."
       />
 
       {/* Fees */}

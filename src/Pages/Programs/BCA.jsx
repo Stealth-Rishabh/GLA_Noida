@@ -251,9 +251,6 @@ export function BCA() {
 
       {/* Eligibility */}
       <EligibilitySection
-        title="Why BCA in Data Science is the Right Choice"
-        subtitle="Who Can Apply"
-        description="A BCA degree gives you a strong foundation in computer applications, and when combined with a Data Science specialization, it sets you up for long-term career success. Data Science is the future, and its applications are expanding across sectors like healthcare, finance, retail, and technology. This degree helps ensure a rewarding and future-proof career."
         requirements={[
           "10+2 examination with Mathematics as one of the subjects",
           "Minimum 60% marks in 10+2 examination (any stream)",
@@ -325,11 +322,8 @@ export function BCA() {
 
       {/* Curriculum */}
       <CurriculumSection
-        title="Curriculum"
-        subtitle="What You'll Learn"
-        programTitle="BCA in Data Science"
-        programDuration="3 Years"
-        programDescription="Choose BCA in Data Science at GLA University, Greater Noida campus to start your journey towards a career in one of the most exciting and in-demand fields of today's tech world!"
+        title="Why BCA in Data Science is the Right Choice"
+        programDescription="A BCA degree gives you a strong foundation in computer applications, and when combined with a Data Science specialization, it sets you up for long-term career success. Data Science is the future, and its applications are expanding across sectors like healthcare, finance, retail, and technology. This degree helps ensure a rewarding and future-proof career."
       />
 
       {/* Fees */}
