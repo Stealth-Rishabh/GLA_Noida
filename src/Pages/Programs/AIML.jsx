@@ -55,6 +55,16 @@ import { CTASection } from "./components/cta-section";
 import { IndustryPartners } from "./components/industry-partners";
 import AdmissionStepper from "./Stepper";
 
+// Import recruiter images
+import accentureImg from "@/assets/programs/recruiters/accenture.webp";
+import amazonImg from "@/assets/programs/recruiters/amazon.webp";
+import facebookImg from "@/assets/programs/recruiters/facebook.webp";
+import ibmImg from "@/assets/programs/recruiters/IBM.webp";
+import intelImg from "@/assets/programs/recruiters/Intel.webp";
+import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
+import nvidiaImg from "@/assets/programs/recruiters/nvidia.webp";
+import samsungImg from "@/assets/programs/recruiters/samsung.webp";
+
 export function AIML() {
   // State management
   const [activeField, setActiveField] = useState(null);
@@ -98,35 +108,35 @@ export function AIML() {
 
   const icons = [
     {
-      src: "/src/assets/programs/recruiters/accenture.webp",
+      src: accentureImg,
       alt: "Accenture",
     },
     {
-      src: "/src/assets/programs/recruiters/amazon.webp", 
-      alt: "Amazon",
+      src: amazonImg,
+      alt: "Amazon", 
     },
     {
-      src: "/src/assets/programs/recruiters/facebook.webp",
+      src: facebookImg,
       alt: "Facebook",
     },
     {
-      src: "/src/assets/programs/recruiters/IBM.webp",
+      src: ibmImg,
       alt: "IBM",
     },
     {
-      src: "/src/assets/programs/recruiters/Intel.webp",
+      src: intelImg,
       alt: "Intel",
     },
     {
-      src: "/src/assets/programs/recruiters/microsoft.png",
+      src: microsoftImg,
       alt: "Microsoft",
     },
     {
-      src: "/src/assets/programs/recruiters/nvidia.webp",
+      src: nvidiaImg,
       alt: "NVIDIA",
     },
     {
-      src: "/src/assets/programs/recruiters/samsung.webp",
+      src: samsungImg,
       alt: "Samsung",
     }
   ];

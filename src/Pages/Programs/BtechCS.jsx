@@ -47,6 +47,15 @@ import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import AdmissionStepper from "./Stepper";
 import { IndustryPartners } from "./components/industry-partners";
+import amazonWebp from "@/assets/programs/recruiters/amazon.webp";
+import dellWebp from "@/assets/programs/recruiters/dell.webp";
+import hpWebp from "@/assets/programs/recruiters/hp.webp";
+import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
+import vmwareWebp from "@/assets/programs/recruiters/vmware.webp";
+import ibmWebp from "@/assets/programs/recruiters/IBM.webp";
+import hclWebp from "@/assets/programs/recruiters/HCL.webp";
+import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
+import capgeminiWebp from "@/assets/programs/recruiters/capgemini.webp";
 
 export function BtechCS() {
   // State management
@@ -91,39 +100,39 @@ export function BtechCS() {
 
   const icons = [
     {
-      src: "/src/assets/programs/recruiters/amazon.webp",
+      src: amazonWebp,
       alt: "Amazon",
     },
     {
-      src: "/src/assets/programs/recruiters/dell.webp", 
+      src: dellWebp,
       alt: "Dell",
     },
     {
-      src: "/src/assets/programs/recruiters/hp.webp",
-      alt: "HP", 
+      src: hpWebp,
+      alt: "HP",
     },
     {
-      src: "/src/assets/programs/recruiters/microsoft.png",
+      src: microsoftImg,
       alt: "Microsoft",
     },
     {
-      src: "/src/assets/programs/recruiters/vmware.webp",
+      src: vmwareWebp,
       alt: "VMware",
     },
     {
-      src: "/src/assets/programs/recruiters/IBM.webp",
+      src: ibmWebp,
       alt: "IBM",
     },
     {
-      src: "/src/assets/programs/recruiters/HCL.webp",
+      src: hclWebp,
       alt: "HCL",
     },
     {
-      src: "/src/assets/programs/recruiters/Infosys.webp",
+      src: infosysWebp,
       alt: "Infosys",
     },
     {
-      src: "/src/assets/programs/recruiters/capgemini.webp",
+      src: capgeminiWebp,
       alt: "Capgemini",
     }
   ];

@@ -14,40 +14,48 @@ import { AnimationStyles } from "./components/animation-styles";
 import { GradientBackground } from "@/components/ui/gradient-background";
 import AdmissionStepper from "./Stepper";
 import herobg from "@/assets/programs/HeroBBA.png";
+import googleWebp from "@/assets/programs/recruiters/Google.webp";
+import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
+import ibmWebp from "@/assets/programs/recruiters/IBM.webp";
+import deloitteWebp from "@/assets/programs/recruiters/Deloitte.webp";
+import axisWebp from "@/assets/programs/recruiters/Axis_Bank.webp";
+import boaWebp from "@/assets/programs/recruiters/bankOfAmerica.webp";
+import tcsWebp from "@/assets/programs/recruiters/TCS.webp";
+import bergerWebp from "@/assets/programs/recruiters/berger.webp";
 
 export function BBA() {
   // Sample data for components
   const icons = [
     {
-      src: "/src/assets/programs/recruiters/Google.webp",
+      src: googleWebp,
       alt: "Google",
     },
     {
-      src: "/src/assets/programs/recruiters/microsoft.png",
-      alt: "Microsoft",
+      src: microsoftImg,
+      alt: "Microsoft", 
     },
     {
-      src: "/src/assets/programs/recruiters/IBM.webp",
+      src: ibmWebp,
       alt: "IBM",
     },
     {
-      src: "/src/assets/programs/recruiters/Deloitte.webp",
+      src: deloitteWebp,
       alt: "Deloitte",
     },
     {
-      src: "/src/assets/programs/recruiters/Axis_Bank.webp",
+      src: axisWebp,
       alt: "Axis Bank",
     },
     {
-      src: "/src/assets/programs/recruiters/bankOfAmerica.webp",
+      src: boaWebp,
       alt: "The Bank of America",
     },
     {
-      src: "/src/assets/programs/recruiters/TCS.webp",
+      src: tcsWebp,
       alt: "TCS",
     },
     {
-      src: "/src/assets/programs/recruiters/berger.webp",
+      src: bergerWebp,
       alt: "Berger Paints",
     },
   ];

@@ -47,39 +47,47 @@ import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import AdmissionStepper from "./Stepper";
 import { IndustryPartners } from "./components/industry-partners";
+import googleWebp from "@/assets/programs/recruiters/Google.webp";
+import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
+import ibmWebp from "@/assets/programs/recruiters/IBM.webp";
+import deloitteWebp from "@/assets/programs/recruiters/Deloitte.webp";
+import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
+import cognizantWebp from "@/assets/programs/recruiters/cognizant.webp";
+import tcsWebp from "@/assets/programs/recruiters/TCS.webp";
+import hclWebp from "@/assets/programs/recruiters/HCL.webp";
 
 export function BCA() {
   const icons = [
     {
-      src: "/src/assets/programs/recruiters/Google.webp",
+      src: googleWebp,
       alt: "Google",
     },
     {
-      src: "/src/assets/programs/recruiters/microsoft.png",
+      src: microsoftImg,
       alt: "Microsoft",
     },
     {
-      src: "/src/assets/programs/recruiters/IBM.webp",
+      src: ibmWebp,
       alt: "IBM",
     },
     {
-      src: "/src/assets/programs/recruiters/Deloitte.webp",
+      src: deloitteWebp,
       alt: "Deloitte",
     },
     {
-      src: "/src/assets/programs/recruiters/Infosys.webp",
+      src: infosysWebp,
       alt: "Infosys",
     },
     {
-      src: "/src/assets/programs/recruiters/cognizant.webp",
+      src: cognizantWebp,
       alt: "Cognizant",
     },
     {
-      src: "/src/assets/programs/recruiters/TCS.webp",
+      src: tcsWebp,
       alt: "TCS",
     },
     {
-      src: "/src/assets/programs/recruiters/HCL.webp",
+      src: hclWebp,
       alt: "HCL",
     },
   ];
