@@ -112,19 +112,19 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
@@ -151,15 +151,15 @@
   --color-cusGreenLight: #80a080;
   --color-cusGreenLighter: #b3d1b3;
   --color-cusGreenDark: #004000;
-  --color-cusPrimary: #1E3A8A;
-  --color-cusPrimaryLight: #2563EB;
-  --color-cusAccent: #10B981;
-  --color-cusAccentLight: #22C55E;
-  --color-cusSecondary: #FACC15;
-  --color-cusSecondaryLight: #EAB308;
-  --color-cusBase: #F9FAFB;
-  --color-cusBaseLight: #F3F4F6;
-  --color-cusText: #1F2937;
+  --color-cusPrimary: #1e3a8a;
+  --color-cusPrimaryLight: #2563eb;
+  --color-cusAccent: #10b981;
+  --color-cusAccentLight: #22c55e;
+  --color-cusSecondary: #facc15;
+  --color-cusSecondaryLight: #eab308;
+  --color-cusBase: #f9fafb;
+  --color-cusBaseLight: #f3f4f6;
+  --color-cusText: #1f2937;
   --color-cusTextLight: #374151;
 }
 
@@ -175,11 +175,10 @@
     @apply bg-gradient-to-b from-white to-slate-100;
   }
   .background-gradient-yellow {
-    @apply bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15;
+    /* @apply bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15; */
+    @apply bg-gradient-to-r from-green-200 via-yellow-200 to-white;
   }
   .background-gradient-blue {
     @apply bg-gradient-to-l from-cusPrimaryLight to-cusPrimaryLight;
   }
-
-
 }
