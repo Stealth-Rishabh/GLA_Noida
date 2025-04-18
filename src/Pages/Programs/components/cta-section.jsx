@@ -1,19 +1,37 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Users, GraduationCap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 
-export function CTASection({ title, subtitle, description, ctaInfo }) {
+export function CTASection({ title, subtitle, description }) {
+  const ctaInfo = [
+    {
+      icon: <Calendar className="h-8 w-8 text-green-600" />,
+      title: "Next Batch",
+      description: "Starting June 15, 2025",
+    },
+    {
+      icon: <Users className="h-8 w-8 text-green-600" />,
+      title: "Class Size",
+      description: "Limited to 30 students",
+    },
+    {
+      icon: <GraduationCap className="h-8 w-8 text-green-600" />,
+      title: "Application Deadline",
+      description: "May 15, 2025",
+    },
+  ];
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 background-gradient-white text-black relative overflow-hidden"
+      className="py-24 bg-gray-100 text-black relative overflow-hidden"
     >
       {/* Animated background elements */}
       {/* <motion.div
@@ -127,7 +145,7 @@ export function CTASection({ title, subtitle, description, ctaInfo }) {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.5, delay: 1.2 }}
-            className="mt-16 pt-16 border-t border-white/20 max-w-3xl mx-auto grid md:grid-cols-3 gap-8"
+            className="mt-16 pt-16 border-t border-black max-w-3xl mx-auto grid md:grid-cols-3 gap-8"
           >
             {ctaInfo.map((info, index) => (
               <motion.div

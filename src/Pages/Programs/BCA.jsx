@@ -55,6 +55,7 @@ import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
 import cognizantWebp from "@/assets/programs/recruiters/cognizant.webp";
 import tcsWebp from "@/assets/programs/recruiters/TCS.webp";
 import hclWebp from "@/assets/programs/recruiters/HCL.webp";
+import brochureImg from "@/assets/programs/brochure3.webp";
 
 export function BCA() {
   const icons = [
@@ -357,7 +358,7 @@ export function BCA() {
         title="Download Program Brochure"
         subtitle="Program Details"
         description="Get detailed information about our program, curriculum, faculty, and more in our comprehensive brochure."
-        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+        imageUrl={brochureImg}
         features={[
           {
             title: "Complete Curriculum",

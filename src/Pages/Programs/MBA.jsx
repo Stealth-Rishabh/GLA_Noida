@@ -20,6 +20,7 @@ import axisWebp from "@/assets/programs/recruiters/Axis_Bank.webp";
 import boaWebp from "@/assets/programs/recruiters/bankOfAmerica.webp";
 import hdfcWebp from "@/assets/programs/recruiters/hdfc.webp";
 import nseWebp from "@/assets/programs/recruiters/nse.webp";
+import brochureImg from "@/assets/programs/brochure4.webp";
 
 export function MBA() {
   const icons = [
@@ -273,7 +274,7 @@ export function MBA() {
         title="Download Program Brochure"
         subtitle="Program Details"
         description="Get detailed information about our program, curriculum, faculty, and more in our comprehensive brochure."
-        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+        imageUrl={brochureImg}
         features={[
           {
             title: "Complete Curriculum",

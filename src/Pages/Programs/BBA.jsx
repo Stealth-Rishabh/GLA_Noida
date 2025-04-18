@@ -22,6 +22,7 @@ import axisWebp from "@/assets/programs/recruiters/Axis_Bank.webp";
 import boaWebp from "@/assets/programs/recruiters/bankOfAmerica.webp";
 import tcsWebp from "@/assets/programs/recruiters/TCS.webp";
 import bergerWebp from "@/assets/programs/recruiters/berger.webp";
+import brochureImg from "@/assets/programs/brochure2.webp";
 
 export function BBA() {
   // Sample data for components
@@ -293,7 +294,7 @@ export function BBA() {
         title="Download Program Brochure"
         subtitle="Program Details"
         description="Get detailed information about our program, curriculum, faculty, and more in our comprehensive brochure."
-        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+        imageUrl={brochureImg}
         features={[
           {
             title: "Complete Curriculum",
@@ -315,23 +316,6 @@ export function BBA() {
         title="Ready to Transform Your Career?"
         subtitle="Limited Seats Available"
         description="Join our Advanced Data Science Program and unlock new opportunities in the world of data."
-        ctaInfo={[
-          {
-            icon: <Calendar className="h-8 w-8 text-green-600" />,
-            title: "Next Batch",
-            description: "Starting June 15, 2025",
-          },
-          {
-            icon: <Users className="h-8 w-8 text-green-600" />,
-            title: "Class Size",
-            description: "Limited to 30 students",
-          },
-          {
-            icon: <GraduationCap className="h-8 w-8 text-green-600" />,
-            title: "Application Deadline",
-            description: "May 15, 2025",
-          },
-        ]}
       />
     </div>
   );
