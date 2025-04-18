@@ -37,9 +37,9 @@ export default function LandingPage() {
       <Section animate className="checkBackground">
         <LatestNews />
       </Section>
-      <GradientBackground className="background-gradient">
+      <GridBackground>
         <CampusShowcase />
-      </GradientBackground>
+      </GridBackground>
     </>
   );
 }

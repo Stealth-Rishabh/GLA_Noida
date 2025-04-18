@@ -219,7 +219,7 @@ const CampusShowcase = () => {
     if (activeSlide === 0) {
       // Club Immersion slide
       return (
-        <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden h-auto md:h-[500px]">
+        <div className="flex flex-col md:flex-row bg-gray-200/50 rounded-lg shadow-md overflow-hidden h-auto md:h-[500px]">
           <div className="w-full h-[300px] md:h-full md:w-1/2 relative">
             <img
               src={clubData[activeClubImage].mainImage || "/placeholder.svg"}
@@ -331,7 +331,7 @@ const CampusShowcase = () => {
     } else if (activeSlide === 1) {
       // Achievers slide
       return (
-        <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden h-auto md:h-[500px]">
+        <div className="flex flex-col md:flex-row bg-gray-200/50 rounded-lg shadow-md overflow-hidden h-auto md:h-[500px]">
           <div className="w-full h-[300px] md:h-full md:w-1/2 relative overflow-hidden">
             <img
               src={achieverImages[activeAchieverImage] || "/placeholder.svg"}
@@ -448,7 +448,7 @@ const CampusShowcase = () => {
     } else {
       // Placements slide
       return (
-        <div className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden h-auto md:h-[500px]">
+        <div className="flex flex-col md:flex-row bg-gray-200/50 rounded-lg shadow-md overflow-hidden h-auto md:h-[500px]">
           <div className="w-full h-[300px] md:h-full md:w-1/2 relative">
             <div className="relative h-full">
               {placementImages.map((item, index) => (

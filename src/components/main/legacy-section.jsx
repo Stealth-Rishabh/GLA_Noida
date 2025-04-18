@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import sketch from "@/assets/general/sketch.png";
 import iconOne from "@/assets/icons/icon1.webp";
 import iconTwo from "@/assets/icons/icon2.webp";
@@ -13,6 +13,9 @@ const LegacySection = () => {
     students: 0,
   });
 
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
   const targetValues = {
     placement: 86,
     alumni: 39000,
@@ -21,6 +24,29 @@ const LegacySection = () => {
   };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-10%",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     const duration = 2000; // 2 seconds
     const steps = 60; // 60 steps for smooth animation
     const interval = duration / steps;
@@ -43,10 +69,10 @@ const LegacySection = () => {
     }, interval);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section ref={sectionRef} className="w-full overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -56,7 +82,7 @@ const LegacySection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-16">
           {/* Stat 1 */}
           <div className="flex flex-col items-center">
             <div className="flex items-center justify-center mb-4">
