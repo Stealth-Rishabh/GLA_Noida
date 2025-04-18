@@ -9,7 +9,6 @@ import MBA from "@/Pages/Programs/MBA";
 import BBA from "@/Pages/Programs/BBA";
 import AIML from "@/Pages/Programs/AIML";
 import Stepper from "@/Pages/Programs/Stepper";
-import GridBackground from "@/components/ui/GridBackground";
 
 // About page component
 function About() {
@@ -25,24 +24,22 @@ function About() {
 
 export default function App() {
   return (
-    <GridBackground>
-      <div className="flex min-h-screen flex-col">
-        <SiteHeader />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact-us" element={<Contact />} />
-            <Route path="/programs/btech" element={<BtechCS />} />
-            <Route path="/programs/bca" element={<BCA />} />
-            <Route path="/programs/mba" element={<MBA />} />
-            <Route path="/programs/bba" element={<BBA />} />
-            <Route path="/programs/aiml" element={<AIML />} />
-            <Route path="/programs/stepper" element={<Stepper />} />
-          </Routes>
-        </main>
-        <SiteFooter />
-      </div>
-    </GridBackground>
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
+          <Route path="/programs/btech" element={<BtechCS />} />
+          <Route path="/programs/bca" element={<BCA />} />
+          <Route path="/programs/mba" element={<MBA />} />
+          <Route path="/programs/bba" element={<BBA />} />
+          <Route path="/programs/aiml" element={<AIML />} />
+          <Route path="/programs/stepper" element={<Stepper />} />
+        </Routes>
+      </main>
+      <SiteFooter />
+    </div>
   );
 }
