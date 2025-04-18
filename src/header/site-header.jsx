@@ -266,7 +266,7 @@ export function SiteHeader() {
               </nav>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <a
                   href="/more-info"
                   className={`rounded-md px-4 py-1.5 text-sm font-medium border-2 transition-colors ${
@@ -283,7 +283,7 @@ export function SiteHeader() {
                 >
                   Apply
                 </a>
-              </div>
+              </div> */}
             </div>
 
             {/* Mobile Navigation Toggle */}

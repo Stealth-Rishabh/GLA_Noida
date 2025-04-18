@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import bgCta from "@/assets/programs/square-pattern.webp";
 
 export function CTASection({ title, subtitle, description }) {
   const ctaInfo = [
@@ -31,7 +32,7 @@ export function CTASection({ title, subtitle, description }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 bg-gray-100 text-black relative overflow-hidden"
+      className="py-24 text-black relative overflow-hidden"
     >
       {/* Animated background elements */}
       {/* <motion.div
@@ -56,6 +57,16 @@ export function CTASection({ title, subtitle, description }) {
           className="absolute bottom-0 right-1/4 w-72 h-72 bg-cusGreen/5 rounded-full blur-3xl"
         />
       </motion.div> */}
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
 
       <motion.div
         initial={{ y: 20, opacity: 0 }}
@@ -118,7 +129,18 @@ export function CTASection({ title, subtitle, description }) {
             transition={{ duration: 0.5, delay: 1 }}
             className="flex flex-wrap max-w-3xl mx-auto justify-center gap-6"
           >
-            <motion.button
+            <motion.a
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector("#hero");
+                if (element) {
+                  element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
+              href="#hero"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="gap-2 group bg-cusSecondary text-cusText hover:bg-cusSecondary/80 transition-all duration-300 hover:pl-6 hover:pr-10 flex items-center px-6 py-2 rounded-md"
@@ -127,8 +149,8 @@ export function CTASection({ title, subtitle, description }) {
               <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
               </motion.span>
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="text-black border-cusYellow hover:bg-cusYellow/10 gap-2 group flex items-center px-6 py-2 rounded-md border"
@@ -137,7 +159,7 @@ export function CTASection({ title, subtitle, description }) {
               <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.span>
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           <motion.div

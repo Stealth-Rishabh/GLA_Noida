@@ -86,10 +86,21 @@ export function EligibilitySection({ plans, requirements }) {
                 transition={{ duration: 0.5, delay: 1.2 }}
                 className="mt-10"
               >
-                <motion.button
+                <motion.a
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector("#hero");
+                    if (element) {
+                      element.scrollIntoView({ 
+                        behavior: "smooth",
+                        block: "start"
+                      });
+                    }
+                  }}
+                  href="#hero"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group gap-2 transition-all bg-cusSecondary text-cusText hover:bg-cusSecondary/80 duration-300 hover:pl-6 hover:pr-7 px-6 py-2 rounded-md flex items-center"
+                  className="group w-fit gap-2 transition-all bg-cusSecondary text-cusText hover:bg-cusSecondary/80 duration-300 hover:pl-6 hover:pr-7 px-6 py-2 rounded-md flex items-center cursor-pointer"
                 >
                   Apply Now
                   <motion.span
@@ -98,7 +109,7 @@ export function EligibilitySection({ plans, requirements }) {
                   >
                     <ArrowRight className="h-4 w-4" />
                   </motion.span>
-                </motion.button>
+                </motion.a>
               </motion.div>
             </div>
           </div>

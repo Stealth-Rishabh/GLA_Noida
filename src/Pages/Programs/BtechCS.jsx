@@ -204,21 +204,21 @@ export function BtechCS() {
         features={[
           {
             icon: (
-              <BookOpen className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
             ),
             title: "Industry-Linked Curriculum",
             description: "Latest Industry Trends",
           },
           {
             icon: (
-              <GraduationCap className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
             ),
             title: "Global Exposure",
             description: "Study Abroad Options",
           },
           {
             icon: (
-              <Users className="h-6 w-6 text-cusPrimary group-hover:text-white transition-all duration-300" />
+              <Users className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
             ),
             title: "Expert Faculty",
             description: "IITs & NITs Professors",
@@ -285,47 +285,47 @@ export function BtechCS() {
             title: "Advanced Technical Expertise",
             description:
               "Master programming languages and development methods for success.",
-            icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+            icon: <BookOpen className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Research & Innovation Skills",
             description:
               "Develop innovative solutions through advanced research approaches.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+            icon: <Beaker className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Industry-Ready Professional",
             description:
               "Transform into skilled professional for tech companies.",
-            icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Global Tech Leader",
             description:
               "Lead international teams and drive innovation projects.",
-            icon: <Users className="h-10 w-10 text-cusGreen" />,
+            icon: <Users className="h-6 w-6 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Strategic Problem Solver",
             description:
               "Create efficient solutions for technical business challenges.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
+            icon: <Beaker className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Tech Entrepreneur Ready",
             description: "Launch and scale innovative tech ventures globally.",
-            icon: <BookOpen className="h-10 w-10 text-cusGreen" />,
+            icon: <BookOpen className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Ethical Tech Champion",
             description: "Drive innovation ensuring data privacy and security.",
-            icon: <Users className="h-10 w-10 text-cusGreen" />,
+            icon: <Users className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
             title: "Continuous Tech Innovator",
             description:
               "Stay ahead with emerging tech and industry practices.",
-            icon: <GraduationCap className="h-10 w-10 text-cusGreen" />,
+            icon: <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
         ]}
       />

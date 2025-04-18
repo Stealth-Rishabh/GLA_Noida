@@ -206,48 +206,48 @@ export function BBA() {
             title: "Business Leadership",
             description:
               "Lead teams effectively to drive organizational growth.",
-            icon: <Users className="h-10 w-10 text-cusAccent" />,
+            icon: <Users className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Strategic Management",
             description:
               "Master strategic planning for sustainable business growth.",
-            icon: <BookOpen className="h-10 w-10 text-cusAccent" />,
+            icon: <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Financial Acumen",
             description:
               "Expert in financial analysis and investment management.",
-            icon: <GraduationCap className="h-10 w-10 text-cusAccent" />,
+            icon: <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Marketing Excellence",
             description: "Drive brand growth with modern marketing strategies.",
-            icon: <Beaker className="h-10 w-10 text-cusAccent" />,
+            icon: <Beaker className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Operations Management",
             description:
               "Optimize business processes for improved operational efficiency.",
-            icon: <BookOpen className="h-10 w-10 text-cusAccent" />,
+            icon: <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Business Analytics",
             description:
               "Make data-driven decisions using modern analytics tools.",
-            icon: <Beaker className="h-10 w-10 text-cusAccent" />,
+            icon: <Beaker className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Entrepreneurial Mindset",
             description:
               "Launch and grow successful business ventures effectively.",
-            icon: <Users className="h-10 w-10 text-cusAccent" />,
+            icon: <Users className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
           {
             title: "Global Business Perspective",
             description:
               "Master international business practices and cross-cultural management.",
-            icon: <GraduationCap className="h-10 w-10 text-cusAccent" />,
+            icon: <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
           },
         ]}
       />

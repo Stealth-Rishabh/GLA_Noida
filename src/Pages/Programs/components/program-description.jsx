@@ -16,8 +16,16 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
   return (
     <section className="py-24 background-gradient-yellow-light px-4 overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-100 rounded-full blur-3xl -z-10"></div>
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
       {/* <div className="max-w-7xl overflow-hidden mx-auto text-center mb-16">
         <motion.div
           initial={{ opacity: 1, y: 20 }}
