@@ -13,11 +13,11 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { Heading } from "@/components/ui/heading";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import GridBackground from "@/components/ui/GridBackground";
 export default function AdmissionStepper() {
   const [currentStep, setCurrentStep] = useState(1);
   const [direction, setDirection] = useState(0);
   const [isHovering, setIsHovering] = useState(null);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isInViewport, setIsInViewport] = useState(false);
   const stepperRef = useRef(null);
 
@@ -87,10 +87,11 @@ export default function AdmissionStepper() {
     };
   }, []);
 
-  // Auto-progression effect
+  // Modify auto-progression effect to pause on hover
   useEffect(() => {
     let interval;
-    if (isAutoPlaying && isInViewport) {
+    // Only auto-play when not hovering over any step and component is in viewport
+    if (!isHovering && isInViewport) {
       interval = setInterval(() => {
         setDirection(1);
         setCurrentStep((prevStep) => {
@@ -107,7 +108,7 @@ export default function AdmissionStepper() {
         clearInterval(interval);
       }
     };
-  }, [isAutoPlaying, steps.length, isInViewport]);
+  }, [isHovering, steps.length, isInViewport]);
 
   const handleNext = () => {
     if (currentStep < steps.length) {
@@ -131,10 +132,6 @@ export default function AdmissionStepper() {
     setCurrentStep(stepNumber);
   };
 
-  const toggleAutoPlay = () => {
-    setIsAutoPlaying(!isAutoPlaying);
-  };
-
   // Reset scroll position when step changes
   useEffect(() => {
     if (window.innerWidth < 768) {
@@ -146,9 +143,10 @@ export default function AdmissionStepper() {
   }, [currentStep]);
 
   return (
-    <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20">
-      <Heading level={2} className="text-center text-cusText">
-        {/* <TextAnimate
+    <GridBackground>
+      <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20">
+        <Heading level={2} className="text-center text-cusText">
+          {/* <TextAnimate
           as="span"
           by="word"
           delay={0.2}
@@ -156,376 +154,332 @@ export default function AdmissionStepper() {
           animation="slideUp"
         > */}
           Admission Process
-        {/* </TextAnimate> */}
-      </Heading>
-      <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full mb-10 sm:mb-16"></div>
+          {/* </TextAnimate> */}
+        </Heading>
+        <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full mb-10 sm:mb-16"></div>
 
-      {/* Auto-play toggle button */}
-      <div className="flex justify-center mb-6">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={toggleAutoPlay}
-          className="gap-2"
-        >
-          {isAutoPlaying ? (
-            <>
-              <Pause className="h-4 w-4" />
-              <span>Pause</span>
-            </>
-          ) : (
-            <>
-              <Play className="h-4 w-4" />
-              <span>Play</span>
-            </>
-          )}
-        </Button>
-      </div>
+        {/* Mobile Stepper (Vertical) */}
+        <div className="md:hidden space-y-0 overflow-hidden">
+          <div className="relative pl-10">
+            {/* Continuous Vertical Line */}
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300 z-0"></div>
 
-      {/* Mobile Stepper (Vertical) */}
-      <div className="md:hidden space-y-0 overflow-hidden">
-        <div className="relative pl-10">
-          {/* Continuous Vertical Line */}
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300 z-0"></div>
-
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              id={`step-${step.number}`}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: step.number * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className={cn(
-                "relative py-3",
-                index !== steps.length - 1 ? "pb-6" : ""
-              )}
-            >
-              {/* Step Circle */}
-              <div className="absolute left-0 top-5 z-10 -translate-x-[13px]">
-                {step.number < currentStep ? (
-                  <motion.div
-                    initial={{ scale: 0.8 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center shadow-md shadow-green-500/20 border-2 border-white"
-                  >
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </motion.div>
-                ) : step.number === currentStep ? (
-                  <motion.div
-                    initial={{ scale: 0.8 }}
-                    animate={{
-                      scale: 1,
-                      boxShadow: [
-                        "0px 0px 0px rgba(0,0,0,0.1)",
-                        "0px 0px 15px rgba(0,0,0,0.2)",
-                        "0px 0px 0px rgba(0,0,0,0.1)",
-                      ],
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      boxShadow: {
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatType: "reverse",
-                        duration: 2,
-                      },
-                    }}
-                    className="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-medium shadow-lg border-2 border-white"
-                  >
-                    {step.number}
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="h-8 w-8 rounded-full border-2 border-white bg-white flex items-center justify-center text-sm font-medium text-gray-400 shadow-sm"
-                  >
-                    {step.number}
-                  </motion.div>
-                )}
-              </div>
-
-              {/* Content Card */}
-              <Card
-                className={cn(
-                  "cursor-pointer transition-all duration-300 overflow-hidden",
-                  step.number === currentStep
-                    ? "border-gray-300 shadow-md"
-                    : step.number < currentStep
-                    ? "border-gray-200 bg-gray-50/50"
-                    : "border-gray-200"
-                )}
-                onClick={() => handleStepClick(step.number)}
-              >
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <motion.span
-                        className="text-xl"
-                        initial={{ rotateY: 180, opacity: 0 }}
-                        animate={{ rotateY: 0, opacity: 1 }}
-                        transition={{ delay: 0.2 + step.number * 0.1 }}
-                      >
-                        {step.icon}
-                      </motion.span>
-                      <h3
-                        className={cn(
-                          "font-medium transition-all duration-300",
-                          step.number === currentStep
-                            ? "text-black font-semibold"
-                            : ""
-                        )}
-                      >
-                        {step.title}
-                      </h3>
-                    </div>
-                    <motion.p
-                      className="text-sm text-muted-foreground mt-1"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.3 + step.number * 0.1 }}
-                    >
-                      {step.description}
-                    </motion.p>
-
-                    {step.number === currentStep && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="mt-2"
-                      >
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="text-black p-0 h-auto font-normal text-xs flex items-center gap-1 hover:bg-transparent hover:text-black hover:gap-2 transition-all duration-300"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleNext();
-                          }}
-                          disabled={currentStep === steps.length}
-                        >
-                          Continue to next step{" "}
-                          <ArrowRight className="h-3 w-3" />
-                        </Button>
-                      </motion.div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Desktop Stepper (Horizontal) */}
-      <div className="hidden md:block relative">
-        <div className="mb-20 relative">
-          {/* Main connecting line - thin and centered through circles */}
-          <div className="absolute top-1/3 left-14 w-[calc(100%-100px)]  h-0.5 bg-gray-300 -translate-y-1/3 z-0"></div>
-
-          {/* Progress line - shows completed steps */}
-          <div
-            className="absolute top-1/3 left-14 max-w-[calc(100%-100px)] w-full h-0.5 bg-green-500 -translate-y-1/3 z-0 transition-all duration-500"
-            style={{
-              width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
-            }}
-          ></div>
-
-          {/* Steps */}
-          <div className="relative z-10 flex mt-20 justify-between">
-            {steps.map((step) => (
+            {steps.map((step, index) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: step.number * 0.1 }}
-                className="flex flex-col items-center"
-                onMouseEnter={() => setIsHovering(step.number)}
-                onMouseLeave={() => setIsHovering(null)}
+                id={`step-${step.number}`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: step.number * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className={cn(
+                  "relative py-3",
+                  index !== steps.length - 1 ? "pb-6" : ""
+                )}
               >
-                {/* Step Circle with Hover Effect */}
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => handleStepClick(step.number)}
-                  className="cursor-pointer relative mb-2"
-                >
-                  {/* Icon above circle */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + step.number * 0.1 }}
-                    className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm border border-gray-100"
-                  >
-                    <span className="text-sm">{step.icon}</span>
-                  </motion.div>
-
-                  {/* Circle */}
+                {/* Step Circle */}
+                <div className="absolute left-0 top-5 z-10 -translate-x-[13px]">
                   {step.number < currentStep ? (
                     <motion.div
                       initial={{ scale: 0.8 }}
                       animate={{ scale: 1 }}
-                      className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center shadow-sm"
-                    >
-                      <CheckCircle className="h-6 w-6 text-white" />
-                    </motion.div>
-                  ) : step.number === currentStep ? (
-                    <motion.div
-                      initial={{ scale: 0.8 }}
-                      animate={{ scale: 1 }}
-                      className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-lg font-medium shadow-sm"
-                    >
-                      {step.number}
-                    </motion.div>
-                  ) : (
-                    <motion.div className="w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center text-lg font-medium text-gray-400">
-                      {step.number}
-                    </motion.div>
-                  )}
-                </motion.div>
-
-                {/* Step Title */}
-                <motion.div
-                  className="text-center max-w-[150px]"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 + step.number * 0.1 }}
-                >
-                  <h3
-                    className={cn(
-                      "font-medium text-sm",
-                      step.number === currentStep
-                        ? "text-black font-semibold"
-                        : "text-gray-600"
-                    )}
-                  >
-                    {step.title}
-                  </h3>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Step Description Card */}
-        <div className="max-w-3xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentStep}
-              initial={{ opacity: 0, x: direction * 100, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: direction * -100, scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="relative"
-            >
-              <Card className="border-gray-200 overflow-hidden shadow-md !p-0">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <motion.div
-                      className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl font-medium shadow-sm"
-                      initial={{ rotate: -10, scale: 0.9 }}
-                      animate={{ rotate: 0, scale: 1 }}
                       transition={{
                         type: "spring",
                         stiffness: 300,
                         damping: 20,
                       }}
+                      className="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center shadow-md shadow-green-500/20 border-2 border-white"
                     >
-                      {currentStep}
+                      <CheckCircle className="h-5 w-5 text-white" />
                     </motion.div>
-                    <div>
-                      <motion.span
-                        className="text-2xl mr-3 inline-block"
-                        initial={{ rotateY: 180, opacity: 0 }}
-                        animate={{ rotateY: 0, opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                      >
-                        {steps[currentStep - 1].icon}
-                      </motion.span>
-                      <motion.h3
-                        className="text-xl font-bold inline-block text-gray-800"
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        {steps[currentStep - 1].title}
-                      </motion.h3>
-                    </div>
-                  </div>
-
-                  <motion.div
-                    className="relative p-6 rounded-xl bg-gray-50 border border-gray-100"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <motion.p
-                      className="text-gray-600 text-lg"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5 }}
+                  ) : step.number === currentStep ? (
+                    <motion.div
+                      initial={{ scale: 0.8 }}
+                      animate={{
+                        scale: 1,
+                        boxShadow: [
+                          "0px 0px 0px rgba(0,0,0,0.1)",
+                          "0px 0px 15px rgba(0,0,0,0.2)",
+                          "0px 0px 0px rgba(0,0,0,0.1)",
+                        ],
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        boxShadow: {
+                          repeat: Number.POSITIVE_INFINITY,
+                          repeatType: "reverse",
+                          duration: 2,
+                        },
+                      }}
+                      className="h-8 w-8 rounded-full bg-black text-white flex items-center justify-center text-sm font-medium shadow-lg border-2 border-white"
                     >
-                      {steps[currentStep - 1].description}
-                    </motion.p>
+                      {step.number}
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="h-8 w-8 rounded-full border-2 border-white bg-white flex items-center justify-center text-sm font-medium text-gray-400 shadow-sm"
+                    >
+                      {step.number}
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Content Card */}
+                <Card
+                  className={cn(
+                    "cursor-pointer transition-all duration-300 overflow-hidden",
+                    step.number === currentStep
+                      ? "border-gray-300 shadow-md"
+                      : step.number < currentStep
+                      ? "border-gray-200 bg-gray-50/50"
+                      : "border-gray-200"
+                  )}
+                  onClick={() => handleStepClick(step.number)}
+                  onMouseEnter={() => setIsHovering(step.number)}
+                  onMouseLeave={() => setIsHovering(null)}
+                >
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <motion.span
+                          className="text-xl"
+                          initial={{ rotateY: 180, opacity: 0 }}
+                          animate={{ rotateY: 0, opacity: 1 }}
+                          transition={{ delay: 0.2 + step.number * 0.1 }}
+                        >
+                          {step.icon}
+                        </motion.span>
+                        <h3
+                          className={cn(
+                            "font-medium transition-all duration-300",
+                            step.number === currentStep
+                              ? "text-black font-semibold"
+                              : ""
+                          )}
+                        >
+                          {step.title}
+                        </h3>
+                      </div>
+                      <motion.p
+                        className="text-sm text-muted-foreground mt-1"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 + step.number * 0.1 }}
+                      >
+                        {step.description}
+                      </motion.p>
+
+                      {step.number === currentStep && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 }}
+                          className="mt-2"
+                        >
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="text-black p-0 h-auto font-normal text-xs flex items-center gap-1 hover:bg-transparent hover:text-black hover:gap-2 transition-all duration-300"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleNext();
+                            }}
+                            disabled={currentStep === steps.length}
+                          >
+                            Continue to next step{" "}
+                            <ArrowRight className="h-3 w-3" />
+                          </Button>
+                        </motion.div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Stepper (Horizontal) */}
+        <div className="hidden md:block relative">
+          <div className="mb-20 relative">
+            {/* Main connecting line - thin and centered through circles */}
+            <div className="absolute top-1/3 left-14 w-[calc(100%-100px)]  h-0.5 bg-gray-300 -translate-y-1/3 z-0"></div>
+
+            {/* Progress line - shows completed steps */}
+            <div
+              className="absolute top-1/3 left-14 max-w-[calc(100%-100px)] w-full h-0.5 bg-green-500 -translate-y-1/3 z-0 transition-all duration-500"
+              style={{
+                width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
+              }}
+            ></div>
+
+            {/* Steps */}
+            <div className="relative z-10 flex mt-20 justify-between">
+              {steps.map((step) => (
+                <motion.div
+                  key={step.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: step.number * 0.1 }}
+                  className="flex flex-col items-center"
+                  onMouseEnter={() => setIsHovering(step.number)}
+                  onMouseLeave={() => setIsHovering(null)}
+                >
+                  {/* Step Circle with Hover Effect */}
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleStepClick(step.number)}
+                    className="cursor-pointer relative mb-2"
+                  >
+                    {/* Icon above circle */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 + step.number * 0.1 }}
+                      className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm border border-gray-100"
+                    >
+                      <span className="text-sm">{step.icon}</span>
+                    </motion.div>
+
+                    {/* Circle */}
+                    {step.number < currentStep ? (
+                      <motion.div
+                        initial={{ scale: 0.8 }}
+                        animate={{ scale: 1 }}
+                        className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center shadow-sm"
+                      >
+                        <CheckCircle className="h-6 w-6 text-white" />
+                      </motion.div>
+                    ) : step.number === currentStep ? (
+                      <motion.div
+                        initial={{ scale: 0.8 }}
+                        animate={{ scale: 1 }}
+                        className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-lg font-medium shadow-sm"
+                      >
+                        {step.number}
+                      </motion.div>
+                    ) : (
+                      <motion.div className="w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center text-lg font-medium text-gray-400">
+                        {step.number}
+                      </motion.div>
+                    )}
                   </motion.div>
 
-                  {/* Step Indicator */}
-                  <div className="flex items-center justify-center mt-8 gap-2">
-                    {steps.map((step, index) => (
+                  {/* Step Title */}
+                  <motion.div
+                    className="text-center max-w-[150px]"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 + step.number * 0.1 }}
+                  >
+                    <h3
+                      className={cn(
+                        "font-medium text-sm",
+                        step.number === currentStep
+                          ? "text-black font-semibold"
+                          : "text-gray-600"
+                      )}
+                    >
+                      {step.title}
+                    </h3>
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Step Description Card */}
+          <div className="max-w-3xl mx-auto">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStep}
+                initial={{ opacity: 0, x: direction * 100, scale: 0.95 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                exit={{ opacity: 0, x: direction * -100, scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="relative"
+              >
+                <Card 
+                  className="border-gray-200 overflow-hidden shadow-md !p-0"
+                  onMouseEnter={() => setIsHovering('description-card')}
+                  onMouseLeave={() => setIsHovering(null)}
+                >
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-4 mb-6">
                       <motion.div
-                        key={index}
-                        className={cn(
-                          "h-1.5 rounded-full transition-all duration-300 cursor-pointer",
-                          currentStep === index + 1
-                            ? "w-6 bg-black"
-                            : "w-1.5 bg-gray-200"
-                        )}
-                        whileHover={{ scale: 1.2 }}
-                        onClick={() => handleStepClick(index + 1)}
-                        whileTap={{ scale: 0.9 }}
-                      />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </AnimatePresence>
+                        className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl font-medium shadow-sm"
+                        initial={{ rotate: -10, scale: 0.9 }}
+                        animate={{ rotate: 0, scale: 1 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                      >
+                        {currentStep}
+                      </motion.div>
+                      <div>
+                        <motion.span
+                          className="text-2xl mr-3 inline-block"
+                          initial={{ rotateY: 180, opacity: 0 }}
+                          animate={{ rotateY: 0, opacity: 1 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          {steps[currentStep - 1].icon}
+                        </motion.span>
+                        <motion.h3
+                          className="text-xl font-bold inline-block text-gray-800"
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 }}
+                        >
+                          {steps[currentStep - 1].title}
+                        </motion.h3>
+                      </div>
+                    </div>
+
+                    <motion.div
+                      className="relative p-6 rounded-xl bg-gray-50 border border-gray-100"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <motion.p
+                        className="text-gray-600 text-lg"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                      >
+                        {steps[currentStep - 1].description}
+                      </motion.p>
+                    </motion.div>
+
+                    {/* Step Indicator */}
+                    <div className="flex items-center justify-center mt-8 gap-2">
+                      {steps.map((step, index) => (
+                        <motion.div
+                          key={index}
+                          className={cn(
+                            "h-1.5 rounded-full transition-all duration-300 cursor-pointer",
+                            currentStep === index + 1
+                              ? "w-6 bg-black"
+                              : "w-1.5 bg-gray-200"
+                          )}
+                          whileHover={{ scale: 1.2 }}
+                          onClick={() => handleStepClick(index + 1)}
+                          whileTap={{ scale: 0.9 }}
+                        />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
-
-      {/* Navigation Buttons - Responsive for both mobile and desktop */}
-      {/* <motion.div
-        className="flex justify-between mt-12"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-      >
-        <Button
-          variant="outline"
-          onClick={handlePrev}
-          disabled={currentStep === 1}
-          className="gap-2 transition-all duration-300 hover:gap-3 group"
-        >
-          <ChevronLeft className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
-          <span className="hidden xs:inline">Previous</span>
-        </Button>
-
-        <div className="flex items-center gap-2 text-xs text-gray-500">
-          <span className="font-medium text-black">{currentStep}</span>
-          <span>of</span>
-          <span>{steps.length}</span>
-        </div>
-
-        <Button
-          onClick={handleNext}
-          disabled={currentStep === steps.length}
-          className="gap-2 transition-all duration-300 hover:gap-3 group"
-        >
-          <span className="hidden xs:inline">Next</span>
-          <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-        </Button>
-      </motion.div> */}
-    </div>
+    </GridBackground>
   );
 }

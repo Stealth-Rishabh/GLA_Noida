@@ -6,6 +6,7 @@ import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import bgCta from "@/assets/programs/square-pattern.webp";
+import { Phone } from "lucide-react";
 
 export function CTASection({ title, subtitle, description }) {
   const ctaInfo = [
@@ -151,14 +152,15 @@ export function CTASection({ title, subtitle, description }) {
               </motion.span>
             </motion.a>
             <motion.a
+              href="tel:+919027068068"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-black border-cusYellow hover:bg-cusYellow/10 gap-2 group flex items-center px-6 py-2 rounded-md border"
+              className="text-black border-cusSecondary bg-cusSecondary/20 hover:bg-cusSecondary/80 gap-2 group flex items-center px-6 py-2 rounded-md border"
             >
-              Request Information
               <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                <Phone className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
               </motion.span>
+              Call Now
             </motion.a>
           </motion.div>
 

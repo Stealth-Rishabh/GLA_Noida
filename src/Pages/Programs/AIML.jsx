@@ -65,6 +65,7 @@ import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
 import nvidiaImg from "@/assets/programs/recruiters/nvidia.webp";
 import samsungImg from "@/assets/programs/recruiters/samsung.webp";
 import brochureImg from "@/assets/programs/brochure1.webp";
+import GridBackground from "@/components/ui/GridBackground";
 export function AIML() {
   // State management
   const [activeField, setActiveField] = useState(null);
@@ -293,27 +294,37 @@ export function AIML() {
             title: "AI Solution Architect",
             description:
               "Design enterprise-level AI solutions and implementations.",
-            icon: <Building2 className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+            icon: (
+              <Building2 className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />
+            ),
           },
           {
             title: "Research Innovator",
             description: "Develop cutting-edge AI research and solutions.",
-            icon: <Lightbulb className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+            icon: (
+              <Lightbulb className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />
+            ),
           },
           {
             title: "MLOps Engineer",
             description: "Deploy ML models in production environments.",
-            icon: <UserPlus className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+            icon: (
+              <UserPlus className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />
+            ),
           },
           {
             title: "AI Ethics Leader",
             description: "Ensure responsible and ethical AI development.",
-            icon: <UserCircle className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+            icon: (
+              <UserCircle className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />
+            ),
           },
           {
             title: "Industry Collaborator",
             description: "Deliver AI solutions with cross-functional teams.",
-            icon: <UsersRound className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+            icon: (
+              <UsersRound className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />
+            ),
           },
           {
             title: "Data Science Specialist",
