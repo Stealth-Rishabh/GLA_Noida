@@ -64,7 +64,7 @@ import intelImg from "@/assets/programs/recruiters/Intel.webp";
 import microsoftImg from "@/assets/programs/recruiters/microsoft.png";
 import nvidiaImg from "@/assets/programs/recruiters/nvidia.webp";
 import samsungImg from "@/assets/programs/recruiters/samsung.webp";
-
+import brochureImg from "@/assets/programs/brochure1.webp";
 export function AIML() {
   // State management
   const [activeField, setActiveField] = useState(null);
@@ -375,7 +375,7 @@ export function AIML() {
         title="Download Program Brochure"
         subtitle="Program Details"
         description="Get detailed information about our program, curriculum, faculty, and more in our comprehensive brochure."
-        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+        imageUrl={brochureImg}
         features={[
           {
             title: "Complete Curriculum",

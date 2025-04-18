@@ -56,6 +56,7 @@ import ibmWebp from "@/assets/programs/recruiters/IBM.webp";
 import hclWebp from "@/assets/programs/recruiters/HCL.webp";
 import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
 import capgeminiWebp from "@/assets/programs/recruiters/capgemini.webp";
+import brochureImg from "@/assets/programs/brochure5.webp";
 
 export function BtechCS() {
   // State management
@@ -375,7 +376,7 @@ export function BtechCS() {
         title="Download Program Brochure"
         subtitle="Program Details"
         description="Get detailed information about our program, curriculum, faculty, and more in our comprehensive brochure."
-        imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
+        imageUrl={brochureImg}
         features={[
           {
             title: "Complete Curriculum",
