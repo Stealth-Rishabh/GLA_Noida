@@ -25,7 +25,20 @@ export default function AdmissionStepper() {
     {
       number: 1,
       title: "Register Online",
-      description: "Register at https://glauniversity.in:8085/Main/Admission",
+      description: (
+        <>
+          Register at{" "}
+          <a
+            href="https://glauniversity.in:8085/Main/Admission"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline"
+            onClick={(e) => e.stopPropagation()}
+          >
+            https://glauniversity.in:8085/Main/Admission
+          </a>
+        </>
+      ),
       icon: "🖥️",
     },
     {
