@@ -7,11 +7,15 @@ import ExploreMajorSections from "@/components/main/ExploreMajorSections";
 import StudentLife from "@/components/main/StudentLife";
 import LatestNews from "@/components/main/LatestNews";
 import { GradientBackground } from "@/components/ui/gradient-background";
+import CampusShowcase from "@/components/main/CampusShowcase";
+import LegacySection from "@/components/main/legacy-section";
 
 export default function LandingPage() {
   return (
     <>
       <BannerSlider />
+
+      <LegacySection />
 
       <Section animate className="checkBackground">
         <UndergraduateAdmissions />
@@ -30,6 +34,9 @@ export default function LandingPage() {
       <Section animate className="checkBackground">
         <LatestNews />
       </Section>
+      <GradientBackground className="background-gradient">
+        <CampusShowcase />
+      </GradientBackground>
     </>
   );
 }
