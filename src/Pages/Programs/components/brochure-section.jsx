@@ -1,36 +1,44 @@
-import { ArrowRight, Download } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Heading } from "@/components/ui/heading"
-import { motion } from "framer-motion"
-
-export function BrochureSection({ title, subtitle, description, features, imageUrl }) {
+import { ArrowRight, Download } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
+import { motion } from "framer-motion";
+import { TextAnimate } from "@/components/magicui/text-animate";
+import { GradientBackground } from "@/components/ui/gradient-background";
+export function BrochureSection({
+  title,
+  subtitle,
+  description,
+  features,
+  imageUrl,
+}) {
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 container mx-auto px-4"
+      className="py-24 container max-w-7xl mx-auto px-4"
     >
-      <motion.div 
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-4xl mx-auto"
-      >
-        <motion.div 
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: false }}
-          transition={{ 
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className=""
+      >
+        <GradientBackground round="rounded-2xl">  
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+          transition={{
             duration: 0.5,
             delay: 0.4,
             type: "spring",
-            stiffness: 100
+            stiffness: 100,
           }}
-          className="grid md:grid-cols-2 gap-12 items-center background-gradient-blue p-8 md:p-12 rounded-2xl shadow-lg border border-slate-100"
+          className="grid md:grid-cols-2 gap-12 items-center p-8 md:p-10 rounded-2xl shadow-lg border border-slate-100"
         >
           <div>
             <motion.div
@@ -39,29 +47,52 @@ export function BrochureSection({ title, subtitle, description, features, imageU
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
+              <Badge className="mb-4 bg-cusSecondary text-cusText">
+                {subtitle}
+              </Badge>
             </motion.div>
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+                ease: "easeOut",
+              }}
+              className="mb-6"
             >
-              <Heading level={3} className="text-center sm:text-left text-white">
-                {title}
+              <Heading level={2} className="text-black">
+                <TextAnimate
+                  as="span"
+                  by="word"
+                  delay={0.2}
+                  duration={0.5}
+                  animation="slideUp"
+                  className="inline-flex flex-wrap"
+                >
+                  {title}
+                </TextAnimate>
               </Heading>
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="h-1 w-20 bg-cusSecondary rounded-full"
+              />
             </motion.div>
-            <motion.p 
+            <motion.p
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 1 }}
-              className="text-white/80 mb-8"
+              className="text-black mb-8"
             >
               {description}
             </motion.p>
 
-            <motion.div 
+            {/* <motion.div 
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false }}
@@ -95,9 +126,9 @@ export function BrochureSection({ title, subtitle, description, features, imageU
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.div> */}
 
-            <motion.div 
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false }}
@@ -120,26 +151,26 @@ export function BrochureSection({ title, subtitle, description, features, imageU
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ x: 100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ 
+            transition={{
               duration: 0.5,
               delay: 0.4,
               type: "spring",
-              stiffness: 100
+              stiffness: 100,
             }}
             className="relative"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-full -z-10"
             />
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: false }}
@@ -147,25 +178,25 @@ export function BrochureSection({ title, subtitle, description, features, imageU
               className="absolute -bottom-6 -left-6 w-32 h-32 bg-slate-100 rounded-full -z-10"
             />
 
-            <motion.div 
-              initial={{ rotate: -10, scale: 0.9 }}
-              whileInView={{ rotate: 3, scale: 1 }}
+            <motion.div
+              initial={{ rotate: 0, scale: 0.9 }}
+              whileInView={{ rotate: 0, scale: 1 }}
               viewport={{ once: false }}
-              transition={{ 
+              transition={{
                 duration: 0.5,
                 delay: 1,
                 type: "spring",
-                stiffness: 100
+                stiffness: 100,
               }}
               whileHover={{ rotate: 0 }}
-              className="relative bg-white p-4 rounded-xl shadow-lg border border-slate-100 transform transition-transform duration-300"
+              className="relative bg-white rounded-xl shadow-lg transform transition-transform duration-300"
             >
               <img
                 src={imageUrl || "/placeholder.svg"}
                 alt="Program Brochure"
-                className="w-full h-auto aspect-square object-cover rounded-lg shadow-md"
+                className="w-full h-auto aspect-video object-cover rounded-lg shadow-md"
               />
-              <motion.div 
+              <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: false }}
@@ -178,7 +209,9 @@ export function BrochureSection({ title, subtitle, description, features, imageU
             </motion.div>
           </motion.div>
         </motion.div>
+        </GradientBackground>
       </motion.div>
+
     </motion.section>
-  )
+  );
 }

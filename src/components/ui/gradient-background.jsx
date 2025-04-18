@@ -5,9 +5,10 @@ export function GradientBackground({
   svgOpacity = 1,
   svgPosition = "top-1/6",
   children,
+  round,
 }) {
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div className={`relative overflow-hidden ${className} ${round}`}>
       {/* SVG Background */}
       <div className="absolute inset-0 z-[1]">
         <img

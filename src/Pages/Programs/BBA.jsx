@@ -317,17 +317,17 @@ export function BBA() {
         description="Join our Advanced Data Science Program and unlock new opportunities in the world of data."
         ctaInfo={[
           {
-            icon: <Calendar className="h-8 w-8 text-cusSecondary" />,
+            icon: <Calendar className="h-8 w-8 text-green-600" />,
             title: "Next Batch",
             description: "Starting June 15, 2025",
           },
           {
-            icon: <Users className="h-8 w-8 text-cusSecondary" />,
+            icon: <Users className="h-8 w-8 text-green-600" />,
             title: "Class Size",
             description: "Limited to 30 students",
           },
           {
-            icon: <GraduationCap className="h-8 w-8 text-cusSecondary" />,
+            icon: <GraduationCap className="h-8 w-8 text-green-600" />,
             title: "Application Deadline",
             description: "May 15, 2025",
           },

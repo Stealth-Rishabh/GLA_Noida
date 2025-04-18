@@ -54,7 +54,7 @@ export function CurriculumSection({
             delay: 0.4,
             ease: "easeOut",
           }}
-          className="max-w-7xl grid grid-cols-2 gap-20 mx-auto items-center"
+          className="max-w-7xl grid md:grid-cols-2 gap-20 mx-auto items-center"
         >
           <motion.div
             className=""
