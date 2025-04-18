@@ -287,44 +287,44 @@ export function AIML() {
           {
             title: "AI/ML Expert",
             description: "Build advanced AI algorithms and ML models.",
-            icon: <Code2 className="h-10 w-10 text-cusGreen" />,
-          },
-          {
-            title: "Data Science Specialist",
-            description:
-              "Analyze data and extract actionable business insights.",
-            icon: <Beaker className="h-10 w-10 text-cusGreen" />,
-          },
-          {
-            title: "Deep Learning Professional",
-            description: "Create neural networks for AI applications.",
-            icon: <Wrench className="h-10 w-10 text-cusGreen" />,
+            icon: <Code2 className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
           },
           {
             title: "AI Solution Architect",
             description:
               "Design enterprise-level AI solutions and implementations.",
-            icon: <Building2 className="h-10 w-10 text-cusGreen" />,
+            icon: <Building2 className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
           },
           {
             title: "Research Innovator",
             description: "Develop cutting-edge AI research and solutions.",
-            icon: <Lightbulb className="h-10 w-10 text-cusGreen" />,
+            icon: <Lightbulb className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
           },
           {
             title: "MLOps Engineer",
             description: "Deploy ML models in production environments.",
-            icon: <UserPlus className="h-10 w-10 text-cusGreen" />,
+            icon: <UserPlus className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
           },
           {
             title: "AI Ethics Leader",
             description: "Ensure responsible and ethical AI development.",
-            icon: <UserCircle className="h-10 w-10 text-cusGreen" />,
+            icon: <UserCircle className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
           },
           {
             title: "Industry Collaborator",
             description: "Deliver AI solutions with cross-functional teams.",
-            icon: <UsersRound className="h-10 w-10 text-cusGreen" />,
+            icon: <UsersRound className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+          },
+          {
+            title: "Data Science Specialist",
+            description:
+              "Analyze data and extract actionable business insights.",
+            icon: <Beaker className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
+          },
+          {
+            title: "Deep Learning Professional",
+            description: "Create neural networks for AI applications.",
+            icon: <Wrench className="h-8 w-8 sm:h-10 sm:w-10 text-cusGreen" />,
           },
         ]}
       />

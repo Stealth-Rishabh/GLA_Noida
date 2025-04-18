@@ -58,7 +58,7 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
             />
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-5">
             {outcomes.map((item, index) => (
               <motion.div
                 key={index}
@@ -71,15 +71,15 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                   ease: "easeOut",
                 }}
               >
-                <Card className="border-none p-3 bg-white backdrop-blur-sm shadow-md group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 gap-2">
-                  <CardHeader className="flex sm:flex-row gap-5 px-0">
+                <Card className="border-none p-2 pr-5 bg-white backdrop-blur-sm shadow-md group rounded-lg sm:rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 gap-2">
+                  <CardHeader className="flex sm:flex-row gap-2 sm:gap-3 px-0">
                     <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="min-w-16 h-16 rounded-2xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
+                      // whileHover={{ scale: 1.1 }}
+                      className="min-w-12 sm:min-w-16 h-12 sm:h-16 rounded-lg sm:rounded-xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
                     >
                       {item.icon}
                     </motion.div>
-                    <CardTitle className="text-black text-2xl font-bold">
+                    <CardTitle className="font-medium text-base text-black sm:text-lg">
                       {item.title}
                     </CardTitle>
                   </CardHeader>

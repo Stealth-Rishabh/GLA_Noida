@@ -13,7 +13,7 @@ export function FeesSection({ title, subtitle, plans }) {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4"
+      className="container mx-auto sm:px-4"
     >
       <motion.div
         initial={{ y: 20, opacity: 0 }}
@@ -22,14 +22,14 @@ export function FeesSection({ title, subtitle, plans }) {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="max-w-md mb-10"
       >
-        <motion.div
+        {/* <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: false }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <Badge className="mb-4 bg-cusSecondary text-cusText">{subtitle}</Badge>
-        </motion.div>
+        </motion.div> */}
         <Heading level={2} className="text-cusText">
           <TextAnimate
             as="span"
@@ -63,11 +63,11 @@ export function FeesSection({ title, subtitle, plans }) {
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
-            transition={{ 
+            transition={{
               duration: 0.5,
               delay: 0.2 + index * 0.2,
               type: "spring",
-              stiffness: 100
+              stiffness: 100,
             }}
             className={`${
               index === plans.length - 1 && plans.length % 2 !== 0
@@ -90,7 +90,9 @@ export function FeesSection({ title, subtitle, plans }) {
               >
                 <CardHeader
                   className={`${
-                    plan.highlight ? "bg-cusAccent/10 p-5 pb-2 text-cusText" : ""
+                    plan.highlight
+                      ? "bg-cusAccent/10 p-5 pb-2 text-cusText"
+                      : ""
                   } rounded-t-lg transition-colors duration-300`}
                 >
                   <motion.div
@@ -99,24 +101,43 @@ export function FeesSection({ title, subtitle, plans }) {
                     viewport={{ once: false }}
                     transition={{ duration: 0.3, delay: 0.4 + index * 0.2 }}
                   >
-                    <CardTitle className="text-xl">{plan.title}</CardTitle>
-                    <div className="mt-4">
-                      <span className="text-3xl font-bold">{plan.price}</span>
+                    <CardTitle className="text-lg text-center sm:text-left sm:text-xl">
+                      {plan.title}
+                    </CardTitle>
+                    <div className="mt-4 flex justify-center sm:justify-start">
+                      <span className="text-2xl text-center sm:text-left sm:text-3xl font-bold">
+                        {plan.price}
+                      </span>
                     </div>
                   </motion.div>
                 </CardHeader>
               </motion.div>
-              <CardFooter>
-                <Button
-                  className={`w-full group ${
-                    plan.highlight
-                      ? "bg-cusAccent hover:bg-cusAccent/80 text-white"
-                      : "bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 hover:border-primary/50"
-                  }`}
+              <CardFooter className="px-3 sm:px-6">
+                <a
+                  href="#hero"
+                  className="w-full"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector("#hero");
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
                 >
-                  {plan.buttonText}
-                  <ArrowRight className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                </Button>
+                  <Button
+                    className={`w-full group ${
+                      plan.highlight
+                        ? "bg-cusAccent hover:bg-cusAccent/80 text-white"
+                        : "bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 hover:border-primary/50"
+                    }`}
+                  >
+                    {plan.buttonText}
+                    <ArrowRight className="ml-2 h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                  </Button>
+                </a>
               </CardFooter>
             </Card>
           </motion.div>

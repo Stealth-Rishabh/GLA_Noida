@@ -51,7 +51,7 @@ export function HeroSection({
   };
 
   return (
-    <section className="relative min-h-[700px] overflow-hidden flex items-center">
+    <section id="hero" className="relative min-h-[700px] overflow-hidden flex items-center">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700"></div>
 
@@ -370,9 +370,9 @@ export function HeroSection({
               style={{ animationDuration: "4s" }}
             >
               {/* <div className="bg-white rounded-full shadow-lg"> */}
-                <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
+                {/* <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
                   Limited Seats
-                </Badge>
+                </Badge> */}
               {/* </div> */}
             </div>
 
