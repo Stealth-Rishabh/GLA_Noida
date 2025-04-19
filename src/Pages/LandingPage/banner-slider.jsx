@@ -20,7 +20,7 @@ export function BannerSlider() {
               : bannnerImage || "/placeholder.svg"
           }
           alt="GLA University Banner"
-          className="w-full h-auto md:h-full object-cover md:object-contain"
+          className="w-full h-auto md:h-full object-cover"
         />
       </div>
     </div>
