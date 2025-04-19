@@ -10,13 +10,13 @@ export default function SetUsApart() {
   console.log("BackgroundWave:", BackgroundWave); // Debug log
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto my-12 px-0 md:px-4 sm:px-6 lg:px-8">
+    <div className="relative w-full max-w-7xl mx-auto my-12 px-0 md:px-4 sm:px-6 lg:px-8 overflow-x-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Content Card */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.5,
             delay: 0.2,
@@ -27,7 +27,7 @@ export default function SetUsApart() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Heading
@@ -53,7 +53,7 @@ export default function SetUsApart() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-cusGreen  text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-all duration-300 hover:shadow-lg"
+            className="bg-cusGreen text-white px-6 py-3 flex items-center gap-2 hover:bg-cusGreenLight transition-all duration-300 hover:shadow-lg"
           >
             Explore More
             <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
@@ -66,7 +66,7 @@ export default function SetUsApart() {
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.5,
             delay: 0.2,

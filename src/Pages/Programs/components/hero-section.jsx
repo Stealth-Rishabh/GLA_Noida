@@ -3,6 +3,8 @@ import { ArrowUpRight, Check, Lock, Mail, Phone, User } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Heading } from "@/components/ui/heading";
 import { BoxReveal } from "@/components/magicui/box-reveal";
+import { submitLead } from "@/services/backend";
+
 export function HeroSection({
   backgroundImage,
   title,
@@ -10,8 +12,14 @@ export function HeroSection({
   features,
   stats,
   para,
+  courseName,
 }) {
   const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+  const [formErrors, setFormErrors] = useState({
     name: "",
     email: "",
     phone: "",
@@ -22,13 +30,46 @@ export function HeroSection({
     phone: false,
   });
   const [activeField, setActiveField] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    // For phone number, only allow numbers and max 10 digits
+    if (name === "phone") {
+      if (!/^\d*$/.test(value) || value.length > 10) return;
+    }
+
+    // For name, only allow letters and spaces
+    if (name === "name") {
+      if (!/^[A-Za-z\s]*$/.test(value)) return;
+    }
+
     setFormState((prev) => ({
       ...prev,
       [name]: value,
+    }));
+
+    // Validate field
+    let error = "";
+    switch (name) {
+      case "name":
+        error = validateName(value);
+        break;
+      case "email":
+        error = validateEmail(value);
+        break;
+      case "phone":
+        error = validatePhone(value);
+        break;
+      default:
+        break;
+    }
+
+    setFormErrors((prev) => ({
+      ...prev,
+      [name]: error,
     }));
   };
 
@@ -50,8 +91,100 @@ export function HeroSection({
     setActiveField(null);
   };
 
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate all fields
+    const nameError = validateName(formState.name);
+    const emailError = validateEmail(formState.email);
+    const phoneError = validatePhone(formState.phone);
+
+    setFormErrors({
+      name: nameError,
+      email: emailError,
+      phone: phoneError,
+    });
+
+    if (nameError || emailError || phoneError) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      // Include courseName in the payload
+      const payload = {
+        ...formState,
+        Campus: "Noida Campus#102",
+        Source_Type: "Online",
+        SubSession: "Summer",
+        Course_Name: courseName,
+      };
+
+      console.log("Sending payload to API:", payload);
+      const response = await submitLead(payload);
+
+      if (response.Message?.Status === "Success") {
+        alert("Thank you for your submission!");
+        setFormState({
+          name: "",
+          email: "",
+          phone: "",
+        });
+        setFormErrors({
+          name: "",
+          email: "",
+          phone: "",
+        });
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const validateName = (name) => {
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!name) {
+      return "Name is required";
+    }
+    if (!nameRegex.test(name)) {
+      return "Name can only contain letters and spaces";
+    }
+    return "";
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      return "Email is required";
+    }
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address";
+    }
+    return "";
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phone) {
+      return "Phone number is required";
+    }
+    if (!phoneRegex.test(phone)) {
+      return "Phone number must start with 6-9 and be 10 digits long";
+    }
+    return "";
+  };
+
   return (
-    <section id="hero" className="relative min-h-[700px] overflow-hidden flex items-center">
+    <section
+      id="hero"
+      className="relative min-h-[700px] overflow-hidden flex items-center"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700"></div>
 
@@ -113,8 +246,8 @@ export function HeroSection({
 
             <div className="grid grid-cols-2 sm:flex items-center gap-6 text-white text-sm">
               {features.map((feature, index) => (
-                <BoxReveal boxColor={"#fdd600"} duration={0.5}>
-                  <div key={index} className="flex items-center gap-2">
+                <BoxReveal key={index} boxColor={"#fdd600"} duration={0.5}>
+                  <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-cusSecondary"></div>
                     <span>{feature}</span>
                   </div>
@@ -125,11 +258,13 @@ export function HeroSection({
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
               {stats.map((stat, index) => (
-                <BoxReveal boxColor={"#fdd600"} width={"100%"} duration={0.5}>
-                  <div
-                    key={index}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center"
-                  >
+                <BoxReveal
+                  key={index}
+                  boxColor={"#fdd600"}
+                  width={"100%"}
+                  duration={0.5}
+                >
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
                     <div className="text-3xl font-bold text-cusSecondary mb-1">
                       {stat.value}
                     </div>
@@ -178,7 +313,7 @@ export function HeroSection({
                 </div>
 
                 {/* Form */}
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   {/* Name field */}
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
@@ -187,9 +322,9 @@ export function HeroSection({
                         className="text-sm font-medium text-white/90 flex items-center gap-1.5"
                       >
                         <User className="h-3.5 w-3.5" />
-                        Full Name
+                        Full Name*
                       </label>
-                      {formState.name && (
+                      {formState.name && !formErrors.name && (
                         <span className="text-xs text-primary/80 flex items-center">
                           <Check className="h-3 w-3 mr-1" /> Valid
                         </span>
@@ -204,6 +339,7 @@ export function HeroSection({
                         type="text"
                         id="name"
                         name="name"
+                        required
                         value={formState.name}
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("name")}
@@ -211,6 +347,8 @@ export function HeroSection({
                         className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
                           formFocus.name
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
+                            : formErrors.name
+                            ? "border-red-500"
                             : "border-white/20"
                         }`}
                         placeholder="Enter your full name"
@@ -220,11 +358,11 @@ export function HeroSection({
                           formFocus.name ? "text-primary" : "text-white/50"
                         }`}
                       />
-                      <div
-                        className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-500 ${
-                          formFocus.name ? "w-full" : "w-0"
-                        }`}
-                      ></div>
+                      {formErrors.name && (
+                        <span className="text-xs text-red-500 mt-1 block">
+                          {formErrors.name}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -302,6 +440,9 @@ export function HeroSection({
                         type="tel"
                         id="phone"
                         name="phone"
+                        required
+                        maxLength="10"
+                        pattern="[6-9][0-9]{9}"
                         value={formState.phone}
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("phone")}
@@ -330,10 +471,11 @@ export function HeroSection({
                   <div className="pt-2">
                     <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full relative overflow-hidden group bg-cusAccent hover:bg-cusAccent/90 text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-primary/20"
                     >
                       <span className="relative z-10 flex items-center justify-center text-lg">
-                        Submit Application
+                        {isSubmitting ? "Submitting..." : "Submit Application"}
                         <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                       </span>
                       <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
@@ -370,7 +512,7 @@ export function HeroSection({
               style={{ animationDuration: "4s" }}
             >
               {/* <div className="bg-white rounded-full shadow-lg"> */}
-                {/* <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
+              {/* <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
                   Limited Seats
                 </Badge> */}
               {/* </div> */}
@@ -381,10 +523,10 @@ export function HeroSection({
               style={{ animationDuration: "5s", animationDelay: "1s" }}
             >
               {/* <div className="bg-white rounded-full shadow-lg p-2"> */}
-                <Badge className="flex bg-white text-cusText items-center gap-1">
-                  {/* <Calendar className="h-3.5 w-3.5" /> */}
-                  Starts June 2025
-                </Badge>
+              <Badge className="flex bg-white text-cusText items-center gap-1">
+                {/* <Calendar className="h-3.5 w-3.5" /> */}
+                Starts June 2025
+              </Badge>
               {/* </div> */}
             </div>
           </div>

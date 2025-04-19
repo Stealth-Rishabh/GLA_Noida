@@ -41,7 +41,7 @@ const studentLifeData = [
 
 export default function StudentLife() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
+    <div className="w-full max-w-7xl mx-auto px-4 py-8 overflow-x-hidden md:overflow-x-visible">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

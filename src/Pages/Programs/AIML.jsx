@@ -188,6 +188,7 @@ export function AIML() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "500+", label: "Top Recruiters" },
         ]}
+        courseName="1550"
       />
 
       {/* Industry Partners */}

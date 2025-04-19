@@ -198,6 +198,7 @@
 "use client";
 
 import bannnerImage from "@/assets/banner/banner_image.png";
+import bannerImageRes from "@/assets/banner/banner_image_res.png";
 
 /**
  * BannerSlider Component
@@ -210,9 +211,13 @@ export function BannerSlider() {
     <div className="relative h-screen overflow-hidden">
       <div className="relative w-full h-full">
         <img
-          src={bannnerImage}
+          src={
+            window.innerWidth < 768
+              ? bannerImageRes
+              : bannnerImage || "/placeholder.svg"
+          }
           alt="GLA University Banner"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-[center_60%]"
         />
       </div>
     </div>

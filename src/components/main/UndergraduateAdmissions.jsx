@@ -6,17 +6,15 @@ import bba from "@/assets/general/BBA_home.webp";
 import mba from "@/assets/general/MBA_home.webp";
 
 const AdmissionCard = memo(({ card, index, total }) => {
-  const xInitial = index % 2 === 0 ? -100 : 100; // Alternate between left and right
-
   return (
     <motion.div
       className="w-full sm:w-1/2 lg:w-1/4 px-0 md:px-2 mb-4 group"
-      initial={{ x: xInitial, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: false }} // Animation will trigger every time element enters viewport
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
       transition={{
-        duration: 0.5,
-        delay: index * 0.2, // Stagger the animations
+        duration: 0.8,
+        delay: index * 0.3,
         ease: "easeOut",
       }}
     >
@@ -86,8 +84,8 @@ export default function UndergraduateAdmissions() {
 
   return (
     <div className="w-full max-w-9xl mx-auto p-0">
-      <div className=" max-w-9xl mx-auto p-0">
-        <div className="flex  flex-wrap mx-0 md:mx-2 gap-6 md:gap-0">
+      <div className="max-w-9xl mx-auto p-0">
+        <div className="flex flex-wrap mx-0 md:mx-2 gap-6 md:gap-0">
           {admissionsCards.map((card, index) => (
             <AdmissionCard
               key={card.id}
