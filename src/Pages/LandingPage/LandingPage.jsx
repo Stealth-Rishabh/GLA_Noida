@@ -10,6 +10,7 @@ import { GradientBackground } from "@/components/ui/gradient-background";
 import CampusShowcase from "@/components/main/CampusShowcase";
 import LegacySection from "@/components/main/legacy-section";
 import GridBackground from "@/components/ui/GridBackground";
+//import RankingSection from "@/components/main/ranking-section";
 
 export default function LandingPage() {
   return (

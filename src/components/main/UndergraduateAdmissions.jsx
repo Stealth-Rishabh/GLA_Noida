@@ -1,6 +1,6 @@
 import { useMemo, memo } from "react";
 import { motion } from "framer-motion";
-import sports1 from "@/assets/general/sports_new.webp";
+import bca from "@/assets/general/BCA.webp";
 import btech from "@/assets/general/Btech_home.webp";
 import bba from "@/assets/general/BBA_home.webp";
 import mba from "@/assets/general/MBA_home.webp";
@@ -56,28 +56,28 @@ export default function UndergraduateAdmissions() {
         id: 1,
         image: btech,
         alt: "Students walking in university hallway",
-        href: "/undergraduate/programs",
+        href: "/programs/btech",
         caption: "B.Tech",
       },
       {
         id: 2,
-        image: sports1,
+        image: bca,
         alt: "Student studying at desk",
-        href: "/undergraduate/admission",
+        href: "/programs/bca",
         caption: "BCA",
       },
       {
         id: 3,
         image: bba,
         alt: "Students in common area",
-        href: "/undergraduate/campus-life",
+        href: "/programs/bba",
         caption: "BBA",
       },
       {
         id: 4,
         image: mba,
         alt: "Students collaborating around computer",
-        href: "/undergraduate/research",
+        href: "/programs/mba",
         caption: "MBA",
       },
     ],
