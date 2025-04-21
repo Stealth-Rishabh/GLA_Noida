@@ -8,6 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import logo from "@/assets/logo/gla_logo.png";
+import Link from "react-router-dom";
 
 /**
  * SiteFooter Component
@@ -93,8 +94,8 @@ const SiteFooter = () => {
           {/* logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="flex items-center gap-3 group"
                 onClick={scrollToTop}
               >
@@ -104,7 +105,7 @@ const SiteFooter = () => {
                   className="h-24 cursor-pointer w-auto transition-transform group-hover:scale-105"
                 />
                 <div className="flex flex-col"></div>
-              </a>
+              </Link>
               <div className="flex gap-3">
                 {[
                   {
@@ -135,7 +136,7 @@ const SiteFooter = () => {
                 ].map((social, index) => {
                   const Icon = social.icon;
                   return (
-                    <a
+                    <Link
                       key={index}
                       href={social.href}
                       target="_blank"
@@ -148,7 +149,7 @@ const SiteFooter = () => {
                       >
                         <Icon className="h-5 w-5" />
                       </button>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
@@ -160,7 +161,7 @@ const SiteFooter = () => {
               >
                 24/7 Student Helpline Number
               </p>
-              <a href="tel:+91-7037256969">
+              <Link href="tel:+91-7037256969">
                 <button
                   className="flex items-center gap-2 px-4 py-2 rounded-full text-white transition-colors hover:opacity-90"
                   style={{ backgroundColor: "var(--color-cusGreen)" }}
@@ -168,7 +169,7 @@ const SiteFooter = () => {
                   <Phone className="h-4 w-4" />
                   +91-7037256969
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -186,7 +187,7 @@ const SiteFooter = () => {
                   {section.items.map((item) => (
                     <li key={item.name}>
                       {item.path.startsWith("https:") ? (
-                        <a
+                        <Link
                           href={item.path}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -202,9 +203,9 @@ const SiteFooter = () => {
                           }
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       ) : (
-                        <a
+                        <Link
                           href={item.path}
                           onClick={scrollToTop}
                           className="group inline-flex items-center gap-1 transition-colors duration-200"
@@ -219,7 +220,7 @@ const SiteFooter = () => {
                           }
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       )}
                     </li>
                   ))}
@@ -281,7 +282,7 @@ const SiteFooter = () => {
             Copyright © GLA University {new Date().getFullYear()}
           </p>
           <div className="flex gap-6">
-            <a
+            <Link
               href="/privacy-policy"
               onClick={(e) => {
                 e.preventDefault();
@@ -297,8 +298,8 @@ const SiteFooter = () => {
               }
             >
               Privacy Policy
-            </a>
-            <a
+            </Link>
+            <Link
               href="/terms-of-service"
               onClick={(e) => {
                 e.preventDefault();
@@ -314,7 +315,7 @@ const SiteFooter = () => {
               }
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
