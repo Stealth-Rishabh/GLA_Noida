@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
-// import logo from "@/assets/logo/gla_logo.png";
+import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/logo/logo.png";
+import logoRes from "@/assets/logo/logo_res.png";
 import logoscrolled from "@/assets/logo/logo_scroll.png";
 import logoResScroll from "@/assets/logo/logo_scroll_res.png";
 
@@ -64,6 +65,8 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
+  const isProgramPage = location.pathname.startsWith("/programs/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -213,7 +216,11 @@ export function SiteHeader() {
               <img
                 src={
                   window.innerWidth < 768
-                    ? logoResScroll
+                    ? isProgramPage
+                      ? logoRes
+                      : logoResScroll
+                    : isProgramPage
+                    ? (scrolled ? logoscrolled : logo) || "/placeholder.svg"
                     : logoscrolled || "/placeholder.svg"
                 }
                 alt="GLA logo"
@@ -232,7 +239,11 @@ export function SiteHeader() {
                     <div key={item.path} className="relative group">
                       <button
                         className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                          scrolled ? "text-black" : "text-black"
+                          scrolled
+                            ? "text-black"
+                            : isProgramPage
+                            ? "text-white"
+                            : "text-black"
                         }`}
                       >
                         {item.title}
@@ -257,7 +268,11 @@ export function SiteHeader() {
                       key={item.path}
                       to={item.path}
                       className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                        scrolled ? "text-black" : "text-black"
+                        scrolled
+                          ? "text-black"
+                          : isProgramPage
+                          ? "text-white"
+                          : "text-black"
                       }`}
                     >
                       {item.title}

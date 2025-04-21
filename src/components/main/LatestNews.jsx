@@ -18,7 +18,7 @@ const Badge = ({ className, children, ...props }) => {
   return (
     <div
       className={cn(
-        "inline-flex items-center background-gradient text-black px-2.5 py-0.5 text-xs font-medium transition-colors",
+        "inline-flex items-center text-black px-2.5 py-0.5 text-xs font-medium transition-colors",
         className
       )}
       {...props}
@@ -328,7 +328,7 @@ const LatestNews = () => {
                   key={`${item.id}-${index}`}
                   className="w-full md:w-1/3 flex-shrink-0 px-3"
                 >
-                  <div className="group relative flex flex-col h-full overflow-hidden rounded-xl bg-white transition-all duration-300 shadow-xl">
+                  <div className="group relative flex flex-col h-full overflow-hidden rounded-xl bg-white transition-all duration-300 shadow-sm">
                     <div className="relative h-48 overflow-hidden rounded-t-xl">
                       <img
                         src={
