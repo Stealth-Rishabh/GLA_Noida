@@ -160,13 +160,13 @@ const SiteFooter = () => {
               >
                 24/7 Student Helpline Number
               </p>
-              <a href="tel:+919027068068">
+              <a href="tel:+91-7037256969">
                 <button
                   className="flex items-center gap-2 px-4 py-2 rounded-full text-white transition-colors hover:opacity-90"
                   style={{ backgroundColor: "var(--color-cusGreen)" }}
                 >
                   <Phone className="h-4 w-4" />
-                  9027068068
+                  +91-7037256969
                 </button>
               </a>
             </div>
