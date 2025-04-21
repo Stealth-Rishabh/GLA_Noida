@@ -80,7 +80,14 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                       {item.icon}
                     </motion.div>
                     <CardTitle className="font-medium text-base text-black sm:text-lg">
-                      {item.title}
+                      <span className="hidden sm:inline">{item.title}</span>
+                      <span className="sm:hidden group-hover:hidden">
+                        {item.title.split(' ').slice(0, 2).join(' ')}
+                        {item.title.split(' ').length > 2 ? '...' : ''}
+                      </span>
+                      <span className="hidden sm:hidden group-hover:inline">
+                        {item.title}
+                      </span>
                     </CardTitle>
                   </CardHeader>
                   {/* <CardContent>
