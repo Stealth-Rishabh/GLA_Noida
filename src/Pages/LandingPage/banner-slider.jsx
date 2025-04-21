@@ -1,6 +1,6 @@
 "use client";
 
-import bannnerImage from "@/assets/banner/banner_image.png";
+import bannnerImage from "@/assets/banner/banner_Image.webp";
 import bannerImageRes from "@/assets/banner/banner_image_res.webp";
 
 /**
