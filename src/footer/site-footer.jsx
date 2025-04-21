@@ -8,7 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import logo from "@/assets/logo/gla_logo.png";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /**
  * SiteFooter Component
