@@ -2,9 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { Heading } from "@/components/ui/heading";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import banner1 from "@/assets/banner/bannerOne.webp";
+import banner1 from "@/assets/general/ArtsAndCulture.webp";
 import banner2 from "@/assets/banner/bannerTwo.webp";
-import sports from "@/assets/sports/sports.webp";
+import sports from "@/assets/general/sports_new.webp";
 
 const studentLifeData = [
   {
