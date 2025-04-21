@@ -33,8 +33,8 @@ const NAV_ITEMS = [
     path: "/about",
     dropdownItems: [
       { title: "About GLA", path: "/about" },
-      { title: "Awards & Accreditation", path: "/about/awards" },
-      { title: "Advisory Board", path: "/about/advisory-board" },
+      { title: "Awards & Accreditation", path: "/awards-accreditations" },
+      { title: "Advisory Board", path: "/advisory-board" },
     ],
   },
   {
@@ -98,9 +98,8 @@ export function SiteHeader() {
       } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       {/* Top Bar */}
-      <div className="hidden md:block bg-cusBlue text-white py-2 px-4">
+      {/* <div className="hidden md:block bg-cusBlue text-white py-2 px-4">
         <div className="container mx-auto flex justify-between items-center">
-          {/* Social Media Links */}
           <div className="flex items-center space-x-4">
             <a href="#" className="hover:text-cusYellow transition-colors">
               <span className="sr-only">Twitter</span>
@@ -175,8 +174,6 @@ export function SiteHeader() {
               </svg>
             </a>
           </div>
-
-          {/* Quick Links */}
           <div className="hidden md:flex items-center space-x-6">
             {QUICK_LINKS.map((link) => (
               <Link
@@ -206,7 +203,7 @@ export function SiteHeader() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navigation */}
       <div className="container mx-auto px-4 my-0">

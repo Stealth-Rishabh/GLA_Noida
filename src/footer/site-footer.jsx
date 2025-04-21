@@ -27,17 +27,16 @@ const SiteFooter = () => {
     {
       label: "Useful Links",
       items: [
-        { name: "About Us", path: "/about/vision-mission" },
-        { name: "Rankings & Awards", path: "/about/accreditations-rankings" },
-        { name: "Accreditations", path: "/accreditations" },
-        { name: "Events", path: "/students-life/life-at-gla" },
-        { name: "Media", path: "/students-life/news-announcements" },
-        { name: "Blog", path: "/blog" },
-        { name: "Careers", path: "/careers" },
-        {
-          name: "AICTE Feedback",
-          path: "https://www.aicte-india.org/feedback/",
-        },
+        { name: "About Us", path: "/about" },
+        { name: "Awards & Accreditations", path: "/awards-accreditations" },
+        { name: "Student Life", path: "/students-life" },
+        // { name: "Media", path: "/students-life/news-announcements" },
+        // { name: "Blog", path: "/blog" },
+        // { name: "Careers", path: "/careers" },
+        // {
+        //   name: "AICTE Feedback",
+        //   path: "https://www.aicte-india.org/feedback/",
+        // },
       ],
     },
     {
@@ -47,28 +46,25 @@ const SiteFooter = () => {
         { name: "BBA", path: "/programs/bba" },
         { name: "BCA", path: "/programs/bca" },
         { name: "MBA", path: "/programs/mba" },
-        { name: "M.Tech", path: "/programs/mtech" },
-        { name: "Ph.D", path: "/programs/phd" },
+        { name: "B.Tech in AI & ML", path: "/programs/aiml" },
+        // { name: "M.Tech", path: "/programs/mtech" },
+        // { name: "Ph.D", path: "/programs/phd" },
       ],
     },
-    {
-      label: "Committees",
-      items: [
-        { name: "Grievance Redressal Mechanism", path: "/grievance" },
-        { name: "Internal Complaints Committee", path: "/complaints" },
-        { name: "Anti-Ragging Committee", path: "/anti-ragging" },
-        { name: "Research Committee", path: "/research-committee" },
-      ],
-    },
+    // {
+    //   label: "Committees",
+    //   items: [
+    //     { name: "Grievance Redressal Mechanism", path: "/grievance" },
+    //     { name: "Internal Complaints Committee", path: "/complaints" },
+    //     { name: "Anti-Ragging Committee", path: "/anti-ragging" },
+    //     { name: "Research Committee", path: "/research-committee" },
+    //   ],
+    // },
     {
       label: "Quick Links",
       items: [
-        { name: "Academic Calendar", path: "/academic-calendar" },
-        { name: "Examinations", path: "/examinations" },
-        { name: "Student Login", path: "/student-login" },
-        { name: "Staff Login", path: "/staff-login" },
-        { name: "NIRF", path: "/nirf" },
-        { name: "IQAC", path: "/iqac" },
+        { name: "Advisory Board", path: "/advisory-board" },
+        { name: "Contact Us", path: "/contact-us" },
       ],
     },
   ];
@@ -93,7 +89,7 @@ const SiteFooter = () => {
       </div>
 
       <div className="container relative mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
@@ -177,7 +173,7 @@ const SiteFooter = () => {
           </div>
 
           {/* Links Sections */}
-          <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-8">
             {footerSections.map((section) => (
               <div key={section.label} className="space-y-6">
                 <h3
