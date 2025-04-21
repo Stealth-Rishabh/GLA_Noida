@@ -151,16 +151,16 @@ function SocialLinks() {
     <div className="mt-6">
       <h3 className="mb-3 text-lg font-semibold text-gray-800">Follow Us</h3>
       <div className="flex space-x-4">
-        <a href="#" className="text-gray-400 hover:text-cusGreen">
+        <a href="https://www.facebook.com/glauniversity/" className="text-gray-400 hover:text-cusGreen">
           <Facebook className="w-6 h-6" />
         </a>
-        <a href="#" className="text-gray-400 hover:text-cusGreen">
+        <a href="https://twitter.com/gla_university" className="text-gray-400 hover:text-cusGreen">
           <Twitter className="w-6 h-6" />
         </a>
-        <a href="#" className="text-gray-400 hover:text-cusGreen">
+        <a href="https://www.instagram.com/glauninoida/" className="text-gray-400 hover:text-cusGreen">
           <Instagram className="w-6 h-6" />
         </a>
-        <a href="#" className="text-gray-400 hover:text-cusGreen">
+        <a href="https://www.linkedin.com/school/gla-university/" className="text-gray-400 hover:text-cusGreen">
           <Linkedin className="w-6 h-6" />
         </a>
       </div>

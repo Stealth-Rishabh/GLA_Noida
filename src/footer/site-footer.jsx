@@ -115,7 +115,7 @@ const SiteFooter = () => {
                   {
                     icon: Instagram,
                     label: "Instagram",
-                    href: "https://www.instagram.com/gla_university/",
+                    href: "https://www.instagram.com/glauninoida/",
                   },
                   {
                     icon: Twitter,
@@ -130,7 +130,7 @@ const SiteFooter = () => {
                   {
                     icon: Youtube,
                     label: "YouTube",
-                    href: "https://www.youtube.com/channel/UCIIKKSQjCqFiXxCe9HQhxbw",
+                    href: "www.youtube.com/@glauniversity2879",
                   },
                 ].map((social, index) => {
                   const Icon = social.icon;
