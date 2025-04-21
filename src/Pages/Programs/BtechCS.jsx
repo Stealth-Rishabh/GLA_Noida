@@ -186,6 +186,7 @@ export function BtechCS() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "500+", label: "Top Recruiters" },
         ]}
+        courseName="1500"
       />
 
       {/* Industry Partners */}
@@ -299,7 +300,9 @@ export function BtechCS() {
             title: "Industry-Ready Professional",
             description:
               "Transform into skilled professional for tech companies.",
-            icon: <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
+            icon: (
+              <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />
+            ),
           },
           {
             title: "Global Tech Leader",
@@ -327,7 +330,9 @@ export function BtechCS() {
             title: "Continuous Tech Innovator",
             description:
               "Stay ahead with emerging tech and industry practices.",
-            icon: <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
+            icon: (
+              <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />
+            ),
           },
         ]}
       />

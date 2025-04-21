@@ -191,9 +191,6 @@
   font-family: "Poppins", sans-serif !important;
 }
 
-body {
-}
-
 .gradientOne {
   background: linear-gradient(125deg, #4dd965 0%, #f4d24e 50%, #e38330 100%);
 }

@@ -94,6 +94,7 @@ export function MBA() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "500+", label: "Top Recruiters" },
         ]}
+        courseName="8410"
       />
 
       {/* Industry Partners */}

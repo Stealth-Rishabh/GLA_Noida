@@ -103,6 +103,7 @@ export function BBA() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "500+", label: "Top Recruiters" },
         ]}
+        courseName="4101"
       />
 
       {/* Industry Partners */}
@@ -212,13 +213,17 @@ export function BBA() {
             title: "Strategic Management",
             description:
               "Master strategic planning for sustainable business growth.",
-            icon: <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
+            icon: (
+              <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />
+            ),
           },
           {
             title: "Financial Acumen",
             description:
               "Expert in financial analysis and investment management.",
-            icon: <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
+            icon: (
+              <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />
+            ),
           },
           {
             title: "Marketing Excellence",
@@ -229,7 +234,9 @@ export function BBA() {
             title: "Operations Management",
             description:
               "Optimize business processes for improved operational efficiency.",
-            icon: <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
+            icon: (
+              <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />
+            ),
           },
           {
             title: "Business Analytics",
@@ -247,7 +254,9 @@ export function BBA() {
             title: "Global Business Perspective",
             description:
               "Master international business practices and cross-cultural management.",
-            icon: <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />,
+            icon: (
+              <GraduationCap className="h-8 w-8 sm:h-10 sm:w-10 text-cusAccent" />
+            ),
           },
         ]}
       />
