@@ -151,16 +151,28 @@ function SocialLinks() {
     <div className="mt-6">
       <h3 className="mb-3 text-lg font-semibold text-gray-800">Follow Us</h3>
       <div className="flex space-x-4">
-        <a href="https://www.facebook.com/glauniversity/" className="text-gray-400 hover:text-cusGreen">
+        <a
+          href="https://www.facebook.com/glauniversity/"
+          className="text-gray-400 hover:text-cusGreen"
+        >
           <Facebook className="w-6 h-6" />
         </a>
-        <a href="https://twitter.com/gla_university" className="text-gray-400 hover:text-cusGreen">
+        <a
+          href="https://twitter.com/gla_university"
+          className="text-gray-400 hover:text-cusGreen"
+        >
           <Twitter className="w-6 h-6" />
         </a>
-        <a href="https://www.instagram.com/glauninoida/" className="text-gray-400 hover:text-cusGreen">
+        <a
+          href="https://www.instagram.com/glauninoida/"
+          className="text-gray-400 hover:text-cusGreen"
+        >
           <Instagram className="w-6 h-6" />
         </a>
-        <a href="https://www.linkedin.com/school/gla-university/" className="text-gray-400 hover:text-cusGreen">
+        <a
+          href="https://www.linkedin.com/school/gla-university/"
+          className="text-gray-400 hover:text-cusGreen"
+        >
           <Linkedin className="w-6 h-6" />
         </a>
       </div>
@@ -172,7 +184,7 @@ function Map() {
   return (
     <div className="aspect-w-16 aspect-h-9">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.019969589436!2d77.17916397533202!3d28.53911947571588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1dfac0000001%3A0xee90409084aef4b8!2sIMM%20BUSINESS%20SCHOOL!5e0!3m2!1sen!2sin!4v1734506660054!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1585.4337540575232!2d77.49304831718206!3d28.462031014375878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1f1dd579315%3A0x741bc5e037e1c18b!2sGLA%20University%20Noida%20Campus!5e0!3m2!1sen!2sin!4v1745236946979!5m2!1sen!2sin"
         width="600"
         height="450"
         style={{ border: 0 }}

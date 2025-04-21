@@ -8,7 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import logo from "@/assets/logo/gla_logo.png";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /**
  * SiteFooter Component
@@ -111,39 +111,39 @@ const SiteFooter = () => {
                   {
                     icon: Facebook,
                     label: "Facebook",
-                    href: "https://www.facebook.com/glauniversity/",
+                    to: "https://www.facebook.com/glauniversity/",
                   },
                   {
                     icon: Instagram,
                     label: "Instagram",
-                    href: "https://www.instagram.com/glauninoida/",
+                    to: "https://www.instagram.com/glauninoida/",
                   },
                   {
                     icon: Twitter,
                     label: "Twitter",
-                    href: "https://twitter.com/gla_university",
+                    to: "https://twitter.com/gla_university",
                   },
                   {
                     icon: Linkedin,
                     label: "LinkedIn",
-                    href: "https://www.linkedin.com/school/gla-university/",
+                    to: "https://www.linkedin.com/school/gla-university/",
                   },
                   {
                     icon: Youtube,
                     label: "YouTube",
-                    href: "www.youtube.com/@glauniversity2879",
+                    to: "www.youtube.com/@glauniversity2879",
                   },
                 ].map((social, index) => {
                   const Icon = social.icon;
                   return (
                     <Link
                       key={index}
-                      href={social.href}
+                      to={social.to}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <button
-                        className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110 text-white"
+                        className="w-9 h-9 cursor-pointer rounded-full flex items-center justify-center transition-all hover:scale-110 text-white"
                         style={{ backgroundColor: "var(--color-cusBlue)" }}
                         aria-label={social.label}
                       >
@@ -161,9 +161,9 @@ const SiteFooter = () => {
               >
                 24/7 Student Helpline Number
               </p>
-              <Link href="tel:+91-7037256969">
+              <Link to="tel:+91-7037256969">
                 <button
-                  className="flex items-center gap-2 px-4 py-2 rounded-full text-white transition-colors hover:opacity-90"
+                  className="flex items-center cursor-pointer gap-2 px-4 py-2 rounded-full text-white transition-colors hover:opacity-90"
                   style={{ backgroundColor: "var(--color-cusGreen)" }}
                 >
                   <Phone className="h-4 w-4" />
@@ -188,7 +188,7 @@ const SiteFooter = () => {
                     <li key={item.name}>
                       {item.path.startsWith("https:") ? (
                         <Link
-                          href={item.path}
+                          to={item.path}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="group inline-flex items-center gap-1 transition-colors duration-200"
@@ -206,7 +206,7 @@ const SiteFooter = () => {
                         </Link>
                       ) : (
                         <Link
-                          href={item.path}
+                          to={item.path}
                           onClick={scrollToTop}
                           className="group inline-flex items-center gap-1 transition-colors duration-200"
                           style={{ color: "var(--color-cusBlue)" }}
@@ -283,7 +283,7 @@ const SiteFooter = () => {
           </p>
           <div className="flex gap-6">
             <Link
-              href="/privacy-policy"
+              to="/privacy-policy"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToTop();
@@ -300,7 +300,7 @@ const SiteFooter = () => {
               Privacy Policy
             </Link>
             <Link
-              href="/terms-of-service"
+              to="/terms-of-service"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToTop();
