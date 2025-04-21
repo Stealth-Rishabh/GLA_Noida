@@ -26,14 +26,14 @@ const rankingData = [
     rank: "#3",
     title: "Ranked #1 in UP",
     description: "amongst Best Private Universities in 2020 by Dainik Jagaran",
-    logoSrc: "/dainik-jagaran-generic-representation.png",
+    logoSrc: dainik,
   },
   {
     id: 4,
     rank: "#4",
     title: "Ranked #2 in UP & #7 in India",
     description: "amongst all private B-Schools Ranking 2021 by TimesBschool",
-    logoSrc: "/generic-business-school-logo.png",
+    logoSrc: times,
   },
 ];
 
