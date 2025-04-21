@@ -57,6 +57,7 @@ import hclWebp from "@/assets/programs/recruiters/HCL.webp";
 import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
 import capgeminiWebp from "@/assets/programs/recruiters/capgemini.webp";
 import brochureImg from "@/assets/programs/brochure5.webp";
+import { AnimationStyles } from "./components/animation-styles";
 
 export function BtechCS() {
   // State management
@@ -166,7 +167,8 @@ export function BtechCS() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
+      <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}

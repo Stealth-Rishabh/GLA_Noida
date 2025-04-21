@@ -54,6 +54,7 @@ import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import { IndustryPartners } from "./components/industry-partners";
 import AdmissionStepper from "./Stepper";
+import { AnimationStyles } from "./components/animation-styles";
 
 // Import recruiter images
 import accentureImg from "@/assets/programs/recruiters/accenture.webp";
@@ -66,6 +67,7 @@ import nvidiaImg from "@/assets/programs/recruiters/nvidia.webp";
 import samsungImg from "@/assets/programs/recruiters/samsung.webp";
 import brochureImg from "@/assets/programs/brochure1.webp";
 import GridBackground from "@/components/ui/GridBackground";
+
 export function AIML() {
   // State management
   const [activeField, setActiveField] = useState(null);
@@ -171,6 +173,7 @@ export function AIML() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}

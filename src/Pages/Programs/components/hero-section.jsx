@@ -51,7 +51,10 @@ export function HeroSection({
   };
 
   return (
-    <section id="hero" className="relative min-h-[700px] overflow-hidden flex items-center">
+    <section
+      id="hero"
+      className="relative min-h-[700px] overflow-hidden flex items-center"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700"></div>
 
@@ -88,10 +91,10 @@ export function HeroSection({
         ></div>
       </div>
 
-      <div className="relative z-10 container max-w-7xl mx-auto px-4 py-24">
-        <div className="grid lg:grid-cols-12 gap-12 items-end">
+      <div className="relative z-10 container max-w-7xl mx-auto px-4 py-24 pt-28">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content Column */}
-          <div className="lg:col-span-6 space-y-8">
+          <div className="space-y-8">
             <div className="space-y-6 max-w-xl">
               <BoxReveal boxColor={"#fdd600"} duration={0.5}>
                 <Heading
@@ -141,7 +144,7 @@ export function HeroSection({
           </div>
 
           {/* Form Column */}
-          <div className="lg:col-span-6 max-w-md relative ml-auto">
+          <div className="relative mx-auto md:ml-auto md:mr-0">
             {/* Form Card with Animation */}
             <div
               className="relative animate-float"
@@ -370,7 +373,7 @@ export function HeroSection({
               style={{ animationDuration: "4s" }}
             >
               {/* <div className="bg-white rounded-full shadow-lg"> */}
-                {/* <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
+              {/* <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
                   Limited Seats
                 </Badge> */}
               {/* </div> */}
@@ -381,18 +384,18 @@ export function HeroSection({
               style={{ animationDuration: "5s", animationDelay: "1s" }}
             >
               {/* <div className="bg-white rounded-full shadow-lg p-2"> */}
-                <Badge className="flex bg-white text-cusText items-center gap-1">
-                  {/* <Calendar className="h-3.5 w-3.5" /> */}
-                  Starts June 2025
-                </Badge>
+              <Badge className="flex bg-white text-cusText items-center gap-1">
+                {/* <Calendar className="h-3.5 w-3.5" /> */}
+                Starts June 2025
+              </Badge>
               {/* </div> */}
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
-          <span className="text-sm mb-2">Scroll to explore</span>
+        <div className="absolute bottom-4 sm:bottom-14 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
+          {/* <span className="text-sm mb-2">Scroll to explore</span> */}
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
             <div className="w-1 h-1 bg-white rounded-full animate-scrollDown"></div>
           </div>

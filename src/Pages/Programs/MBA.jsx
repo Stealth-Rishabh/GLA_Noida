@@ -21,6 +21,7 @@ import boaWebp from "@/assets/programs/recruiters/bankOfAmerica.webp";
 import hdfcWebp from "@/assets/programs/recruiters/hdfc.webp";
 import nseWebp from "@/assets/programs/recruiters/nse.webp";
 import brochureImg from "@/assets/programs/brochure4.webp";
+import { AnimationStyles } from "./components/animation-styles";
 
 export function MBA() {
   const icons = [
@@ -74,7 +75,8 @@ export function MBA() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
+      <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
