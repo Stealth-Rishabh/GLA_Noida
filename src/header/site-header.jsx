@@ -321,13 +321,19 @@ export function SiteHeader() {
  */
 function MobileNav({ scrolled }) {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isProgramPage = location.pathname.startsWith("/programs/");
 
   return (
     <div className="relative">
       {/* Mobile Menu Toggle Button */}
       <button
         className={`flex h-10 w-10 items-center justify-center rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-          scrolled ? "border-cusBlue text-cusBlue" : "border-black text-black"
+          scrolled
+            ? "border-cusBlue text-cusBlue"
+            : isProgramPage
+            ? "border-white text-white"
+            : "border-black text-black"
         }`}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
