@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/ui/heading";
-import banner from "@/assets/news/AI_tech.webp";
+import banner from "@/assets/news/AI_Tech.webp";
 import bannerTwo from "@/assets/banner/bannerTwo.webp";
 import bannerThree from "@/assets/banner/bannerThree.webp";
 import sports from "@/assets/sports/sports.webp";
