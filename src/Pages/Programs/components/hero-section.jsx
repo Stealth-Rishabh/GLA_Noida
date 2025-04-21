@@ -256,7 +256,7 @@ export function HeroSection({
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 h-full">
               {stats.map((stat, index) => (
                 <BoxReveal
                   key={index}
@@ -264,8 +264,8 @@ export function HeroSection({
                   width={"100%"}
                   duration={0.5}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
-                    <div className="text-xl sm:text-3xl font-bold text-cusSecondary mb-1">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-0 py-4 sm:p-4 text-center">
+                    <div className="text-lg sm:text-3xl font-bold text-cusSecondary mb-1">
                       {stat.value}
                     </div>
                     <div className="text-sm text-white">{stat.label}</div>
