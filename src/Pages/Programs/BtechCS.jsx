@@ -173,7 +173,7 @@ export function BtechCS() {
       <HeroSection
         backgroundImage={herobg}
         title="B.Tech in"
-        subtitle="Computer Science Engineering (CSE)"
+        subtitle="Computer Science Engineering"
         para="Transform your career with our comprehensive b.tech in computer science engineering program designed for the modern industry. Learn from experts and build real-world projects."
         features={[
           "8-Semester Program",

@@ -221,20 +221,20 @@ export function HeroSection({
         ></div>
       </div>
 
-      <div className="relative z-10 container max-w-7xl mx-auto px-4 py-24 pt-28">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container max-w-7xl mx-auto px-4 py-24 pt-[118px] sm:pt-28">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-12 items-center">
           {/* Content Column */}
-          <div className="space-y-8">
-            <div className="space-y-6 max-w-xl">
+          <div className="space-y-4 sm:space-y-8">
+            <div className="space-y-2 sm:space-y-6 max-w-xl">
               <BoxReveal boxColor={"#fdd600"} duration={0.5}>
                 <Heading
                   level={1}
-                  className="text-4xl md:!text-5xl font-bold text-white leading-tight"
+                  className="text-[28px] sm:text-4xl md:!text-5xl font-bold text-white leading-tight"
                 >
                   {title}{" "}
                   <span className="text-cusSecondary relative">
                     {subtitle}
-                    <span className="absolute bottom-1 left-0 w-full h-1 bg-cusBlue/30 rounded-full"></span>
+                    <span className="absolute bottom-0 left-0 w-full sm:h-1 h-[2px] bg-white rounded-full"></span>
                   </span>
                   {/* <span className="absolute bottom-1 left-0 w-full h-1 bg-gradient-to-r from-cusSecondary/70 to-cusSecondary-light/70 rounded-full"></span> */}
                 </Heading>
@@ -244,7 +244,7 @@ export function HeroSection({
               </BoxReveal>
             </div>
 
-            <div className="grid grid-cols-2 sm:flex items-center gap-6 text-white text-sm">
+            <div className="grid grid-cols-2 sm:flex items-center gap-2 sm:gap-6 text-white text-sm">
               {features.map((feature, index) => (
                 <BoxReveal key={index} boxColor={"#fdd600"} duration={0.5}>
                   <div className="flex items-center gap-2">
@@ -265,7 +265,7 @@ export function HeroSection({
                   duration={0.5}
                 >
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
-                    <div className="text-3xl font-bold text-cusSecondary mb-1">
+                    <div className="text-xl sm:text-3xl font-bold text-cusSecondary mb-1">
                       {stat.value}
                     </div>
                     <div className="text-sm text-white">{stat.label}</div>
@@ -533,7 +533,7 @@ export function HeroSection({
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-4 sm:bottom-14 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
+        <div className="absolute bottom-8 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
           {/* <span className="text-sm mb-2">Scroll to explore</span> */}
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
             <div className="w-1 h-1 bg-white rounded-full animate-scrollDown"></div>

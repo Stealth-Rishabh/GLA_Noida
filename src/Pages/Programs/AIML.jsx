@@ -178,7 +178,7 @@ export function AIML() {
       <HeroSection
         backgroundImage={herobg}
         title="B.Tech in"
-        subtitle="Computer Science & Engineering with AI/ML"
+        subtitle="Computer Science Engineering with AI/ML"
         para="Transform your career with our comprehensive b.tech in computer science & engineering with AI/ML program designed for the modern industry. Learn from experts and build real-world projects."
         features={[
           "8-Semester Program",
