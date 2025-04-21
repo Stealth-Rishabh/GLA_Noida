@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 // import logo from "@/assets/logo/gla_logo.png";
 import logo from "@/assets/logo/logo.png";
 import logoscrolled from "@/assets/logo/logo_scroll.png";
+import logoRes from "@/assets/logo/logo_res.png";
+import logoResScroll from "@/assets/logo/logo_scroll_res.png";
 
 /**
  * TransparentSiteHeader Component
@@ -214,7 +216,13 @@ export function SiteHeader() {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img
-                src={scrolled ? logoscrolled : logo || "/placeholder.svg"}
+                src={
+                  window.innerWidth < 768
+                    ? scrolled
+                      ? logoResScroll
+                      : logoRes
+                    : (scrolled ? logoscrolled : logo) || "/placeholder.svg"
+                }
                 alt="GLA logo"
                 className="md:h-24 h-20 mt-4 md:mt-0 w-auto"
               />

@@ -57,6 +57,7 @@ import hclWebp from "@/assets/programs/recruiters/HCL.webp";
 import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
 import capgeminiWebp from "@/assets/programs/recruiters/capgemini.webp";
 import brochureImg from "@/assets/programs/brochure5.webp";
+import { AnimationStyles } from "./components/animation-styles";
 
 export function BtechCS() {
   // State management
@@ -166,12 +167,13 @@ export function BtechCS() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
+      <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
         title="B.Tech in"
-        subtitle="Computer Science Engineering (CSE)"
+        subtitle="Computer Science Engineering"
         para="Transform your career with our comprehensive b.tech in computer science engineering program designed for the modern industry. Learn from experts and build real-world projects."
         features={[
           "8-Semester Program",
@@ -184,6 +186,7 @@ export function BtechCS() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "500+", label: "Top Recruiters" },
         ]}
+        courseName="1500"
       />
 
       {/* Industry Partners */}
@@ -297,7 +300,9 @@ export function BtechCS() {
             title: "Industry-Ready Professional",
             description:
               "Transform into skilled professional for tech companies.",
-            icon: <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
+            icon: (
+              <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />
+            ),
           },
           {
             title: "Global Tech Leader",
@@ -325,7 +330,9 @@ export function BtechCS() {
             title: "Continuous Tech Innovator",
             description:
               "Stay ahead with emerging tech and industry practices.",
-            icon: <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
+            icon: (
+              <GraduationCap className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />
+            ),
           },
         ]}
       />

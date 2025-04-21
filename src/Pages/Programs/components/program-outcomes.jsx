@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,12 @@ import { motion } from "framer-motion";
 import { GradientBackground } from "@/components/ui/gradient-background";
 
 export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const handleClick = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
     <GradientBackground>
       <section className="py-24 text-black">
@@ -71,33 +77,25 @@ export function ProgramOutcomes({ title, subtitle, description, outcomes }) {
                   ease: "easeOut",
                 }}
               >
-                <Card className="border-none p-2 pr-5 bg-white backdrop-blur-sm shadow-md group rounded-lg sm:rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 gap-2">
+                <Card 
+                  className="border-none p-2 pr-5 bg-white backdrop-blur-sm shadow-md group rounded-lg sm:rounded-xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 gap-2"
+                  onClick={() => handleClick(index)}
+                >
                   <CardHeader className="flex sm:flex-row gap-2 sm:gap-3 px-0">
                     <motion.div
-                      // whileHover={{ scale: 1.1 }}
                       className="min-w-12 sm:min-w-16 h-12 sm:h-16 rounded-lg sm:rounded-xl bg-cusAccent/30 flex items-center justify-center group-hover:bg-cusAccent/15 transition-colors duration-300"
                     >
                       {item.icon}
                     </motion.div>
                     <CardTitle className="font-medium text-base text-black sm:text-lg">
-                      {item.title}
+                      <span className="hidden sm:inline">{item.title}</span>
+                      <span className="sm:hidden">
+                        {expandedIndex === index ? item.title : 
+                          `${item.title.split(' ').slice(0, 2).join(' ')}${item.title.split(' ').length > 2 ? '...' : ''}`
+                        }
+                      </span>
                     </CardTitle>
                   </CardHeader>
-                  {/* <CardContent>
-                  <p className="text-white/90">{item.description}</p>
-                </CardContent>
-                <CardFooter>
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-cusSecondary text-cusText px-6 py-2 rounded-md flex items-center gap-2 hover:bg-cusSecondaryLight transition-all duration-300 hover:shadow-lg w-fit justify-center"
-                  >
-                    Learn more
-                    <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                      <ArrowRight className="h-4 w-4" />
-                    </motion.span>
-                  </motion.button>
-                </CardFooter> */}
                 </Card>
               </motion.div>
             ))}

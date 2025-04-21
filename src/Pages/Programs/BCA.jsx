@@ -56,6 +56,7 @@ import cognizantWebp from "@/assets/programs/recruiters/cognizant.webp";
 import tcsWebp from "@/assets/programs/recruiters/TCS.webp";
 import hclWebp from "@/assets/programs/recruiters/HCL.webp";
 import brochureImg from "@/assets/programs/brochure3.webp";
+import { AnimationStyles } from "./components/animation-styles";
 
 export function BCA() {
   const icons = [
@@ -154,7 +155,8 @@ export function BCA() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
+      <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
@@ -172,6 +174,7 @@ export function BCA() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "400+", label: "Top Recruiters" },
         ]}
+        courseName="4201"
       />
 
       {/* Industry Partners */}
