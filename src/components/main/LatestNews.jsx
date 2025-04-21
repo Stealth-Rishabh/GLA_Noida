@@ -5,11 +5,11 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/ui/heading";
 import banner from "@/assets/news/AI_Tech.webp";
-import bannerTwo from "@/assets/banner/bannerTwo.webp";
-import bannerThree from "@/assets/banner/bannerThree.webp";
-import sports from "@/assets/sports/sports.webp";
-import general from "@/assets/general/SetUsApart.webp";
-import generalTwo from "@/assets/general/fixedBackground.webp";
+import bannerTwo from "@/assets/news/innovation.webp";
+import bannerThree from "@/assets/news/handshake.webp";
+import sports from "@/assets/news/building.webp";
+import general from "@/assets/news/research.webp";
+import generalTwo from "@/assets/news/alumi.webp";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 
