@@ -84,22 +84,22 @@ function ContactInfo() {
     <div className="space-y-4">
       <div className="flex items-center space-x-3 text-gray-600">
         <MapPin className="w-5 h-5 text-cusGreen" />
-        <span>B-11 Qutab Institutional Area, New Delhi - 110016</span>
+        <span>15A, Knowledge Park II, Greater Noida - 201310 (U.P) INDIA</span>
       </div>
       <div className="flex items-center space-x-3 text-gray-600">
         <Phone className="w-5 h-5 text-cusGreen" />
-        <span>011-26520892</span>
+        <span>+91-7037256969</span>
         <Phone className="w-5 h-5 text-cusGreen" />
-        <span> 011-26520896</span>
+        <span>+91-9319264467</span>
       </div>
       <div className="flex flex-col space-y-4 text-gray-600 sm:items-center sm:flex-row sm:space-y-0 sm:space-x-3">
         <div className="flex items-center ">
           <Mail className="w-5 h-5 mr-3 text-cusGreen" />
-          <span>info@immindia.com</span>
+          <span>info@glanoida.com</span>
         </div>
         <div className="flex items-center">
           <Mail className="w-5 h-5 mr-3 text-cusGreen" />
-          <span>registrar.imm@gmail.com</span>
+          <span>registrar.glanoida@gmail.com</span>
         </div>
       </div>
     </div>
@@ -248,8 +248,6 @@ export default function Contact() {
                 <CorporateResourceCentreHead />
               </div>
             </div>
-
-           
           </div>
         </div>
       </div>
