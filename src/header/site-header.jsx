@@ -4,9 +4,7 @@ import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 // import logo from "@/assets/logo/gla_logo.png";
-import logo from "@/assets/logo/logo.png";
 import logoscrolled from "@/assets/logo/logo_scroll.png";
-import logoRes from "@/assets/logo/logo_res.png";
 import logoResScroll from "@/assets/logo/logo_scroll_res.png";
 
 /**
@@ -218,10 +216,8 @@ export function SiteHeader() {
               <img
                 src={
                   window.innerWidth < 768
-                    ? scrolled
-                      ? logoResScroll
-                      : logoRes
-                    : (scrolled ? logoscrolled : logo) || "/placeholder.svg"
+                    ? logoResScroll
+                    : logoscrolled || "/placeholder.svg"
                 }
                 alt="GLA logo"
                 className="md:h-24 h-20 mt-4 md:mt-0 w-auto"
@@ -239,7 +235,7 @@ export function SiteHeader() {
                     <div key={item.path} className="relative group">
                       <button
                         className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                          scrolled ? "text-cusBlue" : "text-white"
+                          scrolled ? "text-black" : "text-black"
                         }`}
                       >
                         {item.title}
@@ -264,7 +260,7 @@ export function SiteHeader() {
                       key={item.path}
                       to={item.path}
                       className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
-                        scrolled ? "text-cusBlue" : "text-white"
+                        scrolled ? "text-black" : "text-black"
                       }`}
                     >
                       {item.title}
@@ -319,7 +315,7 @@ function MobileNav({ scrolled }) {
       {/* Mobile Menu Toggle Button */}
       <button
         className={`flex h-10 w-10 items-center justify-center rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-          scrolled ? "border-cusBlue text-cusBlue" : "border-white text-white"
+          scrolled ? "border-cusBlue text-cusBlue" : "border-black text-black"
         }`}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
@@ -345,7 +341,7 @@ function MobileNav({ scrolled }) {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-cusBlue hover:bg-cusYellow"
+                  className="block rounded-md px-3 py-2 text-sm font-medium text-cusBlue hover:!bg-cusYellow"
                   onClick={() => setOpen(false)}
                 >
                   {item.title}
@@ -376,7 +372,7 @@ function MobileNavItem({ title, items, setOpen }) {
   return (
     <div>
       <button
-        className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium hover:bg-cusYellow"
+        className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium hover:!bg-cusYellow"
         style={{ color: "var(--color-cusBlue)" }}
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
@@ -394,7 +390,7 @@ function MobileNavItem({ title, items, setOpen }) {
             <Link
               key={item.path}
               to={item.path}
-              className="block rounded-md px-3 py-2 text-sm font-medium hover:bg-cusYellow"
+              className="block rounded-md px-3 py-2 text-sm font-medium hover:!bg-cusYellow"
               style={{ color: "var(--color-cusBlue)" }}
               onClick={() => setOpen(false)}
             >
