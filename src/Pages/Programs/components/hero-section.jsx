@@ -240,7 +240,7 @@ export function HeroSection({
                 </Heading>
               </BoxReveal>
               <BoxReveal boxColor={"#fdd600"} duration={0.5}>
-                <p className="text-xl text-white leading-relaxed">{para}</p>
+                <p className="text-base sm:text-xl text-white leading-relaxed">{para}</p>
               </BoxReveal>
             </div>
 
