@@ -11,10 +11,12 @@ import CampusShowcase from "@/components/main/CampusShowcase";
 import LegacySection from "@/components/main/legacy-section";
 import GridBackground from "@/components/ui/GridBackground";
 import RankingSection from "@/components/main/Ranking";
+import AdmissionQuery from "@/components/main/AdmissionQuery";
 
 export default function LandingPage() {
   return (
     <>
+      <AdmissionQuery />
       <BannerSlider />
 
       <GridBackground>

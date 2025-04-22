@@ -55,7 +55,7 @@ export default function UndergraduateAdmissions() {
         image: btech,
         alt: "Students walking in university hallway",
         href: "/programs/btech",
-        caption: "B.Tech",
+        caption: "B.Tech (CSE / AI & ML)",
       },
       {
         id: 2,
