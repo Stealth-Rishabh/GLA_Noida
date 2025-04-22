@@ -444,9 +444,9 @@ export function HeroSection({
                         onFocus={() => handleFocus("email")}
                         onBlur={() => handleBlur("email")}
                         className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                          formFocus.name
+                          formFocus.email
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : formErrors.name
+                            : formErrors.email
                             ? "border-red-500"
                             : "border-white/20"
                         }`}
@@ -491,9 +491,9 @@ export function HeroSection({
                         onFocus={() => handleFocus("phone")}
                         onBlur={() => handleBlur("phone")}
                         className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                          formFocus.name
+                          formFocus.phone
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : formErrors.name
+                            : formErrors.phone
                             ? "border-red-500"
                             : "border-white/20"
                         }`}
@@ -537,7 +537,7 @@ export function HeroSection({
                       >
                         <SelectTrigger
                           className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                            formFocus.phone
+                            formFocus.state
                               ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                               : "border-white/20"
                           }`}
@@ -587,10 +587,8 @@ export function HeroSection({
                         onFocus={() => handleFocus("city")}
                         onBlur={() => handleBlur("city")}
                         className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                          formFocus.name
+                          formFocus.city
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : formErrors.name
-                            ? "border-red-500"
                             : "border-white/20"
                         }`}
                         placeholder="Enter City*"
