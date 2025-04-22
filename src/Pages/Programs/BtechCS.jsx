@@ -187,6 +187,7 @@ export function BtechCS() {
           { value: "500+", label: "Top Recruiters" },
         ]}
         courseName="1500"
+        courseTitle="B.Tech CSE"
       />
 
       {/* Industry Partners */}

@@ -67,6 +67,7 @@ export function SiteHeader() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const isProgramPage = location.pathname.startsWith("/programs/");
+  const isContactPage = location.pathname.startsWith("/contact-us");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -216,10 +217,10 @@ export function SiteHeader() {
               <img
                 src={
                   window.innerWidth < 768
-                    ? isProgramPage
+                    ? isProgramPage || isContactPage
                       ? logoRes
                       : logoResScroll
-                    : isProgramPage
+                    : isProgramPage || isContactPage
                     ? (scrolled ? logoscrolled : logo) || "/placeholder.svg"
                     : logoscrolled || "/placeholder.svg"
                 }
@@ -241,7 +242,7 @@ export function SiteHeader() {
                         className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
                           scrolled
                             ? "text-black"
-                            : isProgramPage
+                            : isProgramPage || isContactPage
                             ? "text-white"
                             : "text-black"
                         }`}
@@ -270,7 +271,7 @@ export function SiteHeader() {
                       className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
                         scrolled
                           ? "text-black"
-                          : isProgramPage
+                          : isProgramPage || isContactPage
                           ? "text-white"
                           : "text-black"
                       }`}
@@ -323,6 +324,7 @@ function MobileNav({ scrolled }) {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const isProgramPage = location.pathname.startsWith("/programs/");
+  const isContactPage = location.pathname.startsWith("/contact-us");
 
   return (
     <div className="relative">
@@ -331,7 +333,7 @@ function MobileNav({ scrolled }) {
         className={`flex h-10 w-10 items-center justify-center rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           scrolled
             ? "border-cusBlue text-cusBlue"
-            : isProgramPage
+            : isProgramPage || isContactPage
             ? "border-white text-white"
             : "border-black text-black"
         }`}

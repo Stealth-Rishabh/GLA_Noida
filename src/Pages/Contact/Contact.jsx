@@ -12,6 +12,7 @@ import {
   Linkedin,
 } from "lucide-react";
 import { Label } from "@/components/ui/label";
+import contact from "@/assets/general/contact.webp";
 // import Heading from "@/components/Heading";
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -202,19 +203,20 @@ export default function Contact() {
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
       <div
-        className="relative h-40 bg-center bg-cover sm:h-80"
+        className="relative bg-center bg-cover h-[50vh] sm:h-[70vh]"
         style={{
-          backgroundImage:
-            "url('https://immindia.edu.in/images/imm-college.jpg')",
+          backgroundImage: `url(${contact})`,
         }}
       >
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
           {/* <Heading
             title="Contact Us"
             titleClassName="lg:font-extrabold text-center text-white tracking-wide"
             className="block w-full  mx-auto text-left sm:col-span-4 sm:pb-0 lg:pb-0 pb-0 pt-8 sm:pt-0"
           /> */}
-          <h1 className="text-4xl font-bold text-white">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-white bg-black/50 p-2 px-5 sm:p-5 sm:px-10">
+            Contact Us
+          </h1>
         </div>
       </div>
 

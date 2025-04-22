@@ -175,6 +175,7 @@ export function BCA() {
           { value: "400+", label: "Top Recruiters" },
         ]}
         courseName="4201"
+        courseTitle="BCA"
       />
 
       {/* Industry Partners */}

@@ -104,6 +104,7 @@ export function BBA() {
           { value: "500+", label: "Top Recruiters" },
         ]}
         courseName="4101"
+        courseTitle="BBA"
       />
 
       {/* Industry Partners */}
