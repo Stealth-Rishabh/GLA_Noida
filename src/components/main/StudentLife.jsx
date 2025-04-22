@@ -63,7 +63,7 @@ export default function StudentLife() {
             animation="slideUp"
             className="inline-flex flex-wrap"
           >
-            Student Life at GLA
+            Campus Life at GLA Noida
           </TextAnimate>
         </Heading>
       </motion.div>
