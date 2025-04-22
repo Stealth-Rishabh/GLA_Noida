@@ -192,6 +192,7 @@ export function AIML() {
           { value: "500+", label: "Top Recruiters" },
         ]}
         courseName="1550"
+        courseTitle="B.Tech AI/ML"
       />
 
       {/* Industry Partners */}

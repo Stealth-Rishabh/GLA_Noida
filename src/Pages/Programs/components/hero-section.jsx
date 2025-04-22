@@ -1,9 +1,25 @@
 import { useState } from "react";
-import { ArrowUpRight, Check, Lock, Mail, Phone, User } from "lucide-react";
+import {
+  ArrowUpRight,
+  Check,
+  Lock,
+  Mail,
+  Phone,
+  User,
+  MapPin,
+  GraduationCap,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Heading } from "@/components/ui/heading";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 import { submitLead } from "@/services/backend";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function HeroSection({
   backgroundImage,
@@ -13,11 +29,15 @@ export function HeroSection({
   stats,
   para,
   courseName,
+  courseTitle,
 }) {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     phone: "",
+    state: "",
+    city: "",
+    course: "",
   });
   const [formErrors, setFormErrors] = useState({
     name: "",
@@ -28,9 +48,46 @@ export function HeroSection({
     name: false,
     email: false,
     phone: false,
+    state: false,
+    city: false,
+    course: false,
   });
   const [activeField, setActiveField] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Add these arrays for select options
+  const states = [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Delhi",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+    "Other"
+  ];
 
   // Handle form input changes
   const handleInputChange = (e) => {
@@ -130,6 +187,9 @@ export function HeroSection({
           name: "",
           email: "",
           phone: "",
+          state: "",
+          city: "",
+          course: "",
         });
         setFormErrors({
           name: "",
@@ -240,7 +300,9 @@ export function HeroSection({
                 </Heading>
               </BoxReveal>
               <BoxReveal boxColor={"#fdd600"} duration={0.5}>
-                <p className="text-base sm:text-xl text-white leading-relaxed">{para}</p>
+                <p className="text-base sm:text-xl text-white leading-relaxed">
+                  {para}
+                </p>
               </BoxReveal>
             </div>
 
@@ -308,22 +370,15 @@ export function HeroSection({
                     Apply Now
                   </h3>
                   <p className="text-white/80">
-                    Start your data science journey today
+                    Start your {courseTitle} journey today
                   </p>
                 </div>
 
                 {/* Form */}
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   {/* Name field */}
-                  <div className="space-y-2">
+                  <div className="space-y-0">
                     <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-medium text-white/90 flex items-center gap-1.5"
-                      >
-                        <User className="h-3.5 w-3.5" />
-                        Full Name*
-                      </label>
                       {formState.name && !formErrors.name && (
                         <span className="text-xs text-primary/80 flex items-center">
                           <Check className="h-3 w-3 mr-1" /> Valid
@@ -344,18 +399,18 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("name")}
                         onBlur={() => handleBlur("name")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                        className={`w-full px-4 py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
                           formFocus.name
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                             : formErrors.name
                             ? "border-red-500"
                             : "border-white/20"
                         }`}
-                        placeholder="Enter your full name"
+                        placeholder="Full Name*"
                       />
                       <User
                         className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formFocus.name ? "text-primary" : "text-white/50"
+                          formFocus.name ? "text-primary" : "text-black"
                         }`}
                       />
                       {formErrors.name && (
@@ -367,15 +422,8 @@ export function HeroSection({
                   </div>
 
                   {/* Email field */}
-                  <div className="space-y-2">
+                  <div className="space-y-0">
                     <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-medium text-white/90 flex items-center gap-1.5"
-                      >
-                        <Mail className="h-3.5 w-3.5" />
-                        Email Address
-                      </label>
                       {formState.email && (
                         <span className="text-xs text-primary/80 flex items-center">
                           <Check className="h-3 w-3 mr-1" /> Valid
@@ -395,16 +443,16 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("email")}
                         onBlur={() => handleBlur("email")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                        className={`w-full px-4 py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
                           formFocus.email
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                             : "border-white/20"
                         }`}
-                        placeholder="Enter your email address"
+                        placeholder="Email Address*"
                       />
                       <Mail
                         className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formFocus.email ? "text-primary" : "text-white/50"
+                          formFocus.email ? "text-primary" : "text-black"
                         }`}
                       />
                       <div
@@ -416,15 +464,8 @@ export function HeroSection({
                   </div>
 
                   {/* Phone field */}
-                  <div className="space-y-2">
+                  <div className="space-y-0">
                     <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="phone"
-                        className="text-sm font-medium text-white/90 flex items-center gap-1.5"
-                      >
-                        <Phone className="h-3.5 w-3.5" />
-                        Phone Number
-                      </label>
                       {formState.phone && (
                         <span className="text-xs text-primary/80 flex items-center">
                           <Check className="h-3 w-3 mr-1" /> Valid
@@ -447,28 +488,117 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("phone")}
                         onBlur={() => handleBlur("phone")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                        className={`w-full px-4 py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
                           formFocus.phone
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                             : "border-white/20"
                         }`}
-                        placeholder="Enter your phone number"
+                        placeholder="Phone Number*"
                       />
                       <Phone
                         className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formFocus.phone ? "text-primary" : "text-white/50"
+                          formFocus.phone ? "text-primary" : "text-black"
                         }`}
                       />
                       <div
                         className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-500 ${
-                          formFocus.phone ? "w-full" : "w-0"
+                          formFocus.phone
+                            ? "w-full text-primary"
+                            : "w-0 text-black"
                         }`}
                       ></div>
                     </div>
                   </div>
 
+                  {/* State field */}
+                  <div className="space-y-0">
+                    <div className="flex items-center justify-between">
+                      {formState.state && (
+                        <span className="text-xs text-white/80 flex items-center">
+                          <Check className="h-3 w-3 mr-1" /> Valid
+                        </span>
+                      )}
+                    </div>
+                    <div className="relative transition-all duration-300">
+                      <Select
+                        value={formState.state}
+                        onValueChange={(value) => {
+                          setFormState((prev) => ({
+                            ...prev,
+                            state: value,
+                            city: "",
+                          }));
+                          handleFocus("state");
+                        }}
+                      >
+                        <SelectTrigger
+                          className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                            formFocus.phone
+                              ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
+                              : "border-white/20"
+                          }`}
+                        >
+                          <SelectValue
+                            className="text-white"
+                            placeholder="Select State*"
+                          />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white backdrop-blur-md border border-white/20">
+                          {states.map((state) => (
+                            <SelectItem
+                              key={state}
+                              value={state}
+                              className="text-black hover:bg-gray-100 focus:bg-gray-100 focus:text-black/90"
+                            >
+                              {state}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <MapPin
+                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
+                          formState.state ? "text-primary" : "text-black"
+                        }`}
+                      />
+                    </div>
+                  </div>
+
+                  {/* City field */}
+                  <div className="space-y-0">
+                    <div className="flex items-center justify-between">
+                      {formState.city && (
+                        <span className="text-xs text-white/80 flex items-center">
+                          <Check className="h-3 w-3 mr-1" /> Valid
+                        </span>
+                      )}
+                    </div>
+                    <div className="relative transition-all duration-300">
+                      <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        required
+                        value={formState.city}
+                        onChange={handleInputChange}
+                        onFocus={() => handleFocus("city")}
+                        onBlur={() => handleBlur("city")}
+                        className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                          formFocus.city
+                            ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
+                            : "border-white/20"
+                        }`}
+                        placeholder="Enter City*"
+                      />
+                      <MapPin
+                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
+                          formState.city ? "text-primary" : "text-black"
+                        }`}
+                      />
+                    </div>
+                  </div>
+
                   {/* Submit button */}
-                  <div className="pt-2">
+                  <div className="pt-2 mt-2">
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -483,7 +613,7 @@ export function HeroSection({
                   </div>
 
                   {/* Form footer */}
-                  <div className="text-center text-white/80 text-xs flex items-center justify-center gap-1">
+                  <div className="text-center mt-2 text-white/80 text-xs flex items-center justify-center gap-1">
                     <Lock className="h-3 w-3" />
                     <span>
                       By submitting, you agree to our{" "}
