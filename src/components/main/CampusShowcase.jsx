@@ -579,7 +579,7 @@ const CampusShowcase = () => {
         {renderSlideContent()}
 
         {/* Main Navigation Arrows */}
-        <div className="hidden md:flex absolute top-1/2 left-0 right-0 justify-between px-4 transform -translate-y-1/2">
+        <div className="flex absolute top-1/2 left-0 right-0 justify-between px-4 transform -translate-y-1/2">
           <button
             onClick={prevSlide}
             className="w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center border border-gray-100 hover:bg-white transition-all"
