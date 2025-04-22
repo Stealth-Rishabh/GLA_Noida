@@ -288,17 +288,16 @@ const LatestNews = () => {
           transition={{ duration: 0.5 }}
           className="flex justify-between items-center mb-6"
         >
-          <Heading level={2}>
-            <TextAnimate
-              as="span"
-              by="word"
-              delay={0.2}
-              duration={0.5}
-              animation="slideUp"
-              className="inline-flex flex-wrap"
-            >
-              Latest News
-            </TextAnimate>
+          <Heading
+            level={2}
+            as="span"
+            by="word"
+            delay={0.2}
+            duration={0.5}
+            animation="slideUp"
+            className="inline-flex flex-wrap"
+          >
+            Campus Happenings
           </Heading>
           <button
             className="group flex items-center text-sm font-medium text-gray-600 hover:text-cusBlue transition-colors"
