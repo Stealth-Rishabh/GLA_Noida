@@ -298,7 +298,7 @@ export function BtechCS() {
             icon: <Beaker className="h-8 w-8 sm:h-9 sm:w-9 text-cusAccent" />,
           },
           {
-            title: "Industry-Ready Professional",
+            title: "Industry Ready Professional",
             description:
               "Transform into skilled professional for tech companies.",
             icon: (
