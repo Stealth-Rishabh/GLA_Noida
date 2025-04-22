@@ -100,18 +100,29 @@ export default function AdmissionStepper() {
     };
   }, []);
 
-  // Modify auto-progression effect to pause on hover
+  // Modify auto-progression effect
   useEffect(() => {
     let interval;
-    // Only auto-play when not hovering over any step and component is in viewport
-    if (!isHovering && isInViewport) {
+    // Auto-play when component is in viewport and not being interacted with
+    if (isInViewport && !isHovering) {
       interval = setInterval(() => {
         setDirection(1);
         setCurrentStep((prevStep) => {
-          if (prevStep === steps.length) {
-            return 1; // Loop back to first step
+          const nextStep = prevStep === steps.length ? 1 : prevStep + 1;
+          
+          // Scroll to the next step smoothly on mobile
+          if (window.innerWidth < 768) {
+            const nextElement = document.getElementById(`step-${nextStep}`);
+            if (nextElement) {
+              nextElement.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "nearest"
+              });
+            }
           }
-          return prevStep + 1;
+          
+          return nextStep;
         });
       }, 3000); // Change step every 3 seconds
     }
@@ -145,19 +156,33 @@ export default function AdmissionStepper() {
     setCurrentStep(stepNumber);
   };
 
-  // Reset scroll position when step changes
+  // Modify this useEffect to prevent unwanted scrolling
   useEffect(() => {
     if (window.innerWidth < 768) {
       const element = document.getElementById(`step-${currentStep}`);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        // Only scroll within the stepper container
+        const stepperContainer = stepperRef.current;
+        if (stepperContainer) {
+          const containerRect = stepperContainer.getBoundingClientRect();
+          const elementRect = element.getBoundingClientRect();
+          
+          // Only scroll if the element is outside the visible area of the container
+          if (elementRect.top < containerRect.top || elementRect.bottom > containerRect.bottom) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "nearest"
+            });
+          }
+        }
       }
     }
   }, [currentStep]);
 
   return (
     <GridBackground>
-      <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20">
+      <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20 overflow-y-auto scroll-mt-20">
         <Heading level={2} className="text-center text-cusText">
           {/* <TextAnimate
           as="span"
@@ -172,7 +197,11 @@ export default function AdmissionStepper() {
         <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full mb-10 sm:mb-16"></div>
 
         {/* Mobile Stepper (Vertical) */}
-        <div className="md:hidden space-y-0 overflow-hidden">
+        <div 
+          className="md:hidden space-y-0 overflow-hidden"
+          onTouchStart={() => setIsHovering(true)}
+          onTouchEnd={() => setIsHovering(false)}
+        >
           <div className="relative pl-10">
             {/* Continuous Vertical Line */}
             <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300 z-0"></div>
@@ -189,6 +218,11 @@ export default function AdmissionStepper() {
                   "relative py-3",
                   index !== steps.length - 1 ? "pb-6" : ""
                 )}
+                onTouchStart={() => setIsHovering(true)}
+                onTouchEnd={() => {
+                  // Add a small delay before removing hover state
+                  setTimeout(() => setIsHovering(false), 1000);
+                }}
               >
                 {/* Step Circle */}
                 <div className="absolute left-0 top-5 z-10 -translate-x-[13px]">

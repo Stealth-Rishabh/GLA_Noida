@@ -93,6 +93,11 @@ export function SiteHeader() {
     };
   }, [lastScrollY]);
 
+  // Add this useEffect to handle scroll to top only after navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
