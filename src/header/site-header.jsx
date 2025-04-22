@@ -223,8 +223,8 @@ export function SiteHeader() {
                 src={
                   window.innerWidth < 768
                     ? isProgramPage || isContactPage
-                      ? logoRes
-                      : logoResScroll
+                      ? (scrolled ? logoResScroll : logoRes) || "/placeholder.svg"
+                      : logoResScroll || "/placeholder.svg"
                     : isProgramPage || isContactPage
                     ? (scrolled ? logoscrolled : logo) || "/placeholder.svg"
                     : logoscrolled || "/placeholder.svg"

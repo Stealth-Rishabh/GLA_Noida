@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { SiteHeader } from "@/header/site-header";
 import SiteFooter from "@/footer/site-footer";
 import Contact from "@/Pages/Contact/Contact";
@@ -9,7 +9,7 @@ import MBA from "@/Pages/Programs/MBA";
 import BBA from "@/Pages/Programs/BBA";
 import AIML from "@/Pages/Programs/AIML";
 import Stepper from "@/Pages/Programs/Stepper";
-
+import Thankyou from "@/Pages/Thankyou";
 // About page component
 function About() {
   return (
@@ -23,9 +23,15 @@ function About() {
 }
 
 export default function App() {
+  const location = useLocation();
+  const isThankYouPage = location.pathname === '/thankyou';
+
+  const routesWithoutHeaderFooter = ['/thankyou'];
+  const isExcludedRoute = routesWithoutHeaderFooter.includes(location.pathname);
+
   return (
-    <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+    <>
+      {!isExcludedRoute && <SiteHeader />}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -37,9 +43,10 @@ export default function App() {
           <Route path="/programs/bba" element={<BBA />} />
           <Route path="/programs/aiml" element={<AIML />} />
           <Route path="/programs/stepper" element={<Stepper />} />
+          <Route path="/thankyou" element={<Thankyou />} />
         </Routes>
       </main>
-      <SiteFooter />
-    </div>
+      {!isExcludedRoute && <SiteFooter />}
+    </>
   );
 }
