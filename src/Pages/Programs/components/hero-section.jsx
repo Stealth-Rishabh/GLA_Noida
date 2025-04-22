@@ -86,7 +86,7 @@ export function HeroSection({
     "Uttar Pradesh",
     "Uttarakhand",
     "West Bengal",
-    "Other"
+    "Other",
   ];
 
   // Handle form input changes
@@ -370,7 +370,7 @@ export function HeroSection({
                     Apply Now
                   </h3>
                   <p className="text-white/80">
-                    Start your {courseTitle} journey today
+                    Start your journey in {courseTitle} today
                   </p>
                 </div>
 
@@ -399,7 +399,7 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("name")}
                         onBlur={() => handleBlur("name")}
-                        className={`w-full px-4 py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
                           formFocus.name
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                             : formErrors.name
@@ -443,9 +443,11 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("email")}
                         onBlur={() => handleBlur("email")}
-                        className={`w-full px-4 py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
-                          formFocus.email
+                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
+                          formFocus.name
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
+                            : formErrors.name
+                            ? "border-red-500"
                             : "border-white/20"
                         }`}
                         placeholder="Email Address*"
@@ -488,9 +490,11 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("phone")}
                         onBlur={() => handleBlur("phone")}
-                        className={`w-full px-4 py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
-                          formFocus.phone
+                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
+                          formFocus.name
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
+                            : formErrors.name
+                            ? "border-red-500"
                             : "border-white/20"
                         }`}
                         placeholder="Phone Number*"
@@ -532,7 +536,7 @@ export function HeroSection({
                         }}
                       >
                         <SelectTrigger
-                          className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                          className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
                             formFocus.phone
                               ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                               : "border-white/20"
@@ -582,9 +586,11 @@ export function HeroSection({
                         onChange={handleInputChange}
                         onFocus={() => handleFocus("city")}
                         onBlur={() => handleBlur("city")}
-                        className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 transition-all duration-300 ${
-                          formFocus.city
+                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
+                          formFocus.name
                             ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
+                            : formErrors.name
+                            ? "border-red-500"
                             : "border-white/20"
                         }`}
                         placeholder="Enter City*"
