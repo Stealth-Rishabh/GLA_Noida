@@ -6,6 +6,7 @@ import {
   Linkedin,
   Youtube,
   Phone,
+  MapPin,
 } from "lucide-react";
 import logo from "@/assets/logo/gla_logo.png";
 import { Link } from "react-router-dom";
@@ -44,10 +45,11 @@ const SiteFooter = () => {
       label: "Programs Offered",
       items: [
         { name: "B.Tech", path: "/programs/btech" },
-        { name: "BBA", path: "/programs/bba" },
-        { name: "BCA", path: "/programs/bca" },
-        { name: "MBA", path: "/programs/mba" },
         { name: "B.Tech in AI & ML", path: "/programs/aiml" },
+        { name: "BCA", path: "/programs/bca" },
+        { name: "BBA", path: "/programs/bba" },
+        { name: "MBA", path: "/programs/mba" },
+
         // { name: "M.Tech", path: "/programs/mtech" },
         // { name: "Ph.D", path: "/programs/phd" },
       ],
@@ -153,6 +155,12 @@ const SiteFooter = () => {
                   );
                 })}
               </div>
+            </div>
+            <div className="flex items-center space-x-3 text-gray-600">
+              <MapPin className="w-10 h-10 text-cusGreen" />
+              <span>
+                15A, Knowledge Park II, Greater Noida - 201310 (U.P) INDIA
+              </span>
             </div>
             <div className="space-y-3">
               <p

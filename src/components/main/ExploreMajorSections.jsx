@@ -32,7 +32,7 @@ export default function ExploreMajorsSection() {
           </h2>
 
           <p className="text-xl md:text-2xl text-white my-6">
-            Choose from 16 undergraduate and graduate majors
+            Choose from 5 undergraduate and graduate majors
           </p>
 
           <button className="bg-cusGreen hover:bg-cusGreenDark text-white py-3 px-6 flex items-center transition-colors duration-300 mt-4">
