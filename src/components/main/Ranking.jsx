@@ -124,7 +124,7 @@ export default function RankingSection() {
                 loop
                 muted
                 playsInline
-                className="w-full md:w-[120%] lg:w-[150%] object-contain"
+                className="w-full md:w-[160%] lg:w-[180%] object-contain"
               >
                 <source src={trophy} type="video/webm" />
                 Your browser does not support the video tag.
