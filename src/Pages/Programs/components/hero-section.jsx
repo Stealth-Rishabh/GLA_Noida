@@ -653,7 +653,7 @@ export function HeroSection({
             </div>
 
             <div
-              className="absolute bottom-5 -left-6 animate-float"
+              className="absolute bottom-5 left-0 sm:-left-6 animate-float"
               style={{ animationDuration: "5s", animationDelay: "1s" }}
             >
               {/* <div className="bg-white rounded-full shadow-lg p-2"> */}
