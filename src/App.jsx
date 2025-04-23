@@ -11,6 +11,7 @@ import AIML from "@/Pages/Programs/AIML";
 import Stepper from "@/Pages/Programs/Stepper";
 import Thankyou from "@/Pages/Thankyou";
 import About from "@/Pages/About/About";
+import Awards from "@/Pages/About/Awards";
 
 export default function App() {
   const location = useLocation();
@@ -25,7 +26,8 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />} /> 
+          <Route path="/awards-accreditations" element={<Awards />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/programs/btech" element={<BtechCS />} />
           <Route path="/programs/bca" element={<BCA />} />
