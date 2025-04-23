@@ -1,6 +1,6 @@
 import { useMemo, memo } from "react";
 import { motion } from "framer-motion";
-import bca from "@/assets/general/bca.webp";
+import bca from "@/assets/general/BCA.webp";
 import btech from "@/assets/general/btech.webp";
 import bba from "@/assets/general/bba.webp";
 import mba from "@/assets/general/mba.webp";
