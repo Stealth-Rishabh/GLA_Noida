@@ -52,26 +52,18 @@ const LegacySection = () => {
     <section className="w-full overflow-hidden bg-white">
       <div className="w-full px-4 py-6 md:px-6 md:py-16">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="container mx-auto"
-        >
-          <Heading level={2} className="text-center mb-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#1a4e78] mb-4">
-              A Legacy of Educational Excellence
-              <span className="block w-24 h-1 bg-cusYellow mx-auto mt-4"></span>
-            </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto text-center">
-              Experience excellence at GLA University, where cutting-edge
-              technology meets traditional values. Our state-of-the-art
-              facilities, industry-aligned curriculum, and focus on practical
-              learning sets us apart in higher education.
-            </p>
-          </Heading>
-        </motion.div>
+        <div className="container mx-auto text-center mb-8">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1a4e78] mb-4">
+            A Legacy of Educational Excellence
+            <span className="block w-24 h-1 bg-cusYellow mx-auto mt-4"></span>
+          </h2>
+          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+            Experience excellence at GLA University, where cutting-edge
+            technology meets traditional values. Our state-of-the-art
+            facilities, industry-aligned curriculum, and focus on practical
+            learning sets us apart in higher education.
+          </p>
+        </div>
 
         {/* Mobile Stats */}
         <motion.div
