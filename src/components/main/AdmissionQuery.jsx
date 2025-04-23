@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { X, ArrowRight, Send } from "lucide-react";
 import { submitAdmissionQuery } from "@/services/crm";
 import { toast } from "sonner";
+import { getAllStates, getCitiesForState } from "@/services/stateData";
 
 const formFields = [
   {
@@ -49,60 +50,24 @@ const formFields = [
     ],
   },
   {
-    name: "state",
+    name: "stateid",
     label: "State",
     type: "select",
     placeholder: "Select your state",
     required: true,
     validation: (value) => value !== "",
     errorMessage: "Please select a state",
-    options: [
-      "Andhra Pradesh",
-      "Arunachal Pradesh",
-      "Assam",
-      "Bihar",
-      "Chhattisgarh",
-      "Delhi",
-      "Goa",
-      "Gujarat",
-      "Haryana",
-      "Himachal Pradesh",
-      "Jharkhand",
-      "Karnataka",
-      "Kerala",
-      "Madhya Pradesh",
-      "Maharashtra",
-      "Manipur",
-      "Meghalaya",
-      "Mizoram",
-      "Nagaland",
-      "Odisha",
-      "Punjab",
-      "Rajasthan",
-      "Sikkim",
-      "Tamil Nadu",
-      "Telangana",
-      "Tripura",
-      "Uttar Pradesh",
-      "Uttarakhand",
-      "West Bengal",
-      "Andaman and Nicobar Islands",
-      "Chandigarh",
-      "Dadra and Nagar Haveli and Daman and Diu",
-      "Jammu and Kashmir",
-      "Ladakh",
-      "Lakshadweep",
-      "Puducherry",
-    ],
+    options: getAllStates(),
   },
   {
-    name: "district",
+    name: "cityid",
     label: "City",
-    type: "text",
-    placeholder: "Enter your city",
+    type: "select",
+    placeholder: "Select your city",
     required: true,
-    validation: (value) => value.trim().length >= 2,
-    errorMessage: "Please enter a valid city name",
+    validation: (value) => value !== "",
+    errorMessage: "Please select a city",
+    options: [], // Will be populated based on selected state
   },
 ];
 
@@ -111,8 +76,8 @@ const initialFormData = {
   email: "",
   phone: "",
   coursesid: "",
-  state: "",
-  district: "",
+  stateid: "",
+  cityid: "",
 };
 
 export default function AdmissionQuery({ utmParams }) {
@@ -120,73 +85,58 @@ export default function AdmissionQuery({ utmParams }) {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cities, setCities] = useState([]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
+
+    if (name === "stateid") {
+      // Reset city when state changes
+      setFormData((prev) => ({ ...prev, cityid: "" }));
+      // Get cities for selected state
+      const stateCities = getCitiesForState(value);
+      setCities(stateCities);
+    }
+  };
 
   const validateField = (name, value) => {
     const field = formFields.find((f) => f.name === name);
     if (!field) return "";
-
-    if (!value || value.trim() === "") {
-      return `${field.label.replace("*", "")} is required`;
-    }
-
-    if (field.validation && !field.validation(value)) {
+    if (field.required && !value) return `${field.label} is required`;
+    if (value && field.validation && !field.validation(value)) {
       return field.errorMessage;
     }
-
     return "";
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-
-    // Validate field on change
-    const error = validateField(name, value);
-    setErrors((prev) => ({
-      ...prev,
-      [name]: error,
-    }));
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    let isValid = true;
-
-    // Validate all fields
-    formFields.forEach((field) => {
-      const value = formData[field.name] || "";
-      const error = validateField(field.name, value);
-      if (error) {
-        newErrors[field.name] = error;
-        isValid = false;
-      }
-    });
-
-    setErrors(newErrors);
-    return isValid;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      try {
-        setIsSubmitting(true);
-        console.log("Form data before submission:", formData);
-        const result = await submitAdmissionQuery({ ...formData, utmParams });
-        if (result.success) {
-          toast.success(result.message);
-          setFormData(initialFormData);
-          setErrors({});
-          setIsOpen(false);
-        } else {
-          toast.error(result.message);
-        }
-      } catch (error) {
-        toast.error("Failed to submit form. Please try again later.");
-        console.error("Form submission error:", error);
-      } finally {
-        setIsSubmitting(false);
-      }
+
+    // Validate all fields
+    const newErrors = {};
+    formFields.forEach((field) => {
+      const error = validateField(field.name, formData[field.name]);
+      if (error) newErrors[field.name] = error;
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await submitAdmissionQuery(formData, utmParams);
+      toast.success("Form submitted successfully!");
+      setFormData(initialFormData);
+      setIsOpen(false);
+    } catch (error) {
+      toast.error("Failed to submit form. Please try again.");
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -246,67 +196,70 @@ export default function AdmissionQuery({ utmParams }) {
 
                 <form onSubmit={handleSubmit} className="grid gap-3">
                   {formFields.map((field) => (
-                    <div key={field.name} className="relative">
+                    <div key={field.name}>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        {field.label}
+                        {field.required && (
+                          <span className="text-red-500">*</span>
+                        )}
+                      </label>
                       {field.type === "select" ? (
-                        <div>
-                          <select
-                            name={field.name}
-                            value={formData[field.name]}
-                            required
-                            onChange={handleInputChange}
-                            className={`w-full p-3 rounded-lg border ${
-                              errors[field.name]
-                                ? "border-red-500"
-                                : "border-gray-200"
-                            } bg-white focus:outline-none focus:border-cusGreen focus:ring-1 focus:ring-cusGreen text-sm transition-all duration-200`}
-                          >
-                            <option value="">{field.placeholder}</option>
-                            {field.options.map((option) => (
-                              <option
-                                key={
-                                  typeof option === "object"
-                                    ? option.value
-                                    : option
-                                }
-                                value={
-                                  typeof option === "object"
-                                    ? option.value
-                                    : option
-                                }
-                              >
-                                {typeof option === "object"
-                                  ? option.label
-                                  : option}
-                              </option>
-                            ))}
-                          </select>
-                          {errors[field.name] && (
-                            <p className="text-red-500 text-xs mt-1">
-                              {errors[field.name]}
-                            </p>
-                          )}
-                        </div>
+                        <select
+                          name={field.name}
+                          value={formData[field.name]}
+                          onChange={handleChange}
+                          className={`w-full p-3 rounded-lg border ${
+                            errors[field.name]
+                              ? "border-red-500"
+                              : "border-gray-200"
+                          } bg-white focus:outline-none focus:border-cusGreen focus:ring-1 focus:ring-cusGreen text-sm transition-all duration-200`}
+                          required={field.required}
+                        >
+                          <option value="">{field.placeholder}</option>
+                          {field.name === "cityid" && cities.length > 0
+                            ? cities.map((city) => (
+                                <option key={city} value={city}>
+                                  {city}
+                                </option>
+                              ))
+                            : field.options.map((option) => (
+                                <option
+                                  key={
+                                    typeof option === "object"
+                                      ? option.value
+                                      : option
+                                  }
+                                  value={
+                                    typeof option === "object"
+                                      ? option.value
+                                      : option
+                                  }
+                                >
+                                  {typeof option === "object"
+                                    ? option.label
+                                    : option}
+                                </option>
+                              ))}
+                        </select>
                       ) : (
-                        <div>
-                          <input
-                            type={field.type}
-                            name={field.name}
-                            value={formData[field.name]}
-                            placeholder={field.placeholder}
-                            required
-                            onChange={handleInputChange}
-                            className={`w-full p-3 rounded-lg border ${
-                              errors[field.name]
-                                ? "border-red-500"
-                                : "border-gray-200"
-                            } bg-white focus:outline-none focus:border-cusGreen focus:ring-1 focus:ring-cusGreen text-sm transition-all duration-200`}
-                          />
-                          {errors[field.name] && (
-                            <p className="text-red-500 text-xs mt-1">
-                              {errors[field.name]}
-                            </p>
-                          )}
-                        </div>
+                        <input
+                          type={field.type}
+                          name={field.name}
+                          value={formData[field.name]}
+                          onChange={handleChange}
+                          placeholder={field.placeholder}
+                          className={`w-full p-3 rounded-lg border ${
+                            errors[field.name]
+                              ? "border-red-500"
+                              : "border-gray-200"
+                          } bg-white focus:outline-none focus:border-cusGreen focus:ring-1 focus:ring-cusGreen text-sm transition-all duration-200`}
+                          required={field.required}
+                        />
+                      )}
+                      {errors[field.name] && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors[field.name]}
+                        </p>
                       )}
                     </div>
                   ))}
