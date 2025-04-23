@@ -15,6 +15,13 @@ import { Label } from "@/components/ui/label";
 import contact from "@/assets/general/contact.webp";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Banner from "@/components/main/Banner";
+import { Eye } from "lucide-react";
+import { Target } from "lucide-react";
+import { Award } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import GridBackground from "@/components/ui/GridBackground";
+import ganeshi from "@/assets/about/ganeshi-lal-agrawal.jpg";
+import about from "@/assets/about/GLA Building.webp";
 // import Heading from "@/components/Heading";
 
 export default function About() {
@@ -48,16 +55,17 @@ export default function About() {
       />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto py-6 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <Legacy />
-      </div>
+      {/* <div className="max-w-7xl bh mx-auto py-6 sm:py-20 px-4 sm:px-6 lg:px-8"> */}
+      <Legacy />
+      <IMMFeatureSection />
+      {/* </div> */}
     </div>
   );
 }
 
 const Legacy = () => {
   return (
-    <section className="light pt-12 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+    <section className="light pt-12 max-w-7xl mx-auto bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white py-10 sm:py-20">
       <div className="container ">
         <div className="grid lg:grid-cols-3 gap-x-6">
           <div>
@@ -69,7 +77,7 @@ const Legacy = () => {
             <div
               className="min-h-[350px] md:h-full bg-center bg-cover rounded-md"
               style={{
-                backgroundImage: `url("https://www.gla.ac.in/images/ganeshi-lal-agrawal.jpg")`,
+                backgroundImage: `url(${ganeshi})`,
               }}
             ></div>
           </div>
@@ -97,6 +105,170 @@ const Legacy = () => {
               endeavors overseas while maintaining our commitment to excellence
               in management education and creating future business leaders.
             </p> */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const features = [
+  {
+    icon: Eye,
+    title: "Vision",
+    desc: "We envision ourselves as a pace-setting university of Academic Excellence focused on education, research, and development in established and emerging professions.",
+  },
+  {
+    icon: Target,
+    title: "Mission",
+    desc: `To impart quality professional education, conduct commendable research, and provide credible consultancy and extension services per current and emerging socio-economic needs.
+    To continuously enhance and enrich the teaching/learning process and set such standards, education and otherwise, that other institutes would want to emulate.
+    To be student-centric, thus promoting the overall growth and development of intellect and personality of our prime stakeholders, namely students, so our alums are worthy citizens and highly sought-after professionals worldwide.
+    `,
+  },
+];
+
+const FeatureItem = ({ feature, isHovered, onHover }) => {
+  return (
+    <Card
+      className={`
+          flex flex-row background-gradient-yellow-light dark:bg-slate-800  p-6 xl:p-12 mb-4 lg:mb-6
+          transform transition-all duration-300 ease-out relative
+          hover:shadow-2xl hover:-translate-y-1
+          ${isHovered ? "border-primary" : "border-border"}
+        `}
+      onMouseEnter={() => onHover(true)}
+      onMouseLeave={() => onHover(false)}
+    >
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
+      <div
+        className={`
+          transition-all hidden sm:block duration-300
+          text-primary rounded-full mr-3 
+          transform ${isHovered ? "scale-110" : "scale-100"}
+        `}
+      >
+        <feature.icon
+          size={42}
+          className={`transition-all text-cusAccent duration-300 ${
+            isHovered ? "stroke-[1.5]" : "stroke-[1.3]"
+          }`}
+        />
+      </div>
+      <div>
+        <h4
+          className={`
+            text-2xl text-primary-color font-medium mb-4
+            transition-colors duration-300
+            ${isHovered ? "text-primary" : "text-foreground"}
+          `}
+        >
+          {feature.title}
+        </h4>
+        {Array.isArray(feature.desc) ? (
+          <ul className="list-disc pl-5 space-y-2">
+            {feature.desc.map((item, index) => (
+              <li key={index} className="text-muted-foreground leading-relaxed">
+                {item}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-black/70 leading-relaxed text-[17px]">
+            {feature.desc}
+          </p>
+        )}
+        {/* <div
+            className={`
+            mt-4 sm:flex hidden items-center text-primary
+            transition-all duration-300 ease-out
+            opacity-0 transform translate-x-[-10px]
+            ${isHovered ? "opacity-100 translate-x-0" : ""}
+          `}
+          >
+            <span className="mr-2">Learn more</span>
+            <ArrowRight size={16} />
+          </div> */}
+      </div>
+    </Card>
+  );
+};
+
+const IMMFeatureSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  return (
+    <section className="py-14 md:py-20 mx-auto text-foreground relative overflow-visible">
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
+      <div className="container px-4 max-w-7xl mx-auto">
+        <div className="flex max-w-3xl justify-center text-center mb-12 mx-auto">
+          <div className="space-y-6">
+            <h2
+              className="text-4xl leading-none font-bold md:text-5xl text-cusBlue
+                animate-in fade-in slide-in-from-bottom-3 duration-700"
+            >
+              Vision & Mission
+            </h2>
+            <p
+              className="text-lg text-black
+                animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200"
+            >
+              Discover our commitment to excellence in management education and
+              our goals for shaping future leaders.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-6 pt-12 max-w-7xl mx-auto min-h-[90vh]">
+          <div
+            className="col-span-2 lg:col-span-1 lg:sticky lg:top-24"
+            style={{ height: "fit-content" }}
+          >
+            <div className="relative h-full z-10">
+              <div className="absolute -top-11 -left-11 right-12 bottom-12 h-[400px] sm:h-[600px] bg-gray-900 dark:bg-slate-700 -z-10 rounded-[200px] lg:rounded-full rounded-tl-none lg:rounded-tl-none" />
+              <div
+                className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[350px] w-full float-right shadow-xl h-[400px] sm:h-[600px]"
+                style={{
+                  backgroundImage: `url(${about})`,
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="col-span-2 lg:col-span-1">
+            <div className="lg:ml-6 xl:ml-12">
+              {features.map((feature, i) => (
+                <div
+                  key={i}
+                  className="animate-in fade-in slide-in-from-right duration-700"
+                  style={{ animationDelay: `${(i + 1) * 200 + 300}ms` }}
+                >
+                  <FeatureItem
+                    feature={feature}
+                    isHovered={hoveredIndex === i}
+                    onHover={(hovered) => setHoveredIndex(hovered ? i : null)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
