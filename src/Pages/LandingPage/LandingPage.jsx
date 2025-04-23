@@ -36,7 +36,7 @@ export default function LandingPage() {
         <SetUsApart />
       </GradientBackground>
 
-      <ExploreMajorSections />
+      {/* <ExploreMajorSections /> */}
 
       <Section className="background-gradient-white">
         <StudentLife />

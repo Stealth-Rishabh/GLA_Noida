@@ -388,7 +388,7 @@ const LatestNews = () => {
       </div>
 
       {/* Events Section - Right side */}
-      <div className="overflow-hidden p-2 relative h-full">
+      <div className="overflow-hidden relative h-full">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -416,12 +416,15 @@ const LatestNews = () => {
         <div className="relative overflow-hidden h-[380px]">
           <div
             ref={eventsContainerRef}
-            className="absolute inset-0 flex flex-col md:grid md:grid-cols-1 transition-transform duration-700 ease-out"
+            className="absolute inset-0 flex flex-col transition-transform duration-500 ease-in-out"
             style={{
               transform: `translateY(-${
                 activeEventIndex * (100 / visibleItems)
               }%)`,
             }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={() => onTouchEnd(false)}
           >
             {[...events, ...events.slice(0, visibleItems)].map(
               (event, index) => (
@@ -434,12 +437,12 @@ const LatestNews = () => {
                 >
                   <div
                     className="group flex items-start p-4 h-full rounded-xl bg-white border border-gray-100 
-                             transition-all duration-300 hover:shadow-lg hover:border-cusBlue/20 
-                             cursor-pointer transform hover:-translate-y-1"
+                           transition-all duration-300 hover:shadow-lg hover:border-cusBlue/20 
+                           cursor-pointer transform hover:-translate-y-1"
                   >
                     <div
                       className="flex-shrink-0 mr-5 p-3 bg-gradient-to-br from-cusBlue/10 to-cusBlue/5 
-                               rounded-lg transition-colors group-hover:from-cusBlue/20 group-hover:to-cusBlue/10"
+                             rounded-lg transition-colors group-hover:from-cusBlue/20 group-hover:to-cusBlue/10"
                     >
                       <div className="text-3xl font-bold text-cusBlue">
                         {event.day}
@@ -452,7 +455,7 @@ const LatestNews = () => {
                     <div className="flex-1 min-w-0">
                       <h3
                         className="text-lg font-bold mb-2 text-gray-900 group-hover:text-cusBlue 
-                                 transition-colors line-clamp-2"
+                               transition-colors line-clamp-2"
                       >
                         {event.title}
                       </h3>

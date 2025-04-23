@@ -12,7 +12,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Heading } from "@/components/ui/heading";
 import { BoxReveal } from "@/components/magicui/box-reveal";
-import { submitLead } from "@/services/backend";
+import { submitAdmissionQuery } from "@/services/crm";
 import {
   Select,
   SelectContent,
@@ -20,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "sonner";
 
 export function HeroSection({
   backgroundImage,
@@ -151,6 +152,7 @@ export function HeroSection({
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     // Validate all fields
     const nameError = validateName(formState.name);
@@ -164,25 +166,16 @@ export function HeroSection({
     });
 
     if (nameError || emailError || phoneError) {
+      setIsSubmitting(false);
       return;
     }
 
-    setIsSubmitting(true);
     try {
-      // Include courseName in the payload
-      const payload = {
-        ...formState,
-        Campus: "Noida Campus#102",
-        Source_Type: "Online",
-        SubSession: "Summer",
-        Course_Name: courseName,
-      };
+      const result = await submitAdmissionQuery(formState);
 
-      console.log("Sending payload to API:", payload);
-      const response = await submitLead(payload);
-
-      if (response.Message?.Status === "Success") {
-        alert("Thank you for your submission!");
+      if (result.success) {
+        toast.success(result.message);
+        // Reset form
         setFormState({
           name: "",
           email: "",
@@ -197,11 +190,11 @@ export function HeroSection({
           phone: "",
         });
       } else {
-        alert("Something went wrong. Please try again later.");
+        toast.error(result.message);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("An error occurred. Please try again later.");
+      toast.error("An unexpected error occurred. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
