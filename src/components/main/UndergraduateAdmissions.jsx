@@ -1,9 +1,9 @@
 import { useMemo, memo } from "react";
 import { motion } from "framer-motion";
 import bca from "@/assets/general/BCA.webp";
-import btech from "@/assets/general/Btech_home.webp";
-import bba from "@/assets/general/BBA_home.webp";
-import mba from "@/assets/general/MBA_home.webp";
+import btech from "@/assets/general/btech.webp";
+import bba from "@/assets/general/bba.webp";
+import mba from "@/assets/general/mba.webp";
 
 const AdmissionCard = memo(({ card, index, total }) => {
   return (
@@ -55,7 +55,7 @@ export default function UndergraduateAdmissions() {
         image: btech,
         alt: "Students walking in university hallway",
         href: "/programs/btech",
-        caption: "B.Tech (CSE / AI & ML)",
+        caption: "B.Tech (CSE / AIML)",
       },
       {
         id: 2,
