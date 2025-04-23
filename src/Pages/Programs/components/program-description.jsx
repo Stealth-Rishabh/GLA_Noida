@@ -16,9 +16,9 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
   return (
     <section className="py-24 background-gradient-yellow-light px-4 overflow-hidden">
       {/* Background elements */}
-      <div class="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5">
         <div
-          class="w-full h-full"
+          className="w-full h-full"
           style={{
             backgroundImage:
               "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
