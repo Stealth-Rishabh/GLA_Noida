@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { X, ArrowRight, Send } from "lucide-react";
 import { submitAdmissionQuery } from "@/services/crm";
 import { toast } from "sonner";
@@ -40,7 +40,13 @@ const formFields = [
     required: true,
     validation: (value) => value !== "",
     errorMessage: "Please select a course",
-    options: ["B.Tech", "BBA", "BCA", "MBA", "B.Tech (AI & ML)"],
+    options: [
+      { value: "1500", label: "B.Tech" },
+      { value: "1550", label: "B.Tech (AI & ML)" },
+      { value: "4201", label: "BCA" },
+      { value: "4101", label: "BBA" },
+      { value: "8410", label: "MBA" },
+    ],
   },
   {
     name: "state",
@@ -109,7 +115,7 @@ const initialFormData = {
   district: "",
 };
 
-export default function AdmissionQuery() {
+export default function AdmissionQuery({ utmParams }) {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
@@ -164,18 +170,22 @@ export default function AdmissionQuery() {
     e.preventDefault();
     if (validateForm()) {
       try {
+        setIsSubmitting(true);
         console.log("Form data before submission:", formData);
-        const result = await submitAdmissionQuery(formData);
+        const result = await submitAdmissionQuery({ ...formData, utmParams });
         if (result.success) {
           toast.success(result.message);
           setFormData(initialFormData);
           setErrors({});
+          setIsOpen(false);
         } else {
           toast.error(result.message);
         }
       } catch (error) {
         toast.error("Failed to submit form. Please try again later.");
         console.error("Form submission error:", error);
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
@@ -252,8 +262,21 @@ export default function AdmissionQuery() {
                           >
                             <option value="">{field.placeholder}</option>
                             {field.options.map((option) => (
-                              <option key={option} value={option}>
-                                {option}
+                              <option
+                                key={
+                                  typeof option === "object"
+                                    ? option.value
+                                    : option
+                                }
+                                value={
+                                  typeof option === "object"
+                                    ? option.value
+                                    : option
+                                }
+                              >
+                                {typeof option === "object"
+                                  ? option.label
+                                  : option}
                               </option>
                             ))}
                           </select>

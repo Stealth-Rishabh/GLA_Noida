@@ -12,11 +12,27 @@ import LegacySection from "@/components/main/legacy-section";
 import GridBackground from "@/components/ui/GridBackground";
 import RankingSection from "@/components/main/Ranking";
 import AdmissionQuery from "@/components/main/AdmissionQuery";
+import { useEffect, useState } from "react";
 
 export default function LandingPage() {
+  const [utmParams, setUtmParams] = useState({
+    source: "",
+    medium: "",
+    campaign: "",
+  });
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    setUtmParams({
+      source: urlParams.get("utm_source") || "",
+      medium: urlParams.get("utm_medium") || "",
+      campaign: urlParams.get("utm_campaign") || "",
+    });
+  }, []);
+
   return (
     <>
-      <AdmissionQuery />
+      <AdmissionQuery utmParams={utmParams} />
       <BannerSlider />
 
       <GridBackground>

@@ -1,18 +1,29 @@
 import { submitLead } from "./backend";
 
+const getUTMParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return {
+    source: urlParams.get("utm_source") || "",
+    medium: urlParams.get("utm_medium") || "",
+    campaign: urlParams.get("utm_campaign") || "",
+  };
+};
+
 export const submitAdmissionQuery = async (formData) => {
   try {
     console.log("Raw form data received:", formData);
 
+    const utmParams = getUTMParams();
+
     const crmPayload = {
       Campus: "Noida Campus#102",
       SubSession: "Summer",
-      Source_Type: "Online",
-      Campaign: "",
-      Source_Name: "",
-      Sourse_Course_Code: formData.coursesid || " ",
-      Source_Medium: "",
-      Course_Name: formData.coursesid || " ",
+      Source_Type: utmParams.source || "Online",
+      Campaign: utmParams.campaign || "Direct",
+      Source_Name: utmParams.source || "Direct",
+      Source_Course_Code: formData.coursesid || "",
+      Source_Medium: utmParams.medium || "Direct",
+      Course_Name: "",
       Branch: "",
       Study_Mode: "Offline",
       Name: formData.name || "",
@@ -24,11 +35,11 @@ export const submitAdmissionQuery = async (formData) => {
       Contact_2: "",
       Address: "",
       Country: "India",
-      State: formData.state || "",
-      District: formData.district || "",
+      State: formData.stateid || "",
+      District: formData.cityid || "",
       Locality: "",
-      Lead_Source_Type: null,
-      Lead_Source_Name: null,
+      Lead_Source_Type: utmParams.source || "Online",
+      Lead_Source_Name: utmParams.source || "Direct",
       Operation: "Add",
       SubmittedByCode: null,
       SubmittedByName: null,
