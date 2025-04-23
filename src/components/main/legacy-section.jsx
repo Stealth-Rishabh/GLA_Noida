@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import sketch from "@/assets/general/sketch.png";
+import sketch from "@/assets/general/sketch_two.png";
 import iconOne from "@/assets/icons/icon1.webp";
 import iconTwo from "@/assets/icons/icon2.webp";
 import iconThree from "@/assets/icons/icon3.webp";
