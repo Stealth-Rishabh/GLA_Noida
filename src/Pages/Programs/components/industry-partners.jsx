@@ -6,9 +6,9 @@ import GridBackground from "@/components/ui/GridBackground";
 export function IndustryPartners({ title, subtitle, icons }) {
   return (
     <section className="py-16 container mx-auto px-4 relative overflow-hidden">
-      <div class="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5">
         <div
-          class="w-full h-full"
+          className="w-full h-full"
           style={{
             backgroundImage:
               "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",

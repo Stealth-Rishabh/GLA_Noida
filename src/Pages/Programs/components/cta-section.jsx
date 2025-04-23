@@ -58,9 +58,9 @@ export function CTASection({ title, subtitle, description }) {
           className="absolute bottom-0 right-1/4 w-72 h-72 bg-cusGreen/5 rounded-full blur-3xl"
         />
       </motion.div> */}
-      <div class="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5">
         <div
-          class="w-full h-full"
+          className="w-full h-full"
           style={{
             backgroundImage:
               "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",

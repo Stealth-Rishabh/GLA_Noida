@@ -10,17 +10,7 @@ import BBA from "@/Pages/Programs/BBA";
 import AIML from "@/Pages/Programs/AIML";
 import Stepper from "@/Pages/Programs/Stepper";
 import Thankyou from "@/Pages/Thankyou";
-// About page component
-function About() {
-  return (
-    <div className="container py-12 text-center">
-      <h1 className="text-3xl font-bold">About GLA University</h1>
-      <p className="mt-4 text-muted-foreground">
-        Learn more about our institution and its history.
-      </p>
-    </div>
-  );
-}
+import About from "@/Pages/About/About";
 
 export default function App() {
   const location = useLocation();

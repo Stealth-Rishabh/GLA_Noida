@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -68,6 +66,7 @@ export function SiteHeader() {
   const location = useLocation();
   const isProgramPage = location.pathname.startsWith("/programs/");
   const isContactPage = location.pathname.startsWith("/contact-us");
+  const isAboutPage = location.pathname.startsWith("/about");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -222,10 +221,10 @@ export function SiteHeader() {
               <img
                 src={
                   window.innerWidth < 768
-                    ? isProgramPage || isContactPage
+                    ? isProgramPage || isContactPage || isAboutPage
                       ? (scrolled ? logoResScroll : logoRes) || "/placeholder.svg"
                       : logoResScroll || "/placeholder.svg"
-                    : isProgramPage || isContactPage
+                    : isProgramPage || isContactPage || isAboutPage
                     ? (scrolled ? logoscrolled : logo) || "/placeholder.svg"
                     : logoscrolled || "/placeholder.svg"
                 }
@@ -247,7 +246,7 @@ export function SiteHeader() {
                         className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
                           scrolled
                             ? "text-black"
-                            : isProgramPage || isContactPage
+                            : isProgramPage || isContactPage || isAboutPage
                             ? "text-white"
                             : "text-black"
                         }`}
@@ -276,7 +275,7 @@ export function SiteHeader() {
                       className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
                         scrolled
                           ? "text-black"
-                          : isProgramPage || isContactPage
+                          : isProgramPage || isContactPage || isAboutPage
                           ? "text-white"
                           : "text-black"
                       }`}
@@ -330,6 +329,7 @@ function MobileNav({ scrolled }) {
   const location = useLocation();
   const isProgramPage = location.pathname.startsWith("/programs/");
   const isContactPage = location.pathname.startsWith("/contact-us");
+  const isAboutPage = location.pathname.startsWith("/about");
 
   return (
     <div className="relative">
@@ -338,7 +338,7 @@ function MobileNav({ scrolled }) {
         className={`flex h-10 w-10 items-center justify-center rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           scrolled
             ? "border-cusBlue text-cusBlue"
-            : isProgramPage || isContactPage
+            : isProgramPage || isContactPage || isAboutPage
             ? "border-white text-white"
             : "border-black text-black"
         }`}
