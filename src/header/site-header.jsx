@@ -31,7 +31,7 @@ const NAV_ITEMS = [
     dropdownItems: [
       { title: "About GLA", path: "/about" },
       { title: "Awards & Accreditation", path: "/awards-accreditations" },
-      { title: "Advisory Board", path: "/advisory-board" },
+      // { title: "Advisory Board", path: "/advisory-board" },
     ],
   },
   {
@@ -45,17 +45,17 @@ const NAV_ITEMS = [
       { title: "MBA", path: "/programs/mba" },
     ],
   },
-  {
-    title: "Admissions",
-    path: "/admissions",
-    dropdownItems: [
-      { title: "Admissions Procedure", path: "/admissions/procedure" },
-      { title: "Eligibility Criteria", path: "/admissions/eligibility" },
-      { title: "Fee Structure", path: "/admissions/fee-structure" },
-      { title: "Scholarships", path: "/admissions/scholarships" },
-    ],
-  },
-  { title: "Student Life", path: "/student-life" },
+  // {
+  //   title: "Admissions",
+  //   path: "/admissions",
+  //   dropdownItems: [
+  //     { title: "Admissions Procedure", path: "/admissions/procedure" },
+  //     { title: "Eligibility Criteria", path: "/admissions/eligibility" },
+  //     { title: "Fee Structure", path: "/admissions/fee-structure" },
+  //     { title: "Scholarships", path: "/admissions/scholarships" },
+  //   ],
+  // },
+  // { title: "Student Life", path: "/student-life" },
   { title: "Contact Us", path: "/contact-us" },
 ];
 

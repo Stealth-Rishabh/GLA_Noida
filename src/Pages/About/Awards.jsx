@@ -5,7 +5,7 @@ import Banner from "@/components/main/Banner";
 export default function Awards() {
   const [hoveredMember, setHoveredMember] = useState(null);
 
-  const teamMembers = [
+  const awards = [
     {
       id: 1,
       name: "Ranked #2 in UP & #6 in INDIA",
@@ -120,6 +120,105 @@ export default function Awards() {
     },
   ];
 
+  const govermentAwards = [
+    {
+      id: 1,
+      name: "Ranked #2 in UP & #6 in INDIA",
+      description: "amongst all Private B-Schools Ranking 2018",
+      image: "https://www.gla.ac.in/Uploads/banner/1ardach_time-b.png",
+    },
+    {
+      id: 2,
+      name: "Best Private University",
+      description: "in UP in Engineering by Survey 2018",
+      image: "https://www.gla.ac.in/Uploads/banner/2ardach_danik-j.png",
+    },
+    {
+      id: 3,
+      name: "Rated 'AAA'",
+      description: "amongst India's Best Engineering Colleges 2020",
+      image: "https://www.gla.ac.in/Uploads/banner/3ardach_careers360.png",
+    },
+    {
+      id: 4,
+      name: "Ranked #1 in INDIA",
+      description:
+        "amongst the Top Emerging Engineering Institutes in survey 2018 by Times of India",
+      image: "https://www.gla.ac.in/Uploads/banner/4ardach_time-of-india.png",
+    },
+    {
+      id: 5,
+      name: "Ranked #1 University in UP",
+      description:
+        "Best Private University in UP and also in North, East & North Eastern India",
+      image: "https://www.gla.ac.in/Uploads/banner/7ardach_dilog-india.png",
+    },
+    {
+      id: 6,
+      name: "Ranked #3 in UP",
+      description: "amongst Top 75 B Schools - BBA Edition survey 2018",
+      image: "https://www.gla.ac.in/Uploads/banner/8ardach_time-b.png",
+    },
+    {
+      id: 7,
+      name: "National Employability Award",
+      description: "among the Top 10% engineering campuses nationally 2019",
+      image: "https://www.gla.ac.in/Uploads/banner/9ardach_aspiringminds.png",
+    },
+    {
+      id: 8,
+      name: "Ranked #3 in UP",
+      description: "Institute of Business Management - BBA",
+      image: "https://www.gla.ac.in/Uploads/banner/10ardach_indiatoday.png",
+    },
+    {
+      id: 9,
+      name: "Best Private University",
+      description: "in UP Survey 2019 & 2020 by Dainik Jagran",
+      image: "https://www.gla.ac.in/Uploads/banner/21ardach_dj.png",
+    },
+    {
+      id: 10,
+      name: "Awarded Excellence in Placements & Alumni Network",
+      description: "amongst best private universities in India",
+      image: "https://www.gla.ac.in/Uploads/banner/24ardach_hindustan.png",
+    },
+    {
+      id: 11,
+      name: "University Grant Commission (UGC)",
+      description:
+        "12B Status by UGC Among the top private universities in India to receive this honour.",
+      image: "https://www.gla.ac.in/Uploads/banner/25ardach_ugc.jpg",
+    },
+    {
+      id: 12,
+      name: "ARIIA Band Excellent Award",
+      description:
+        "for blending innovation in learning and beyond classroom experiential activities",
+      image: "https://www.gla.ac.in/Uploads/banner/26ardach_AriiaLogo.png",
+    },
+    {
+      id: 13,
+      name: "NAAC 'A+' Grade",
+      description:
+        "for high standard Infrastructure, Learning Resources, Research, Innovation, etc.",
+      image: "https://www.gla.ac.in/Uploads/banner/30ardach_naac.png",
+    },
+    {
+      id: 14,
+      name: "NPTEL ACTIVE Local Chapter",
+      description:
+        "Ranked among the top 100 institutions with Local Chapter tag by NPTEL",
+      image: "https://www.gla.ac.in/Uploads/banner/31ardach_nptel.png",
+    },
+    {
+      id: 15,
+      name: "IACBE Accreditation",
+      description:
+        "Specialized accreditation through the International Accreditation Council for Business Education",
+      image: "https://www.gla.ac.in/Uploads/banner/32ardach_iacbe.png",
+    },
+  ];
   return (
     <>
       <Banner
@@ -149,7 +248,7 @@ export default function Awards() {
         </motion.div> */}
 
         <div className="grid md:grid-cols-2 sm:gap-8 gap-4 max-w-7xl mx-auto mb-12">
-          {teamMembers.map((member, index) => (
+          {awards.map((member, index) => (
             <motion.div
               key={member.id}
               className="flex flex-col items-center sm:flex-row gap-8 group p-4 rounded-lg background-gradient-yellow-light z-10 shadow-md"
