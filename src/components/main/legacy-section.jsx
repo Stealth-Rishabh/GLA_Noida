@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import sketch from "@/assets/general/sketch_two.png";
+import sketch from "@/assets/general/sketch_Two.png";
 import iconOne from "@/assets/icons/icon1.webp";
 import iconTwo from "@/assets/icons/icon2.webp";
 import iconThree from "@/assets/icons/icon3.webp";
@@ -15,13 +15,6 @@ const LegacySection = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-
-  const targetValues = {
-    placement: 86,
-    alumni: 39000,
-    faculty: 700,
-    students: 23000,
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,6 +39,13 @@ const LegacySection = () => {
 
   useEffect(() => {
     if (!isVisible) return;
+
+    const targetValues = {
+      placement: 86,
+      alumni: 39000,
+      faculty: 700,
+      students: 23000,
+    };
 
     const duration = 2000; // 2 seconds
     const steps = 60; // 60 steps for smooth animation
