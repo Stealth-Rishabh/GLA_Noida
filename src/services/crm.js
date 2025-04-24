@@ -21,7 +21,7 @@ export const submitAdmissionQuery = async (formData) => {
       Source_Type: utmParams.source || "Online",
       Campaign: utmParams.campaign || "Direct",
       Source_Name: utmParams.source || "Direct",
-      Source_Course_Code: formData.coursesid || "",
+      Sourse_Course_Code: formData.coursesid || "",
       Source_Medium: utmParams.medium || "Direct",
       Course_Name: "",
       Branch: "",
