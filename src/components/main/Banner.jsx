@@ -15,7 +15,7 @@ const Banner = ({ title, image }) => {
             titleClassName="lg:font-extrabold text-center text-white tracking-wide"
             className="block w-full  mx-auto text-left sm:col-span-4 sm:pb-0 lg:pb-0 pb-0 pt-8 sm:pt-0"
           /> */}
-        <h1 className="text-3xl sm:text-5xl font-bold text-white bg-black/50 p-2 px-5 sm:p-5 sm:px-10">
+        <h1 className="text-2xl sm:text-5xl font-bold text-white bg-black/50 p-2 px-5 sm:p-5 sm:px-10">
           <TextAnimate
             as="span"
             by="word"
