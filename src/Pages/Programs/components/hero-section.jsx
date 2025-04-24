@@ -13,13 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heading } from "@/components/ui/heading";
 import { BoxReveal } from "@/components/magicui/box-reveal";
 import { submitAdmissionQuery } from "@/services/crm";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { getAllStates, getCitiesForState } from "@/services/stateData";
 import { toast } from "sonner";
 
 export function HeroSection({
@@ -32,206 +26,131 @@ export function HeroSection({
   courseName,
   courseTitle,
 }) {
-  const [formState, setFormState] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    state: "",
-    city: "",
-    course: "",
+    stateid: "",
+    cityid: "",
+    coursesid: courseName || "", // Use courseName from props
   });
-  const [formErrors, setFormErrors] = useState({
-    name: "",
-    email: "",
-    phone: "",
-  });
-  const [formFocus, setFormFocus] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    state: false,
-    city: false,
-    course: false,
-  });
-  const [activeField, setActiveField] = useState(null);
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cities, setCities] = useState([]);
 
-  // Add these arrays for select options
-  const states = [
-    "Andhra Pradesh",
-    "Arunachal Pradesh",
-    "Assam",
-    "Bihar",
-    "Chhattisgarh",
-    "Delhi",
-    "Goa",
-    "Gujarat",
-    "Haryana",
-    "Himachal Pradesh",
-    "Jharkhand",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Manipur",
-    "Meghalaya",
-    "Mizoram",
-    "Nagaland",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Sikkim",
-    "Tamil Nadu",
-    "Telangana",
-    "Tripura",
-    "Uttar Pradesh",
-    "Uttarakhand",
-    "West Bengal",
-    "Other",
-  ];
-
-  // Handle form input changes
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: validateField(name, value) }));
 
-    // For phone number, only allow numbers and max 10 digits
-    if (name === "phone") {
-      if (!/^\d*$/.test(value) || value.length > 10) return;
+    if (name === "stateid") {
+      // Reset city when state changes
+      setFormData((prev) => ({ ...prev, cityid: "" }));
+      // Get cities for selected state
+      const stateCities = getCitiesForState(value);
+      setCities(stateCities);
     }
-
-    // For name, only allow letters and spaces
-    if (name === "name") {
-      if (!/^[A-Za-z\s]*$/.test(value)) return;
-    }
-
-    setFormState((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    // Validate field
-    let error = "";
-    switch (name) {
-      case "name":
-        error = validateName(value);
-        break;
-      case "email":
-        error = validateEmail(value);
-        break;
-      case "phone":
-        error = validatePhone(value);
-        break;
-      default:
-        break;
-    }
-
-    setFormErrors((prev) => ({
-      ...prev,
-      [name]: error,
-    }));
   };
 
-  // Handle form focus
-  const handleFocus = (field) => {
-    setFormFocus((prev) => ({
-      ...prev,
-      [field]: true,
-    }));
-    setActiveField(field);
+  const validateField = (name, value) => {
+    const field = formFields.find((f) => f.name === name);
+    if (!field) return "";
+    if (field.required && !value) return `${field.label} is required`;
+    if (value && field.validation && !field.validation(value)) {
+      return field.errorMessage;
+    }
+    return "";
   };
 
-  // Handle form blur
-  const handleBlur = (field) => {
-    setFormFocus((prev) => ({
-      ...prev,
-      [field]: false,
-    }));
-    setActiveField(null);
-  };
-
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
     // Validate all fields
-    const nameError = validateName(formState.name);
-    const emailError = validateEmail(formState.email);
-    const phoneError = validatePhone(formState.phone);
-
-    setFormErrors({
-      name: nameError,
-      email: emailError,
-      phone: phoneError,
+    const newErrors = {};
+    formFields.forEach((field) => {
+      const error = validateField(field.name, formData[field.name]);
+      if (error) newErrors[field.name] = error;
     });
 
-    if (nameError || emailError || phoneError) {
-      setIsSubmitting(false);
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
+    setIsSubmitting(true);
     try {
-      const result = await submitAdmissionQuery(formState);
-
-      if (result.success) {
-        toast.success(result.message);
-        // Reset form
-        setFormState({
-          name: "",
-          email: "",
-          phone: "",
-          state: "",
-          city: "",
-          course: "",
-        });
-        setFormErrors({
-          name: "",
-          email: "",
-          phone: "",
-        });
-      } else {
-        toast.error(result.message);
-      }
+      await submitAdmissionQuery(formData);
+      toast.success("Form submitted successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        stateid: "",
+        cityid: "",
+        coursesid: courseName || "",
+      });
     } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("An unexpected error occurred. Please try again later.");
+      toast.error("Failed to submit form. Please try again.");
+      console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const validateName = (name) => {
-    const nameRegex = /^[A-Za-z\s]+$/;
-    if (!name) {
-      return "Name is required";
-    }
-    if (!nameRegex.test(name)) {
-      return "Name can only contain letters and spaces";
-    }
-    return "";
-  };
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email) {
-      return "Email is required";
-    }
-    if (!emailRegex.test(email)) {
-      return "Please enter a valid email address";
-    }
-    return "";
-  };
-
-  const validatePhone = (phone) => {
-    const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phone) {
-      return "Phone number is required";
-    }
-    if (!phoneRegex.test(phone)) {
-      return "Phone number must start with 6-9 and be 10 digits long";
-    }
-    return "";
-  };
+  const formFields = [
+    {
+      name: "name",
+      label: "Name",
+      type: "text",
+      placeholder: "Enter your name",
+      required: true,
+      validation: (value) => value.trim().length >= 2,
+      errorMessage: "Name must be at least 2 characters long",
+      icon: User,
+    },
+    {
+      name: "email",
+      label: "Email",
+      type: "email",
+      placeholder: "Enter your email",
+      required: true,
+      validation: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+      errorMessage: "Please enter a valid email address",
+      icon: Mail,
+    },
+    {
+      name: "phone",
+      label: "Phone",
+      type: "tel",
+      placeholder: "Enter your phone number",
+      required: true,
+      validation: (value) => /^[0-9]{10}$/.test(value),
+      errorMessage: "Please enter a valid 10-digit phone number",
+      icon: Phone,
+    },
+    {
+      name: "stateid",
+      label: "State",
+      type: "select",
+      placeholder: "Select your state",
+      required: true,
+      validation: (value) => value !== "",
+      errorMessage: "Please select a state",
+      options: getAllStates(),
+      icon: MapPin,
+    },
+    {
+      name: "cityid",
+      label: "City",
+      type: "select",
+      placeholder: "Select your city",
+      required: true,
+      validation: (value) => value !== "",
+      errorMessage: "Please select a city",
+      options: cities,
+      icon: MapPin,
+    },
+  ];
 
   return (
     <section
@@ -289,7 +208,6 @@ export function HeroSection({
                     {subtitle}
                     <span className="absolute bottom-0 left-0 w-full sm:h-1 h-[2px] bg-white rounded-full"></span>
                   </span>
-                  {/* <span className="absolute bottom-1 left-0 w-full h-1 bg-gradient-to-r from-cusSecondary/70 to-cusSecondary-light/70 rounded-full"></span> */}
                 </Heading>
               </BoxReveal>
               <BoxReveal boxColor={"#fdd600"} duration={0.5}>
@@ -369,230 +287,78 @@ export function HeroSection({
 
                 {/* Form */}
                 <form className="space-y-4" onSubmit={handleSubmit}>
-                  {/* Name field */}
-                  <div className="space-y-0">
-                    <div className="flex items-center justify-between">
-                      {formState.name && !formErrors.name && (
-                        <span className="text-xs text-primary/80 flex items-center">
-                          <Check className="h-3 w-3 mr-1" /> Valid
-                        </span>
-                      )}
-                    </div>
-                    <div
-                      className={`relative transition-all duration-300 ${
-                        formFocus.name ? "scale-[1.02]" : ""
-                      }`}
-                    >
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formState.name}
-                        onChange={handleInputChange}
-                        onFocus={() => handleFocus("name")}
-                        onBlur={() => handleBlur("name")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
-                          formFocus.name
-                            ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : formErrors.name
-                            ? "border-red-500"
-                            : "border-white/20"
-                        }`}
-                        placeholder="Full Name*"
-                      />
-                      <User
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formFocus.name ? "text-primary" : "text-black"
-                        }`}
-                      />
-                      {formErrors.name && (
-                        <span className="text-xs text-red-500 mt-1 block">
-                          {formErrors.name}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Email field */}
-                  <div className="space-y-0">
-                    <div className="flex items-center justify-between">
-                      {formState.email && (
-                        <span className="text-xs text-primary/80 flex items-center">
-                          <Check className="h-3 w-3 mr-1" /> Valid
-                        </span>
-                      )}
-                    </div>
-                    <div
-                      className={`relative transition-all duration-300 ${
-                        formFocus.email ? "scale-[1.02]" : ""
-                      }`}
-                    >
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formState.email}
-                        onChange={handleInputChange}
-                        onFocus={() => handleFocus("email")}
-                        onBlur={() => handleBlur("email")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                          formFocus.email
-                            ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : formErrors.email
-                            ? "border-red-500"
-                            : "border-white/20"
-                        }`}
-                        placeholder="Email Address*"
-                      />
-                      <Mail
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formFocus.email ? "text-primary" : "text-black"
-                        }`}
-                      />
-                      <div
-                        className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-500 ${
-                          formFocus.email ? "w-full" : "w-0"
-                        }`}
-                      ></div>
-                    </div>
-                  </div>
-
-                  {/* Phone field */}
-                  <div className="space-y-0">
-                    <div className="flex items-center justify-between">
-                      {formState.phone && (
-                        <span className="text-xs text-primary/80 flex items-center">
-                          <Check className="h-3 w-3 mr-1" /> Valid
-                        </span>
-                      )}
-                    </div>
-                    <div
-                      className={`relative transition-all duration-300 ${
-                        formFocus.phone ? "scale-[1.02]" : ""
-                      }`}
-                    >
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        maxLength="10"
-                        pattern="[6-9][0-9]{9}"
-                        value={formState.phone}
-                        onChange={handleInputChange}
-                        onFocus={() => handleFocus("phone")}
-                        onBlur={() => handleBlur("phone")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                          formFocus.phone
-                            ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : formErrors.phone
-                            ? "border-red-500"
-                            : "border-white/20"
-                        }`}
-                        placeholder="Phone Number*"
-                      />
-                      <Phone
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formFocus.phone ? "text-primary" : "text-black"
-                        }`}
-                      />
-                      <div
-                        className={`absolute bottom-0 left-0 h-[2px] bg-primary transition-all duration-500 ${
-                          formFocus.phone
-                            ? "w-full text-primary"
-                            : "w-0 text-black"
-                        }`}
-                      ></div>
-                    </div>
-                  </div>
-
-                  {/* State field */}
-                  <div className="space-y-0">
-                    <div className="flex items-center justify-between">
-                      {formState.state && (
-                        <span className="text-xs text-white/80 flex items-center">
-                          <Check className="h-3 w-3 mr-1" /> Valid
-                        </span>
-                      )}
-                    </div>
-                    <div className="relative transition-all duration-300">
-                      <Select
-                        value={formState.state}
-                        onValueChange={(value) => {
-                          setFormState((prev) => ({
-                            ...prev,
-                            state: value,
-                            city: "",
-                          }));
-                          handleFocus("state");
-                        }}
-                      >
-                        <SelectTrigger
-                          className={`w-full !h-full !py-3 pl-10 bg-transparent border-b-2 text-white placeholder:text-white/80 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                            formFocus.state
-                              ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                              : "border-white/20"
-                          }`}
-                        >
-                          <SelectValue
-                            className="text-white"
-                            placeholder="Select State*"
-                          />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white backdrop-blur-md border border-white/20">
-                          {states.map((state) => (
-                            <SelectItem
-                              key={state}
-                              value={state}
-                              className="text-black hover:bg-gray-100 focus:bg-gray-100 focus:text-black/90"
+                  {formFields.map((field) => (
+                    <div key={field.name} className="space-y-0">
+                      <div className="flex items-center justify-between">
+                        {formData[field.name] && !errors[field.name] && (
+                          <span className="text-xs flex items-center text-green-500">
+                            <Check className="h-3 w-3 mr-1" /> Valid
+                          </span>
+                        )}
+                      </div>
+                      <div className="relative transition-all duration-300">
+                        {field.type === "select" ? (
+                          <select
+                            name={field.name}
+                            value={formData[field.name]}
+                            onChange={handleChange}
+                            className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg ${
+                              field.name === "stateid" ||
+                              field.name === "cityid"
+                                ? "text-white placeholder:text-white/50"
+                                : "text-black placeholder:text-white/50"
+                            } focus:outline-none focus:ring-2 transition-all duration-300 ${
+                              errors[field.name]
+                                ? "border-red-500"
+                                : "border-white/20 focus:border-primary/50 focus:ring-primary/30"
+                            }`}
+                            required={field.required}
+                          >
+                            <option
+                              value=""
+                              className={`${
+                                field.name === "stateid" ||
+                                field.name === "cityid"
+                                  ? "text-white/50"
+                                  : "text-gray-500"
+                              } bg-white`}
                             >
-                              {state}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <MapPin
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formState.state ? "text-primary" : "text-black"
-                        }`}
-                      />
+                              {field.placeholder}
+                            </option>
+                            {field.options.map((option) => (
+                              <option
+                                key={option}
+                                value={option}
+                                className="text-black bg-white hover:bg-gray-100"
+                              >
+                                {option}
+                              </option>
+                            ))}
+                          </select>
+                        ) : (
+                          <input
+                            type={field.type}
+                            name={field.name}
+                            value={formData[field.name]}
+                            onChange={handleChange}
+                            placeholder={field.placeholder}
+                            className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 transition-all duration-300 ${
+                              errors[field.name]
+                                ? "border-red-500"
+                                : "border-white/20 focus:border-primary/50 focus:ring-primary/30"
+                            }`}
+                            required={field.required}
+                          />
+                        )}
+                        <field.icon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50" />
+                        {errors[field.name] && (
+                          <span className="text-xs text-red-500 mt-1 block">
+                            {errors[field.name]}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-
-                  {/* City field */}
-                  <div className="space-y-0">
-                    <div className="flex items-center justify-between">
-                      {formState.city && (
-                        <span className="text-xs text-white/80 flex items-center">
-                          <Check className="h-3 w-3 mr-1" /> Valid
-                        </span>
-                      )}
-                    </div>
-                    <div className="relative transition-all duration-300">
-                      <input
-                        type="text"
-                        id="city"
-                        name="city"
-                        required
-                        value={formState.city}
-                        onChange={handleInputChange}
-                        onFocus={() => handleFocus("city")}
-                        onBlur={() => handleBlur("city")}
-                        className={`w-full px-4 py-3 pl-10 bg-white/10 border rounded-lg text-white placeholder:text-white/50 focus:outline-none focus:ring-2 ring-primary/50 transition-all duration-300 ${
-                          formFocus.city
-                            ? "border-primary/50 focus:ring-primary/30 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
-                            : "border-white/20"
-                        }`}
-                        placeholder="Enter City*"
-                      />
-                      <MapPin
-                        className={`absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 transition-colors duration-300 ${
-                          formState.city ? "text-primary" : "text-black"
-                        }`}
-                      />
-                    </div>
-                  </div>
+                  ))}
 
                   {/* Submit button */}
                   <div className="pt-2 mt-2">
@@ -635,33 +401,18 @@ export function HeroSection({
 
             {/* Floating elements */}
             <div
-              className="absolute top-5 -right-6 animate-float"
-              style={{ animationDuration: "4s" }}
-            >
-              {/* <div className="bg-white rounded-full shadow-lg"> */}
-              {/* <Badge className="bg-cusSecondary hover:bg-cusSecondary/80 text-cusText">
-                  Limited Seats
-                </Badge> */}
-              {/* </div> */}
-            </div>
-
-            <div
               className="absolute bottom-5 left-0 sm:-left-6 animate-float"
               style={{ animationDuration: "5s", animationDelay: "1s" }}
             >
-              {/* <div className="bg-white rounded-full shadow-lg p-2"> */}
               <Badge className="flex bg-white text-cusText items-center gap-1">
-                {/* <Calendar className="h-3.5 w-3.5" /> */}
                 Starts June 2025
               </Badge>
-              {/* </div> */}
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70">
-          {/* <span className="text-sm mb-2">Scroll to explore</span> */}
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
             <div className="w-1 h-1 bg-white rounded-full animate-scrollDown"></div>
           </div>
