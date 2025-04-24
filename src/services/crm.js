@@ -18,11 +18,11 @@ export const submitAdmissionQuery = async (formData) => {
     const crmPayload = {
       Campus: "Noida Campus#102",
       SubSession: "Summer",
-      Source_Type: utmParams.source || "Online",
-      Campaign: utmParams.campaign || "Direct",
-      Source_Name: utmParams.source || "Direct",
-      Source_Course_Code: formData.coursesid || "",
-      Source_Medium: utmParams.medium || "Direct",
+      Source_Type: utmParams.source || "",
+      Campaign: utmParams.campaign || "",
+      Source_Name: utmParams.source || "",
+      Sourse_Course_Code: formData.coursesid || "",
+      Source_Medium: utmParams.medium || "",
       Course_Name: "",
       Branch: "",
       Study_Mode: "Offline",
@@ -38,12 +38,12 @@ export const submitAdmissionQuery = async (formData) => {
       State: formData.stateid || "",
       District: formData.cityid || "",
       Locality: "",
-      Lead_Source_Type: utmParams.source || "Online",
-      Lead_Source_Name: utmParams.source || "Direct",
+      Lead_Source_Type: null,
+      Lead_Source_Name: null,
       Operation: "Add",
       SubmittedByCode: null,
       SubmittedByName: null,
-      LeadComeFrom: "Website",
+      LeadComeFrom: "",
     };
 
     console.log("Constructed CRM payload:", crmPayload);
