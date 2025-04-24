@@ -216,7 +216,7 @@ const IMMFeatureSection = () => {
               "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
             backgroundSize: "20px 20px",
           }}
-        ></div>
+        ></div> 
       </div>
       <div className="container px-4 max-w-7xl mx-auto">
         <div className="flex max-w-3xl justify-center text-center mb-12 mx-auto">

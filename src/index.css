@@ -183,7 +183,7 @@
   }
 
   .background-gradient-yellow-light {
-    @apply bg-gradient-to-b from-cusSecondary/10 to-cusSecondary/15;
+    @apply bg-[#fdf9ea];
   }
 }
 
