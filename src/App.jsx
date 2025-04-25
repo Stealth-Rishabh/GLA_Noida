@@ -12,12 +12,13 @@ import Stepper from "@/Pages/Programs/Stepper";
 import Thankyou from "@/Pages/Thankyou";
 import About from "@/Pages/About/About";
 import Awards from "@/Pages/About/Awards";
+import AdmissionPage from "@/Pages/Admission/AdmissionPage";
 
 export default function App() {
   const location = useLocation();
-  const isThankYouPage = location.pathname === '/thankyou';
+  const isThankYouPage = location.pathname === "/thankyou";
 
-  const routesWithoutHeaderFooter = ['/thankyou'];
+  const routesWithoutHeaderFooter = ["/thankyou"];
   const isExcludedRoute = routesWithoutHeaderFooter.includes(location.pathname);
 
   return (
@@ -26,7 +27,7 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<About />} /> 
+          <Route path="/about" element={<About />} />
           <Route path="/awards-accreditations" element={<Awards />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/programs/btech" element={<BtechCS />} />
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="/programs/bba" element={<BBA />} />
           <Route path="/programs/aiml" element={<AIML />} />
           <Route path="/programs/stepper" element={<Stepper />} />
+          <Route path="/admissions" element={<AdmissionPage />} />
           <Route path="/thankyou" element={<Thankyou />} />
         </Routes>
       </main>

@@ -31,7 +31,6 @@ const NAV_ITEMS = [
     dropdownItems: [
       { title: "About GLA", path: "/about" },
       { title: "Awards & Accreditation", path: "/awards-accreditations" },
-      // { title: "Advisory Board", path: "/advisory-board" },
     ],
   },
   {
@@ -45,17 +44,10 @@ const NAV_ITEMS = [
       { title: "MBA", path: "/programs/mba" },
     ],
   },
-  // {
-  //   title: "Admissions",
-  //   path: "/admissions",
-  //   dropdownItems: [
-  //     { title: "Admissions Procedure", path: "/admissions/procedure" },
-  //     { title: "Eligibility Criteria", path: "/admissions/eligibility" },
-  //     { title: "Fee Structure", path: "/admissions/fee-structure" },
-  //     { title: "Scholarships", path: "/admissions/scholarships" },
-  //   ],
-  // },
-  // { title: "Student Life", path: "/student-life" },
+  {
+    title: "Admissions",
+    path: "/admissions",
+  },
   { title: "Contact Us", path: "/contact-us" },
 ];
 
@@ -68,6 +60,7 @@ export function SiteHeader() {
   const isContactPage = location.pathname.startsWith("/contact-us");
   const isAboutPage = location.pathname.startsWith("/about");
   const isAwardsPage = location.pathname.startsWith("/awards-accreditations");
+  const isAdmissionPage = location.pathname.startsWith("/admissions");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -222,10 +215,19 @@ export function SiteHeader() {
               <img
                 src={
                   window.innerWidth < 768
-                    ? isProgramPage || isContactPage || isAboutPage || isAwardsPage
-                      ? (scrolled ? logoResScroll : logoRes) || "/placeholder.svg"
+                    ? isProgramPage ||
+                      isContactPage ||
+                      isAboutPage ||
+                      isAwardsPage ||
+                      isAdmissionPage
+                      ? (scrolled ? logoResScroll : logoRes) ||
+                        "/placeholder.svg"
                       : logoResScroll || "/placeholder.svg"
-                    : isProgramPage || isContactPage || isAboutPage || isAwardsPage
+                    : isProgramPage ||
+                      isContactPage ||
+                      isAboutPage ||
+                      isAwardsPage ||
+                      isAdmissionPage
                     ? (scrolled ? logoscrolled : logo) || "/placeholder.svg"
                     : logoscrolled || "/placeholder.svg"
                 }
@@ -247,7 +249,11 @@ export function SiteHeader() {
                         className={`flex items-center px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
                           scrolled
                             ? "text-black"
-                            : isProgramPage || isContactPage || isAboutPage || isAwardsPage
+                            : isProgramPage ||
+                              isContactPage ||
+                              isAboutPage ||
+                              isAwardsPage ||
+                              isAdmissionPage
                             ? "text-white"
                             : "text-black"
                         }`}
@@ -276,7 +282,11 @@ export function SiteHeader() {
                       className={`px-4 py-2 text-sm font-medium rounded-md transition-colors hover:bg-cusYellow ${
                         scrolled
                           ? "text-black"
-                          : isProgramPage || isContactPage || isAboutPage || isAwardsPage
+                          : isProgramPage ||
+                            isContactPage ||
+                            isAboutPage ||
+                            isAwardsPage ||
+                            isAdmissionPage
                           ? "text-white"
                           : "text-black"
                       }`}
@@ -332,6 +342,7 @@ function MobileNav({ scrolled }) {
   const isContactPage = location.pathname.startsWith("/contact-us");
   const isAboutPage = location.pathname.startsWith("/about");
   const isAwardsPage = location.pathname.startsWith("/awards-accreditations");
+  const isAdmissionPage = location.pathname.startsWith("/admissions");
 
   return (
     <div className="relative">
@@ -340,7 +351,11 @@ function MobileNav({ scrolled }) {
         className={`flex h-10 w-10 items-center justify-center rounded-md border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
           scrolled
             ? "border-cusBlue text-cusBlue"
-            : isProgramPage || isContactPage || isAboutPage || isAwardsPage
+            : isProgramPage ||
+              isContactPage ||
+              isAboutPage ||
+              isAwardsPage ||
+              isAdmissionPage
             ? "border-white text-white"
             : "border-black text-black"
         }`}

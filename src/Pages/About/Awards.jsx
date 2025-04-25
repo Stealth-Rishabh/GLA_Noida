@@ -35,6 +35,7 @@ import nirfGovt from "@/assets/about/awards/governmentAwards/29ardach_NIRF.png";
 import ariiaLogo from "@/assets/about/awards/governmentAwards/34ardach_AriiaLogo.png";
 import ugcOffCampus from "@/assets/about/awards/governmentAwards/36ardach_6ardach_govt-recog2.png";
 import icar from "@/assets/about/awards/governmentAwards/37ardach_aicr.png";
+import awardBanner from "@/assets/about/awards/awards-banner.webp";
 
 export default function Awards() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -377,13 +378,22 @@ export default function Awards() {
     </div>
   );
 
+  const breadcrumbItems = [
+    { href: "/", label: "Home" },
+    { href: "/about/awards-accreditations", label: "About" },
+    { label: "Awards & Accreditations" },
+  ];
+
   return (
     <>
       <Banner
         title="Awards & Accreditations"
-        image={"https://www.gla.ac.in/images/awards-banner.webp"}
+        image={awardBanner}
+        imageAlt="Award Banner Image"
+        breadcrumbItems={breadcrumbItems}
       />
-      <section className="container mx-auto px-4 py-10 relative sm:py-20">
+
+      <section className="container mx-auto px-4 pb-20 pt-32">
         <div className="absolute inset-0 opacity-5">
           <div
             className="w-full h-full"

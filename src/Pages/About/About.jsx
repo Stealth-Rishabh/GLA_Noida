@@ -22,11 +22,23 @@ import { Card } from "@/components/ui/card";
 import GridBackground from "@/components/ui/GridBackground";
 import ganeshi from "@/assets/about/ganeshi-lal-agrawal.jpg";
 import about from "@/assets/about/GLA Building.webp";
+import aboutBanner from "@/assets/about/about-us.jpg";
 // import Heading from "@/components/Heading";
 
 export default function About() {
+  const breadcrumbItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { label: "About GLA University" },
+  ];
   return (
     <div className="min-h-screen">
+      <Banner
+        title="About GLA University"
+        image={aboutBanner}
+        imageAlt="About GLA"
+        breadcrumbItems={breadcrumbItems}
+      />
       {/* Hero Section */}
       {/* <div
         className="relative bg-center bg-cover h-[50vh] sm:h-[70vh]"
@@ -49,10 +61,6 @@ export default function About() {
           </h1>
         </div>
       </div> */}
-      <Banner
-        title="About GLA University"
-        image={"https://www.gla.ac.in/images/about-us.jpg"}
-      />
 
       {/* Main Content */}
       {/* <div className="max-w-7xl bh mx-auto py-6 sm:py-20 px-4 sm:px-6 lg:px-8"> */}
@@ -65,7 +73,7 @@ export default function About() {
 
 const Legacy = () => {
   return (
-    <section className="light pt-12 max-w-7xl mx-auto bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white py-10 sm:py-20">
+    <section className="light pt-12 px-6 max-w-7xl mx-auto bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white py-10 sm:py-20">
       <div className="container ">
         <div className="grid lg:grid-cols-3 gap-x-6">
           <div>
@@ -154,7 +162,7 @@ const FeatureItem = ({ feature, isHovered, onHover }) => {
         className={`
           transition-all hidden sm:block duration-300
           text-primary rounded-full mr-3 
-          transform ${isHovered ? "scale-110" : "scale-100"}
+          transform ${isHovered ? "scale-110" : "scale-100"} 
         `}
       >
         <feature.icon
@@ -216,10 +224,10 @@ const IMMFeatureSection = () => {
               "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
             backgroundSize: "20px 20px",
           }}
-        ></div> 
+        ></div>
       </div>
       <div className="container px-4 max-w-7xl mx-auto">
-        <div className="flex max-w-3xl justify-center text-center mb-12 mx-auto">
+        <div className="flex max-w-3xl justify-center text-center mb-12 mx-auto ">
           <div className="space-y-6">
             <h2
               className="text-4xl leading-none font-bold md:text-5xl text-cusBlue
@@ -253,8 +261,8 @@ const IMMFeatureSection = () => {
             </div>
           </div>
 
-          <div className="col-span-2 lg:col-span-1">
-            <div className="lg:ml-6 xl:ml-12">
+          <div className="col-span-2 lg:col-span-1 ">
+            <div className="lg:ml-6 xl:ml-12 ">
               {features.map((feature, i) => (
                 <div
                   key={i}
@@ -265,6 +273,7 @@ const IMMFeatureSection = () => {
                     feature={feature}
                     isHovered={hoveredIndex === i}
                     onHover={(hovered) => setHoveredIndex(hovered ? i : null)}
+                    className="bg-gradient-yellow-light"
                   />
                 </div>
               ))}
