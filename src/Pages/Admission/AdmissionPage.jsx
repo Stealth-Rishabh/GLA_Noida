@@ -69,7 +69,7 @@ export default function AdmissionPage() {
 
         {/* Course Selector */}
         <motion.div
-          className="max-w-7xl mx-auto px-4 pt-12 py-2"
+          className="max-w-7xl mx-auto px-4 pt-12 py-2 text-center md:text-left"
           variants={itemVariants}
         >
           <CourseSelector
@@ -93,31 +93,31 @@ export default function AdmissionPage() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <TabsList className="flex w-full overflow-x-auto space-x-2 bg-gray-200 mb-12 justify-center shadow-md">
+              <TabsList className="flex flex-col md:flex-row w-full space-y-2 md:space-y-0 md:space-x-2 bg-gray-200 mb-12 items-center justify-center shadow-md p-4 md:p-2">
                 <TabsTrigger
                   value="procedure"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
                 >
                   <BookOpen className="mr-2 h-4 w-4" />
                   Admissions Procedure
                 </TabsTrigger>
                 <TabsTrigger
                   value="eligibility"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
                 >
                   <GraduationCap className="mr-2 h-4 w-4" />
                   Eligibility Criteria
                 </TabsTrigger>
                 <TabsTrigger
                   value="fees"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
                 >
                   <DollarSign className="mr-2 h-4 w-4" />
                   Fee Structure
                 </TabsTrigger>
                 <TabsTrigger
                   value="scholarships"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
                 >
                   <Award className="mr-2 h-4 w-4" />
                   Scholarships
@@ -132,6 +132,7 @@ export default function AdmissionPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
+                className="text-center md:text-left"
               >
                 {/* Admissions Procedure Content */}
                 <TabsContent value="procedure" className="mt-0">

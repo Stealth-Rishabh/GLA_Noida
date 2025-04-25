@@ -2,7 +2,7 @@
 export const courses = [
   {
     id: "cse",
-    name: "B.Tech CSE",
+    name: "B.Tech (CSE)",
     overview:
       "The B.Tech in Computer Science & Engineering (CSE) is a comprehensive 8-semester program that prepares you for an exciting career in the world of computing. If you have a passion for technology, this program will help you understand the core concepts of computer science and engineering. You'll learn how to design, develop, and test software and algorithms, as well as explore the latest advancements in the field.",
     benefits: [
@@ -63,15 +63,15 @@ export const courses = [
     eligibility:
       "Applicants should have completed their 10+2 examination with Physics and Mathematics as mandatory subjects, along with either Chemistry or Computer Science. They must have secured at least 50% marks in these subjects combined, and 50% overall.",
     fees: [
-      { year: "1st Year", amount: "2,00,000/- INR" },
-      { year: "2nd Year", amount: "2,08,000/- INR" },
-      { year: "3rd Year", amount: "2,16,000/- INR" },
-      { year: "4th Year", amount: "2,24,000/- INR" },
+      { year: "1st Year", amount: "₹2,00,000/-" },
+      { year: "2nd Year", amount: "₹2,08,000/-" },
+      { year: "3rd Year", amount: "₹2,16,000/-" },
+      { year: "4th Year", amount: "₹2,24,000/-" },
     ],
   },
   {
     id: "aiml",
-    name: "B.Tech CSE (AIML)",
+    name: "B.Tech CSE (AI & ML)",
     overview:
       "B.Tech in Computer Science & Engineering with AIML (In Partnership with Microsoft) offers you a chance to dive into the heart of this revolution. This program covers everything from the basics of programming languages like Python and R, and Tableau, to exploring the depths of machine learning algorithms, data analysis, and intelligent systems. With a curriculum backed by industry giants, you'll not only learn cutting-edge skills but also get hands-on experience with Microsoft tools, preparing you to be a leader in AI and ML technologies.",
     benefits: [
@@ -129,10 +129,10 @@ export const courses = [
     eligibility:
       "Applicants should have completed their 10+2 examination with Physics and Mathematics as mandatory subjects, along with either Chemistry or Computer Science. They must have secured at least 50% marks in these subjects combined, and 50% overall.",
     fees: [
-      { year: "1st Year", amount: "2,35,000/- INR" },
-      { year: "2nd Year", amount: "2,43,000/- INR" },
-      { year: "3rd Year", amount: "2,51,000/- INR" },
-      { year: "4th Year", amount: "2,59,000/- INR" },
+      { year: "1st Year", amount: "₹2,35,000/-" },
+      { year: "2nd Year", amount: "₹2,43,000/-" },
+      { year: "3rd Year", amount: "₹2,51,000/-" },
+      { year: "4th Year", amount: "₹2,59,000/-" },
     ],
   },
   {
@@ -196,9 +196,9 @@ export const courses = [
     eligibility:
       "Applicants should have completed their 10+2 examination with a minimum of 60% marks in any stream.",
     fees: [
-      { year: "1st Year", amount: "1,40,000/- INR" },
-      { year: "2nd Year", amount: "1,45,000/- INR" },
-      { year: "3rd Year", amount: "1,50,000/- INR" },
+      { year: "1st Year", amount: "₹1,40,000/-" },
+      { year: "2nd Year", amount: "₹1,45,000/-" },
+      { year: "3rd Year", amount: "₹1,50,000/-" },
     ],
   },
   {
@@ -254,9 +254,9 @@ export const courses = [
     eligibility:
       "To apply for the BCA in Data Science, you need to have completed 10+2 with Mathematics as one of the subjects and a minimum of 60% marks in any stream.",
     fees: [
-      { year: "1st Year", amount: "1,40,000/- INR" },
-      { year: "2nd Year", amount: "1,45,000/- INR" },
-      { year: "3rd Year", amount: "1,50,000/- INR" },
+      { year: "1st Year", amount: "₹1,40,000/-" },
+      { year: "2nd Year", amount: "₹1,45,000/-" },
+      { year: "3rd Year", amount: "₹1,50,000/-" },
     ],
   },
   {
@@ -319,8 +319,8 @@ export const courses = [
     eligibility:
       "To apply for the MBA (Dual) program at GLA University, greater Noida campus, applicants must have a Bachelor's degree of at least 3 years in any discipline with a minimum of 50% marks from a recognized institution.",
     fees: [
-      { year: "1st Year", amount: "2,35,000/- INR" },
-      { year: "2nd Year", amount: "2,45,000/- INR" },
+      { year: "1st Year", amount: "₹2,35,000/-" },
+      { year: "2nd Year", amount: "₹2,45,000/-" },
     ],
   },
 ];
@@ -331,6 +331,7 @@ export const admissionSteps = [
     title: "Register Online",
     description:
       "Visit https://glauniversity.in:8085/Main/Admission and complete the registration form with your personal details.",
+    registrationUrl: "https://glauniversity.in:8085/Main/Admission",
     deadline: "Rolling admissions",
   },
   {

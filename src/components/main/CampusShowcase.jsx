@@ -255,7 +255,7 @@ const CampusShowcase = () => {
 
             <div className="mt-8">
               <h4 className="text-xs uppercase tracking-wider text-gray-400 mb-4 text-center">
-                Our Clubs
+                Our Innovations
               </h4>
               <div className="flex justify-center items-center space-x-4">
                 <button
@@ -566,7 +566,7 @@ const CampusShowcase = () => {
       {/* Header - Static without animation */}
       <div className="mb-12 text-center">
         <h2 className="text-5xl font-bold text-cusBlue mb-4">
-          Campus Chronicles: Clubs and Connections
+          Campus Success to Corporate Excellence
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Explore the vibrant campus life, clubs, and connections that shape our

@@ -25,6 +25,30 @@ export default function AdmissionProcedure() {
     },
   };
 
+  const renderDescription = (step) => {
+    if (step.registrationUrl) {
+      const parts = step.description.split("Visit");
+      return (
+        <>
+          Visit
+          <a
+            href={step.registrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cusBlue hover:underline mx-1"
+          >
+            https://glauniversity.in:8085/Main/Admission
+          </a>
+          {parts[1].replace(
+            "https://glauniversity.in:8085/Main/Admission and",
+            ""
+          )}
+        </>
+      );
+    }
+    return step.description;
+  };
+
   return (
     <motion.div
       className="max-w-4xl mx-auto"
@@ -67,7 +91,7 @@ export default function AdmissionProcedure() {
             >
               <h3 className="text-2xl font-semibold">{step.title}</h3>
               <p className="text-gray-600 leading-relaxed">
-                {step.description}
+                {renderDescription(step)}
               </p>
               {step.note && (
                 <motion.div
@@ -86,7 +110,7 @@ export default function AdmissionProcedure() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 + 0.5 }}
                 >
-                  Deadline: {step.deadline}
+                  {step.deadline}
                 </motion.div>
               )}
             </motion.div>

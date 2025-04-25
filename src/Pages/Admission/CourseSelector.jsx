@@ -16,7 +16,7 @@ export default function CourseSelector({ selectedCourse, setSelectedCourse }) {
             onClick={() => setSelectedCourse(course)}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className={`px-3 text-center py-2 rounded-lg  transition-all duration-300 ${
+            className={`px-3 text-center py-2 rounded-md  transition-all duration-300 ${
               selectedCourse.id === course.id
                 ? "bg-cusGreen"
                 : "bg-gray-200 hover:bg-indigo-50 shadow-md hover:shadow-indigo-100"
