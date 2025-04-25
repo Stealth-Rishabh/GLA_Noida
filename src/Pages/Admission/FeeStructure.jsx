@@ -68,7 +68,7 @@ export default function FeeStructure({ course }) {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <h4 className="text-lg font-semibold mb-3 flex items-center text-gray-900">
+                <h4 className="text-lg font-semibold mb-3 flex items-center text-gray-900 justify-center sm:justify-start">
                   <Calendar className="h-5 w-5 mr-2 text-cusYellow" />
                   {fee.year}
                 </h4>

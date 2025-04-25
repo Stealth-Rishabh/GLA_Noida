@@ -29,21 +29,23 @@ export default function AdmissionProcedure() {
     if (step.registrationUrl) {
       const parts = step.description.split("Visit");
       return (
-        <>
-          Visit
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1">
+          <span>Visit</span>
           <a
             href={step.registrationUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cusBlue hover:underline mx-1"
+            className="text-cusBlue hover:underline break-all sm:break-normal"
           >
             https://glauniversity.in:8085/Main/Admission
           </a>
-          {parts[1].replace(
-            "https://glauniversity.in:8085/Main/Admission and",
-            ""
-          )}
-        </>
+          <span>
+            {parts[1].replace(
+              "https://glauniversity.in:8085/Main/Admission and",
+              ""
+            )}
+          </span>
+        </div>
       );
     }
     return step.description;
@@ -84,15 +86,15 @@ export default function AdmissionProcedure() {
               )}
             </div>
             <motion.div
-              className="pt-3 space-y-3"
+              className="pt-3 space-y-3 flex-1"
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: index * 0.1 + 0.3 }}
             >
               <h3 className="text-2xl font-semibold">{step.title}</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <div className="text-gray-600 leading-relaxed">
                 {renderDescription(step)}
-              </p>
+              </div>
               {step.note && (
                 <motion.div
                   className="text-sm bg-gray-50 p-4 rounded-lg border border-gray-100 text-gray-600"

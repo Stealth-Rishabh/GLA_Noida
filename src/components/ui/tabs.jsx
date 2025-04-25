@@ -18,7 +18,7 @@ function TabsList({ className, ...props }) {
     <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-[3px] overflow-x-auto max-w-full snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 no-scrollbar",
+        "bg-muted text-muted-foreground flex flex-wrap md:inline-flex h-auto md:h-9 items-center justify-center rounded-lg p-2 md:p-[3px] gap-2 md:gap-0 overflow-hidden md:overflow-x-auto max-w-full md:snap-x md:snap-mandatory",
         className
       )}
       {...props}
@@ -31,7 +31,7 @@ function TabsTrigger({ className, ...props }) {
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-3 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm snap-center min-w-[120px] md:min-w-fit [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground flex w-[calc(50%-0.25rem)] md:w-auto h-12 md:h-[calc(100%-1px)] items-center justify-center gap-1.5 rounded-md border border-transparent px-4 md:px-3 py-2 md:py-1 text-sm font-medium text-center whitespace-normal md:whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm md:snap-center md:min-w-[120px] [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

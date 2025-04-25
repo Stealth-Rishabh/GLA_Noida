@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, GraduationCap, DollarSign, Award } from "lucide-react";
+import { BookOpen, GraduationCap, IndianRupee, Award } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import AdmissionProcedure from "./AdmissionProcedure";
@@ -11,7 +11,6 @@ import Banner from "@/components/main/Banner";
 import CourseSelector from "./CourseSelector";
 import admissionBanner from "@/assets/admission/admissionBanner.webp";
 import { courses } from "./data";
-import GridBackground from "@/components/ui/GridBackground";
 
 export default function AdmissionPage() {
   const [selectedCourse, setSelectedCourse] = useState(courses[0]);
@@ -80,7 +79,7 @@ export default function AdmissionPage() {
 
         {/* Main Content */}
         <motion.div
-          className="max-w-6xl mx-auto px-4 pb-16 pt-2"
+          className="max-w-5xl mx-auto px-4 pb-16 pt-2"
           variants={itemVariants}
         >
           <Tabs
@@ -93,31 +92,31 @@ export default function AdmissionPage() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <TabsList className="flex flex-col md:flex-row w-full space-y-2 md:space-y-0 md:space-x-2 bg-gray-200 mb-12 items-center justify-center shadow-md p-4 md:p-2">
+              <TabsList className="flex flex-col md:flex-row w-full space-y-2 md:space-y-0 bg-gray-200 mb-12 items-center justify-center shadow-md p-4 md:p-1">
                 <TabsTrigger
                   value="procedure"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-[25%] text-center flex items-center justify-center hover:bg-gray-100"
                 >
                   <BookOpen className="mr-2 h-4 w-4" />
                   Admissions Procedure
                 </TabsTrigger>
                 <TabsTrigger
                   value="eligibility"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-[25%] text-center flex items-center justify-center hover:bg-gray-100"
                 >
                   <GraduationCap className="mr-2 h-4 w-4" />
                   Eligibility Criteria
                 </TabsTrigger>
                 <TabsTrigger
                   value="fees"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-[25%] text-center flex items-center justify-center hover:bg-gray-100"
                 >
-                  <DollarSign className="mr-2 h-4 w-4" />
+                  <IndianRupee className="mr-2 h-4 w-4" />
                   Fee Structure
                 </TabsTrigger>
                 <TabsTrigger
                   value="scholarships"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-auto text-center flex items-center justify-center"
+                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-[25%] text-center flex items-center justify-center hover:bg-gray-100"
                 >
                   <Award className="mr-2 h-4 w-4" />
                   Scholarships

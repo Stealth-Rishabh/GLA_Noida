@@ -95,7 +95,7 @@ const CampusShowcase = () => {
     },
     {
       id: 2,
-      title: "Top Placement Getters 2024",
+      title: "Top Placement Holders 2024",
       subtitle: "Placements",
       description: "",
       stats: [
@@ -533,26 +533,6 @@ const CampusShowcase = () => {
                     Overall Average CTC
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-gray-100">
-              <div className="flex justify-center space-x-8">
-                <img
-                  src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=80&h=30&fit=crop"
-                  alt="Company 1"
-                  className="h-6 opacity-70"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=80&h=30&fit=crop"
-                  alt="Company 2"
-                  className="h-6 opacity-70"
-                />
-                <img
-                  src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=80&h=30&fit=crop"
-                  alt="Company 3"
-                  className="h-6 opacity-70"
-                />
               </div>
             </div>
           </div>
