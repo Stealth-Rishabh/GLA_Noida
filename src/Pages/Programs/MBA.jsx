@@ -80,9 +80,9 @@ export function MBA() {
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
-        title="MBA in"
+        title="MBA with"
         subtitle="Dual Specialization"
-        para="Transform your career with our comprehensive MBA in Dual Specialization program designed for the modern industry. Learn from experts and build real-world projects."
+        para="Transform your career with our comprehensive MBA in Dual Specialization, designed for today's dynamic industry."
         features={[
           "4-Semester Program",
           "Expert Faculty",
