@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Banner from "@/components/main/Banner";
+import { cn } from "@/lib/utils";
 
 import ranked2 from "@/assets/about/awards/1ardach_time-b.png";
 import danikJ from "@/assets/about/awards/2ardach_danik-j.png";
@@ -406,31 +407,45 @@ export default function Awards() {
         </div>
 
         <Tabs defaultValue="university" className="w-full">
-          <TabsList className="grid w-full h-full relative z-10 max-w-7xl grid-cols-2 p-1 mx-auto mb-12">
-            <TabsTrigger
-              value="university"
-              className="px-8 py-1 text-base font-medium transition-all data-[state=active]:bg-cusSecondary data-[state=active]:text-black"
-            >
-              University Awards
-            </TabsTrigger>
-            <TabsTrigger
-              value="government"
-              className="px-8 py-1 text-base font-medium transition-all data-[state=active]:bg-cusSecondary data-[state=active]:text-black"
-            >
-              Government Awards
-            </TabsTrigger>
-          </TabsList>
+          <div className="flex justify-center mb-12">
+            <TabsList className="relative z-10 w-full max-w-[320px] sm:max-w-3xl flex items-center bg-white/20 backdrop-blur-sm rounded-lg p-1 shadow-lg border border-gray-200">
+              <TabsTrigger
+                value="university"
+                className={cn(
+                  "flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-base font-medium rounded-sm transition-all duration-300",
+                  "data-[state=active]:bg-cusSecondary data-[state=active]:text-black data-[state=active]:shadow-md",
+                  "data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100/50",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cusSecondary",
+                  "whitespace-nowrap"
+                )}
+              >
+                University Awards
+              </TabsTrigger>
+              <TabsTrigger
+                value="government"
+                className={cn(
+                  "flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-base font-medium rounded-sm transition-all duration-300",
+                  "data-[state=active]:bg-cusSecondary data-[state=active]:text-black data-[state=active]:shadow-md",
+                  "data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100/50",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cusSecondary",
+                  "whitespace-nowrap"
+                )}
+              >
+                Government Awards
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent
             value="university"
-            className="mt-6 focus-visible:outline-none"
+            className="mt-6 focus-visible:outline-none animate-in fade-in-50 slide-in-from-bottom-5 duration-500"
           >
             <AwardGrid items={awards} isGovernment={false} />
           </TabsContent>
 
           <TabsContent
             value="government"
-            className="mt-6 focus-visible:outline-none"
+            className="mt-6 focus-visible:outline-none animate-in fade-in-50 slide-in-from-bottom-5 duration-500"
           >
             <AwardGrid items={govermentAwards} isGovernment={true} />
           </TabsContent>

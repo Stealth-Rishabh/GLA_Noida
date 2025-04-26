@@ -1,27 +1,9 @@
-import React, { useEffect } from 'react';
-import logo from '../assets/logo/logo.png';
+import React, { useEffect } from "react";
+import logo from "@/assets/logo/logo.png";
 
 const Thankyou = () => {
-  useEffect(() => {
-    // Uncomment if you want to enable the redirect
-    // const timer = setTimeout(() => {
-    //   window.location.href = "https://inetapps.nus.edu.sg/gda2/Applicant.aspx/Account/SignUp";
-    // }, 10000);
-    // return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-400 to-green-700 overflow-x-hidden">
-      {/* Google Tag Manager (noscript) */}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MHBL4G5"
-          height="0"
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        ></iframe>
-      </noscript>
-
       {/* Background Decorative Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {/* Abstract Shapes */}
@@ -37,11 +19,11 @@ const Thankyou = () => {
         </svg>
 
         {/* Floating Circles */}
-        <div className="absolute left-10 top-40 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+        <div className="absolute left-10 top-40 w-20 h-20 bg-white/10 rounded-full animate-float" />
         <div
           className="absolute right-20 bottom-40 w-16 h-16 bg-white/5 rounded-full animate-float"
-          style={{ animationDelay: '-2s' }}
-        ></div>
+          style={{ animationDelay: "-2s" }}
+        />
       </div>
 
       {/* Main Content Container */}
@@ -49,7 +31,7 @@ const Thankyou = () => {
         {/* Logo and Badge Container */}
         <div className="flex items-center justify-start">
           <img
-            className="w-[250px] mb-8 top-0 left-0"
+            className="w-8 mb-8 top-0 left-0"
             src={logo}
             alt="GLA Noida University Logo"
           />
@@ -68,11 +50,11 @@ const Thankyou = () => {
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop
                     offset="0%"
-                    style={{ stopColor: '#ffffff', stopOpacity: 0.2 }}
+                    style={{ stopColor: "#ffffff", stopOpacity: 0.2 }}
                   />
                   <stop
                     offset="100%"
-                    style={{ stopColor: '#ffffff', stopOpacity: 0.05 }}
+                    style={{ stopColor: "#ffffff", stopOpacity: 0.05 }}
                   />
                 </linearGradient>
               </defs>
@@ -88,7 +70,11 @@ const Thankyou = () => {
 
             {/* Success Check Animation */}
             <div className="relative z-10 transform transition-all duration-700 animate-bounce-subtle">
-              <svg className="w-32 h-32 mx-auto" viewBox="0 0 100 100" fill="none">
+              <svg
+                className="w-32 h-32 mx-auto"
+                viewBox="0 0 100 100"
+                fill="none"
+              >
                 <circle
                   cx="50"
                   cy="50"
@@ -141,7 +127,9 @@ const Thankyou = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <h3 className="text-lg font-semibold mb-2">Check Our Website</h3>
+                <h3 className="text-lg font-semibold mb-2">
+                  Check Our Website
+                </h3>
                 <p className="text-sm text-white/80">
                   Visit our website for more information
                   <br />
@@ -178,42 +166,6 @@ const Thankyou = () => {
           <p>Copyright © GLA University 2025. All rights reserved.</p>
         </div>
       </div>
-
-      <style>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-        @keyframes bounce-subtle {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        .animate-bounce-subtle {
-          animation: bounce-subtle 3s ease-in-out infinite;
-        }
-        .check {
-          stroke-dasharray: 100;
-          stroke-dashoffset: 100;
-          animation: draw 1s ease forwards;
-        }
-        @keyframes draw {
-          to {
-            stroke-dashoffset: 0;
-          }
-        }
-      `}</style>
     </div>
   );
 };
