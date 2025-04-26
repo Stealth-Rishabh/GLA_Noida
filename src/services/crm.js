@@ -9,7 +9,7 @@ const getUTMParams = () => {
   };
 };
 
-export const submitAdmissionQuery = async (formData) => {
+export const submitAdmissionQuery = async (formData, navigate) => {
   try {
     console.log("Raw form data received:", formData);
 
@@ -51,6 +51,7 @@ export const submitAdmissionQuery = async (formData) => {
     console.log("CRM API response:", response);
 
     if (response.Message?.Status === "Success") {
+      navigate("/thankyou");
       return {
         success: true,
         message: "Your query has been submitted successfully!",
