@@ -174,8 +174,8 @@ export function BCA() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "400+", label: "Top Recruiters" },
         ]}
-        courseName="4201"
-        courseTitle="BCA"
+        courseName="4211"
+        courseTitle="BCA (DS)"
       />
 
       {/* Industry Partners */}

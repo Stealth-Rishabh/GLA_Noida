@@ -103,8 +103,8 @@ export function BBA() {
           { value: "4.8/5", label: "Student Rating" },
           { value: "500+", label: "Top Recruiters" },
         ]}
-        courseName="4101"
-        courseTitle="BBA"
+        courseName="4701"
+        courseTitle="BBA - MS "
       />
 
       {/* Industry Partners */}
