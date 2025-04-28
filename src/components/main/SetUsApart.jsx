@@ -248,7 +248,7 @@ const SetUsApart = () => {
               viewport={{ margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-[#1e3a5f] text-4xl font-bold mb-2">
+              <h2 className="text-[#1e3a5f] text-4xl md:text-5xl font-bold mb-2">
                 What Sets Us Apart?
               </h2>
               <div className="w-20 h-1 bg-yellow-400 mb-6"></div>
