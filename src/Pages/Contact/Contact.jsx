@@ -15,6 +15,8 @@ import { Label } from "@/components/ui/label";
 import contact from "@/assets/general/contact.webp";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Banner from "@/components/main/Banner";
+import { motion } from "framer-motion";
+import GridBackground from "@/components/ui/GridBackground";
 // import Heading from "@/components/Heading";
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -201,59 +203,81 @@ function Map() {
 }
 
 export default function Contact() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Hero Section */}
-      <Banner
-        title="Contact Us"
-        image={contact}
-      />
+    <GridBackground>
+      <div className="min-h-screen ">
+        <motion.div
+          className="relative z-10"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          {/* Hero Section */}
+          <Banner
+            className="z-10"
+            title="Contact Us"
+            image={contact}
+            imageAlt="Contact Us"
+          />
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto py-6 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 sm:gap-8">
-          {/* Contact Form */}
-          <div className="p-6 bg-white rounded-lg shadow-lg">
-            <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-              Send us a message
-            </h2>
-            <ContactForm />
-
-            <div className="mt-6 ">
-              <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-                Find Us
-              </h2>
-              <Map />
-            </div>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-5 sm:space-y-8">
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-                Contact Information
-              </h2>
-              <ContactInfo />
-              <SocialLinks />
-            </div>
-            <div className="grid gap-5 sm:gap-8">
-              <div className="p-6 bg-white rounded-lg shadow-lg">
+          {/* Main Content */}
+          <div className="max-w-7xl mx-auto py-6 sm:py-16 px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 sm:gap-8">
+              {/* Contact Form */}
+              <div className="p-6 background-gradient-yellow-light rounded-lg shadow-lg">
                 <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-                  Admission Head
+                  Send us a message
                 </h2>
-                <AdmissionHead />
+                <ContactForm />
+
+                <div className="mt-6 ">
+                  <h2 className="mb-6 text-2xl font-semibold text-gray-800">
+                    Find Us
+                  </h2>
+                  <Map />
+                </div>
               </div>
 
-              <div className="p-6 bg-white rounded-lg shadow-lg">
-                <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-                  Corporate Resource Centre Head
-                </h2>
-                <CorporateResourceCentreHead />
+              {/* Contact Information */}
+              <div className="space-y-5 sm:space-y-8">
+                <div className="p-6 bg-white rounded-lg shadow-lg">
+                  <h2 className="mb-6 text-2xl font-semibold text-gray-800">
+                    Contact Information
+                  </h2>
+                  <ContactInfo />
+                  <SocialLinks />
+                </div>
+                <div className="grid gap-5 sm:gap-8">
+                  <div className="p-6 bg-white rounded-lg shadow-lg">
+                    <h2 className="mb-6 text-2xl font-semibold text-gray-800">
+                      Admission Head
+                    </h2>
+                    <AdmissionHead />
+                  </div>
+
+                  <div className="p-6 bg-white rounded-lg shadow-lg">
+                    <h2 className="mb-6 text-2xl font-semibold text-gray-800">
+                      Corporate Resource Centre Head
+                    </h2>
+                    <CorporateResourceCentreHead />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </GridBackground>
   );
 }

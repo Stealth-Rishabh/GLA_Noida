@@ -6,7 +6,6 @@ export default function Section({
   children,
   className,
   containerClassName,
-  background = "bg-white",
   spacing = "py-8 md:py-16",
   animate = false,
 }) {
@@ -37,7 +36,7 @@ export default function Section({
   }, [animate]);
 
   return (
-    <section className={cn("w-full", background, spacing, className)}>
+    <section className={cn("w-full", spacing, className)}>
       <div
         ref={animate ? sectionRef : null}
         className={cn(

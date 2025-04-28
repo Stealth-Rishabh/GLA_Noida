@@ -49,7 +49,7 @@ const LegacySection = () => {
   }, []);
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full overflow-hidden bg-transparent">
       <div className="w-full px-4 py-6 md:px-6 md:py-16">
         {/* Heading */}
         <div className="container mx-auto text-center mb-8">

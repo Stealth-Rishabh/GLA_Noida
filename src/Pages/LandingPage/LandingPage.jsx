@@ -12,6 +12,7 @@ import LegacySection from "@/components/main/legacy-section";
 import GridBackground from "@/components/ui/GridBackground";
 import RankingSection from "@/components/main/Ranking";
 import AdmissionQuery from "@/components/main/AdmissionQuery";
+import FiveYearPlanSection from "@/components/main/fiveYearPlan";
 import { useEffect, useState } from "react";
 
 export default function LandingPage() {
@@ -44,6 +45,10 @@ export default function LandingPage() {
         <RankingSection />
       </Section>
 
+      <GridBackground>
+        <FiveYearPlanSection />
+      </GridBackground>
+
       <Section animate>
         <UndergraduateAdmissions />
       </Section>
@@ -58,7 +63,7 @@ export default function LandingPage() {
         <StudentLife />
       </Section>
 
-      <Section animate className="checkBackground">
+      <Section animate className="background-gradient-yellow-light">
         <LatestNews />
       </Section>
       <GridBackground>

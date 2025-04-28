@@ -37,6 +37,7 @@ import ariiaLogo from "@/assets/about/awards/governmentAwards/34ardach_AriiaLogo
 import ugcOffCampus from "@/assets/about/awards/governmentAwards/36ardach_6ardach_govt-recog2.png";
 import icar from "@/assets/about/awards/governmentAwards/37ardach_aicr.png";
 import awardBanner from "@/assets/about/awards/awards-banner.webp";
+import GridBackground from "@/components/ui/GridBackground";
 
 export default function Awards() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -321,7 +322,7 @@ export default function Awards() {
   ];
 
   const AwardGrid = ({ items, isGovernment = false }) => (
-    <div className="grid md:grid-cols-2 sm:gap-8 gap-4 max-w-7xl mx-auto mb-12">
+    <div className="grid md:grid-cols-2 sm:gap-8  gap-4 max-w-7xl mx-auto mb-12">
       {items.map((member) => (
         <div
           key={member.id}
@@ -394,63 +395,54 @@ export default function Awards() {
         breadcrumbItems={breadcrumbItems}
       />
 
-      <section className="container mx-auto px-4 pb-20 pt-32">
-        <div className="absolute inset-0 opacity-5">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
-              backgroundSize: "20px 20px",
-            }}
-          ></div>
-        </div>
+      <GridBackground>
+        <section className="container mx-auto px-4 pb-20 pt-32">
+          <Tabs defaultValue="university" className="w-full">
+            <div className="flex justify-center mb-12">
+              <TabsList className="relative z-10 w-full max-w-[320px] sm:max-w-3xl flex items-center bg-white/20 backdrop-blur-sm rounded-lg p-1 shadow-lg border border-gray-200">
+                <TabsTrigger
+                  value="university"
+                  className={cn(
+                    "flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-base font-medium rounded-sm transition-all duration-300",
+                    "data-[state=active]:bg-cusSecondary data-[state=active]:text-black data-[state=active]:shadow-md",
+                    "data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100/50",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cusSecondary",
+                    "whitespace-nowrap"
+                  )}
+                >
+                  University Awards
+                </TabsTrigger>
+                <TabsTrigger
+                  value="government"
+                  className={cn(
+                    "flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-base font-medium rounded-sm transition-all duration-300",
+                    "data-[state=active]:bg-cusSecondary data-[state=active]:text-black data-[state=active]:shadow-md",
+                    "data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100/50",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cusSecondary",
+                    "whitespace-nowrap"
+                  )}
+                >
+                  Government Awards
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
-        <Tabs defaultValue="university" className="w-full">
-          <div className="flex justify-center mb-12">
-            <TabsList className="relative z-10 w-full max-w-[320px] sm:max-w-3xl flex items-center bg-white/20 backdrop-blur-sm rounded-lg p-1 shadow-lg border border-gray-200">
-              <TabsTrigger
-                value="university"
-                className={cn(
-                  "flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-base font-medium rounded-sm transition-all duration-300",
-                  "data-[state=active]:bg-cusSecondary data-[state=active]:text-black data-[state=active]:shadow-md",
-                  "data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100/50",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cusSecondary",
-                  "whitespace-nowrap"
-                )}
-              >
-                University Awards
-              </TabsTrigger>
-              <TabsTrigger
-                value="government"
-                className={cn(
-                  "flex-1 px-4 sm:px-8 py-2.5 text-xs sm:text-base font-medium rounded-sm transition-all duration-300",
-                  "data-[state=active]:bg-cusSecondary data-[state=active]:text-black data-[state=active]:shadow-md",
-                  "data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100/50",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cusSecondary",
-                  "whitespace-nowrap"
-                )}
-              >
-                Government Awards
-              </TabsTrigger>
-            </TabsList>
-          </div>
+            <TabsContent
+              value="university"
+              className="mt-6 focus-visible:outline-none animate-in fade-in-50 slide-in-from-bottom-5 duration-500"
+            >
+              <AwardGrid items={awards} isGovernment={false} />
+            </TabsContent>
 
-          <TabsContent
-            value="university"
-            className="mt-6 focus-visible:outline-none animate-in fade-in-50 slide-in-from-bottom-5 duration-500"
-          >
-            <AwardGrid items={awards} isGovernment={false} />
-          </TabsContent>
-
-          <TabsContent
-            value="government"
-            className="mt-6 focus-visible:outline-none animate-in fade-in-50 slide-in-from-bottom-5 duration-500"
-          >
-            <AwardGrid items={govermentAwards} isGovernment={true} />
-          </TabsContent>
-        </Tabs>
-      </section>
+            <TabsContent
+              value="government"
+              className="mt-6 focus-visible:outline-none animate-in fade-in-50 slide-in-from-bottom-5 duration-500"
+            >
+              <AwardGrid items={govermentAwards} isGovernment={true} />
+            </TabsContent>
+          </Tabs>
+        </section>
+      </GridBackground>
     </>
   );
 }

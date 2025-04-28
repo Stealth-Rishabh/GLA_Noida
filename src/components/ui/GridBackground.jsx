@@ -2,8 +2,8 @@ import React from "react";
 
 const GridBackground = ({ children, green }) => {
   return (
-    <div className={`relative min-h-screen ${green}`}>
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+    <div className={`relative ${green}`}>
+      <div className="absolute -z-10 inset-0 opacity-5 pointer-events-none">
         <div
           className="w-full h-full"
           style={{

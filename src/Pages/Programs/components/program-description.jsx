@@ -95,7 +95,7 @@ export function ProgramDescription({ title, description, features, imageUrl }) {
             />
           </motion.div>
           <div className="space-y-4">
-            <div className={`space-y-4 ${!isExpanded ? 'line-clamp-7' : ''}`}>
+            <div className={`space-y-4 ${!isExpanded ? "line-clamp-7" : ""}`}>
               {description.map((paragraph, index) => (
                 <motion.p
                   key={index}
