@@ -114,13 +114,16 @@ export default function AdmissionPage() {
                   <IndianRupee className="mr-2 h-4 w-4" />
                   Fee Structure
                 </TabsTrigger>
-                <TabsTrigger
-                  value="scholarships"
-                  className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-[25%] text-center flex items-center justify-center hover:bg-gray-100"
-                >
-                  <Award className="mr-2 h-4 w-4" />
-                  Scholarships
-                </TabsTrigger>
+                {(selectedCourse.name === "B.Tech (CSE)" ||
+                  selectedCourse.name === "B.Tech CSE (AI & ML)") && (
+                  <TabsTrigger
+                    value="scholarships"
+                    className="data-[state=active]:bg-cusYellow data-[state=active]:text-black rounded-sm py-2.5 px-5 transition-all w-full md:w-[25%] text-center flex items-center justify-center hover:bg-gray-100"
+                  >
+                    <Award className="mr-2 h-4 w-4" />
+                    Scholarships
+                  </TabsTrigger>
+                )}
               </TabsList>
             </motion.div>
 

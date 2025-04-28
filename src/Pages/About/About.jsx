@@ -124,14 +124,12 @@ const features = [
   {
     icon: Eye,
     title: "Vision",
-    desc: "We envision ourselves as a pace-setting university of Academic Excellence focused on education, research, and development in established and emerging professions.",
+    desc: "At GLA Greater Noida, we want to create a space where students gain practical skills and real-world experience. Our goal is to prepare them for successful careers by connecting learning with industry needs, so they are ready to thrive in today’s fast-changing world.",
   },
   {
     icon: Target,
     title: "Mission",
-    desc: `To impart quality professional education, conduct commendable research, and provide credible consultancy and extension services per current and emerging socio-economic needs.
-    To continuously enhance and enrich the teaching/learning process and set such standards, education and otherwise, that other institutes would want to emulate.
-    To be student-centric, thus promoting the overall growth and development of intellect and personality of our prime stakeholders, namely students, so our alums are worthy citizens and highly sought-after professionals worldwide.
+    desc: `We focus on giving students hands-on training and personal guidance, helping them grow both professionally and personally. By working closely with industry experts and offering practical learning opportunities, we aim to ensure our graduates are ready to succeed and make an impact in their careers.
     `,
   },
 ];
@@ -148,16 +146,6 @@ const FeatureItem = ({ feature, isHovered, onHover }) => {
       onMouseEnter={() => onHover(true)}
       onMouseLeave={() => onHover(false)}
     >
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        ></div>
-      </div>
       <div
         className={`
           transition-all hidden sm:block duration-300
@@ -215,72 +203,65 @@ const IMMFeatureSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="py-14 md:py-20 mx-auto text-foreground relative overflow-visible">
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        ></div>
-      </div>
-      <div className="container px-4 max-w-7xl mx-auto">
-        <div className="flex max-w-3xl justify-center text-center mb-12 mx-auto ">
-          <div className="space-y-6">
-            <h2
-              className="text-4xl leading-none font-bold md:text-5xl text-cusBlue
+    <GridBackground>
+      <section className="py-14 md:py-20 mx-auto text-foreground relative overflow-visible">
+        <div className="absolute inset-0 opacity-5"></div>
+        <div className="container px-4 max-w-7xl mx-auto">
+          <div className="flex max-w-3xl justify-center text-center mb-12 mx-auto ">
+            <div className="space-y-6">
+              <h2
+                className="text-4xl leading-none font-bold md:text-5xl text-cusBlue
                 animate-in fade-in slide-in-from-bottom-3 duration-700"
-            >
-              Vision & Mission
-            </h2>
-            <p
-              className="text-lg text-black
+              >
+                Vision & Mission
+              </h2>
+              <p
+                className="text-lg text-black
                 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200"
+              >
+                Discover our commitment to excellence in management education
+                and our goals for shaping future leaders.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 pt-12 max-w-7xl mx-auto min-h-[90vh]">
+            <div
+              className="col-span-2 lg:col-span-1 lg:sticky lg:top-24"
+              style={{ height: "fit-content" }}
             >
-              Discover our commitment to excellence in management education and
-              our goals for shaping future leaders.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-6 pt-12 max-w-7xl mx-auto min-h-[90vh]">
-          <div
-            className="col-span-2 lg:col-span-1 lg:sticky lg:top-24"
-            style={{ height: "fit-content" }}
-          >
-            <div className="relative h-full z-10">
-              <div className="absolute -top-11 -left-11 right-12 bottom-12 h-[400px] sm:h-[600px] bg-gray-900 dark:bg-slate-700 -z-10 rounded-[200px] lg:rounded-full rounded-tl-none lg:rounded-tl-none" />
-              <div
-                className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[350px] w-full float-right shadow-xl h-[400px] sm:h-[600px]"
-                style={{
-                  backgroundImage: `url(${about})`,
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="col-span-2 lg:col-span-1 ">
-            <div className="lg:ml-6 xl:ml-12 ">
-              {features.map((feature, i) => (
+              <div className="relative h-full z-10">
+                <div className="absolute -top-11 -left-11 right-12 bottom-12 h-[400px] sm:h-[600px] bg-gray-900 dark:bg-slate-700 -z-10 rounded-[200px] lg:rounded-full rounded-tl-none lg:rounded-tl-none" />
                 <div
-                  key={i}
-                  className="animate-in fade-in slide-in-from-right duration-700"
-                  style={{ animationDelay: `${(i + 1) * 200 + 300}ms` }}
-                >
-                  <FeatureItem
-                    feature={feature}
-                    isHovered={hoveredIndex === i}
-                    onHover={(hovered) => setHoveredIndex(hovered ? i : null)}
-                    className="bg-gradient-yellow-light"
-                  />
-                </div>
-              ))}
+                  className="bg-center bg-no-repeat bg-cover rounded-2xl min-h-[350px] w-full float-right shadow-xl h-[400px] sm:h-[600px]"
+                  style={{
+                    backgroundImage: `url(${about})`,
+                  }}
+                />
+              </div>
+            </div>
+
+            <div className="col-span-2 lg:col-span-1 ">
+              <div className="lg:ml-6 xl:ml-12 ">
+                {features.map((feature, i) => (
+                  <div
+                    key={i}
+                    className="animate-in fade-in slide-in-from-right duration-700"
+                    style={{ animationDelay: `${(i + 1) * 200 + 300}ms` }}
+                  >
+                    <FeatureItem
+                      feature={feature}
+                      isHovered={hoveredIndex === i}
+                      onHover={(hovered) => setHoveredIndex(hovered ? i : null)}
+                      className="bg-gradient-yellow-light"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </GridBackground>
   );
 };

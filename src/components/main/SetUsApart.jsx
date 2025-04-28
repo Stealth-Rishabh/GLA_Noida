@@ -252,7 +252,7 @@ const SetUsApart = () => {
                 What Sets Us Apart?
               </h2>
               <div className="w-20 h-1 bg-yellow-400 mb-6"></div>
-              <p className="text-black text-2xl text-justify">
+              <p className="text-black sm:text-xl/10 pt-4  text-justify">
                 At GLA Greater Noida, we offer more than just traditional
                 education. Our students gain real-world experience through
                 industry-based learning and projects. With guidance from top
