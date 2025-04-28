@@ -31,7 +31,7 @@ const Thankyou = () => {
         {/* Logo and Badge Container */}
         <div className="flex items-center justify-start">
           <img
-            className="w-8 mb-8 top-0 left-0"
+            className="w-full h-[70px] mb-8 top-0 left-0"
             src={logo}
             alt="GLA Noida University Logo"
           />
@@ -109,7 +109,7 @@ const Thankyou = () => {
             <div className="grid md:grid-cols-2 gap-6 mt-10">
               {/* Check Our Website Card */}
               <a
-                href="https://gla-noida.vercel.app"
+                href="https://noida.gla.ac.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-white transform hover:scale-105 transition-transform"
