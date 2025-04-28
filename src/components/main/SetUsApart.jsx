@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import setUsApart from "@/assets/general/setUsApart.webp";
+import setUsApart from "@/assets/general/SetUsApart.webp";
 
 const SetUsApart = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
