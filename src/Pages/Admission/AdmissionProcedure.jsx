@@ -86,7 +86,7 @@ export default function AdmissionProcedure() {
               )}
             </div>
             <motion.div
-              className="pt-3 space-y-3 flex-1"
+              className="pt-3 space-y-3 flex-1 hover:bg-white p-6 rounded-lg hover:shadow-md"
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: index * 0.1 + 0.3 }}
