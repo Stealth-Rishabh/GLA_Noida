@@ -61,7 +61,7 @@ export default function AdmissionPage() {
       >
         {/* Hero Section */}
         <Banner
-          title="Admission"
+          title="Admission Open for 2025 Batch"
           image={admissionBanner}
           imageAlt="Admission Banner"
         />

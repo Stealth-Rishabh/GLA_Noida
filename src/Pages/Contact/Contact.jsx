@@ -91,21 +91,27 @@ function ContactInfo() {
         <MapPin className="w-5 h-5 text-cusGreen" />
         <span>15A, Knowledge Park II, Greater Noida - 201310 (U.P) INDIA</span>
       </div>
-      <div className="flex items-center space-x-3 text-gray-600">
-        <Phone className="w-5 h-5 text-cusGreen" />
-        <span>+91-7037256969</span>
-        <Phone className="w-5 h-5 text-cusGreen" />
-        <span>+91-9319264467</span>
+      <div className="flex flex-col space-y-2 text-gray-600">
+        <div className="flex items-center space-x-3">
+          <Phone className="w-5 h-5 text-cusGreen" />
+          <span>+91-5662-250900</span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <Phone className="w-5 h-5 text-cusGreen" />
+          <span>+91-5662-250909</span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <Phone className="w-5 h-5 text-cusGreen" />
+          <span>+91-5662-241489</span>
+        </div>
+        <div className="flex items-center space-x-3">
+          <Phone className="w-5 h-5 text-cusGreen" />
+          <span>+91-9927064017</span>
+        </div>
       </div>
-      <div className="flex flex-col space-y-4 text-gray-600 sm:items-center sm:flex-row sm:space-y-0 sm:space-x-3">
-        <div className="flex items-center ">
-          <Mail className="w-5 h-5 mr-3 text-cusGreen" />
-          <span>info@glanoida.com</span>
-        </div>
-        <div className="flex items-center">
-          <Mail className="w-5 h-5 mr-3 text-cusGreen" />
-          <span>registrar.glanoida@gmail.com</span>
-        </div>
+      <div className="flex items-center space-x-3 text-gray-600">
+        <Mail className="w-5 h-5 text-cusGreen" />
+        <span>glauniversity@gla.ac.in</span>
       </div>
     </div>
   );
@@ -116,36 +122,7 @@ function AdmissionHead() {
     <div className="space-y-4">
       <div className="flex items-center space-x-3 text-gray-600">
         <Phone className="w-5 h-5 text-cusGreen" />
-        <span>+91-9999078888</span>
-      </div>
-      <div className="flex items-center space-x-3 text-gray-600">
-        <Phone className="w-5 h-5 text-cusGreen" />
-        <span>+91-9910463458</span>
-      </div>
-      <div className="flex items-center space-x-3 text-gray-600">
-        <Mail className="w-5 h-5 text-cusGreen" />
-        <span>admissions@immindia.edu.in</span>
-      </div>
-    </div>
-  );
-}
-
-function CorporateResourceCentreHead() {
-  return (
-    <div className="space-y-4">
-      <div className="flex items-center space-x-3 text-gray-600">
-        <Phone className="w-5 h-5 text-cusGreen" />
-        <span>+91-9313556551</span>
-      </div>
-      <div className="flex items-center space-x-3 text-gray-600">
-        <Phone className="w-5 h-5 text-cusGreen" />
-        <span>011-41324850</span>
-        <Phone className="w-5 h-5 text-cusGreen" />
-        <span>011-26965558</span>
-      </div>
-      <div className="flex items-center space-x-3 text-gray-600">
-        <Mail className="w-5 h-5 text-cusGreen" />
-        <span>immplacement1@gmail.com</span>
+        <span>Admission Helpline: +91-9027068068</span>
       </div>
     </div>
   );
@@ -189,7 +166,7 @@ function Map() {
   return (
     <div className="aspect-w-16 aspect-h-9">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1585.4337540575232!2d77.49304831718206!3d28.462031014375878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1f1dd579315%3A0x741bc5e037e1c18b!2sGLA%20University%20Noida%20Campus!5e0!3m2!1sen!2sin!4v1745236946979!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3547.904410352566!2d77.49304831718206!3d28.462031014375878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cc1f1dd579315%3A0x741bc5e037e1c18b!2sGLA%20University!5e0!3m2!1sen!2sin!4v1745236946979!5m2!1sen!2sin"
         width="600"
         height="450"
         style={{ border: 0 }}
@@ -216,8 +193,8 @@ export default function Contact() {
 
   return (
     <GridBackground>
-      <div className="min-h-screen ">
-        <motion.div
+      <div className="min-h-screen">
+        <div
           className="relative z-10"
           initial="hidden"
           animate="visible"
@@ -241,7 +218,7 @@ export default function Contact() {
                 </h2>
                 <ContactForm />
 
-                <div className="mt-6 ">
+                <div className="mt-6">
                   <h2 className="mb-6 text-2xl font-semibold text-gray-800">
                     Find Us
                   </h2>
@@ -258,25 +235,16 @@ export default function Contact() {
                   <ContactInfo />
                   <SocialLinks />
                 </div>
-                <div className="grid gap-5 sm:gap-8">
-                  <div className="p-6 bg-white rounded-lg shadow-lg">
-                    <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-                      Admission Head
-                    </h2>
-                    <AdmissionHead />
-                  </div>
-
-                  <div className="p-6 bg-white rounded-lg shadow-lg">
-                    <h2 className="mb-6 text-2xl font-semibold text-gray-800">
-                      Corporate Resource Centre Head
-                    </h2>
-                    <CorporateResourceCentreHead />
-                  </div>
+                <div className="p-6 bg-white rounded-lg shadow-lg">
+                  <h2 className="mb-6 text-2xl font-semibold text-gray-800">
+                    Admission Helpline
+                  </h2>
+                  <AdmissionHead />
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </GridBackground>
   );

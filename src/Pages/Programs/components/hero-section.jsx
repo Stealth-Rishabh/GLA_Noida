@@ -54,6 +54,29 @@ export function HeroSection({
     }
   };
 
+  // Handler to restrict name input to only letters and spaces
+  const handleNameInput = (e) => {
+    const value = e.target.value.replace(/[^a-zA-Z ]/g, "");
+    e.target.value = value;
+    setFormData((prev) => ({ ...prev, name: value }));
+    setErrors((prev) => ({ ...prev, name: validateField("name", value) }));
+  };
+
+  // Handler to restrict phone input to only digits, first digit >= 6, max 10 digits
+  const handlePhoneInput = (e) => {
+    let value = e.target.value.replace(/[^0-9]/g, "");
+    if (value.length > 0) {
+      // Only allow first digit >= 6
+      if (value[0] < "6") {
+        value = value.slice(1);
+      }
+    }
+    if (value.length > 10) value = value.slice(0, 10);
+    e.target.value = value;
+    setFormData((prev) => ({ ...prev, phone: value }));
+    setErrors((prev) => ({ ...prev, phone: validateField("phone", value) }));
+  };
+
   const validateField = (name, value) => {
     const field = formFields.find((f) => f.name === name);
     if (!field) return "";
@@ -350,6 +373,22 @@ export function HeroSection({
                                 : "border-white/20 focus:border-primary/50 focus:ring-primary/30"
                             }`}
                             required={field.required}
+                            {...(field.name === "name"
+                              ? {
+                                  onInput: handleNameInput,
+                                  inputMode: "text",
+                                  autoComplete: "off",
+                                }
+                              : {})}
+                            {...(field.name === "phone"
+                              ? {
+                                  onInput: handlePhoneInput,
+                                  inputMode: "numeric",
+                                  pattern: "[6-9][0-9]{9}",
+                                  maxLength: 10,
+                                  autoComplete: "off",
+                                }
+                              : {})}
                           />
                         )}
                         <field.icon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50" />

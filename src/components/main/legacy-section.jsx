@@ -151,7 +151,7 @@ const LegacySection = () => {
 
         {/* Desktop Layout */}
         <motion.div
-          className="hidden sm:pt-32 sm:pb-12 md:grid grid-cols-[1fr_2fr_1fr] gap-12 items-center relative"
+          className="hidden sm:pt-12 md:grid grid-cols-[1fr_2fr_1fr] gap-12 items-center relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
