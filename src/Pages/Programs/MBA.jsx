@@ -1,14 +1,12 @@
 import { Calendar, GraduationCap, Users, Beaker, BookOpen } from "lucide-react";
+
 import { HeroSection } from "./components/hero-section";
 import { ProgramDescription } from "./components/program-description";
 import { IndustryPartners } from "./components/industry-partners";
 import { ProgramOutcomes } from "./components/program-outcomes";
 import { EligibilitySection } from "./components/eligibility-section";
 import { CurriculumSection } from "./components/curriculum-section";
-import { FeesSection } from "./components/fees-section";
-import { LabsSection } from "./components/labs-section";
 import { BrochureSection } from "./components/brochure-section";
-import { EventsSection } from "./components/events-section";
 import { CTASection } from "./components/cta-section";
 import herobg from "@/assets/programs/HeroMBA.png";
 import AdmissionStepper from "./Stepper";
@@ -22,6 +20,8 @@ import hdfcWebp from "@/assets/programs/recruiters/hdfc.webp";
 import nseWebp from "@/assets/programs/recruiters/nse.webp";
 import brochureImg from "@/assets/programs/brochure4.webp";
 import { AnimationStyles } from "./components/animation-styles";
+import MBAPrograms from "./components/MBAPrograms";
+import CoreSpecializations from "./components/core-specializations";
 
 export function MBA() {
   const icons = [
@@ -98,13 +98,6 @@ export function MBA() {
         courseTitle="MBA"
       />
 
-      {/* Industry Partners */}
-      <IndustryPartners
-        title="Industry Partners"
-        subtitle="Trusted by"
-        icons={icons}
-      />
-
       {/* Program Description */}
       <ProgramDescription
         title="About the Program"
@@ -172,6 +165,13 @@ export function MBA() {
             description: "Career Enhancement",
           },
         ]}
+      />
+
+      {/* Industry Partners */}
+      <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
       />
 
       {/* Eligibility */}
@@ -273,6 +273,9 @@ export function MBA() {
         ]}
       /> */}
 
+      {/* MBA Programs Section */}
+      <MBAPrograms />
+      <CoreSpecializations />
       {/* Brochure */}
       <BrochureSection
         title="Download Program Brochure"

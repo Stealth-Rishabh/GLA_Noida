@@ -13,22 +13,25 @@ import Thankyou from "@/Pages/Thankyou";
 import About from "@/Pages/About/About";
 import Awards from "@/Pages/About/Awards";
 import AdmissionPage from "@/Pages/Admission/AdmissionPage";
+import AdvisoryBoard from "@/Pages/About/AdvisoryBoard";
+import Placements from "@/Pages/Placements/Placements";
+import { ReactLenis } from "lenis/react";
 
 export default function App() {
   const location = useLocation();
-  const isThankYouPage = location.pathname === "/thankyou";
 
   const routesWithoutHeaderFooter = ["/thankyou"];
   const isExcludedRoute = routesWithoutHeaderFooter.includes(location.pathname);
 
   return (
-    <>
+    <ReactLenis root>
       {!isExcludedRoute && <SiteHeader />}
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/awards-accreditations" element={<Awards />} />
+          <Route path="/advisory-board" element={<AdvisoryBoard />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/programs/btech" element={<BtechCS />} />
           <Route path="/programs/bca" element={<BCA />} />
@@ -37,10 +40,11 @@ export default function App() {
           <Route path="/programs/aiml" element={<AIML />} />
           <Route path="/programs/stepper" element={<Stepper />} />
           <Route path="/admissions" element={<AdmissionPage />} />
+          <Route path="/placements" element={<Placements />} />
           <Route path="/thankyou" element={<Thankyou />} />
         </Routes>
       </main>
       {!isExcludedRoute && <SiteFooter />}
-    </>
+    </ReactLenis>
   );
 }

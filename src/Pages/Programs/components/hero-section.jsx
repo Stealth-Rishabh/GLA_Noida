@@ -26,6 +26,7 @@ export function HeroSection({
   para,
   courseName,
   courseTitle,
+  customHero,
 }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -223,23 +224,29 @@ export function HeroSection({
           {/* Content Column */}
           <div className="space-y-4 sm:space-y-8">
             <div className="space-y-2 sm:space-y-6 max-w-xl">
-              <BoxReveal boxColor={"#fdd600"} duration={0.5}>
-                <Heading
-                  level={1}
-                  className="text-[28px] sm:text-4xl md:!text-5xl font-bold text-white leading-tight"
-                >
-                  {title}{" "}
-                  <span className="text-cusSecondary relative">
-                    {subtitle}
-                    <span className="absolute bottom-0 left-0 w-full sm:h-1 h-[2px] bg-white rounded-full"></span>
-                  </span>
-                </Heading>
-              </BoxReveal>
-              <BoxReveal boxColor={"#fdd600"} duration={0.5}>
-                <p className="text-base sm:text-xl text-white leading-relaxed">
-                  {para}
-                </p>
-              </BoxReveal>
+              {customHero ? (
+                customHero
+              ) : (
+                <>
+                  <BoxReveal boxColor={"#fdd600"} duration={0.5}>
+                    <Heading
+                      level={1}
+                      className="text-[28px] sm:text-4xl md:!text-5xl font-bold text-white leading-tight"
+                    >
+                      {title}{" "}
+                      <span className="text-cusSecondary relative">
+                        {subtitle}
+                        <span className="absolute bottom-0 left-0 w-full sm:h-1 h-[2px] bg-white rounded-full"></span>
+                      </span>
+                    </Heading>
+                  </BoxReveal>
+                  <BoxReveal boxColor={"#fdd600"} duration={0.5}>
+                    <p className="text-base sm:text-xl text-white leading-relaxed">
+                      {para}
+                    </p>
+                  </BoxReveal>
+                </>
+              )}
             </div>
 
             <div className="grid grid-cols-2 sm:flex items-center gap-2 sm:gap-6 text-white text-sm">

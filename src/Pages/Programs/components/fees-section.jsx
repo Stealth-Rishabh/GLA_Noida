@@ -121,7 +121,7 @@ export function FeesSection({ title, subtitle, plans }) {
                     const element = document.querySelector("#hero");
                     if (element) {
                       element.scrollIntoView({
-                        behavior: "smooth",
+                        behavior: "auto",
                         block: "start",
                       });
                     }

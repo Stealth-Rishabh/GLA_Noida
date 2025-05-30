@@ -109,19 +109,19 @@ export default function AdmissionStepper() {
         setDirection(1);
         setCurrentStep((prevStep) => {
           const nextStep = prevStep === steps.length ? 1 : prevStep + 1;
-          
+
           // Scroll to the next step smoothly on mobile
           if (window.innerWidth < 768) {
             const nextElement = document.getElementById(`step-${nextStep}`);
             if (nextElement) {
               nextElement.scrollIntoView({
-                behavior: "smooth",
+                behavior: "auto",
                 block: "nearest",
-                inline: "nearest"
+                inline: "nearest",
               });
             }
           }
-          
+
           return nextStep;
         });
       }, 3000); // Change step every 3 seconds
@@ -166,13 +166,16 @@ export default function AdmissionStepper() {
         if (stepperContainer) {
           const containerRect = stepperContainer.getBoundingClientRect();
           const elementRect = element.getBoundingClientRect();
-          
+
           // Only scroll if the element is outside the visible area of the container
-          if (elementRect.top < containerRect.top || elementRect.bottom > containerRect.bottom) {
+          if (
+            elementRect.top < containerRect.top ||
+            elementRect.bottom > containerRect.bottom
+          ) {
             element.scrollIntoView({
-              behavior: "smooth",
+              behavior: "auto",
               block: "nearest",
-              inline: "nearest"
+              inline: "nearest",
             });
           }
         }
@@ -182,7 +185,10 @@ export default function AdmissionStepper() {
 
   return (
     <GridBackground>
-      <div ref={stepperRef} className="w-full max-w-7xl mx-auto px-4 py-20 overflow-y-auto scroll-mt-20">
+      <div
+        ref={stepperRef}
+        className="w-full max-w-7xl mx-auto px-4 py-20 overflow-y-auto scroll-mt-20"
+      >
         <Heading level={2} className="text-center text-cusText">
           {/* <TextAnimate
           as="span"
@@ -197,7 +203,7 @@ export default function AdmissionStepper() {
         <div className="h-1 w-20 bg-cusYellow mx-auto rounded-full mb-10 sm:mb-16"></div>
 
         {/* Mobile Stepper (Vertical) */}
-        <div 
+        <div
           className="md:hidden space-y-0 overflow-hidden"
           onTouchStart={() => setIsHovering(true)}
           onTouchEnd={() => setIsHovering(false)}
@@ -448,9 +454,9 @@ export default function AdmissionStepper() {
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 className="relative"
               >
-                <Card 
+                <Card
                   className="border-gray-200 overflow-hidden shadow-md !p-0"
-                  onMouseEnter={() => setIsHovering('description-card')}
+                  onMouseEnter={() => setIsHovering("description-card")}
                   onMouseLeave={() => setIsHovering(null)}
                 >
                   <CardContent className="p-8">

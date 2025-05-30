@@ -32,8 +32,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import Section from "@/layout.jsx/section";
-import { Heading } from "@/components/ui/heading";
+
 import herobg from "@/assets/programs/HeroAIML.png";
 import { Building2 } from "lucide-react";
 import { UserPlus } from "lucide-react";
@@ -177,9 +176,22 @@ export function AIML() {
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
-        title="B.Tech in"
-        subtitle="Computer Science Engineering with AI/ML"
-        para="Transform your career with our comprehensive b.tech in computer science & engineering with AI/ML program designed for the modern industry. Learn from experts and build real-world projects."
+        customHero={
+          <>
+            <h1 className="text-3xl sm:text-6xl font-extrabold text-white drop-shadow-lg tracking-tight leading-tight animate-fade-in-up">
+              Code your own{" "}
+              <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+                Future
+              </span>
+            </h1>
+            <h2 className="text-lg sm:text-2xl font-semibold italic text-cusYellow drop-shadow-md animate-fade-in-up delay-100">
+              With GLA Industry Integrated
+            </h2>
+            <h3 className="text-2xl sm:text-4xl font-bold text-yellow-400 drop-shadow-xl animate-fade-in-up delay-200">
+              B.Tech in AI/ML & CSE
+            </h3>
+          </>
+        }
         features={[
           "8-Semester Program",
           "Expert Faculty",

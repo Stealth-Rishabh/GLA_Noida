@@ -31,6 +31,7 @@ const NAV_ITEMS = [
     dropdownItems: [
       { title: "About GLA", path: "/about" },
       { title: "Awards & Accreditation", path: "/awards-accreditations" },
+      { title: "Advisory Board", path: "/advisory-board" },
     ],
   },
   {
@@ -43,6 +44,10 @@ const NAV_ITEMS = [
       { title: "BBA", path: "/programs/bba" },
       { title: "MBA", path: "/programs/mba" },
     ],
+  },
+  {
+    title: "Placements",
+    path: "/placements",
   },
   {
     title: "Admissions",
@@ -60,8 +65,9 @@ export function SiteHeader() {
   const isContactPage = location.pathname.startsWith("/contact-us");
   const isAboutPage = location.pathname.startsWith("/about");
   const isAwardsPage = location.pathname.startsWith("/awards-accreditations");
+  const isAdvisoryBoardPage = location.pathname.startsWith("/advisory-board");
   const isAdmissionPage = location.pathname.startsWith("/admissions");
-
+  const isPlacementsPage = location.pathname.startsWith("/placements");
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -219,7 +225,9 @@ export function SiteHeader() {
                       isContactPage ||
                       isAboutPage ||
                       isAwardsPage ||
-                      isAdmissionPage
+                      isAdvisoryBoardPage ||
+                      isAdmissionPage ||
+                      isPlacementsPage
                       ? (scrolled ? logoResScroll : logoRes) ||
                         "/placeholder.svg"
                       : logoResScroll || "/placeholder.svg"
@@ -227,7 +235,9 @@ export function SiteHeader() {
                       isContactPage ||
                       isAboutPage ||
                       isAwardsPage ||
-                      isAdmissionPage
+                      isAdvisoryBoardPage ||
+                      isAdmissionPage ||
+                      isPlacementsPage
                     ? (scrolled ? logoscrolled : logo) || "/placeholder.svg"
                     : logoscrolled || "/placeholder.svg"
                 }
@@ -253,7 +263,9 @@ export function SiteHeader() {
                               isContactPage ||
                               isAboutPage ||
                               isAwardsPage ||
-                              isAdmissionPage
+                              isAdvisoryBoardPage ||
+                              isAdmissionPage ||
+                              isPlacementsPage
                             ? "text-white"
                             : "text-black"
                         }`}
@@ -286,7 +298,9 @@ export function SiteHeader() {
                             isContactPage ||
                             isAboutPage ||
                             isAwardsPage ||
-                            isAdmissionPage
+                            isAdvisoryBoardPage ||
+                            isAdmissionPage ||
+                            isPlacementsPage
                           ? "text-white"
                           : "text-black"
                       }`}
@@ -342,8 +356,9 @@ function MobileNav({ scrolled }) {
   const isContactPage = location.pathname.startsWith("/contact-us");
   const isAboutPage = location.pathname.startsWith("/about");
   const isAwardsPage = location.pathname.startsWith("/awards-accreditations");
+  const isAdvisoryBoardPage = location.pathname.startsWith("/advisory-board");
   const isAdmissionPage = location.pathname.startsWith("/admissions");
-
+  const isPlacementsPage = location.pathname.startsWith("/placements");
   return (
     <div className="relative">
       {/* Mobile Menu Toggle Button */}
@@ -355,7 +370,9 @@ function MobileNav({ scrolled }) {
               isContactPage ||
               isAboutPage ||
               isAwardsPage ||
-              isAdmissionPage
+              isAdvisoryBoardPage ||
+              isAdmissionPage ||
+              isPlacementsPage
             ? "border-white text-white"
             : "border-black text-black"
         }`}

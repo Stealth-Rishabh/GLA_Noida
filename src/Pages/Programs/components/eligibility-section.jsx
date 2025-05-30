@@ -94,7 +94,7 @@ export function EligibilitySection({ plans, requirements }) {
                       const element = document.querySelector("#hero");
                       if (element) {
                         element.scrollIntoView({
-                          behavior: "smooth",
+                          behavior: "auto",
                           block: "start",
                         });
                       }

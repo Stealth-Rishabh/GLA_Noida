@@ -9,23 +9,23 @@ import bgCta from "@/assets/programs/square-pattern.webp";
 import { Phone } from "lucide-react";
 
 export function CTASection({ title, subtitle, description }) {
-  const ctaInfo = [
-    {
-      icon: <Calendar className="h-8 w-8 text-green-600" />,
-      title: "Next Batch",
-      description: "Starting June 15, 2025",
-    },
-    {
-      icon: <Users className="h-8 w-8 text-green-600" />,
-      title: "Class Size",
-      description: "Limited to 30 students",
-    },
-    {
-      icon: <GraduationCap className="h-8 w-8 text-green-600" />,
-      title: "Application Deadline",
-      description: "May 15, 2025",
-    },
-  ];
+  // const ctaInfo = [
+  //   {
+  //     icon: <Calendar className="h-8 w-8 text-green-600" />,
+  //     title: "Next Batch",
+  //     description: "Starting June 15, 2025",
+  //   },
+  //   {
+  //     icon: <Users className="h-8 w-8 text-green-600" />,
+  //     title: "Class Size",
+  //     description: "Limited to 30 students",
+  //   },
+  //   {
+  //     icon: <GraduationCap className="h-8 w-8 text-green-600" />,
+  //     title: "Application Deadline",
+  //     description: "May 15, 2025",
+  //   },
+  // ];
 
   return (
     <motion.section
@@ -136,7 +136,7 @@ export function CTASection({ title, subtitle, description }) {
                 const element = document.querySelector("#hero");
                 if (element) {
                   element.scrollIntoView({
-                    behavior: "smooth",
+                    behavior: "auto",
                     block: "start",
                   });
                 }
@@ -164,7 +164,7 @@ export function CTASection({ title, subtitle, description }) {
             </motion.a>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: false }}
@@ -196,7 +196,7 @@ export function CTASection({ title, subtitle, description }) {
                 <p className="opacity-80">{info.description}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </motion.div>
     </motion.section>
