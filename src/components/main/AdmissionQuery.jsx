@@ -4,7 +4,6 @@ import { X, ArrowRight, Send } from "lucide-react";
 import { submitAdmissionQuery } from "@/services/crm";
 import { toast } from "sonner";
 import { getAllStates, getCitiesForState } from "@/services/stateData";
-import { useNavigate } from "react-router-dom";
 
 const formFields = [
   {
@@ -81,13 +80,12 @@ const initialFormData = {
   cityid: "",
 };
 
-export default function AdmissionQuery({ utmParams }) {
+export function AdmissionQuery({ courseName }) {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cities, setCities] = useState([]);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -153,7 +151,7 @@ export default function AdmissionQuery({ utmParams }) {
 
     setIsSubmitting(true);
     try {
-      await submitAdmissionQuery(formData, navigate);
+      await submitAdmissionQuery(formData);
       toast.success("Form submitted successfully!");
       setFormData(initialFormData);
       setIsOpen(false);

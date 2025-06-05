@@ -41,7 +41,7 @@ export default function App() {
           <Route path="/programs/stepper" element={<Stepper />} />
           <Route path="/admissions" element={<AdmissionPage />} />
           <Route path="/placements" element={<Placements />} />
-          <Route path="/thankyou" element={<Thankyou />} />
+          {/* <Route path="/thankyou" element={<Thankyou />} /> */}
         </Routes>
       </main>
       {!isExcludedRoute && <SiteFooter />}

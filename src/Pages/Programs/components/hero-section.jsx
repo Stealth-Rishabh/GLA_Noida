@@ -15,7 +15,6 @@ import { BoxReveal } from "@/components/magicui/box-reveal";
 import { submitAdmissionQuery } from "@/services/crm";
 import { getAllStates, getCitiesForState } from "@/services/stateData";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
 
 export function HeroSection({
   backgroundImage,
@@ -39,7 +38,6 @@ export function HeroSection({
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cities, setCities] = useState([]);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -105,7 +103,7 @@ export function HeroSection({
 
     setIsSubmitting(true);
     try {
-      await submitAdmissionQuery(formData, navigate);
+      await submitAdmissionQuery(formData);
       toast.success("Form submitted successfully!");
       setFormData({
         name: "",
