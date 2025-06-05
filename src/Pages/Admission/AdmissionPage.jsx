@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, GraduationCap, IndianRupee, Award } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Seo from '@/components/SEO/Seo';
 
 import AdmissionProcedure from "./AdmissionProcedure";
 import EligibilityCriteria from "./EligibilityCriteria";
@@ -41,6 +42,15 @@ export default function AdmissionPage() {
 
   return (
     <>
+      <Seo
+        title="GLA Greater Noida Admissions 2025 | Apply for BTech, MBA"
+        description="Apply now for 2025 admissions at GLA Greater Noida. Enroll in BTech, BCA, BBA, MBA programs with top placements and expert faculty."
+        // keywords={['GLA University admissions', 'apply to GLA', 'university admission 2025', 'GLA eligibility', 'GLA fee structure', 'GLA scholarships']}
+        // ogTitle="GLA University Admissions 2025 - Your Path to Excellence"
+        // ogDescription="Explore admission procedures, courses, and how to apply to GLA University. Start your academic journey with us."
+        // ogImage="https://www.example.com/images/gla-admissions-og.jpg" // Replace with actual image URL
+        canonicalUrl="/admissions" // Replace with actual URL
+      />
       <div className="fixed inset-0 -z-50">
         <div className="absolute inset-0 opacity-5">
           <div

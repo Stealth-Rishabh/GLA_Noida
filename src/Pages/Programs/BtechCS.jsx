@@ -58,6 +58,7 @@ import infosysWebp from "@/assets/programs/recruiters/Infosys.webp";
 import capgeminiWebp from "@/assets/programs/recruiters/capgemini.webp";
 import brochureImg from "@/assets/programs/brochure5.webp";
 import { AnimationStyles } from "./components/animation-styles";
+import Seo from "@/components/SEO/Seo";
 
 export function BtechCS() {
   // State management
@@ -168,6 +169,22 @@ export function BtechCS() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <Seo
+        title="Join Best B Tech CS College - GLA Greater Noida"
+        description="Join GLA Greater Noida for B Tech in CSE - Top ranked college for b tech in Computer Science & Engineering in Greater Noida."
+        keywords={[
+          "b tech cse",
+          "btech in cs",
+          "top btech college in noida",
+          "best btech college in noida",
+          "b tech in computer science & engineering",
+          "B.Tech in Computer Science Engineering",
+        ]}
+            // ogTitle="GLA University - B.Tech in Computer Science & Engineering"
+            // ogDescription="Join our B.Tech CSE program and gain the skills to excel in the tech industry. Discover our state-of-the-art labs and placement support."
+        // ogImage="https://www.example.com/images/gla-btech-cse-og.jpg" // Replace with actual image URL
+        canonicalUrl="/programs/btech" // Replace with actual URL
+      />
       <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection

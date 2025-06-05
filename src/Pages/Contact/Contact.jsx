@@ -17,6 +17,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import Banner from "@/components/main/Banner";
 import { motion } from "framer-motion";
 import GridBackground from "@/components/ui/GridBackground";
+import Seo from "@/components/SEO/Seo";
 // import Heading from "@/components/Heading";
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -193,6 +194,22 @@ export default function Contact() {
 
   return (
     <GridBackground>
+      <Seo
+        title="Contact GLA Greater Noida - Get in Touch Today!"
+        description="Have questions? Contact GLA Greater Noida for admissions, courses, or campus info. Call, email, or visit our Noida campus today."
+        // keywords={[
+        //   "GLA University contact",
+        //   "contact GLA",
+        //   "GLA address",
+        //   "GLA phone",
+        //   "GLA email",
+        //   "university contact form",
+        // ]}
+        // ogTitle="Contact GLA University - We are here to help"
+        // ogDescription="Reach out to GLA University for any inquiries. We look forward to hearing from you."
+        // ogImage="https://www.example.com/images/gla-contact-og.jpg" // Replace with actual image URL
+        canonicalUrl="/contact-us" // Replace with actual URL
+      />
       <div className="min-h-screen">
         <div
           className="relative z-10"

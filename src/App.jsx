@@ -8,8 +8,6 @@ import BCA from "@/Pages/Programs/BCA";
 import MBA from "@/Pages/Programs/MBA";
 import BBA from "@/Pages/Programs/BBA";
 import AIML from "@/Pages/Programs/AIML";
-import Stepper from "@/Pages/Programs/Stepper";
-import Thankyou from "@/Pages/Thankyou";
 import About from "@/Pages/About/About";
 import Awards from "@/Pages/About/Awards";
 import AdmissionPage from "@/Pages/Admission/AdmissionPage";
@@ -34,14 +32,12 @@ export default function App() {
           <Route path="/advisory-board" element={<AdvisoryBoard />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/programs/btech" element={<BtechCS />} />
-          <Route path="/programs/bca" element={<BCA />} />
-          <Route path="/programs/mba" element={<MBA />} />
-          <Route path="/programs/bba" element={<BBA />} />
           <Route path="/programs/aiml" element={<AIML />} />
-          <Route path="/programs/stepper" element={<Stepper />} />
+          <Route path="/programs/bca" element={<BCA />} />
+          <Route path="/programs/bba" element={<BBA />} />
+          <Route path="/programs/mba" element={<MBA />} />
           <Route path="/admissions" element={<AdmissionPage />} />
           <Route path="/placements" element={<Placements />} />
-          {/* <Route path="/thankyou" element={<Thankyou />} /> */}
         </Routes>
       </main>
       {!isExcludedRoute && <SiteFooter />}

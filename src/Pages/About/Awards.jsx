@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Banner from "@/components/main/Banner";
 import { cn } from "@/lib/utils";
+import Seo from '@/components/SEO/Seo';
 
 import ranked2 from "@/assets/about/awards/1ardach_time-b.png";
 import danikJ from "@/assets/about/awards/2ardach_danik-j.png";
@@ -382,12 +383,21 @@ export default function Awards() {
 
   const breadcrumbItems = [
     { href: "/", label: "Home" },
-    { href: "/about/awards-accreditations", label: "About" },
+    { href: "/about", label: "About" },
     { label: "Awards & Accreditations" },
   ];
 
   return (
     <>
+      <Seo
+        title="GLA Greater Noida - Awards & Accreditations | Ranked Institute"
+        description="Discover the prestigious awards, accreditations, and rankings earned by GLA Greater Noida, recognized among the top engineering and management colleges in India."
+        // keywords={['GLA University awards', 'GLA accreditations', 'GLA rankings', 'university recognition', 'NAAC A+', 'IACBE Accreditation', 'ISO Certificate', 'UGC', 'AICTE', 'NIRF', 'ARIIA', 'NAAC', 'IACBE', 'ISO', 'UGC', 'AICTE', 'NIRF', 'ARIIA']}
+        // ogTitle="Awards and Accreditations - GLA University"
+        // ogDescription="GLA University is proud of its recognitions and achievements. See our list of awards and accreditations."
+        // ogImage="https://www.example.com/images/gla-awards-og.jpg" // Replace with actual image URL
+        canonicalUrl="/awards-accreditations" // Replace with actual URL
+      />
       <Banner
         title="Awards & Accreditations"
         image={awardBanner}

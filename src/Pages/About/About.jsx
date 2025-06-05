@@ -23,6 +23,7 @@ import GridBackground from "@/components/ui/GridBackground";
 import ganeshi from "@/assets/about/ganeshi-lal-agrawal.jpg";
 import about from "@/assets/about/GLA Building.webp";
 import aboutBanner from "@/assets/about/about-us.jpg";
+import Seo from '@/components/SEO/Seo';
 // import Heading from "@/components/Heading";
 
 export default function About() {
@@ -33,6 +34,15 @@ export default function About() {
   ];
   return (
     <div className="min-h-screen">
+      <Seo
+        title="About GLA Greater Noida - Top BTech College in Noida"
+        description="Learn about GLA Greater Noida, a top-ranked institution offering BTech in Computer Science and more. Known for academic excellence and industry-ready programs."
+        // keywords={['GLA University about', 'GLA history', 'GLA mission', 'GLA vision', 'university legacy']}
+        // ogTitle="About GLA University - A Tradition of Excellence"
+        // ogDescription="Discover the story behind GLA University, our commitment to academic excellence, and our impact on education."
+        // ogImage="https://www.example.com/images/gla-about-og.jpg" // Replace with actual image URL
+        canonicalUrl="/about" // Replace with actual URL
+      />
       <Banner
         title="About GLA University"
         image={aboutBanner}
@@ -124,7 +134,7 @@ const features = [
   {
     icon: Eye,
     title: "Vision",
-    desc: "At GLA Greater Noida, we want to create a space where students gain practical skills and real-world experience. Our goal is to prepare them for successful careers by connecting learning with industry needs, so they are ready to thrive in today’s fast-changing world.",
+    desc: "At GLA Greater Noida, we want to create a space where students gain practical skills and real-world experience. Our goal is to prepare them for successful careers by connecting learning with industry needs, so they are ready to thrive in today's fast-changing world.",
   },
   {
     icon: Target,

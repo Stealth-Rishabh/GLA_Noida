@@ -57,6 +57,7 @@ import tcsWebp from "@/assets/programs/recruiters/TCS.webp";
 import hclWebp from "@/assets/programs/recruiters/HCL.webp";
 import brochureImg from "@/assets/programs/brochure3.webp";
 import { AnimationStyles } from "./components/animation-styles";
+import Seo from "@/components/SEO/Seo";
 
 export function BCA() {
   const icons = [
@@ -156,6 +157,19 @@ export function BCA() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <Seo
+        title="BCA in Data Science Greater Noida - GLA Greater Noida"
+        description="BCA in Data Science Greater Noida at GLA, a top BCA college in Greater Noida with fees details. Call at +91-5662-250900 for info."
+        keywords={[
+          "bca in data science greater noida",
+          "bca college in greater noida",
+          "bca college in greater noida with fees",
+        ]}
+        // ogTitle="GLA University - Bachelor of Computer Applications (BCA)"
+        // ogDescription="Embark on your IT journey with GLA University's BCA program. Learn about our specialized tracks, modern labs, and excellent placement records."
+        // ogImage="https://www.example.com/images/gla-bca-og.jpg" // Replace with actual image URL
+        canonicalUrl="/programs/bca" // Replace with actual URL
+      />
       <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection

@@ -1,4 +1,5 @@
 import { Calendar, GraduationCap, Users, Beaker, BookOpen } from "lucide-react";
+import Seo from "@/components/SEO/Seo";
 import { HeroSection } from "./components/hero-section";
 import { ProgramDescription } from "./components/program-description";
 import { IndustryPartners } from "./components/industry-partners";
@@ -84,6 +85,19 @@ export function BBA() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <Seo
+        title="Join GLA - One of the Top BBA Colleges in Noida with Fees"
+        description="Join one of the top BBA colleges in Noida - GLA University. Cutting-edge programs, career support, and real-world exposure await you."
+        keywords={[
+          "bba colleges in noida",
+          "top bba colleges in noida",
+          "bba colleges in greater noida",
+        ]}
+        // ogTitle="GLA University - BBA in Management Science"
+        // ogDescription="Our BBA program offers a strong foundation in management principles and practices. Explore our curriculum and career opportunities."
+        // ogImage="https://www.example.com/images/gla-bba-og.jpg" // Replace with actual image URL
+        canonicalUrl="/programs/bba" // Replace with actual URL
+      />
       <AnimationStyles />
 
       {/* Hero Banner */}

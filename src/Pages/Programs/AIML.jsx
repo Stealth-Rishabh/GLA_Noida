@@ -32,6 +32,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import Seo from "@/components/SEO/Seo";
 
 import herobg from "@/assets/programs/HeroAIML.png";
 import { Building2 } from "lucide-react";
@@ -172,6 +173,19 @@ export function AIML() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <Seo
+        title="Join Btech in Artificial Intelligence Greater Noida - GLA Noida"
+        description="Pursue BTech in Artificial Intelligence and Machine Learning in Greater Noida - a leading institute for future-ready AI professionals."
+        keywords={[
+          "artificial intelligence course in btech greater noida",
+          "btech in artificial intelligence greater noida",
+          "btech in artificial intelligence and machine learning",
+        ]}
+        // ogTitle="GLA University - B.Tech CSE (AI & Machine Learning)"
+        // ogDescription="Join our cutting-edge B.Tech CSE program specializing in AI & ML. Learn from experts and work on real-world projects."
+        // ogImage="https://www.example.com/images/gla-aiml-og.jpg" // Replace with actual image URL
+        canonicalUrl="/programs/aiml" // Replace with actual URL
+      />
       <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection

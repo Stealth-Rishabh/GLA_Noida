@@ -1,4 +1,5 @@
 import { Calendar, GraduationCap, Users, Beaker, BookOpen } from "lucide-react";
+import Seo from "@/components/SEO/Seo";
 
 import { HeroSection } from "./components/hero-section";
 import { ProgramDescription } from "./components/program-description";
@@ -76,6 +77,19 @@ export function MBA() {
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <Seo
+        title="Top MBA Colleges in Noida with Fee Structure - GLA University"
+        description="Explore top MBA colleges in Noida with fee structure. GLA University offers quality education, expert faculty, and great placements."
+        keywords={[
+          "mba colleges in noida",
+          "top mba colleges in noida",
+          "top mba colleges in noida with fee structure",
+        ]}
+        // ogTitle="GLA University - MBA with Dual Specialization"
+        // ogDescription="Advance your career with our comprehensive MBA program. Learn about our curriculum, specializations, and industry connections."
+        // ogImage="https://www.example.com/images/gla-mba-og.jpg" // Replace with actual image URL
+        canonicalUrl="/programs/mba" // Replace with actual URL
+      />
       <AnimationStyles />
       {/* Hero Banner */}
       <HeroSection

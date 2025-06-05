@@ -18,6 +18,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import Seo from '@/components/SEO/Seo';
 
 export default function AdvisoryBoard() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,6 +54,15 @@ export default function AdvisoryBoard() {
 
   return (
     <>
+      <Seo
+        title="GLA Greater Noida Advisory Board | Academic & Industry Leaders"
+        description="Meet the Advisory Board of GLA Greater Noida—comprising industry experts and academic leaders guiding excellence in engineering, management, and innovation."
+        //keywords={['GLA University advisory board', 'academic advisors', 'industry experts', 'university governance', 'GLA Greater Noida', 'GLA University', 'GLA University Noida Campus']}
+        // ogTitle="Advisory Board - GLA University"
+        // ogDescription="Our Advisory Board features prominent leaders dedicated to advancing GLA University's mission and vision."
+        // ogImage="https://www.example.com/images/gla-advisory-og.jpg" // Replace with actual image URL
+        canonicalUrl="/advisory-board" // Replace with actual URL
+      />
       <Banner
         title="Advisory Board"
         image={aboutBanner}
