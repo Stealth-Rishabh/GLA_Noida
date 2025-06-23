@@ -54,6 +54,7 @@ const NAV_ITEMS = [
     path: "/admissions",
   },
   { title: "Contact Us", path: "/contact-us" },
+  { title: "Blog", path: "/blog" },
 ];
 
 export function SiteHeader() {

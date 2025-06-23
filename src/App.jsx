@@ -13,6 +13,8 @@ import Awards from "@/Pages/About/Awards";
 import AdmissionPage from "@/Pages/Admission/AdmissionPage";
 import AdvisoryBoard from "@/Pages/About/AdvisoryBoard";
 import Placements from "@/Pages/Placements/Placements";
+import Blog from "@/Pages/blog/Blog";
+import BlogDetails from "@/Pages/blog/BlogDetails";
 import { ReactLenis } from "lenis/react";
 
 export default function App() {
@@ -38,6 +40,8 @@ export default function App() {
           <Route path="/programs/mba" element={<MBA />} />
           <Route path="/admissions" element={<AdmissionPage />} />
           <Route path="/placements" element={<Placements />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
         </Routes>
       </main>
       {!isExcludedRoute && <SiteFooter />}
