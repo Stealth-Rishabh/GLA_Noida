@@ -94,14 +94,14 @@ export function MBA() {
       {/* Hero Banner */}
       <HeroSection
         backgroundImage={herobg}
-        title="MBA with"
+        title="AI-Enabled MBA with"
         subtitle="Dual Specialization"
-        para="Transform your career with our comprehensive MBA in Dual Specialization, designed for today's dynamic industry."
+        para="The AI-Enabled MBA. Double the Expertise. Transform Your Future."
         features={[
           "4-Semester Program",
           "Expert Faculty",
           "Industry-Ready Skills",
-          "Latest Technology",
+          "AI-Powered Learning",
         ]}
         stats={[
           { value: "55 LPA", label: "Highest CTC" },

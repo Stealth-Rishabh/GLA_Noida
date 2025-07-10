@@ -218,7 +218,7 @@ export function HeroSection({
       </div>
 
       <div className="relative z-10 container max-w-7xl mx-auto px-4 py-24 pt-[118px] sm:pt-28">
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-0 items-center">
           {/* Content Column */}
           <div className="space-y-4 sm:space-y-8">
             <div className="space-y-2 sm:space-y-6 max-w-xl">
@@ -259,7 +259,7 @@ export function HeroSection({
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 h-full">
+            <div className="grid grid-cols-3 gap-4 h-full max-w-xl">
               {stats.map((stat, index) => (
                 <BoxReveal
                   key={index}
@@ -279,7 +279,7 @@ export function HeroSection({
           </div>
 
           {/* Form Column */}
-          <div className="relative mx-auto md:ml-auto md:mr-0">
+          <div className="relative mx-auto max-w-[400px] md:ml-auto md:mr-0">
             {/* Form Card with Animation */}
             <div
               className="relative animate-float"
