@@ -180,26 +180,9 @@ export function MBA() {
         ]}
       />
 
-      {/* Industry Partners */}
-      <IndustryPartners
-        title="Industry Partners"
-        subtitle="Trusted by"
-        icons={icons}
-      />
-
-      {/* Eligibility */}
-      <EligibilitySection
-        requirements={[
-          "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
-          "Minimum 50% marks in Bachelor's degree",
-          "Strong analytical and problem-solving abilities",
-          "Good communication and interpersonal skills",
-          "Basic computer proficiency",
-          "Proficiency in English (written and verbal)",
-          "Prior work experience preferred but not mandatory",
-        ]}
-        plans={plans}
-      />
+      {/* MBA Programs Section */}
+      <CoreSpecializations />
+      <MBAPrograms />
 
       {/* Program Outcome */}
       <ProgramOutcomes
@@ -257,14 +240,35 @@ export function MBA() {
         ]}
       />
 
-      {/* Admission Process */}
-      <AdmissionStepper />
+      {/* Eligibility */}
+      <EligibilitySection
+        requirements={[
+          "Bachelor's degree (minimum 3 years) in any discipline from a recognized institution",
+          "Minimum 50% marks in Bachelor's degree",
+          "Strong analytical and problem-solving abilities",
+          "Good communication and interpersonal skills",
+          "Basic computer proficiency",
+          "Proficiency in English (written and verbal)",
+          "Prior work experience preferred but not mandatory",
+        ]}
+        plans={plans}
+      />
+
+      {/* Industry Partners */}
+      <IndustryPartners
+        title="Industry Partners"
+        subtitle="Trusted by"
+        icons={icons}
+      />
 
       {/* Curriculum */}
       <CurriculumSection
         title="Why Pursue an MBA in Dual Specialization?"
         programDescription="The demand for skilled professionals in managerial roles continues to rise, making an MBA an essential qualification for career advancement. Many engineers, after completing their technical degrees, choose to pursue an MBA to open up new career avenues and boost their professional growth."
       />
+
+      {/* Admission Process */}
+      <AdmissionStepper />
 
       {/* Fees */}
       {/* <FeesSection
@@ -285,10 +289,6 @@ export function MBA() {
           },
         ]}
       /> */}
-
-      {/* MBA Programs Section */}
-      <MBAPrograms />
-      <CoreSpecializations />
       {/* Brochure */}
       <BrochureSection
         title="Download Program Brochure"

@@ -46,8 +46,24 @@ const specializations = [
 
 export default function CoreSpecializations() {
   return (
-    <section className="py-16 background-gradient-yellow-light">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 bg-white relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+      <div className="card mx-auto px-4 relative max-w-7xl z-10">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-cusText mb-2">
             Core Specializations

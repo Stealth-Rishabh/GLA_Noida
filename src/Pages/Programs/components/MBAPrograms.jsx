@@ -80,7 +80,7 @@ export default function MBAPrograms() {
       <div className="absolute bottom-20 right-10 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 
       {/* Content */}
-      <div className="cardddd mx-auto px-4 relative   max-w-7xl z-10">
+      <div className="card mx-auto px-4 relative max-w-7xl z-10">
         <div className="max-w-7xl mx-auto text-center mb-16">
           <Badge className="mb-4 bg-cusSecondary text-cusText">
             Choose Your Specialization

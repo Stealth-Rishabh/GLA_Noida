@@ -19,14 +19,30 @@ export function BrochureSection({
       whileInView={{ opacity: 1 }}
       viewport={{ once: false }}
       transition={{ duration: 0.5 }}
-      className="py-24 container max-w-7xl mx-auto px-4"
+      className="py-24 px-4 relative overflow-hidden"
     >
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className=""
+        className="card mx-auto px-4 relative max-w-7xl z-10"
       >
         <GradientBackground round="rounded-2xl">
           <motion.div
