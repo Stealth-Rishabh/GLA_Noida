@@ -116,9 +116,8 @@ export function MBA() {
       <ProgramDescription
         title="About the Program"
         description={[
-          "Are you ready to take your career to the next level and step into the world of business leadership? The MBA (Dual) programme at GLA University offers you a unique opportunity to do just that. This isn't just any MBA, it's designed to prepare you for the ever-evolving global business landscape by giving you the knowledge, skills, and strategic mindset needed to thrive in today's fast-paced, competitive environment.",
-          "So, what does 'MBA (Dual)' mean? Well, it means you get the best of both worlds! The Dual aspect of this programme allows you to specialize in two distinct areas of business, helping you build a broader, more versatile skill set. Not only will you gain in-depth knowledge of core business functions like marketing, finance, human resources, operations, and strategy, but you'll also have the flexibility to customize your education by choosing a second specialization that aligns with your career aspirations.",
-          "Our MBA programme is designed with a perfect mix of theoretical and practical experience. You won't just be sitting in classrooms absorbing knowledge, you'll actively engage in real-world business challenges through case studies, live projects, and internships. These hands-on opportunities give you a chance to apply what you've learned in real business situations, helping you develop critical thinking, problem-solving, and decision-making skills that are essential in today's business world.",
+          "Step into the future of business leadership with GLA University’s AI-Enabled MBA (Dual Specialization). This cutting-edge program empowers you to master today’s dynamic global market by combining two specializations, giving you a versatile skill set and a competitive advantage.",
+          "Gain more than knowledge — tackle real-world challenges through practical learning, live projects, and internships that sharpen your strategic thinking and decision-making. Graduate ready to lead, innovate, and succeed in the modern business world.",
         ]}
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[
@@ -126,12 +125,12 @@ export function MBA() {
             icon: (
               <Beaker className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
             ),
-            title: "Industry-Integrated Learning",
+            title: "AI-Powered Learning",
             description: "Hands-on Experience",
           },
           {
             icon: (
-              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
             ),
             title: "Small Batch Sizes",
             description: "Personalized Learning",
@@ -145,10 +144,10 @@ export function MBA() {
           },
           {
             icon: (
-              <GraduationCap className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
+              <BookOpen className="h-6 w-6 text-cusAccent group-hover:text-white transition-all duration-300" />
             ),
-            title: "Project-Based Education",
-            description: "Real-world Cases",
+            title: "Expert Faculty",
+            description: "Top B-School Professors",
           },
           {
             icon: (
