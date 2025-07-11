@@ -46,9 +46,7 @@ const Seo = ({
       )} */}
 
       {/* Canonical URL */}
-      {canonicalUrl && (
-        <link rel="canonical" href={"https://noida.gla.ac.in" + canonicalUrl} />
-      )}
+      <link rel="canonical" href={"https://noida.gla.ac.in" + canonicalUrl} />
 
       {/* Other tags */}
       <meta name="robots" content="index, follow" />
