@@ -133,8 +133,8 @@ export function BBA() {
       <ProgramDescription
         title="About the Program"
         description={[
-          "In today's world, businesses are the backbone of every economy, catering to the needs of people across the globe. The BBA in Management Science opens the door to a wide range of career opportunities in industries like finance, marketing, human resources, and operations.",
-          "This three-year program is designed to equip students with a strong foundation in key management areas such as finance, marketing, accounting, and organizational behavior. The course not only focuses on core business principles but also helps students enhance their communication, leadership, and problem-solving skills—traits that are essential for success in the business world.",
+          "In today's world, businesses are the backbone of every economy, catering to the needs of people across the globe. The BBA in Management Science, offered by GLA one of the top BBA colleges in Noida, opens the door to a wide range of career opportunities in industries like finance, marketing, human resources, and operations.",
+          "This three-year program is designed to equip students with a strong foundation in key management areas such as finance, marketing, accounting, and organizational behavior. The course not only focuses on core business principles but also helps students enhance their communication, leadership, and problem-solving skills—traits essential for success in the business world.",
           "Additionally, this program is a great stepping stone for those aspiring to pursue an MBA. It equips students with the knowledge and preparation needed to succeed in competitive MBA entrance exams like CAT, XAT, MAT, and others.",
         ]}
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"

@@ -219,7 +219,7 @@ export function BtechCS() {
         title="About the Program"
         description={[
           "The B.Tech in Computer Science & Engineering (CSE) is a comprehensive 8-semester program that prepares you for an exciting career in the world of computing. If you have a passion for technology, this program will help you understand the core concepts of computer science and engineering. You'll learn how to design, develop, and test software and algorithms, as well as explore the latest advancements in the field.",
-          "After completing the course, you'll be a skilled professional in computing systems and their operation. The knowledge you gain will help not only in computer science but also in other areas of engineering, like IT, electronics, and software engineering. Get ready to dive into the fast-changing world of technology with a B. Tech in CSE from GLA University",
+          "Recognized as a top choice for students pursuing a BTech in Computer Science Engineering, GLA University ensures you gain hands-on experience with real-world applications and modern tools. After completing the course, you'll be a skilled professional in computing systems and their operation. The knowledge you gain will help not only in computer science but also in other areas of engineering, like IT, electronics, and software engineering. Get ready to dive into the fast-changing world of technology with a BTech in CSE from GLA University.",
         ]}
         imageUrl="https://gla-noida.vercel.app/assets/sports-UcTaf5m6.webp"
         features={[

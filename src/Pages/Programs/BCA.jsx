@@ -203,7 +203,7 @@ export function BCA() {
       <ProgramDescription
         title="About the Program"
         description={[
-          "In today's tech-driven world, data is everything. The field of data science is growing rapidly, and its influence is expanding across industries. The BCA in Data Science at GLA University is a three-year undergraduate program that combines the essentials of computer science with specialized knowledge in data science.",
+          "In today's tech-driven world, data is everything. The field of data science is growing rapidly, and its influence is expanding across industries. Among the top colleges in Greater Noida for BCA, GLA University offers a specialized BCA in Data Science—a three-year undergraduate program that combines the essentials of computer science with focused knowledge in data science.",
           "This course provides a strong foundation in programming, software development, and data analysis. It covers crucial areas such as Machine Learning, Big Data Analytics, Database Management Systems, and Statistics, giving students a comprehensive understanding of how data can drive decision-making in businesses and industries.",
           "By the end of the program, students are equipped with the skills and expertise needed to pursue exciting careers as Data Scientists, Machine Learning Engineers, Business Analysts, and more.",
         ]}
