@@ -8,7 +8,7 @@ const teamMembers = [
   },
   {
     name: "Prof. Swatantra",
-    role: "IIM, Indore", 
+    role: "IIM, Indore",
     image: "/Prof_Swatantra.jpg",
   },
   {
@@ -58,15 +58,32 @@ const TeamMemberCard = ({ member }) => {
 
 const LearningResources = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
+    <section className="py-20 bg-white relative">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+      <div className="container max-w-7xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-24">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Our Exceptional Team
+            Top-Tier Academic Mentors
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-            Empowered by passion and skill, our Exceptional Team turns
-            challenges into opportunities for growth.
+            Gain a competitive edge with guidance from renowned faculty from
+            IIMs, MDI, and other premier institutions, here to enrich your
+            two-year MBA experience.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-8 gap-y-20">

@@ -184,6 +184,7 @@ export function MBA() {
       {/* MBA Programs Section */}
       <CoreSpecializations />
       <MBAPrograms />
+      <LearningResources />
 
       {/* Program Outcome */}
       <ProgramOutcomes
@@ -311,8 +312,6 @@ export function MBA() {
           },
         ]}
       />
-
-      <LearningResources />
 
       {/* CTA Section */}
       <CTASection

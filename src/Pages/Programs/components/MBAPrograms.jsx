@@ -62,22 +62,7 @@ export default function MBAPrograms() {
   const [hoveredProgram, setHoveredProgram] = useState(null);
 
   return (
-    <section className="py-16 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="w-full h-full"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        ></div>
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <section className="py-16 bg-gray-50 relative overflow-hidden">
 
       {/* Content */}
       <div className="card mx-auto px-4 relative max-w-7xl z-10">

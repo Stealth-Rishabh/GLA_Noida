@@ -10,7 +10,7 @@ import GridBackground from "@/components/ui/GridBackground";
 export function EligibilitySection({ plans, requirements }) {
   return (
     <GridBackground>
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 bg-gray-50">
         <div className="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
