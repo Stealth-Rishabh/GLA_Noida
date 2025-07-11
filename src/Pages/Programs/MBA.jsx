@@ -23,6 +23,7 @@ import brochureImg from "@/assets/programs/brochure4.webp";
 import { AnimationStyles } from "./components/animation-styles";
 import MBAPrograms from "./components/MBAPrograms";
 import CoreSpecializations from "./components/core-specializations";
+import LearningResources from "./components/LearningResources";
 
 export function MBA() {
   const icons = [
@@ -310,6 +311,8 @@ export function MBA() {
           },
         ]}
       />
+
+      <LearningResources />
 
       {/* CTA Section */}
       <CTASection
